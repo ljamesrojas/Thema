@@ -110,3 +110,11 @@ export const PILL_RADIUS_MIN = 500;
 
 /** OKLCH lightness dividing light from dark canvases, for detecting a dark theme. */
 export const DARK_CANVAS_LIGHTNESS = 0.5;
+
+// --- accuracy (week-2 gate) ---------------------------------------------------------------
+
+/** A recorded site's primary is correct when within this ΔE OK of the hand-verified value. */
+export const PRIMARY_MAX_DELTA_E = 5;
+
+/** Share of checks (primary, fonts, spacing base) that must pass across real sites. SPEC. */
+export const ACCURACY_GATE = 0.9;

@@ -26,4 +26,15 @@ export {
   withOpacity,
 } from "./color-math.js";
 export { isTextSample, sampleRole, sampleWeight } from "./samples.js";
+export {
+  ACCURACY_CHECKS,
+  scoreFixture,
+  summarizeAccuracy,
+  type AccuracyCheck,
+  type AccuracySummary,
+  type CheckResult,
+  type CheckStatus,
+  type FixtureExpected,
+  type FixtureScore,
+} from "./accuracy.js";
 export * from "./constants.js";
