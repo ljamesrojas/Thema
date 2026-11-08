@@ -1,0 +1,21 @@
+{
+  "description": "Cream editorial article page, burnt-orange primary, teal accent. Noise: black cookie banner with a lime button, large red sponsored ad unit close to the orange that would win primary without the occurrence factor.",
+  "roles": {
+    "canvas": "oklch(0.974 0.011 84.6)",
+    "surface": "oklch(0.927 0.026 84.6)",
+    "ink": "oklch(0.216 0.006 56)",
+    "ink-muted": "oklch(0.444 0.01 73.6)",
+    "hairline": "oklch(0.888 0.025 83.4)",
+    "primary": "oklch(0.553 0.174 38.4)",
+    "accent": "oklch(0.511 0.086 186.4)"
+  },
+  "sourceHex": {
+    "canvas": "#faf6ee",
+    "surface": "#efe6d4",
+    "ink": "#1c1917",
+    "ink-muted": "#57534e",
+    "hairline": "#e2d9c8",
+    "primary": "#c2410c",
+    "accent": "#0f766e"
+  }
+}

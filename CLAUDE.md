@@ -38,3 +38,11 @@ Thema turns several reference websites into one original, accessible design syst
 
 ## Decisions log
 - 2026-11-08: Project started. Palette and look approved (see DESIGN.md).
+- 2026-11-08: ΔE in SPEC means ΔE OK: OKLab Euclidean distance × 100 (white↔black ≈ 100). Clustering uses < 4, fixture tolerance < 2.
+- 2026-11-08: Translucent colors are composited (sRGB) onto the canvas, which is found first from opaque backgrounds only.
+- 2026-11-08: Clustering is greedy, heaviest color first; a cluster's representative is a real member color, not an average. Each role reports the heaviest exact color among the members that count for it (text for ink, borders for hairline…), since one cluster can mix e.g. a navy footer background and body text.
+- 2026-11-08: Primary/accent scores are scaled by min(1, distinct samples / 3) so one-off cookie buttons and ads can't win.
+- 2026-11-08: Accent must differ from primary by ≥ 20° hue, not by ΔE: hover shades sit 6–10 ΔE away at the same hue, while blue→violet is only ~12 ΔE apart.
+- 2026-11-08: Confidence per role = 1 − runnerUp / winner (1 = no rival, 0 = tie).
+- 2026-11-08: TypeScript pinned to ~6.0 because typescript-eslint 8 supports only < 6.1.
+- 2026-11-08: Prettier ignores the hand-written root docs (CLAUDE.md, DESIGN.md, SPEC.md, docs/).

@@ -1,0 +1,285 @@
+import { describe, expect, it } from "vitest";
+import { analyzeColors } from "../src/colors.js";
+import type { StyleSample } from "../src/types.js";
+import { distance, sample } from "./helpers.js";
+
+/** Assert a role was assigned and is within ΔE 1 of the expected CSS color. */
+function expectRole(actual: string | undefined, expected: string): void {
+  expect(actual, `expected a color close to ${expected}`).toBeDefined();
+  expect(distance(actual ?? "", expected)).toBeLessThan(1);
+}
+
+const page = (bg = "#ffffff", area = 1_000_000): StyleSample =>
+  sample({ tag: "body", role: "container", area, backgroundColor: bg, color: "#111111" });
+
+const button = (bg: string, area = 8000): StyleSample =>
+  sample({ tag: "button", area, backgroundColor: bg, color: "#ffffff" });
+
+describe("analyzeColors: canvas", () => {
+  it("returns empty roles for no samples", () => {
+    expect(analyzeColors([])).toEqual({ roles: {}, confidence: {} });
+  });
+
+  it("picks the largest background by raw area, ignoring importance weights", () => {
+    const { roles } = analyzeColors([
+      page("#ffffff", 400_000),
+      // Interactive weight ×3 would make this 450k, but canvas ranks by raw area only.
+      button("#2563eb", 150_000),
+    ]);
+    expectRole(roles.canvas, "#ffffff");
+  });
+
+  it("ignores fully transparent backgrounds", () => {
+    const { roles } = analyzeColors([
+      sample({ area: 2_000_000, backgroundColor: "rgba(0, 0, 0, 0)" }),
+      sample({ area: 2_000_000, backgroundColor: "transparent" }),
+      page("#faf6ee", 500_000),
+    ]);
+    expectRole(roles.canvas, "#faf6ee");
+  });
+});
+
+describe("analyzeColors: surface", () => {
+  it("takes the next neutral background close to the canvas", () => {
+    const { roles } = analyzeColors([
+      page("#ffffff"),
+      sample({ area: 200_000, backgroundColor: "#eef2f7" }),
+    ]);
+    expectRole(roles.surface, "#eef2f7");
+  });
+
+  it("rejects a large background that is far from the canvas", () => {
+    const { roles } = analyzeColors([
+      page("#ffffff"),
+      sample({ tag: "footer", role: "container", area: 400_000, backgroundColor: "#0b1120" }),
+      sample({ area: 100_000, backgroundColor: "#eef2f7" }),
+    ]);
+    expectRole(roles.surface, "#eef2f7");
+  });
+
+  it("rejects a saturated background", () => {
+    const { roles } = analyzeColors([
+      page("#ffffff"),
+      sample({ area: 300_000, backgroundColor: "#dbeafe" }), // light blue, chroma ≈ 0.05
+      sample({ area: 300_000, backgroundColor: "#fde047" }), // yellow, saturated
+    ]);
+    expectRole(roles.surface, "#dbeafe");
+  });
+
+  it("is omitted when nothing qualifies", () => {
+    const { roles } = analyzeColors([
+      page("#ffffff"),
+      sample({ area: 300_000, backgroundColor: "#111827" }),
+    ]);
+    expect(roles.surface).toBeUndefined();
+  });
+});
+
+describe("analyzeColors: ink and ink-muted", () => {
+  const text = (color: string, area: number, tag = "p"): StyleSample =>
+    sample({ tag, area, color });
+
+  it("picks the heaviest neutral text color as ink", () => {
+    const { roles } = analyzeColors([page(), text("#0f172a", 50_000), text("#64748b", 30_000)]);
+    expectRole(roles.ink, "#0f172a");
+  });
+
+  it("counts headings extra", () => {
+    // 20k heading × 2 = 40k beats 30k body text.
+    const { roles } = analyzeColors([
+      page(),
+      text("#111111", 20_000, "h1"),
+      text("#444444", 30_000),
+    ]);
+    expectRole(roles.ink, "#111111");
+  });
+
+  it("ignores container text color, which is only inherited", () => {
+    const { roles } = analyzeColors([
+      sample({
+        tag: "main",
+        role: "container",
+        area: 900_000,
+        backgroundColor: "#ffffff",
+        color: "#ff0000",
+      }),
+      text("#222222", 10_000),
+    ]);
+    expectRole(roles.ink, "#222222");
+  });
+
+  it("never uses the canvas color as ink", () => {
+    const { roles } = analyzeColors([
+      page(),
+      button("#2563eb", 5000),
+      button("#2563eb", 5000),
+      text("#1f2937", 3000),
+    ]);
+    expectRole(roles.ink, "#1f2937");
+  });
+
+  it("takes ink-muted from text lighter than ink but darker than a light canvas", () => {
+    const { roles } = analyzeColors([
+      page(),
+      text("#0f172a", 50_000),
+      text("#64748b", 30_000),
+      text("#000000", 40_000), // darker than ink, so not "muted"
+    ]);
+    expectRole(roles["ink-muted"], "#64748b");
+  });
+
+  it("works the other way round on a dark canvas", () => {
+    const { roles } = analyzeColors([
+      page("#0a0a0a"),
+      text("#ededed", 50_000),
+      text("#a1a1a1", 30_000),
+      text("#ffffff", 40_000), // lighter than ink, so not "muted"
+    ]);
+    expectRole(roles.ink, "#ededed");
+    expectRole(roles["ink-muted"], "#a1a1a1");
+  });
+});
+
+describe("analyzeColors: hairline", () => {
+  it("is taken from border colors only", () => {
+    const { roles } = analyzeColors([
+      page(),
+      sample({ tag: "p", area: 90_000, color: "#9ca3af" }), // gray text, not a border
+      sample({ area: 50_000, borderColor: "#e2e8f0" }),
+    ]);
+    expectRole(roles.hairline, "#e2e8f0");
+  });
+
+  it("composites translucent borders onto the canvas", () => {
+    const { roles } = analyzeColors([
+      page(),
+      sample({ area: 50_000, borderColor: "rgba(0, 0, 0, 0.08)" }),
+    ]);
+    expectRole(roles.hairline, "#ebebeb");
+  });
+
+  it("ignores saturated borders", () => {
+    const { roles } = analyzeColors([
+      page(),
+      sample({ tag: "input", area: 50_000, borderColor: "#2563eb" }),
+    ]);
+    expect(roles.hairline).toBeUndefined();
+  });
+});
+
+describe("analyzeColors: primary and accent", () => {
+  it("picks the most-weighted saturated color on interactive elements", () => {
+    const { roles } = analyzeColors([
+      page(),
+      button("#2563eb"),
+      button("#2563eb"),
+      sample({ tag: "a", area: 3000, color: "#2563eb" }),
+      // Big saturated decorative block, but not interactive.
+      sample({ tag: "section", role: "container", area: 300_000, backgroundColor: "#7c3aed" }),
+    ]);
+    expectRole(roles.primary, "#2563eb");
+  });
+
+  it("lets a repeated button beat a larger one-off button (cookie banner, ad)", () => {
+    const { roles } = analyzeColors([
+      page(),
+      button("#facc15", 20_000), // one big "Accept cookies" button: 60k × 1/3 = 20k
+      button("#2563eb", 6000),
+      button("#2563eb", 6000),
+      sample({ tag: "a", area: 2000, color: "#2563eb" }), // 3 occurrences: 42k × 1 = 42k
+    ]);
+    expectRole(roles.primary, "#2563eb");
+  });
+
+  it("picks the accent as the next saturated color far enough from primary", () => {
+    const { roles } = analyzeColors([
+      page(),
+      button("#2563eb"),
+      button("#2563eb"),
+      button("#2563eb"),
+      button("#1d4ed8", 4000), // primary hover shade: too close to be the accent
+      button("#1d4ed8", 4000),
+      button("#1d4ed8", 4000),
+      sample({ tag: "span", area: 3000, backgroundColor: "#7c3aed" }),
+      sample({ tag: "span", area: 3000, backgroundColor: "#7c3aed" }),
+      sample({ tag: "span", area: 3000, backgroundColor: "#7c3aed" }),
+    ]);
+    expectRole(roles.primary, "#2563eb");
+    expectRole(roles.accent, "#7c3aed");
+  });
+
+  it("omits primary when there are no saturated colors", () => {
+    const { roles } = analyzeColors([
+      page(),
+      button("#111111"),
+      sample({ tag: "p", color: "#333333" }),
+    ]);
+    expect(roles.primary).toBeUndefined();
+    expect(roles.accent).toBeUndefined();
+  });
+});
+
+describe("analyzeColors: each role reports its own channel's color", () => {
+  it("keeps ink as the text color when a large background of a similar shade merges with it", () => {
+    // #0b1120 footer and #0f172a text are ΔE ≈ 2.9 apart, so they share a cluster.
+    const { roles } = analyzeColors([
+      page(),
+      sample({ tag: "footer", role: "container", area: 500_000, backgroundColor: "#0b1120" }),
+      sample({ tag: "p", area: 40_000, color: "#0f172a" }),
+    ]);
+    expectRole(roles.ink, "#0f172a");
+  });
+
+  it("keeps the hairline as the border color when it merges with the surface", () => {
+    // #e2e8f0 border and #eef2f7 surface are ΔE ≈ 3.1 apart.
+    const { roles } = analyzeColors([
+      page(),
+      sample({ area: 300_000, backgroundColor: "#eef2f7" }),
+      sample({ area: 60_000, borderColor: "#e2e8f0" }),
+    ]);
+    expectRole(roles.surface, "#eef2f7");
+    expectRole(roles.hairline, "#e2e8f0");
+  });
+});
+
+describe("analyzeColors: confidence", () => {
+  it("is 1 with no rival", () => {
+    const { confidence } = analyzeColors([page()]);
+    expect(confidence.canvas).toBe(1);
+  });
+
+  it("drops near 0 for a close rival and stays within 0–1", () => {
+    const { confidence } = analyzeColors([
+      page(),
+      button("#2563eb"),
+      button("#2563eb"),
+      button("#2563eb"),
+      button("#16a34a"),
+      button("#16a34a"),
+      button("#16a34a", 7000),
+    ]);
+    // Button backgrounds are tiny next to the page, so canvas is near-certain.
+    expect(confidence.canvas).toBeGreaterThan(0.95);
+    // Blue 72k vs green 69k: almost a tie.
+    expect(confidence.primary).toBeGreaterThanOrEqual(0);
+    expect(confidence.primary).toBeLessThan(0.2);
+    for (const value of Object.values(confidence)) {
+      expect(value).toBeGreaterThanOrEqual(0);
+      expect(value).toBeLessThanOrEqual(1);
+    }
+  });
+
+  it("assigns a confidence for every role it returns", () => {
+    const { roles, confidence } = analyzeColors([
+      page(),
+      button("#2563eb"),
+      sample({ tag: "p", color: "#222222" }),
+    ]);
+    expect(Object.keys(confidence).sort()).toEqual(Object.keys(roles).sort());
+  });
+
+  it("is deterministic", () => {
+    const input = [page(), button("#2563eb"), sample({ tag: "p", color: "#222222" })];
+    expect(analyzeColors(input)).toEqual(analyzeColors([...input]));
+  });
+});

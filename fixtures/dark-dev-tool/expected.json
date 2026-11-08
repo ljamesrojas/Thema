@@ -1,0 +1,21 @@
+{
+  "description": "Near-black developer-tool landing page, green primary, violet accent. Noise: white cookie card with a blue button, hot-pink sponsor badge.",
+  "roles": {
+    "canvas": "oklch(0.145 0 0)",
+    "surface": "oklch(0.205 0 0)",
+    "ink": "oklch(0.946 0 0)",
+    "ink-muted": "oklch(0.709 0 0)",
+    "hairline": "oklch(0.269 0 0)",
+    "primary": "oklch(0.723 0.192 149.6)",
+    "accent": "oklch(0.709 0.159 293.5)"
+  },
+  "sourceHex": {
+    "canvas": "#0a0a0a",
+    "surface": "#171717",
+    "ink": "#ededed",
+    "ink-muted": "#a1a1a1",
+    "hairline": "#262626",
+    "primary": "#22c55e",
+    "accent": "#a78bfa"
+  }
+}

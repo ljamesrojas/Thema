@@ -1,0 +1,21 @@
+{
+  "description": "White SaaS landing page, blue primary, violet accent. Noise: dark footer, dark cookie banner with a yellow Accept button, red Sale ad badge.",
+  "roles": {
+    "canvas": "oklch(1 0 0)",
+    "surface": "oklch(0.96 0.008 253.9)",
+    "ink": "oklch(0.208 0.04 265.8)",
+    "ink-muted": "oklch(0.554 0.041 257.4)",
+    "hairline": "oklch(0.929 0.013 255.5)",
+    "primary": "oklch(0.546 0.215 262.9)",
+    "accent": "oklch(0.541 0.247 293)"
+  },
+  "sourceHex": {
+    "canvas": "#ffffff",
+    "surface": "#eef2f7",
+    "ink": "#0f172a",
+    "ink-muted": "#64748b",
+    "hairline": "#e2e8f0",
+    "primary": "#2563eb",
+    "accent": "#7c3aed"
+  }
+}
