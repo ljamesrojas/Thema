@@ -17,5 +17,85 @@
     "hairline": "#e2d9c8",
     "primary": "#c2410c",
     "accent": "#0f766e"
+  },
+  "typography": {
+    "families": {
+      "sans": "Source Sans 3",
+      "serif": "Source Serif 4"
+    },
+    "scale": [
+      {
+        "name": "xs",
+        "size": 14,
+        "lineHeight": 1.43,
+        "weight": 400,
+        "tracking": 0
+      },
+      {
+        "name": "sm",
+        "size": 16,
+        "lineHeight": 1.5,
+        "weight": 400,
+        "tracking": 0
+      },
+      {
+        "name": "base",
+        "size": 19,
+        "lineHeight": 1.68,
+        "weight": 400,
+        "tracking": 0
+      },
+      {
+        "name": "lg",
+        "size": 22,
+        "lineHeight": 1.36,
+        "weight": 400,
+        "tracking": 0
+      },
+      {
+        "name": "xl",
+        "size": 24,
+        "lineHeight": 1.33,
+        "weight": 600,
+        "tracking": 0
+      },
+      {
+        "name": "2xl",
+        "size": 28,
+        "lineHeight": 1.43,
+        "weight": 400,
+        "tracking": 0
+      },
+      {
+        "name": "3xl",
+        "size": 30,
+        "lineHeight": 1.33,
+        "weight": 700,
+        "tracking": -0.017
+      },
+      {
+        "name": "4xl",
+        "size": 56,
+        "lineHeight": 1.07,
+        "weight": 600,
+        "tracking": -0.018
+      }
+    ],
+    "ratio": 1.158
+  },
+  "spacing": {
+    "base": 4,
+    "scale": [12, 16, 20, 24, 40, 64]
+  },
+  "radius": {
+    "sm": 2,
+    "md": 2,
+    "lg": 4,
+    "full": 9999
+  },
+  "shadow": {
+    "sm": "none",
+    "md": "none",
+    "lg": "none"
   }
 }

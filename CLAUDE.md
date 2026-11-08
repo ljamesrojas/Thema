@@ -46,3 +46,8 @@ Thema turns several reference websites into one original, accessible design syst
 - 2026-11-08: Confidence per role = 1 − runnerUp / winner (1 = no rival, 0 = tie).
 - 2026-11-08: TypeScript pinned to ~6.0 because typescript-eslint 8 supports only < 6.1.
 - 2026-11-08: Prettier ignores the hand-written root docs (CLAUDE.md, DESIGN.md, SPEC.md, docs/).
+- 2026-11-08: Typography units: `size` px, `lineHeight` unitless (px ÷ size), `tracking` em (px ÷ size). `families.*` are family names only ("Inter"); exporters add fallback stacks. `sans` falls back to "system-ui".
+- 2026-11-08: Type scale: sizes weighted by area × role weight, < 1% of text weight dropped; base = heaviest body size; keep the 2 heaviest below (xs, sm) and 5 heaviest above (lg…4xl). Per-step lineHeight/weight/tracking use raw area, so ×3 buttons or a bold ad don't set the body weight. Ratio = median of (size/base)^(1/k).
+- 2026-11-08: Display family = used ≥ 80% on headings while another family carries body text.
+- 2026-11-08: Spacing base = 8 when ≥ 75% of values seen on ≥ 2 samples are multiples of 8, else 4 (robust form of SPEC's GCD rule). Values counted once per sample, > 256px ignored, snapped to base, one-offs dropped.
+- 2026-11-08: Radius and shadow sm/md/lg: md = most common, sm/lg = most common below/above (ties → closer to md), missing → md. Radius skips 0 and pills (≥ 500px). Shadow colors stay OKLCH with alpha (`formatOklch` now emits `/ a` below 1); inset-only shadows skipped.
