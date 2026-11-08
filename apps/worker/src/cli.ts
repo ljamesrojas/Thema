@@ -39,7 +39,11 @@ async function main(argv: string[]): Promise<number> {
 
   const root = workspaceRoot(process.cwd());
   const out = isAbsolute(values.out) ? values.out : resolve(root, values.out);
-  const shown = (path: string) => relative(root, path) || path;
+  /** Repo-relative when inside the repo, absolute otherwise. */
+  const shown = (path: string) => {
+    const rel = relative(root, path);
+    return rel === "" || rel.startsWith("..") || isAbsolute(rel) ? path : rel;
+  };
 
   console.log(`Extracting ${url} …`);
   const result = await extract(url);
