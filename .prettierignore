@@ -1,0 +1,10 @@
+node_modules
+pnpm-lock.yaml
+.turbo
+coverage
+dist
+# Hand-written source-of-truth docs: keep their formatting as authored.
+/CLAUDE.md
+/DESIGN.md
+/SPEC.md
+/docs/

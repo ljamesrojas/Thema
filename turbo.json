@@ -1,0 +1,9 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "test": {
+      "inputs": ["src/**", "test/**", "../../fixtures/**", "vitest.config.ts", "package.json"]
+    },
+    "typecheck": {}
+  }
+}
