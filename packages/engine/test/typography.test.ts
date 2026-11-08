@@ -160,6 +160,22 @@ describe("analyzeTypography: scale", () => {
     expect(names([text(15.98, 1000), text(16.1, 1000)])).toEqual(["base:16"]);
   });
 
+  it("takes per-step attributes by raw area, so semibold buttons don't set the body weight", () => {
+    const [step] = analyzeTypography([
+      text(16, 60_000, { fontWeight: 400, lineHeight: 24 }),
+      // 30k area × 3 (interactive) = 90k weight, but only 30k area.
+      sample({
+        tag: "button",
+        fontFamily: INTER,
+        fontSize: 16,
+        fontWeight: 600,
+        lineHeight: 20,
+        area: 30_000,
+      }),
+    ]).scale;
+    expect(step).toMatchObject({ name: "base", weight: 400, lineHeight: 1.5 });
+  });
+
   it("keeps line height unitless, tracking in em and the dominant weight per step", () => {
     const [step] = analyzeTypography([
       sample({

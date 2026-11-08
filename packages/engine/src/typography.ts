@@ -129,6 +129,11 @@ function detectFamilies(samples: readonly StyleSample[]): Families {
 const NAMES_BELOW: readonly StepName[] = ["xs", "sm"];
 const NAMES_ABOVE: readonly StepName[] = ["lg", "xl", "2xl", "3xl", "4xl"];
 
+/**
+ * Per font size: `weight`/`bodyWeight` (area × role weight) decide which sizes make the scale.
+ * The attribute maps use raw area, so they describe what text at that size looks like:
+ * semibold buttons (×3) or a bold ad don't override the body text's weight.
+ */
 interface SizeStats {
   weight: number;
   bodyWeight: number;
@@ -168,9 +173,9 @@ function collectSizes(samples: readonly StyleSample[]): Map<number, SizeStats> {
     };
     stats.weight += weight;
     if (sampleRole(sample) === "body") stats.bodyWeight += weight;
-    addTo(stats.lineHeight, sample.lineHeight, weight);
-    addTo(stats.fontWeight, sample.fontWeight, weight);
-    addTo(stats.letterSpacing, sample.letterSpacing, weight);
+    addTo(stats.lineHeight, sample.lineHeight, sample.area);
+    addTo(stats.fontWeight, sample.fontWeight, sample.area);
+    addTo(stats.letterSpacing, sample.letterSpacing, sample.area);
     sizes.set(size, stats);
   }
   return sizes;
