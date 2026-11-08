@@ -12,7 +12,8 @@
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
     "extract": "pnpm --filter @thema/worker extract",
-    "palette": "tsx scripts/palette.ts"
+    "palette": "tsx scripts/palette.ts",
+    "accuracy": "tsx scripts/accuracy.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
