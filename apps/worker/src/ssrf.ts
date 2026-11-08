@@ -131,7 +131,11 @@ export async function assertPublicUrl(raw: string, lookup: Lookup = systemLookup
   if (addresses.length === 0) throw new BlockedUrlError(`Could not resolve ${host}`);
   const blocked = addresses.find(isPrivateAddress);
   if (blocked !== undefined) {
-    throw new BlockedUrlError(`${host} resolves to a non-public address (${blocked})`);
+    throw new BlockedUrlError(
+      isIP(host)
+        ? `${host} is a non-public address`
+        : `${host} resolves to a non-public address (${blocked})`,
+    );
   }
   return url;
 }

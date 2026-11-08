@@ -1,1 +1,61 @@
-# apps/worker — Playwright extraction worker. Returns raw StyleSample[] + a screenshot, no analysis.
+# @thema/worker
+
+Loads a reference site in headless Chromium and records raw `StyleSample[]` plus a screenshot. It does no analysis; that's `@thema/engine`.
+
+## Setup (once)
+
+```sh
+pnpm install
+pnpm --filter @thema/worker exec playwright install chromium   # ~200 MB download
+```
+
+The worker's tests launch Chromium too, so `pnpm test` needs this step.
+
+## Usage
+
+```sh
+pnpm extract https://example.com --out fixtures/example/
+pnpm palette fixtures/example        # run the engine on what was recorded
+```
+
+A relative `--out` is resolved against the repo root. The CLI writes:
+
+| File                | Contents                                                                            |
+| ------------------- | ----------------------------------------------------------------------------------- |
+| `samples.json`      | `StyleSample[]` from the light pass                                                 |
+| `samples.dark.json` | Only when `prefers-color-scheme: dark` flips the canvas (`canvasFlipsInDark`)       |
+| `screenshot.png`    | Full-page screenshot of the light pass. Gitignored: never commit third-party images |
+
+## What a pass does
+
+1. Opens a fresh context at 1440×900 with the given color scheme and reduced motion.
+2. Navigates, then waits for network idle (up to 10 s; many sites never go idle).
+3. Dismisses a cookie banner. It tries reject or "necessary only" first, then accept, in every frame. Known consent managers come first; after that, exact button labels inside elements that look like a consent banner.
+4. Scrolls to the bottom once for lazy content, then back to the top.
+5. Collects samples in the page ([`src/collect.ts`](src/collect.ts)):
+   - **What's kept:** visible elements with a style signal (background, drawn border, text, interactive or heading role, shadow, radius), at most 2000, keeping the largest.
+   - **Roles:** guessed from the tag and ARIA role.
+   - **Values:**
+     - `borderColor` only for drawn borders.
+     - `line-height: normal` becomes 1.2 × the font size.
+     - `html` reports the color that actually paints the canvas (html, else body, else the browser's `Canvas` color).
+
+## SSRF guard
+
+[`src/ssrf.ts`](src/ssrf.ts) rejects any request that isn't http(s), has credentials, targets `localhost`, or resolves to a private, loopback, link-local, CGNAT, multicast, reserved or documentation address. That includes `169.254.169.254` and IPv4-mapped IPv6.
+
+It checks the URL before Chromium starts, and then **every request and every redirect hop**:
+
+- Playwright's route handler only sees the first request of a redirect chain, and Chromium follows redirects on its own. So the worker follows redirects itself, checking each hop before requesting it, and hands the browser only the final response.
+- The page's own redirects are resolved the same way before navigating, so the page loads at its final URL.
+
+**Limits:**
+
+- **DNS rebinding:** a host could resolve to a public address for the check and a private one for the actual request.
+- **Uncovered request types:** WebSocket and WebRTC traffic doesn't go through the route handler.
+
+A hosted worker must also run behind an egress firewall that blocks private ranges. That firewall is the real boundary; this guard is defence in depth.
+
+## Tests
+
+All tests run offline. Browser tests either abort every request and use `page.setContent`, or serve an in-memory website through the injectable `upstream`. The SSRF guard still checks every hop in those tests.

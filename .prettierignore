@@ -8,3 +8,7 @@ dist
 /DESIGN.md
 /SPEC.md
 /docs/
+# Machine-written recorded samples. expected.json files stay formatted (people edit them).
+fixtures/**/samples*.json
+test-results
+playwright-report
