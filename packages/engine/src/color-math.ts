@@ -34,6 +34,15 @@ export function hueDelta(a: Oklch, b: Oklch): number {
 }
 
 /** Flatten a translucent color onto an opaque backdrop, blending in sRGB as browsers do. */
+/**
+ * Multiply a color's alpha by an element's opacity (clamped to 0–1). Computed CSS colors
+ * ignore `opacity`, so a faded element's colors only become what's painted after this.
+ */
+export function withOpacity(color: Oklch, opacity: number | undefined): Oklch {
+  if (opacity === undefined || opacity >= 1) return color;
+  return { ...color, alpha: alphaOf(color) * Math.max(0, opacity) };
+}
+
 export function compositeOver(color: Oklch, backdrop: Oklch): Oklch {
   const a = alphaOf(color);
   if (a >= 1) return color;

@@ -154,6 +154,25 @@ describe("collectSamples: field rules", () => {
   });
 });
 
+describe("collectSamples: opacity", () => {
+  it("records effective opacity, multiplied through ancestors", async () => {
+    const samples = await collect(
+      page(
+        `<div style="opacity:0.5;background:#eee"><p style="opacity:0.8">Faded</p></div><h1>Plain</h1>`,
+      ),
+    );
+    expect(one(samples, "div").opacity).toBe(0.5);
+    expect(one(samples, "p").opacity).toBe(0.4);
+    expect(one(samples, "h1").opacity).toBeUndefined();
+  });
+
+  it("never records opacity on html, whose sample is the canvas", async () => {
+    const samples = await collect(page(`<p>Text</p>`, `<style>html{opacity:0.9}</style>`));
+    expect(one(samples, "html").opacity).toBeUndefined();
+    expect(one(samples, "p").opacity).toBeUndefined();
+  });
+});
+
 describe("collectSamples: canvas", () => {
   const lightness = (css: string) => parseCssColor(css)?.l ?? Number.NaN;
 

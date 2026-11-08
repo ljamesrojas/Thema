@@ -242,6 +242,66 @@ describe("analyzeColors: each role reports its own channel's color", () => {
   });
 });
 
+describe("analyzeColors: opacity", () => {
+  it("composites faded text, so black at 0.6 on white becomes a gray ink-muted", () => {
+    const { roles } = analyzeColors([
+      page(),
+      sample({ tag: "p", area: 60_000, color: "#111111" }),
+      sample({ tag: "p", area: 30_000, color: "#000000", opacity: 0.6 }),
+    ]);
+    expectRole(roles.ink, "#111111");
+    // 0 × 0.6 + 255 × 0.4 = 102 → #666666
+    expectRole(roles["ink-muted"], "#666666");
+  });
+
+  it("composites a faded background onto the page, so an 8% black section is a light surface", () => {
+    const { roles } = analyzeColors([
+      page(),
+      sample({
+        tag: "section",
+        role: "container",
+        area: 300_000,
+        backgroundColor: "#000000",
+        opacity: 0.08,
+      }),
+    ]);
+    expectRole(roles.canvas, "#ffffff");
+    // 255 × 0.92 ≈ 235 → #ebebeb. (At 5%, #f2f2f2 is ΔE 3.9 from white and merges into the canvas.)
+    expectRole(roles.surface, "#ebebeb");
+  });
+
+  it("never uses a faded layer as the compositing backdrop", () => {
+    const { roles } = analyzeColors([
+      page("#ffffff", 400_000),
+      // A faded black overlay larger than the page. If its unfaded black were the backdrop it
+      // would composite to black; over the real white page it paints #666666.
+      sample({
+        tag: "div",
+        role: "container",
+        area: 900_000,
+        backgroundColor: "#000000",
+        opacity: 0.6,
+      }),
+    ]);
+    expectRole(roles.canvas, "#666666");
+  });
+
+  it("drops a color faded to nothing", () => {
+    const { roles } = analyzeColors([
+      page(),
+      sample({ tag: "p", area: 90_000, color: "#ff0000", opacity: 0 }),
+      sample({ tag: "p", area: 10_000, color: "#222222" }),
+    ]);
+    expectRole(roles.ink, "#222222");
+  });
+
+  it("gives the same result as before for samples without opacity", () => {
+    const samples = [page(), sample({ tag: "p", area: 30_000, color: "#333333" })];
+    const withOne = samples.map((s) => ({ ...s, opacity: 1 }));
+    expect(analyzeColors(withOne)).toEqual(analyzeColors(samples));
+  });
+});
+
 describe("analyzeColors: confidence", () => {
   it("is 1 with no rival", () => {
     const { confidence } = analyzeColors([page()]);

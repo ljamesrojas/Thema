@@ -5,8 +5,33 @@ import {
   formatOklch,
   hueDelta,
   parseCssColor,
+  withOpacity,
 } from "../src/color-math.js";
 import { distance } from "./helpers.js";
+
+describe("withOpacity", () => {
+  const parse = (css: string) => {
+    const color = parseCssColor(css);
+    if (!color) throw new Error(`fixture color must parse: ${css}`);
+    return color;
+  };
+
+  it("multiplies the existing alpha by the opacity", () => {
+    expect(withOpacity(parse("#000000"), 0.6).alpha).toBeCloseTo(0.6);
+    expect(withOpacity(parse("rgba(0, 0, 0, 0.5)"), 0.5).alpha).toBeCloseTo(0.25);
+  });
+
+  it("leaves the color unchanged at opacity 1 or when missing", () => {
+    const red = parse("#ff0000");
+    expect(withOpacity(red, 1)).toBe(red);
+    expect(withOpacity(red, undefined)).toBe(red);
+  });
+
+  it("clamps out-of-range opacity", () => {
+    expect(withOpacity(parse("#000000"), -0.5).alpha).toBe(0);
+    expect(withOpacity(parse("#000000"), 1.5).alpha ?? 1).toBe(1);
+  });
+});
 
 describe("parseCssColor", () => {
   it.each(["#2563eb", "rgb(37, 99, 235)", "rgba(37, 99, 235, 0.5)", "oklch(0.546 0.215 262.9)"])(

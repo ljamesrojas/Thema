@@ -94,4 +94,9 @@ export interface StyleSample {
   borderRadius: number;
   boxShadow?: string;
   maxWidth?: number;
+  /**
+   * Effective opacity including ancestors, 0–1; omitted when 1. Computed colors ignore CSS
+   * opacity, so the engine folds this into each color's alpha.
+   */
+  opacity?: number;
 }

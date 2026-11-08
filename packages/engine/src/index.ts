@@ -17,6 +17,13 @@ export {
   type ShadowLayer,
 } from "./shape.js";
 export { clusterColors, type ClusterInput, type ColorCluster } from "./cluster.js";
-export { compositeOver, deltaEOK, formatOklch, hueDelta, parseCssColor } from "./color-math.js";
+export {
+  compositeOver,
+  deltaEOK,
+  formatOklch,
+  hueDelta,
+  parseCssColor,
+  withOpacity,
+} from "./color-math.js";
 export { isTextSample, sampleRole, sampleWeight } from "./samples.js";
 export * from "./constants.js";

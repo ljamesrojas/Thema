@@ -125,6 +125,21 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
       ? el.checkVisibility({ opacityProperty: true, visibilityProperty: true })
       : true;
 
+  /**
+   * Effective opacity: the product of `opacity` over the element and its ancestors, cached so
+   * each element is read once. html is excluded: its sample is the canvas, the backdrop itself.
+   */
+  const opacityCache = new Map<Element, number>();
+  const effectiveOpacity = (el: Element | null): number => {
+    if (!el || el === root) return 1;
+    const cached = opacityCache.get(el);
+    if (cached !== undefined) return cached;
+    const own = Number.parseFloat(getComputedStyle(el).opacity);
+    const value = (Number.isFinite(own) ? own : 1) * effectiveOpacity(el.parentElement);
+    opacityCache.set(el, value);
+    return value;
+  };
+
   const found: { sample: StyleSample; index: number }[] = [];
   const elements = Array.from(document.querySelectorAll("*"));
   elements.forEach((el, index) => {
@@ -169,6 +184,8 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     const isFlexOrGrid = /flex|grid/.test(display);
     const gap = isFlexOrGrid ? Math.max(px(cs.rowGap), px(cs.columnGap)) : 0;
     const maxWidth = cs.maxWidth.endsWith("px") ? px(cs.maxWidth) : undefined;
+    // Computed colors ignore CSS opacity; record it so the engine can fold it in.
+    const opacity = round(effectiveOpacity(el));
 
     const sample: StyleSample = {
       tag,
@@ -198,6 +215,7 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
       borderRadius: round(borderRadius),
       ...(hasShadow ? { boxShadow } : {}),
       ...(maxWidth !== undefined ? { maxWidth: round(maxWidth) } : {}),
+      ...(opacity < 1 ? { opacity } : {}),
     };
     found.push({ sample, index });
   });

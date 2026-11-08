@@ -22,7 +22,8 @@ It returns `roles: Partial<Record<ColorRole, string>>` (OKLCH strings) and a `co
    - Text color on `container` samples is skipped, because it's only inherited.
    - Fully transparent and unparseable colors are dropped.
 2. **Weight.** Weight is visible area × an importance weight: interactive elements ×3, headings ×2. All weights and thresholds live in [`src/constants.ts`](src/constants.ts).
-3. **Flatten translucent colors.** The canvas is found first from opaque backgrounds. Translucent colors are then composited onto it, so a border of `rgba(0,0,0,.08)` becomes a light gray.
+3. **Flatten translucent colors.** A sample's `opacity` is folded into each of its colors' alpha first (computed colors ignore CSS opacity). The canvas is then found from opaque backgrounds, and translucent colors are composited onto it: a border of `rgba(0,0,0,.08)` becomes a light gray, and black text at `opacity: .6` becomes `#666`.
+   - **Limitation:** colors are composited onto the canvas, not onto their real parent, so faded text on a dark footer is slightly off. Box shadows aren't faded.
 4. **Cluster.** Colors merge greedily when ΔE OK < 4 (OKLab distance × 100). Clustering is deterministic and doesn't depend on input order.
 5. **Assign roles.** A color with chroma below 0.06 counts as neutral; anything at or above it counts as saturated.
 

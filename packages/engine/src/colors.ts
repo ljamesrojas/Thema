@@ -6,6 +6,7 @@ import {
   formatOklch,
   hueDelta,
   parseCssColor,
+  withOpacity,
   type Oklch,
 } from "./color-math.js";
 import {
@@ -53,8 +54,13 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
     const weight = sample.area * ROLE_WEIGHT[role];
     const push = (css: string | undefined, channel: Channel): void => {
       if (css === undefined) return;
-      const color = parseCssColor(css);
-      if (color) entries.push({ color, channel, role, area: sample.area, weight, sample: index });
+      const parsed = parseCssColor(css);
+      if (!parsed) return;
+      // Fold in CSS opacity: a faded element paints a translucent color (composited later).
+      const color = withOpacity(parsed, sample.opacity);
+      if (alphaOf(color) > 0) {
+        entries.push({ color, channel, role, area: sample.area, weight, sample: index });
+      }
     };
     push(sample.backgroundColor, "background");
     // A container's text color is inherited, not visible text.

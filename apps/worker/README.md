@@ -38,6 +38,7 @@ A relative `--out` is resolved against the repo root. The CLI writes:
    - **Values:**
      - `borderColor` only for drawn borders.
      - `line-height: normal` becomes 1.2 × the font size.
+     - `opacity` is the effective opacity (multiplied through ancestors), sent only below 1 and never on `html`.
      - `html` reports the color that actually paints the canvas (html, else body, else the browser's `Canvas` color).
 
 ## SSRF guard

@@ -181,6 +181,7 @@ interface StyleSample {
   fontFamily: string; fontSize: number; fontWeight: number; lineHeight: number; letterSpacing: number;
   padding: [number, number, number, number]; margin: [number, number, number, number]; gap?: number;
   borderRadius: number; boxShadow?: string; maxWidth?: number;
+  opacity?: number;                  // effective opacity incl. ancestors, 0–1; omitted when 1
 }
 ```
 
