@@ -47,16 +47,22 @@ export function compositeOver(color: Oklch, backdrop: Oklch): Oklch {
   });
 }
 
-function round(value: number, digits: number): number {
+/** Round to `digits` decimals, never returning -0. */
+export function round(value: number, digits: number): number {
   const f = 10 ** digits;
   const r = Math.round(value * f) / f;
   return Object.is(r, -0) ? 0 : r;
 }
 
-/** Format as "oklch(L C H)": L and C to 3 dp, H to 1 dp, H = 0 for hueless colors. Drops alpha. */
+/**
+ * Format as "oklch(L C H)": L and C to 3 dp, H to 1 dp, H = 0 for hueless colors.
+ * Translucent colors get an alpha to 2 dp: "oklch(L C H / 0.06)".
+ */
 export function formatOklch(color: Oklch): string {
   const l = round(Math.min(1, Math.max(0, color.l)), 3);
   const c = round(Math.max(0, color.c), 3);
   const h = c === 0 || color.h === undefined || Number.isNaN(color.h) ? 0 : round(color.h, 1);
-  return `oklch(${l} ${c} ${h === 360 ? 0 : h})`;
+  const a = round(alphaOf(color), 2);
+  const alpha = a < 1 ? ` / ${a}` : "";
+  return `oklch(${l} ${c} ${h === 360 ? 0 : h}${alpha})`;
 }

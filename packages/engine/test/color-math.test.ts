@@ -88,6 +88,14 @@ describe("formatOklch", () => {
     expect(formatOklch(gray)).toMatch(/^oklch\(0\.\d+ 0 0\)$/);
   });
 
+  it("adds alpha only for translucent colors", () => {
+    const translucent = parseCssColor("rgba(15, 23, 42, 0.06)");
+    const opaque = parseCssColor("rgb(15, 23, 42)");
+    if (!translucent || !opaque) throw new Error("fixture colors must parse");
+    expect(formatOklch(translucent)).toMatch(/^oklch\([\d.]+ [\d.]+ [\d.]+ \/ 0\.06\)$/);
+    expect(formatOklch(opaque)).not.toContain("/");
+  });
+
   it("rounds L and C to 3 dp and H to 1 dp", () => {
     const blue = parseCssColor("#2563eb");
     if (!blue) throw new Error("fixture color must parse");

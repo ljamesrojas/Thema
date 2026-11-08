@@ -14,9 +14,9 @@ import {
   ROLE_WEIGHT,
   SATURATED_CHROMA,
   SURFACE_MAX_DELTA_E,
-  TAG_ROLE,
   type SampleRole,
 } from "./constants.js";
+import { sampleRole } from "./samples.js";
 import type { ColorRole, StyleSample } from "./types.js";
 
 export interface ColorAnalysis {
@@ -44,10 +44,6 @@ type Cluster = ColorCluster<ColorEntry>;
 
 /** White, used as the backdrop when no opaque background exists. */
 const WHITE: Oklch = { mode: "oklch", l: 1, c: 0 };
-
-export function sampleRole(sample: StyleSample): SampleRole {
-  return sample.role ?? TAG_ROLE[sample.tag.toLowerCase()] ?? "body";
-}
 
 function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
   const entries: ColorEntry[] = [];

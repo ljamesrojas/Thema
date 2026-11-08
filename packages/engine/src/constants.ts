@@ -47,3 +47,55 @@ export const ACCENT_MIN_HUE_DELTA = 20;
  * Fewer samples scale the score down linearly, so a one-off cookie button or ad badge can't win.
  */
 export const OCCURRENCE_TARGET = 3;
+
+// --- typography ---------------------------------------------------------------------------
+
+/** Font sizes with less than this share of total text weight are outliers and dropped. */
+export const MIN_SIZE_SHARE = 0.01;
+
+/** A family is "display" when at least this share of its weight comes from headings. */
+export const DISPLAY_HEADING_SHARE = 0.8;
+
+/** Scale slots on each side of base: xs, sm below; lg … 4xl above. */
+export const MAX_STEPS_BELOW = 2;
+export const MAX_STEPS_ABOVE = 5;
+
+/** Generic CSS font keywords and the category they imply. */
+export const GENERIC_FAMILY: Record<string, "sans" | "serif" | "mono" | "display"> = {
+  "sans-serif": "sans",
+  "system-ui": "sans",
+  "ui-sans-serif": "sans",
+  "-apple-system": "sans",
+  blinkmacsystemfont: "sans",
+  "ui-rounded": "sans",
+  serif: "serif",
+  "ui-serif": "serif",
+  monospace: "mono",
+  "ui-monospace": "mono",
+  cursive: "display",
+  fantasy: "display",
+};
+
+/** Used to classify a family when its stack has no generic fallback. */
+export const MONO_NAME = /mono|code|consol|courier|menlo/i;
+export const SERIF_NAME =
+  /(?<!sans[\s-]?)serif|georgia|times|garamond|baskerville|playfair|lora|merriweather/i;
+
+/** Icon fonts are never text families. */
+export const ICON_FONT_NAME = /icon|awesome|symbols/i;
+
+// --- spacing ------------------------------------------------------------------------------
+
+/** Spacing values above this are layout sizes, not spacing tokens. */
+export const SPACING_MAX_PX = 256;
+
+/** A spacing value must appear on at least this many samples to count. */
+export const SPACING_MIN_COUNT = 2;
+
+/** Base is 8 when at least this share of common values are multiples of 8; otherwise 4. */
+export const BASE8_SHARE = 0.75;
+
+// --- shape --------------------------------------------------------------------------------
+
+/** Radii at or above this are pills; they map to `full` and don't affect sm/md/lg. */
+export const PILL_RADIUS_MIN = 500;
