@@ -1,4 +1,5 @@
 {
+  "source": "synthetic",
   "description": "White SaaS landing page, blue primary, violet accent. Noise: dark footer, dark cookie banner with a yellow Accept button, red Sale ad badge.",
   "roles": {
     "canvas": "oklch(1 0 0)",

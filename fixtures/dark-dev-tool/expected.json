@@ -1,4 +1,5 @@
 {
+  "source": "synthetic",
   "description": "Near-black developer-tool landing page, green primary, violet accent. Noise: white cookie card with a blue button, hot-pink sponsor badge.",
   "roles": {
     "canvas": "oklch(0.145 0 0)",

@@ -18,6 +18,7 @@ const RATIO_TOLERANCE = 0.01;
 const FIXTURES = fileURLToPath(new URL("../../../fixtures/", import.meta.url));
 
 interface Expected {
+  source: "synthetic" | "recorded";
   description?: string;
   roles: Partial<Record<ColorRole, string>>;
   typography?: ThemaSystem["typography"];
@@ -29,15 +30,17 @@ interface Expected {
 const readJson = <T>(...parts: string[]): T =>
   JSON.parse(readFileSync(join(FIXTURES, ...parts), "utf8")) as T;
 
-// Only fixtures with a human-verified expected.json are tested. A freshly recorded site
-// (samples.json only) is skipped until someone fills in its expected values.
+// Exact snapshot tests are for synthetic fixtures only. Recorded real sites are measured by
+// `pnpm accuracy` and guarded against regressions by accuracy-ratchet.test.ts; a site without
+// an expected.json yet is skipped everywhere until someone fills it in.
 const names = readdirSync(FIXTURES, { withFileTypes: true })
   .filter((d) => d.isDirectory() && existsSync(join(FIXTURES, d.name, "expected.json")))
   .map((d) => d.name)
+  .filter((name) => readJson<Expected>(name, "expected.json").source === "synthetic")
   .sort();
 
 describe("fixtures", () => {
-  it("has at least one fixture", () => {
+  it("has at least one synthetic fixture", () => {
     expect(names.length).toBeGreaterThan(0);
   });
 
