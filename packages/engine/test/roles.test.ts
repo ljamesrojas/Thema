@@ -79,19 +79,33 @@ describe("analyzeColors: ink and ink-muted", () => {
   const text = (color: string, area: number, tag = "p"): StyleSample =>
     sample({ tag, area, color });
 
-  it("picks the heaviest neutral text color as ink", () => {
+  it("picks the main dark text as ink and the lighter one as ink-muted", () => {
     const { roles } = analyzeColors([page(), text("#0f172a", 50_000), text("#64748b", 30_000)]);
     expectRole(roles.ink, "#0f172a");
+    expectRole(roles["ink-muted"], "#64748b");
   });
 
-  it("counts headings extra", () => {
-    // 20k heading × 2 = 40k beats 30k body text.
-    const { roles } = analyzeColors([
-      page(),
-      text("#111111", 20_000, "h1"),
-      text("#444444", 30_000),
-    ]);
-    expectRole(roles.ink, "#111111");
+  it("prefers contrast over volume: muted copy that outweighs the main text stays muted", () => {
+    // example.com's real areas: one black paragraph (31,941 px²) vs faded gray ones (149,033 px²),
+    // so black has 21% of the gray's weight.
+    const { roles } = analyzeColors([page(), text("#000000", 31_941), text("#666666", 149_033)]);
+    expectRole(roles.ink, "#000000");
+    expectRole(roles["ink-muted"], "#666666");
+  });
+
+  it("ignores a darker text color used too little to count (< 15% of the top)", () => {
+    // A 5k black footnote vs 50k of #333 body text: 10%, so not an ink candidate.
+    const { roles } = analyzeColors([page(), text("#333333", 50_000), text("#000000", 5_000)]);
+    expectRole(roles.ink, "#333333");
+  });
+
+  it("counts headings extra when deciding what is substantial", () => {
+    // 4k heading × 2 = 8k is 16% of the 50k body text: substantial, and darker, so it's ink.
+    // Without the heading weight it would be 8%, below the cut.
+    const heading = analyzeColors([page(), text("#111111", 4_000, "h1"), text("#555555", 50_000)]);
+    expectRole(heading.roles.ink, "#111111");
+    const plain = analyzeColors([page(), text("#111111", 4_000), text("#555555", 50_000)]);
+    expectRole(plain.roles.ink, "#555555");
   });
 
   it("ignores container text color, which is only inherited", () => {
@@ -123,7 +137,7 @@ describe("analyzeColors: ink and ink-muted", () => {
       page(),
       text("#0f172a", 50_000),
       text("#64748b", 30_000),
-      text("#000000", 40_000), // darker than ink, so not "muted"
+      text("#000000", 5_000), // darker than ink, so not "muted"; too little (10%) to be ink
     ]);
     expectRole(roles["ink-muted"], "#64748b");
   });
@@ -133,7 +147,7 @@ describe("analyzeColors: ink and ink-muted", () => {
       page("#0a0a0a"),
       text("#ededed", 50_000),
       text("#a1a1a1", 30_000),
-      text("#ffffff", 40_000), // lighter than ink, so not "muted"
+      text("#ffffff", 5_000), // lighter than ink, so not "muted"; too little (10%) to be ink
     ]);
     expectRole(roles.ink, "#ededed");
     expectRole(roles["ink-muted"], "#a1a1a1");

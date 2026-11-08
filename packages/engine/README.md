@@ -14,7 +14,7 @@ const { roles, confidence } = analyzeColors(samples);
 // confidence.primary → a number from 0 to 1
 ```
 
-It returns `roles: Partial<Record<ColorRole, string>>` (OKLCH strings) and a `confidence` of 0–1 for each returned role. Confidence is `1 − runnerUp / winner`: 1 means there was no rival candidate, 0 means a tie. When the samples give no candidate for a role, the role is left out rather than invented.
+It returns `roles: Partial<Record<ColorRole, string>>` (OKLCH strings) and a `confidence` of 0–1 for each returned role. Confidence is `1 − runnerUp / winner` on the score that picked the role: 1 means there was no rival candidate, 0 means a tie. (For `ink` that score is contrast, not weight.) When the samples give no candidate for a role, the role is left out rather than invented.
 
 ### How it works
 
@@ -27,15 +27,15 @@ It returns `roles: Partial<Record<ColorRole, string>>` (OKLCH strings) and a `co
 4. **Cluster.** Colors merge greedily when ΔE OK < 4 (OKLab distance × 100). Clustering is deterministic and doesn't depend on input order.
 5. **Assign roles.** A color with chroma below 0.06 counts as neutral; anything at or above it counts as saturated.
 
-| Role        | Rule                                                                   |
-| ----------- | ---------------------------------------------------------------------- |
-| `canvas`    | Background with the most raw area                                      |
-| `surface`   | Next neutral background within ΔE 15 of the canvas                     |
-| `ink`       | Heaviest neutral text color (never the canvas or surface color)        |
-| `ink-muted` | Next neutral text color whose lightness sits between ink and canvas    |
-| `hairline`  | Heaviest neutral border color                                          |
-| `primary`   | Saturated color with the most weight on interactive elements           |
-| `accent`    | Next saturated color whose hue is at least 20° away from the primary's |
+| Role        | Rule                                                                                                                                                |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `canvas`    | Background with the most raw area                                                                                                                   |
+| `surface`   | Next neutral background within ΔE 15 of the canvas                                                                                                  |
+| `ink`       | Among neutral text colors with ≥ 15% of the top one's weight, the one with the most contrast against the canvas (never the canvas or surface color) |
+| `ink-muted` | Next neutral text color whose lightness sits between ink and canvas                                                                                 |
+| `hairline`  | Heaviest neutral border color                                                                                                                       |
+| `primary`   | Saturated color with the most weight on interactive elements                                                                                        |
+| `accent`    | Next saturated color whose hue is at least 20° away from the primary's                                                                              |
 
 For `primary` and `accent`, a color seen on fewer than 3 distinct samples has its score scaled down. That keeps a one-off cookie button or ad from winning.
 

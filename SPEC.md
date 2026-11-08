@@ -91,7 +91,7 @@ Deterministic code decides every number. The LLM only names, describes and write
 - Load the page in headless Chromium at 1440×900, wait for network idle, dismiss common cookie banners, scroll once to trigger lazy content.
 - Sample computed styles from visible elements: color, background, border colors, font family/size/weight/line-height/letter-spacing, padding, margin, gap, border-radius, box-shadow, max-width.
 - Weight each value by visible area and element importance (buttons, headings and links count more).
-- Colors: convert to OKLCH, cluster with a perceptual distance (ΔE < 4), then assign roles by rules: largest background = `canvas`, dominant text = `ink`, most-used saturated color on interactive elements = `primary`.
+- Colors: convert to OKLCH, cluster with a perceptual distance (ΔE < 4), then assign roles by rules: largest background = `canvas`, highest-contrast text among the substantially used text colors = `ink` (so muted copy that outweighs the main text stays `ink-muted`), most-used saturated color on interactive elements = `primary`.
 - Type: detect families (including Google Fonts and @font-face sources), build the size scale from the distinct sizes, and estimate the ratio.
 - Spacing: find the base unit (4 or 8) from the GCD of common values, then snap to a scale.
 - Capture a full-page screenshot for the reference card and preview comparison.

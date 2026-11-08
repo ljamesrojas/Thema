@@ -11,6 +11,7 @@ import {
 } from "./color-math.js";
 import {
   ACCENT_MIN_HUE_DELTA,
+  INK_MIN_SHARE,
   OCCURRENCE_TARGET,
   ROLE_WEIGHT,
   SATURATED_CHROMA,
@@ -194,11 +195,19 @@ export function analyzeColors(samples: readonly StyleSample[]): ColorAnalysis {
   // Text the color of the canvas or surface would be invisible on it, so neither can be ink.
   const textCandidates = clusters.filter((c) => c !== canvas && c !== surface);
   const neutralText = textCandidates.filter(isNeutral);
-  const ink = assign(
-    "ink",
-    TEXT,
-    pickBest(neutralText, total(TEXT)) ?? pickBest(textCandidates, total(TEXT)),
-  );
+
+  // Ink: among text colors used substantially (≥ INK_MIN_SHARE of the heaviest), the one with
+  // the most contrast against the canvas. "Most used" alone fails when muted copy outweighs
+  // the main text (four faded paragraphs vs one black one): the gray would become ink.
+  const contrast = (c: Cluster): number => Math.abs(c.color.l - canvas.color.l);
+  const pickInk = (candidates: readonly Cluster[]): Pick | null => {
+    const heaviest = Math.max(0, ...candidates.map(total(TEXT)));
+    const substantial = candidates.filter(
+      (c) => heaviest > 0 && total(TEXT)(c) >= heaviest * INK_MIN_SHARE,
+    );
+    return pickBest(substantial, contrast);
+  };
+  const ink = assign("ink", TEXT, pickInk(neutralText) ?? pickInk(textCandidates));
 
   if (ink) {
     const [lo, hi] = [ink.color.l, canvas.color.l].sort((a, b) => a - b) as [number, number];

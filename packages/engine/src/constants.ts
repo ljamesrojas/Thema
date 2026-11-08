@@ -32,6 +32,12 @@ export const CLUSTER_DELTA_E = 4;
 /** OKLCH chroma at or above this counts as "saturated"; below it, "neutral". */
 export const SATURATED_CHROMA = 0.06;
 
+/**
+ * Ink candidates must carry at least this share of the heaviest text color's weight; among
+ * them, the one with the most contrast against the canvas is ink.
+ */
+export const INK_MIN_SHARE = 0.15;
+
 /** A surface must sit within this ΔE OK of the canvas. */
 export const SURFACE_MAX_DELTA_E = 15;
 
