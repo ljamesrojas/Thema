@@ -99,3 +99,8 @@ export const BASE8_SHARE = 0.75;
 
 /** Radii at or above this are pills; they map to `full` and don't affect sm/md/lg. */
 export const PILL_RADIUS_MIN = 500;
+
+// --- dark mode ----------------------------------------------------------------------------
+
+/** OKLCH lightness dividing light from dark canvases, for detecting a dark theme. */
+export const DARK_CANVAS_LIGHTNESS = 0.5;

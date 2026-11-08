@@ -1,5 +1,6 @@
 export * from "./types.js";
 export { analyzeColors, type ColorAnalysis } from "./colors.js";
+export { canvasFlipsInDark } from "./dark.js";
 export {
   analyzeTypography,
   FALLBACK_SANS,

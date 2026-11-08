@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
@@ -29,8 +29,10 @@ interface Expected {
 const readJson = <T>(...parts: string[]): T =>
   JSON.parse(readFileSync(join(FIXTURES, ...parts), "utf8")) as T;
 
+// Only fixtures with a human-verified expected.json are tested. A freshly recorded site
+// (samples.json only) is skipped until someone fills in its expected values.
 const names = readdirSync(FIXTURES, { withFileTypes: true })
-  .filter((d) => d.isDirectory())
+  .filter((d) => d.isDirectory() && existsSync(join(FIXTURES, d.name, "expected.json")))
   .map((d) => d.name)
   .sort();
 
