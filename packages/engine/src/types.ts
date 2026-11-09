@@ -111,4 +111,9 @@ export interface StyleSample {
   inHeading?: boolean;
   /** The element is, or is inside, pre, code, kbd or samp. Omitted otherwise. */
   inCode?: boolean;
+  /**
+   * The element's class attribute, trimmed and single-spaced, at most 80 characters; omitted when
+   * empty. Lets the engine count repeated identical elements once.
+   */
+  className?: string;
 }

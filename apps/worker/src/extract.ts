@@ -14,6 +14,8 @@ import {
 
 export const VIEWPORT = { width: 1440, height: 900 } as const;
 export const MAX_SAMPLES = 2000;
+/** Spacing-only layout wrappers get their own budget (see CollectOptions.maxWrappers). */
+export const MAX_WRAPPERS = 2000;
 export const MAX_REDIRECTS = 10;
 
 /** One HTTP request to make, without following redirects. */
@@ -180,7 +182,10 @@ async function capture(
     await page.waitForTimeout(SCROLL_PAUSE_MS);
     await settle(page, 10_000);
 
-    const samples = await inFrame(page, collectSamples, { maxSamples: MAX_SAMPLES });
+    const samples = await inFrame(page, collectSamples, {
+      maxSamples: MAX_SAMPLES,
+      maxWrappers: MAX_WRAPPERS,
+    });
     const screenshot = withScreenshot ? await page.screenshot({ fullPage: true }) : undefined;
     return {
       url: page.url(),

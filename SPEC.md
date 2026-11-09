@@ -186,6 +186,7 @@ interface StyleSample {
   y?: number;                        // top of the box from the top of the document, px
   inHeading?: boolean;               // is or is inside h1–h6 / role=heading; omitted otherwise
   inCode?: boolean;                  // is or is inside pre, code, kbd, samp; omitted otherwise
+  className?: string;                // class attribute, trimmed, single-spaced, ≤ 80 chars; omitted when empty
 }
 ```
 

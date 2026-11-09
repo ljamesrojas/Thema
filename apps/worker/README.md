@@ -33,7 +33,7 @@ A relative `--out` is resolved against the repo root. The CLI writes:
 3. Dismisses a cookie banner. It tries reject or "necessary only" first, then accept, in every frame. Known consent managers come first; after that, exact button labels inside elements that look like a consent banner.
 4. Closes a "where are we shipping to?" location modal if there is one (never picks a country), then scrolls down 600px at a time with a short pause so scroll-triggered and lazy content renders, returns to the top and waits for network idle.
 5. Collects samples in the page ([`src/collect.ts`](src/collect.ts)):
-   - **What's kept:** visible elements with a style signal (background, drawn border, text, interactive or heading role, shadow, radius), at most 2000, keeping the largest.
+   - **What's kept:** visible elements with a style signal (background, drawn border, text, interactive or heading role, shadow, radius), at most 2000, keeping the largest. Layout wrappers with nothing visible of their own are kept too when they carry spacing (padding, margin or flex/grid gap), as `role: "container"`, with their own budget of 2000 so they never push out the samples above. They carry most of a page's section padding and gaps.
    - **Roles:** guessed from the tag and ARIA role.
    - **Values:**
      - `borderColor` only for drawn borders.
@@ -41,6 +41,7 @@ A relative `--out` is resolved against the repo root. The CLI writes:
      - `opacity` is the effective opacity (multiplied through ancestors), sent only below 1 and never on `html`.
      - `fill`: for a transparent button or link, the color painted behind it by its gradient, a covering `::before`/`::after`, or a child covering half its area.
      - `y`: the top of the box from the top of the document (the engine uses it to find first-screen calls-to-action).
+     - `className`: the class attribute, trimmed and single-spaced, at most 80 characters (the engine counts repeated identical elements once when finding the spacing base).
      - `inHeading` / `inCode`: the element is, or is inside, a heading (h1–h6, `role="heading"`) or `pre`/`code`/`kbd`/`samp`. A styled span inside an h1 records as body text by its tag; this flag tells the engine it's heading text.
      - `html` reports the color that actually paints the canvas (html, else body, else the browser's `Canvas` color).
    - **Skipped:** visually hidden elements (sr-only `clip`/`clip-path` on the element or a parent, or boxes 1px or smaller), such as skip links.

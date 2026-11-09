@@ -36,10 +36,11 @@ export async function collect(
   html: string,
   options: BrowserContextOptions = {},
   maxSamples = 2000,
+  maxWrappers = 2000,
 ): Promise<StyleSample[]> {
   const page = await offlinePage(html, options);
   try {
-    return await inFrame(page, collectSamples, { maxSamples });
+    return await inFrame(page, collectSamples, { maxSamples, maxWrappers });
   } finally {
     await page.context().close();
   }

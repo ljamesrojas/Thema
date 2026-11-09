@@ -384,3 +384,48 @@ describe("collectSamples: fill only on button-sized elements", () => {
     expect(one(samples, "a").fill).toBeUndefined();
   });
 });
+
+describe("collectSamples: spacing wrappers", () => {
+  it("records layout wrappers that carry spacing, as containers", async () => {
+    const samples = await collect(
+      page(`
+        <section style="padding:24px 0">
+          <div style="display:flex;gap:12px"><p>One</p><p>Two</p></div>
+        </section>
+      `),
+    );
+    const section = one(samples, "section");
+    expect(section).toMatchObject({ role: "container", padding: [24, 0, 24, 0] });
+    expect(one(samples, "div")).toMatchObject({ role: "container", gap: 12 });
+  });
+
+  it("still skips wrappers with no spacing", async () => {
+    const samples = await collect(page(`<div><div><p>Text</p></div></div>`));
+    expect(byTag(samples, "div")).toHaveLength(0);
+  });
+
+  it("caps wrappers with their own budget, keeping the largest", async () => {
+    const wrappers = [300, 200, 100]
+      .map((h) => `<div style="height:${h}px;padding:8px"></div>`)
+      .join("");
+    const samples = await collect(page(`${wrappers}<p>a</p><p>b</p>`), {}, 2000, 2);
+    expect(byTag(samples, "div").map((s) => s.padding[0])).toEqual([8, 8]);
+    expect(byTag(samples, "div").map((s) => s.area)).toEqual([1440 * 316, 1440 * 216]);
+    // Samples with a style signal aren't affected by the wrapper budget.
+    expect(byTag(samples, "p")).toHaveLength(2);
+  });
+});
+
+describe("collectSamples: class names", () => {
+  it("records the class attribute, trimmed and single-spaced", async () => {
+    const samples = await collect(page(`<p class="  lead   big ">Text</p><h2>No class</h2>`));
+    expect(one(samples, "p").className).toBe("lead big");
+    expect(one(samples, "h2")).not.toHaveProperty("className");
+  });
+
+  it("truncates long class lists to 80 characters", async () => {
+    const long = Array.from({ length: 30 }, (_, i) => `utility-${i}`).join(" ");
+    const samples = await collect(page(`<p class="${long}">Text</p>`));
+    expect(one(samples, "p").className).toBe(long.slice(0, 80));
+  });
+});

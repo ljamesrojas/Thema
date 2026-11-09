@@ -1,8 +1,13 @@
 import type { StyleSample } from "@thema/engine";
 
 export interface CollectOptions {
-  /** Keep at most this many samples (the largest by area), in document order. */
+  /** Keep at most this many samples with a style signal (the largest by area), in document order. */
   maxSamples: number;
+  /**
+   * Keep at most this many spacing-only wrappers (layout elements with nothing visible of their
+   * own but padding, margin or gap). A separate budget, so wrappers never push out real samples.
+   */
+  maxWrappers: number;
 }
 
 /**
@@ -43,6 +48,7 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     "switch",
     "option",
   ]);
+  const MAX_CLASS_LENGTH = 80;
   const HEADING_SELECTOR = "h1, h2, h3, h4, h5, h6, [role='heading' i]";
   const CODE_SELECTOR = "pre, code, kbd, samp";
   const SIDES = ["top", "right", "bottom", "left"] as const;
@@ -202,7 +208,7 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     return undefined;
   };
 
-  const found: { sample: StyleSample; index: number }[] = [];
+  const found: { sample: StyleSample; index: number; wrapper: boolean }[] = [];
   const elements = Array.from(document.querySelectorAll("*"));
   elements.forEach((el, index) => {
     const tag = el.tagName.toLowerCase();
@@ -237,7 +243,7 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     const boxShadow = cs.boxShadow;
     const hasShadow = boxShadow !== "" && boxShadow !== "none";
 
-    // Skip pure wrappers: nothing visible of their own and no text.
+    // Pure wrappers (nothing visible of their own and no text) are kept only for their spacing.
     const hasSignal =
       el === root ||
       el === document.body ||
@@ -246,18 +252,30 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
       borderColor !== undefined ||
       hasShadow ||
       borderRadius > 0;
-    if (!hasSignal) return;
 
     const fontSize = px(cs.fontSize);
     const display = cs.display;
     const isFlexOrGrid = /flex|grid/.test(display);
     const gap = isFlexOrGrid ? Math.max(px(cs.rowGap), px(cs.columnGap)) : 0;
+    const spacing = [
+      cs.paddingTop,
+      cs.paddingRight,
+      cs.paddingBottom,
+      cs.paddingLeft,
+      cs.marginTop,
+      cs.marginRight,
+      cs.marginBottom,
+      cs.marginLeft,
+    ].some((v) => px(v) > 0);
+    if (!hasSignal && !spacing && gap <= 0) return;
     const maxWidth = cs.maxWidth.endsWith("px") ? px(cs.maxWidth) : undefined;
     // Computed colors ignore CSS opacity; record it so the engine can fold it in.
     const opacity = round(effectiveOpacity(el));
     // Ancestry the tag alone doesn't show: a styled span inside an h1, a highlight span in a pre.
     const inHeading = el.closest(HEADING_SELECTOR) !== null;
     const inCode = el.closest(CODE_SELECTOR) !== null;
+    const classAttr = el.getAttribute("class") ?? "";
+    const className = classAttr.trim().replace(/\s+/g, " ").slice(0, MAX_CLASS_LENGTH);
 
     const sample: StyleSample = {
       tag,
@@ -292,15 +310,28 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
       y: el === root ? 0 : Math.max(0, Math.round(rect.top + window.scrollY)),
       ...(inHeading ? { inHeading } : {}),
       ...(inCode ? { inCode } : {}),
+      ...(className !== "" ? { className } : {}),
     };
-    found.push({ sample, index });
+    found.push({ sample, index, wrapper: !hasSignal });
   });
 
-  if (found.length <= options.maxSamples) return found.map((f) => f.sample);
-  // Too many: keep the largest, then restore document order.
-  return [...found]
-    .sort((a, b) => b.sample.area - a.sample.area || a.index - b.index)
-    .slice(0, options.maxSamples)
+  // Each kind keeps its largest entries within its own budget; then restore document order.
+  const largest = (entries: typeof found, max: number): typeof found =>
+    entries.length <= max
+      ? entries
+      : [...entries]
+          .sort((a, b) => b.sample.area - a.sample.area || a.index - b.index)
+          .slice(0, max);
+  return [
+    ...largest(
+      found.filter((f) => !f.wrapper),
+      options.maxSamples,
+    ),
+    ...largest(
+      found.filter((f) => f.wrapper),
+      options.maxWrappers,
+    ),
+  ]
     .sort((a, b) => a.index - b.index)
     .map((f) => f.sample);
 }
