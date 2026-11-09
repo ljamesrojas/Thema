@@ -1,15 +1,15 @@
 {
   "fixtures": {
-    "allbirds": ["primary", "fonts"],
+    "allbirds": ["primary", "fonts", "spacing"],
     "cal-com": ["primary", "fonts", "spacing"],
     "duolingo": ["primary", "fonts", "spacing"],
     "github": ["primary", "fonts", "spacing"],
     "glossier": ["primary", "fonts", "spacing"],
     "gov-uk": ["primary", "fonts", "spacing"],
-    "headspace": ["primary", "fonts"],
+    "headspace": ["primary", "fonts", "spacing"],
     "linear": ["primary", "fonts", "spacing"],
     "mailchimp": ["primary", "fonts", "spacing"],
-    "medium": ["primary", "fonts"],
+    "medium": ["primary", "fonts", "spacing"],
     "mozilla": ["primary", "fonts", "spacing"],
     "notion": ["primary", "fonts", "spacing"],
     "react-dev": ["primary", "fonts", "spacing"],
