@@ -31,7 +31,7 @@ A relative `--out` is resolved against the repo root. The CLI writes:
 1. Opens a fresh context at 1440×900 with the given color scheme and reduced motion.
 2. Navigates, then waits for network idle (up to 10 s; many sites never go idle).
 3. Dismisses a cookie banner. It tries reject or "necessary only" first, then accept, in every frame. Known consent managers come first; after that, exact button labels inside elements that look like a consent banner.
-4. Scrolls to the bottom once for lazy content, then back to the top.
+4. Closes a "where are we shipping to?" location modal if there is one (never picks a country), then scrolls down 600px at a time with a short pause so scroll-triggered and lazy content renders, returns to the top and waits for network idle.
 5. Collects samples in the page ([`src/collect.ts`](src/collect.ts)):
    - **What's kept:** visible elements with a style signal (background, drawn border, text, interactive or heading role, shadow, radius), at most 2000, keeping the largest.
    - **Roles:** guessed from the tag and ARIA role.
@@ -39,7 +39,10 @@ A relative `--out` is resolved against the repo root. The CLI writes:
      - `borderColor` only for drawn borders.
      - `line-height: normal` becomes 1.2 × the font size.
      - `opacity` is the effective opacity (multiplied through ancestors), sent only below 1 and never on `html`.
+     - `fill`: for a transparent button or link, the color painted behind it by its gradient, a covering `::before`/`::after`, or a child covering half its area.
+     - `y`: the top of the box from the top of the document (the engine uses it to find first-screen calls-to-action).
      - `html` reports the color that actually paints the canvas (html, else body, else the browser's `Canvas` color).
+   - **Skipped:** visually hidden elements (sr-only `clip`/`clip-path` on the element or a parent, or boxes 1px or smaller), such as skip links.
 
 ## SSRF guard
 

@@ -198,3 +198,111 @@ describe("collectSamples: canvas", () => {
     expect(one(samples, "html").backgroundColor).toBe("rgb(250, 246, 238)");
   });
 });
+
+describe("collectSamples: visually hidden elements", () => {
+  const SR_ONLY =
+    "position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0";
+
+  it("skips sr-only skip links and clip-path-hidden wrappers, keeps normal links", async () => {
+    const samples = await collect(
+      page(`
+        <a href="#main" style="${SR_ONLY};color:rgb(94, 106, 210)">Skip to content</a>
+        <div style="position:absolute;clip-path:inset(50%)"><button>Hidden action</button></div>
+        <section style="clip:rect(0 0 0 0);position:absolute"><h2>Clipped heading</h2></section>
+        <a href="/pricing">Pricing</a>
+      `),
+    );
+    const links = byTag(samples, "a");
+    expect(links).toHaveLength(1);
+    expect(links[0]?.color).not.toBe("rgb(94, 106, 210)");
+    expect(byTag(samples, "button")).toHaveLength(0);
+    expect(byTag(samples, "h2")).toHaveLength(0);
+  });
+
+  it("skips boxes 1px or smaller in either dimension", async () => {
+    const samples = await collect(
+      page(
+        `<button style="width:200px;height:1px;padding:0;border:0;overflow:hidden;background:red">x</button>`,
+      ),
+    );
+    expect(byTag(samples, "button")).toHaveLength(0);
+  });
+});
+
+describe("collectSamples: fill behind transparent buttons", () => {
+  const CTA =
+    "position:relative;display:inline-block;width:180px;height:48px;background:transparent;color:#fff";
+
+  it("reads a ::before that covers the button (Duolingo)", async () => {
+    const samples = await collect(
+      page(
+        `<a href="/start" class="cta">Get started</a>`,
+        `<style>.cta{${CTA}} .cta::before{content:"";position:absolute;inset:0;background:rgb(88, 204, 2);z-index:-1}</style>`,
+      ),
+    );
+    expect(one(samples, "a")).toMatchObject({
+      backgroundColor: "rgba(0, 0, 0, 0)",
+      fill: "rgb(88, 204, 2)",
+    });
+  });
+
+  it("reads a covering ::after", async () => {
+    const samples = await collect(
+      page(
+        `<button class="cta">Sign up</button>`,
+        `<style>.cta{${CTA};border:0} .cta::after{content:"";position:absolute;inset:0;background:rgb(255, 224, 27);z-index:-1}</style>`,
+      ),
+    );
+    expect(one(samples, "button").fill).toBe("rgb(255, 224, 27)");
+  });
+
+  it("ignores a small decorative ::before dot", async () => {
+    const samples = await collect(
+      page(
+        `<a href="/inbox" class="cta">Inbox</a>`,
+        `<style>.cta{${CTA}} .cta::before{content:"";position:absolute;top:4px;right:4px;width:8px;height:8px;background:rgb(239, 68, 68)}</style>`,
+      ),
+    );
+    expect(one(samples, "a").fill).toBeUndefined();
+  });
+
+  it("reads the first stop of a gradient background (Resend's glass button)", async () => {
+    const samples = await collect(
+      page(
+        `<a href="/signup" style="${CTA};background-image:linear-gradient(rgb(15, 15, 15), rgb(24, 24, 24))">Get started</a>`,
+      ),
+    );
+    expect(one(samples, "a").fill).toBe("rgb(15, 15, 15)");
+  });
+
+  it("reads a child that covers the button", async () => {
+    const samples = await collect(
+      page(
+        `<a href="/go" style="${CTA}"><span style="display:block;width:100%;height:100%;background:rgb(0, 97, 239)">Go</span></a>`,
+      ),
+    );
+    expect(one(samples, "a").fill).toBe("rgb(0, 97, 239)");
+  });
+
+  it("records no fill when the button has its own background, or isn't interactive", async () => {
+    const samples = await collect(
+      page(
+        `<button class="solid" style="background:rgb(37, 99, 235)">Buy</button><div class="card">Card</div>`,
+        `<style>.solid{width:120px;height:40px;position:relative} .solid::before{content:"";position:absolute;inset:0;background:red}
+         .card{position:relative;width:200px;height:80px} .card::before{content:"";position:absolute;inset:0;background:rgb(1, 2, 3)}</style>`,
+      ),
+    );
+    expect(one(samples, "button").fill).toBeUndefined();
+    expect(byTag(samples, "div").every((s) => s.fill === undefined)).toBe(true);
+  });
+});
+
+describe("collectSamples: position", () => {
+  it("records y as the top of the box in the document", async () => {
+    const samples = await collect(
+      page(`<div style="height:1200px"></div><h2 style="margin:0">Below</h2>`),
+    );
+    expect(one(samples, "h2").y).toBe(1200);
+    expect(one(samples, "html").y).toBe(0);
+  });
+});

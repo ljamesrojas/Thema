@@ -140,6 +140,58 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     return value;
   };
 
+  /**
+   * Screen-reader-only CSS: a zero `clip` or a collapsing `clip-path` on the element or any
+   * ancestor (skip links, sr-only labels). Cached so each element is read once.
+   */
+  const zeroClip = (cs: CSSStyleDeclaration): boolean =>
+    /^rect\((0px){4}\)$/.test(cs.clip.replace(/[\s,]/g, "")) ||
+    /^inset\((50|100)%\)/.test(cs.clipPath) ||
+    /^circle\(0(px)?[\s)]/.test(cs.clipPath);
+  const clipCache = new Map<Element, boolean>();
+  const clippedAway = (el: Element | null): boolean => {
+    if (!el || el === root) return false;
+    const cached = clipCache.get(el);
+    if (cached !== undefined) return cached;
+    const value = zeroClip(getComputedStyle(el)) || clippedAway(el.parentElement);
+    clipCache.set(el, value);
+    return value;
+  };
+
+  /** The first visible color stop of a gradient background-image, if any. */
+  const gradientColor = (image: string): string | undefined => {
+    if (!image.includes("gradient(")) return undefined;
+    const stops =
+      image.match(/(rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\([^()]*\)|#[0-9a-f]{3,8}\b/gi) ?? [];
+    return stops.find((c) => !isTransparent(c));
+  };
+  const paintOf = (cs: CSSStyleDeclaration): string | undefined =>
+    isTransparent(cs.backgroundColor) ? gradientColor(cs.backgroundImage) : cs.backgroundColor;
+
+  /**
+   * For a transparent button/link: the color painted behind it by its own gradient, a covering
+   * ::before/::after (at least half its width and height), or a child covering half its area.
+   * Small decorations (a notification dot) don't count.
+   */
+  const fillBehind = (el: Element, cs: CSSStyleDeclaration, rect: DOMRect): string | undefined => {
+    const own = gradientColor(cs.backgroundImage);
+    if (own) return own;
+    for (const pseudo of ["::before", "::after"]) {
+      const ps = getComputedStyle(el, pseudo);
+      if (ps.content === "none" || ps.content === "normal") continue;
+      if (px(ps.width) < rect.width * 0.5 || px(ps.height) < rect.height * 0.5) continue;
+      const color = paintOf(ps);
+      if (color) return color;
+    }
+    const child = el.firstElementChild;
+    if (child) {
+      const r = child.getBoundingClientRect();
+      if (r.width * r.height >= rect.width * rect.height * 0.5)
+        return paintOf(getComputedStyle(child));
+    }
+    return undefined;
+  };
+
   const found: { sample: StyleSample; index: number }[] = [];
   const elements = Array.from(document.querySelectorAll("*"));
   elements.forEach((el, index) => {
@@ -148,6 +200,8 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     if (el !== root && !visible(el)) return;
 
     const rect = el.getBoundingClientRect();
+    // Visually hidden: sr-only clipping, or a box 1px or smaller (skip links, a11y labels).
+    if (el !== root && (rect.width <= 1 || rect.height <= 1 || clippedAway(el))) return;
     let area: number;
     if (el === root) {
       area = docWidth * docHeight; // the canvas paints the whole document
@@ -163,6 +217,10 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     const cs = getComputedStyle(el);
     const role = roleOf(el, tag);
     const backgroundColor = el === root ? canvasColor() : cs.backgroundColor;
+    const fill =
+      role === "interactive" && el !== root && isTransparent(backgroundColor)
+        ? fillBehind(el, cs, rect)
+        : undefined;
     const borderColor = visibleBorderColor(cs);
     const borderRadius = largestRadius(cs, rect.width, rect.height);
     const boxShadow = cs.boxShadow;
@@ -216,6 +274,8 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
       ...(hasShadow ? { boxShadow } : {}),
       ...(maxWidth !== undefined ? { maxWidth: round(maxWidth) } : {}),
       ...(opacity < 1 ? { opacity } : {}),
+      ...(fill !== undefined ? { fill } : {}),
+      y: el === root ? 0 : Math.max(0, Math.round(rect.top + window.scrollY)),
     };
     found.push({ sample, index });
   });
