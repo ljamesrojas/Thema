@@ -212,7 +212,7 @@
   {
     "tag": "p",
     "role": "body",
-    "area": 6159,
+    "area": 6280,
     "color": "rgb(255, 255, 255)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -238,7 +238,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 1627,
+    "area": 1638,
     "color": "rgb(255, 255, 255)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "borderColor": "rgb(255, 255, 255)",
@@ -291,7 +291,7 @@
   {
     "tag": "button",
     "role": "interactive",
-    "area": 5643,
+    "area": 5747,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -317,7 +317,7 @@
   {
     "tag": "button",
     "role": "interactive",
-    "area": 3430,
+    "area": 3406,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -343,7 +343,7 @@
   {
     "tag": "button",
     "role": "interactive",
-    "area": 3069,
+    "area": 3166,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -369,7 +369,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 4236,
+    "area": 4271,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -395,7 +395,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 1786,
+    "area": 1820,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -447,7 +447,7 @@
   {
     "tag": "summary",
     "role": "interactive",
-    "area": 2739,
+    "area": 2782,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -474,7 +474,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 1202,
+    "area": 1226,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -501,7 +501,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 5109,
+    "area": 5008,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -527,7 +527,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 544,
+    "area": 575,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -553,7 +553,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 1697,
+    "area": 1610,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -579,7 +579,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 3722,
+    "area": 3785,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(35, 30, 21, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -606,7 +606,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 4133,
+    "area": 4224,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgb(255, 224, 27)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -707,7 +707,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 960,
-    "y": 179
+    "y": 179,
+    "inHeading": true
   },
   {
     "tag": "em",
@@ -733,7 +734,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 255
+    "y": 255,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -791,7 +793,7 @@
   {
     "tag": "p",
     "role": "body",
-    "area": 3335,
+    "area": 3455,
     "color": "rgb(255, 255, 255)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -817,7 +819,7 @@
   {
     "tag": "b",
     "role": "body",
-    "area": 1141,
+    "area": 991,
     "color": "rgb(255, 255, 255)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -838,7 +840,7 @@
       0
     ],
     "borderRadius": 0,
-    "y": 628
+    "y": 629
   },
   {
     "tag": "section",
@@ -890,12 +892,13 @@
       0
     ],
     "borderRadius": 0,
-    "y": 869
+    "y": 869,
+    "inHeading": true
   },
   {
     "tag": "button",
     "role": "interactive",
-    "area": 5015,
+    "area": 5101,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(35, 30, 21, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -1023,7 +1026,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 100
+    "y": 100,
+    "inHeading": true
   },
   {
     "tag": "span",
@@ -1049,7 +1053,8 @@
       -2
     ],
     "borderRadius": 0,
-    "y": 100
+    "y": 100,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -1080,7 +1085,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 2884,
+    "area": 2540,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -1101,7 +1106,7 @@
       0
     ],
     "borderRadius": 0,
-    "y": 174
+    "y": 175
   },
   {
     "tag": "span",
@@ -1794,7 +1799,7 @@
   {
     "tag": "button",
     "role": "interactive",
-    "area": 5589,
+    "area": 5670,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgba(35, 30, 21, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -1821,7 +1826,7 @@
   {
     "tag": "button",
     "role": "interactive",
-    "area": 9005,
+    "area": 9034,
     "color": "rgb(35, 30, 21)",
     "backgroundColor": "rgb(255, 224, 27)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -1901,7 +1906,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 1313,
+    "area": 1335,
     "color": "rgb(255, 255, 255)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -1927,7 +1932,7 @@
   {
     "tag": "button",
     "role": "interactive",
-    "area": 4817,
+    "area": 4864,
     "color": "rgb(255, 255, 255)",
     "backgroundColor": "rgb(36, 28, 21)",
     "borderColor": "rgb(255, 255, 255)",
@@ -1980,7 +1985,7 @@
   {
     "tag": "button",
     "role": "interactive",
-    "area": 2400,
+    "area": 2472,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -2002,12 +2007,12 @@
     ],
     "borderRadius": 0,
     "fill": "rgb(239, 238, 234)",
-    "y": 414
+    "y": 413
   },
   {
     "tag": "div",
     "role": "container",
-    "area": 2400,
+    "area": 2472,
     "color": "rgb(36, 28, 21)",
     "backgroundColor": "rgb(239, 238, 234)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -2028,12 +2033,12 @@
       0
     ],
     "borderRadius": 6,
-    "y": 414
+    "y": 413
   },
   {
     "tag": "div",
     "role": "body",
-    "area": 708,
+    "area": 738,
     "color": "rgb(36, 28, 21)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
@@ -2054,7 +2059,7 @@
       0
     ],
     "borderRadius": 0,
-    "y": 424
+    "y": 423
   },
   {
     "tag": "div",

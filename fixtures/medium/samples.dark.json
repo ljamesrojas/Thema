@@ -338,7 +338,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 306
+    "y": 306,
+    "inHeading": true
   },
   {
     "tag": "h3",
@@ -364,7 +365,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 554
+    "y": 554,
+    "inHeading": true
   },
   {
     "tag": "button",

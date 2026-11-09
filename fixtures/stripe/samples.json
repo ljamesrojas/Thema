@@ -972,7 +972,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 1018.37,
-    "y": 258
+    "y": 258,
+    "inHeading": true
   },
   {
     "tag": "em",
@@ -998,7 +999,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 255
+    "y": 255,
+    "inHeading": true
   },
   {
     "tag": "span",
@@ -1024,7 +1026,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 310
+    "y": 310,
+    "inHeading": true
   },
   {
     "tag": "sup",
@@ -1050,7 +1053,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 318
+    "y": 318,
+    "inHeading": true
   },
   {
     "tag": "h1",
@@ -1077,7 +1081,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 1018.37,
-    "y": 258
+    "y": 258,
+    "inHeading": true
   },
   {
     "tag": "em",
@@ -1103,7 +1108,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 255
+    "y": 255,
+    "inHeading": true
   },
   {
     "tag": "span",
@@ -1129,7 +1135,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 310
+    "y": 310,
+    "inHeading": true
   },
   {
     "tag": "sup",
@@ -1155,7 +1162,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 318
+    "y": 318,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -1528,7 +1536,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 854
+    "y": 854,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -1607,7 +1616,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1051
+    "y": 1051,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -5770,7 +5780,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1051
+    "y": 1051,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -7207,7 +7218,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1743
+    "y": 1743,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -8254,7 +8266,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1743
+    "y": 1743,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -8411,7 +8424,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1743
+    "y": 1743,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -8542,7 +8556,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2435
+    "y": 2435,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -11630,7 +11645,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 489.22,
-    "y": 3597
+    "y": 3597,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -12216,7 +12232,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4587
+    "y": 4587,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -12269,7 +12286,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 504,
-    "y": 4789
+    "y": 4789,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -12375,7 +12393,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4992
+    "y": 4992,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -12690,7 +12709,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5690
+    "y": 5690,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -12797,7 +12817,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5763
+    "y": 5763,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -12904,7 +12925,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5836
+    "y": 5836,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -13012,7 +13034,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6073
+    "y": 6073,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -13117,7 +13140,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6073
+    "y": 6073,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -13222,7 +13246,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6073
+    "y": 6073,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -13301,7 +13326,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 504,
-    "y": 6337
+    "y": 6337,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -13486,7 +13512,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 7027
+    "y": 7027,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -13591,7 +13618,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 7027
+    "y": 7027,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -13696,7 +13724,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 7027
+    "y": 7027,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -13801,7 +13830,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 7027
+    "y": 7027,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -13931,7 +13961,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 7227
+    "y": 7227,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -14087,7 +14118,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 7227
+    "y": 7227,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -14166,7 +14198,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 504,
-    "y": 7523
+    "y": 7523,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -17667,7 +17700,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 8377
+    "y": 8377,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -17772,7 +17806,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 8377
+    "y": 8377,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -17877,7 +17912,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 8377
+    "y": 8377,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -18223,7 +18259,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 9197
+    "y": 9197,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -18330,7 +18367,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 9477
+    "y": 9477,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -19237,7 +19275,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10143
+    "y": 10143,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -19289,7 +19328,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10572
+    "y": 10572,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -19341,7 +19381,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10572
+    "y": 10572,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -19393,7 +19434,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10572
+    "y": 10572,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -19445,7 +19487,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10782
+    "y": 10782,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -19835,7 +19878,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11245
+    "y": 11245,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -19965,7 +20009,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11245
+    "y": 11245,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -20095,7 +20140,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10951
+    "y": 10951,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20121,7 +20167,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10955
+    "y": 10955,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20147,7 +20194,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10955
+    "y": 10955,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20173,7 +20221,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10955
+    "y": 10955,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20199,7 +20248,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10975
+    "y": 10975,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20225,7 +20275,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10979
+    "y": 10979,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20251,7 +20302,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 10999
+    "y": 10999,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20277,7 +20329,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11003
+    "y": 11003,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20303,7 +20356,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11023
+    "y": 11023,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20329,7 +20383,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11027
+    "y": 11027,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20355,7 +20410,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11027
+    "y": 11027,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20381,7 +20437,8 @@
       8
     ],
     "borderRadius": 4,
-    "y": 11019
+    "y": 11019,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20407,7 +20464,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11023
+    "y": 11023,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20433,7 +20491,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11047
+    "y": 11047,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20459,7 +20518,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11071
+    "y": 11071,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20485,7 +20545,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11095
+    "y": 11095,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20511,7 +20572,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11119
+    "y": 11119,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20537,7 +20599,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11047
+    "y": 11047,
+    "inCode": true
   },
   {
     "tag": "span",
@@ -20563,7 +20626,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11071
+    "y": 11071,
+    "inCode": true
   },
   {
     "tag": "div",
@@ -20772,7 +20836,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 11245
+    "y": 11245,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -20905,7 +20970,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 858.62,
-    "y": 11541
+    "y": 11541,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -21010,7 +21076,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 12166
+    "y": 12166,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -21090,7 +21157,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 12371
+    "y": 12371,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -21223,7 +21291,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 454.27,
-    "y": 12585
+    "y": 12585,
+    "inHeading": true
   },
   {
     "tag": "span",
@@ -21707,7 +21776,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 13386
+    "y": 13386,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -21812,7 +21882,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 13386
+    "y": 13386,
+    "inHeading": true
   },
   {
     "tag": "p",

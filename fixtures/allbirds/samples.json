@@ -389,7 +389,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 673
+    "y": 673,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -522,7 +523,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1049
+    "y": 1049,
+    "inHeading": true
   },
   {
     "tag": "li",
@@ -601,7 +603,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1057
+    "y": 1057,
+    "inHeading": true
   },
   {
     "tag": "li",
@@ -680,7 +683,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1057
+    "y": 1057,
+    "inHeading": true
   },
   {
     "tag": "li",
@@ -759,7 +763,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1049
+    "y": 1049,
+    "inHeading": true
   },
   {
     "tag": "button",
@@ -1783,7 +1788,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2256
+    "y": 2256,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -1889,8 +1895,8 @@
       0
     ],
     "borderRadius": 0,
-    "opacity": 0.98,
-    "y": 2256
+    "y": 2256,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -1917,7 +1923,6 @@
       0
     ],
     "borderRadius": 33554400,
-    "opacity": 0.98,
     "y": 2566
   },
   {
@@ -1945,7 +1950,6 @@
       0
     ],
     "borderRadius": 33554400,
-    "opacity": 0.98,
     "y": 2566
   },
   {
@@ -1998,8 +2002,8 @@
       0
     ],
     "borderRadius": 0,
-    "opacity": 0.96,
-    "y": 2256
+    "y": 2256,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -2026,7 +2030,6 @@
       0
     ],
     "borderRadius": 33554400,
-    "opacity": 0.96,
     "y": 2566
   },
   {
@@ -2054,7 +2057,6 @@
       0
     ],
     "borderRadius": 33554400,
-    "opacity": 0.96,
     "y": 2566
   },
   {
@@ -2943,7 +2945,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3383
+    "y": 3383,
+    "inHeading": true
   },
   {
     "tag": "a",

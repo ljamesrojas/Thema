@@ -339,7 +339,8 @@
     ],
     "borderRadius": 4,
     "boxShadow": "rgb(228, 235, 230) 0px -1px 0px 0px inset",
-    "y": 21
+    "y": 21,
+    "inCode": true
   },
   {
     "tag": "a",
@@ -658,7 +659,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 190
+    "y": 190,
+    "inHeading": true
   },
   {
     "tag": "form",
@@ -1167,7 +1169,7 @@
   {
     "tag": "li",
     "role": "container",
-    "area": 27429,
+    "area": 44053,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "borderColor": "rgb(210, 217, 212)",
@@ -1195,7 +1197,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 26818,
+    "area": 43136,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgb(242, 245, 243)",
     "fontFamily": "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans Backtick Fix\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1247,7 +1249,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 3373,
+    "area": 4105,
     "color": "rgb(88, 99, 91)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1273,7 +1275,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 1497,
+    "area": 1462,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1299,7 +1301,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 822,
+    "area": 1519,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1325,7 +1327,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 2035,
+    "area": 5244,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1509,7 +1511,7 @@
   {
     "tag": "li",
     "role": "container",
-    "area": 36104,
+    "area": 28394,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "borderColor": "rgb(210, 217, 212)",
@@ -1537,7 +1539,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 35333,
+    "area": 27766,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgb(242, 245, 243)",
     "fontFamily": "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans Backtick Fix\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1589,7 +1591,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 4099,
+    "area": 3780,
     "color": "rgb(88, 99, 91)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1615,7 +1617,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 1462,
+    "area": 1497,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1641,7 +1643,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 1515,
+    "area": 1190,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1667,7 +1669,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 3710,
+    "area": 1974,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1745,7 +1747,7 @@
   {
     "tag": "li",
     "role": "container",
-    "area": 38349,
+    "area": 35439,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "borderColor": "rgb(210, 217, 212)",
@@ -1773,7 +1775,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 37537,
+    "area": 34681,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgb(242, 245, 243)",
     "fontFamily": "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans Backtick Fix\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1825,7 +1827,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 2815,
+    "area": 2720,
     "color": "rgb(88, 99, 91)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1877,7 +1879,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 1187,
+    "area": 1101,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1903,7 +1905,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 4480,
+    "area": 3932,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1955,7 +1957,7 @@
   {
     "tag": "relative-time",
     "role": "body",
-    "area": 1509,
+    "area": 1496,
     "color": "rgb(88, 99, 91)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -1981,7 +1983,7 @@
   {
     "tag": "li",
     "role": "container",
-    "area": 21489,
+    "area": 15485,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "borderColor": "rgb(210, 217, 212)",
@@ -2009,7 +2011,7 @@
   {
     "tag": "a",
     "role": "interactive",
-    "area": 21094,
+    "area": 15200,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgb(242, 245, 243)",
     "fontFamily": "\"Mona Sans VF\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans Backtick Fix\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -2061,7 +2063,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 2972,
+    "area": 1813,
     "color": "rgb(88, 99, 91)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -2087,7 +2089,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 1937,
+    "area": 1640,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -2113,33 +2115,7 @@
   {
     "tag": "span",
     "role": "body",
-    "area": 19,
-    "color": "rgb(0, 0, 0)",
-    "backgroundColor": "rgba(0, 0, 0, 0)",
-    "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
-    "fontSize": 14,
-    "fontWeight": 400,
-    "lineHeight": 21,
-    "letterSpacing": 0.21,
-    "padding": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "margin": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "borderRadius": 0,
-    "y": 1561
-  },
-  {
-    "tag": "span",
-    "role": "body",
-    "area": 2954,
+    "area": 2485,
     "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
@@ -2161,58 +2137,6 @@
     ],
     "borderRadius": 0,
     "y": 1596
-  },
-  {
-    "tag": "span",
-    "role": "body",
-    "area": 129,
-    "color": "rgb(88, 99, 91)",
-    "backgroundColor": "rgba(0, 0, 0, 0)",
-    "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
-    "fontSize": 14,
-    "fontWeight": 400,
-    "lineHeight": 21,
-    "letterSpacing": 0.21,
-    "padding": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "margin": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "borderRadius": 0,
-    "y": 1597
-  },
-  {
-    "tag": "relative-time",
-    "role": "body",
-    "area": 419,
-    "color": "rgb(88, 99, 91)",
-    "backgroundColor": "rgba(0, 0, 0, 0)",
-    "fontFamily": "\"Mona Sans\", MonaSansFallback, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
-    "fontSize": 14,
-    "fontWeight": 400,
-    "lineHeight": 21,
-    "letterSpacing": 0.21,
-    "padding": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "margin": [
-      0,
-      0,
-      0,
-      0
-    ],
-    "borderRadius": 0,
-    "y": 1597
   },
   {
     "tag": "button",
@@ -2319,7 +2243,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1730
+    "y": 1730,
+    "inHeading": true
   },
   {
     "tag": "section",
@@ -2505,7 +2430,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 2374
+    "y": 2374,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -2825,7 +2751,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 2373
+    "y": 2373,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -3168,7 +3095,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2681
+    "y": 2681,
+    "inHeading": true
   },
   {
     "tag": "section",
@@ -3354,7 +3282,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3213
+    "y": 3213,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -3620,7 +3549,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3212
+    "y": 3212,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -3886,7 +3816,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3817
+    "y": 3817,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -4152,7 +4083,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3817
+    "y": 3817,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -4418,7 +4350,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3816
+    "y": 3816,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -4606,7 +4539,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 562.63,
-    "y": 4250
+    "y": 4250,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -5690,7 +5624,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5494
+    "y": 5494,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -5716,7 +5651,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5493
+    "y": 5493,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -5849,7 +5785,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5494
+    "y": 5494,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -5875,7 +5812,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5493
+    "y": 5493,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -6008,7 +5946,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5494
+    "y": 5494,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -6034,7 +5973,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 5493
+    "y": 5493,
+    "inHeading": true
   },
   {
     "tag": "div",
@@ -8767,7 +8707,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6365
+    "y": 6365,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -9060,7 +9001,8 @@
     ],
     "gap": 12,
     "borderRadius": 0,
-    "y": 6728
+    "y": 6728,
+    "inHeading": true
   },
   {
     "tag": "span",
@@ -9086,7 +9028,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6736
+    "y": 6736,
+    "inHeading": true
   },
   {
     "tag": "p",
@@ -9221,7 +9164,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6950
+    "y": 6950,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -9951,7 +9895,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6950
+    "y": 6950,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -10473,7 +10418,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6950
+    "y": 6950,
+    "inHeading": true
   },
   {
     "tag": "a",
@@ -10891,7 +10837,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 6950
+    "y": 6950,
+    "inHeading": true
   },
   {
     "tag": "a",
