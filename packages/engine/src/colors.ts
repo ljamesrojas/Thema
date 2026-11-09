@@ -11,11 +11,17 @@ import {
 } from "./color-math.js";
 import {
   ACCENT_MIN_HUE_DELTA,
+  CTA_MIN_AREA,
+  CTA_MIN_DELTA_E,
+  CTA_NEUTRAL_CHROMA,
+  FIRST_SCREEN_MAX_Y,
   INK_MIN_SHARE,
   OCCURRENCE_TARGET,
   ROLE_WEIGHT,
   SATURATED_CHROMA,
   SURFACE_MAX_DELTA_E,
+  UA_LINK_COLORS,
+  UA_LINK_MAX_DELTA_E,
   type SampleRole,
 } from "./constants.js";
 import { sampleRole } from "./samples.js";
@@ -47,6 +53,19 @@ type Cluster = ColorCluster<ColorEntry>;
 /** White, used as the backdrop when no opaque background exists. */
 const WHITE: Oklch = { mode: "oklch", l: 1, c: 0 };
 
+const UA_LINKS = UA_LINK_COLORS.map((css) => parseCssColor(css)).filter(
+  (c): c is Oklch => c !== null,
+);
+
+/** Browser-default link colors (unstyled links) aren't design decisions. */
+const isUaLinkColor = (color: Oklch): boolean =>
+  UA_LINKS.some((ua) => deltaEOK(color, ua) < UA_LINK_MAX_DELTA_E);
+
+/** The background a sample actually paints: its own if visible, else the recorded fill. */
+function paintedBackground(sample: StyleSample): string | undefined {
+  return parseCssColor(sample.backgroundColor) ? sample.backgroundColor : sample.fill;
+}
+
 function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
   const entries: ColorEntry[] = [];
   samples.forEach((sample, index) => {
@@ -57,18 +76,39 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
       if (css === undefined) return;
       const parsed = parseCssColor(css);
       if (!parsed) return;
+      if (channel !== "background" && isUaLinkColor(parsed)) return;
       // Fold in CSS opacity: a faded element paints a translucent color (composited later).
       const color = withOpacity(parsed, sample.opacity);
       if (alphaOf(color) > 0) {
         entries.push({ color, channel, role, area: sample.area, weight, sample: index });
       }
     };
-    push(sample.backgroundColor, "background");
+    push(paintedBackground(sample), "background");
     // A container's text color is inherited, not visible text.
     if (role !== "container") push(sample.color, "text");
     push(sample.borderColor, "border");
   });
   return entries;
+}
+
+/**
+ * A site is monochrome when its first screen has filled calls-to-action and every one of them
+ * is neutral (black/white/gray), e.g. Resend: saturated colors further down (demo widgets,
+ * illustrations) are then not its primary. Inactive when there are no first-screen CTAs (GOV.UK
+ * has only links) or no position data (older recordings, synthetic fixtures).
+ */
+function firstScreenIsMonochrome(samples: readonly StyleSample[], canvas: Oklch): boolean {
+  const ctas: Oklch[] = [];
+  for (const sample of samples) {
+    if (sample.y === undefined || sample.y >= FIRST_SCREEN_MAX_Y) continue;
+    if (sample.area < CTA_MIN_AREA || sampleRole(sample) !== "interactive") continue;
+    const css = paintedBackground(sample);
+    const parsed = css === undefined ? null : parseCssColor(css);
+    if (!parsed) continue;
+    const fill = compositeOver(withOpacity(parsed, sample.opacity), canvas);
+    if (deltaEOK(fill, canvas) >= CTA_MIN_DELTA_E) ctas.push(fill);
+  }
+  return ctas.length > 0 && ctas.every((fill) => fill.c < CTA_NEUTRAL_CHROMA);
 }
 
 // --- cluster measurements ---------------------------------------------------------------
@@ -232,7 +272,9 @@ export function analyzeColors(samples: readonly StyleSample[]): ColorAnalysis {
 
   const taken = new Set<Cluster>([canvas, ...(surface ? [surface] : [])]);
   const saturated = clusters.filter((c) => !isNeutral(c) && !taken.has(c));
-  const primary = assign("primary", INTERACTIVE, pickBest(saturated, scaledTotal(INTERACTIVE)));
+  const primary = firstScreenIsMonochrome(samples, canvas.color)
+    ? null
+    : assign("primary", INTERACTIVE, pickBest(saturated, scaledTotal(INTERACTIVE)));
 
   assign(
     "accent",

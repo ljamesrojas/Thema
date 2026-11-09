@@ -99,4 +99,11 @@ export interface StyleSample {
    * opacity, so the engine folds this into each color's alpha.
    */
   opacity?: number;
+  /**
+   * Interactive elements whose own background is transparent: the color painted behind them by
+   * ::before, ::after, a gradient background-image or a child covering the box. Omitted otherwise.
+   */
+  fill?: string;
+  /** Top of the element's box from the top of the document, px. */
+  y?: number;
 }

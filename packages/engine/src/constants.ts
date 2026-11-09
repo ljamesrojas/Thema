@@ -124,3 +124,33 @@ export const MONOCHROME_MAX_CHROMA = 0.03;
 
 /** Share of checks (primary, fonts, spacing base) that must pass across real sites. SPEC. */
 export const ACCURACY_GATE = 0.9;
+
+// --- primary ------------------------------------------------------------------------------
+
+/**
+ * Browser-default link colors: link, visited and active, for the light and the dark color
+ * scheme (Chromium). Unstyled links aren't a design decision, so these never count as colors.
+ */
+export const UA_LINK_COLORS = [
+  "rgb(0, 0, 238)",
+  "rgb(85, 26, 139)",
+  "rgb(238, 0, 0)",
+  "rgb(158, 158, 255)",
+  "rgb(208, 173, 240)",
+  "rgb(255, 158, 158)",
+] as const;
+
+/** A text/border color this close (ΔE OK) to a browser-default link color is ignored. */
+export const UA_LINK_MAX_DELTA_E = 1;
+
+/** The first screen: elements whose top is above this (px from the top) are header/hero. */
+export const FIRST_SCREEN_MAX_Y = 900;
+
+/** A first-screen call-to-action needs a fill of at least this area (px²)… */
+export const CTA_MIN_AREA = 1000;
+
+/** …that stands out from the canvas by at least this ΔE OK (a light search bar doesn't). */
+export const CTA_MIN_DELTA_E = 10;
+
+/** When every first-screen CTA is below this chroma, the site is monochrome: no primary. */
+export const CTA_NEUTRAL_CHROMA = 0.03;
