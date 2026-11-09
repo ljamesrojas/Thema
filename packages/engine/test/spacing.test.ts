@@ -5,12 +5,26 @@ import { sample } from "./helpers.js";
 
 type Quad = [number, number, number, number];
 
-/** A sample with the given padding (uniform if a number) and optional margin/gap. */
+let boxId = 0;
+
+/**
+ * A sample with the given padding (uniform if a number) and optional margin/gap. Each box gets
+ * its own class, so it counts as a distinct style when finding the base.
+ */
 const box = (padding: number | Quad, margin: Quad = [0, 0, 0, 0], gap?: number): StyleSample =>
   sample({
+    className: `box-${(boxId += 1)}`,
     padding: typeof padding === "number" ? [padding, padding, padding, padding] : padding,
     margin,
     ...(gap === undefined ? {} : { gap }),
+  });
+
+/** A sample with uniform padding and an explicit tag/class, for the dedupe tests. */
+const styled = (tag: string, className: string | undefined, padding: number): StyleSample =>
+  sample({
+    tag,
+    ...(className === undefined ? {} : { className }),
+    padding: [padding, padding, padding, padding],
   });
 
 /** n identical boxes. */
@@ -56,6 +70,22 @@ describe("detectBase", () => {
   it("defaults to 4 with no common values", () => {
     expect(detectBase(new Map())).toBe(4);
     expect(detectBase(new Map([[8, 1]]))).toBe(4);
+  });
+
+  it("counts values off the 4-grid (6, 10, 14) against 8", () => {
+    // Ignoring them was tried and rejected: on our sites 2/6/10/14 are what marks a non-8
+    // system. Without them, base-4 sites read up to 90% multiples of 8 (Duolingo) while the
+    // base-8 Tailwind reads 85%, so no threshold separates them (18/19 → 10/19 sites).
+    expect(
+      detectBase(
+        new Map([
+          [8, 4],
+          [16, 2],
+          [6, 2],
+          [10, 2],
+        ]),
+      ),
+    ).toBe(4); // 6/10 = 60%; with 6 and 10 ignored it would be 100% → 8
   });
 });
 
@@ -122,5 +152,34 @@ describe("analyzeSpacing", () => {
 
   it("returns base 4 and an empty scale for no input", () => {
     expect(analyzeSpacing([])).toEqual({ base: 4, scale: [] });
+  });
+});
+
+describe("analyzeSpacing: each distinct style counts once for the base", () => {
+  const grid = () => ["a", "b", "c", "d"].map((cls, i) => styled("div", cls, i % 2 ? 16 : 8));
+
+  it("doesn't let 100 identical decorative elements outvote the real grid (Vercel's dots)", () => {
+    // 100 × span.dot with 12px: one style, so a one-off. Without dedupe it would be 12×100.
+    const dots = Array.from({ length: 100 }, () => styled("span", "dot", 12));
+    expect(analyzeSpacing([...dots, ...grid()]).base).toBe(8);
+  });
+
+  it("counts the same values on different classes separately", () => {
+    const samples = [styled("div", "x", 12), styled("div", "y", 12), ...grid()];
+    // 12 on two styles: 8 ×2, 16 ×2, 12 ×2 → 67% multiples of 8 → base 4.
+    expect(analyzeSpacing(samples).base).toBe(4);
+  });
+
+  it("falls back to tag + values when samples have no class (older recordings)", () => {
+    const repeated = Array.from({ length: 3 }, () => styled("div", undefined, 12));
+    const samples = [...repeated, styled("section", undefined, 8), styled("article", undefined, 8)];
+    // Three identical divs are one style (12 ×1, a one-off); 8 is on two tags → base 8.
+    expect(analyzeSpacing(samples).base).toBe(8);
+  });
+
+  it("leaves the scale alone: repeated elements still put their value on the scale", () => {
+    const repeated = Array.from({ length: 3 }, () => styled("div", undefined, 24));
+    const samples = [...repeated, styled("section", undefined, 8), styled("article", undefined, 8)];
+    expect(analyzeSpacing(samples)).toEqual({ base: 8, scale: [8, 24] });
   });
 });

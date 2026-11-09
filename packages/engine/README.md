@@ -69,6 +69,8 @@ Returns `ThemaSystem["typography"]`: families, a size scale and its ratio. Only 
 Returns `{ base: 4 | 8, scale: number[] }` in px. It reads padding, margin and gap, counting each distinct value once per sample and ignoring zeros, negatives and values over 256px.
 
 - The base is 8 when at least 75% of the values seen on 2 or more samples are multiples of 8; otherwise it is 4.
+  - For the base, each distinct element style (tag, `className`, padding, margin and gap) counts once, so 100 identical decorative dots cast one vote. Without a class (synthetic fixtures, older recordings) the key is tag plus values. The scale still counts every sample.
+  - Values off the 4-grid (2, 6, 10, 14…) count against 8: on our sites they mark a non-8 system.
 - Values are snapped to the base, and anything left on fewer than 2 samples is dropped as an outlier.
 
 ## `analyzeRadius(samples)` and `analyzeShadow(samples)`

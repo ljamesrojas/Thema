@@ -23,7 +23,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 0
+    "y": 0,
+    "className": "QPCBRq_theme -Qs3Ha_noXScroll"
   },
   {
     "tag": "body",
@@ -76,7 +77,36 @@
     ],
     "borderRadius": 0,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 1px 0px 0px",
-    "y": 0
+    "y": 0,
+    "className": "HWB10a_globalNavigation"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 92160,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      14,
+      24,
+      14,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 0,
+    "className": "HWB10a_container"
   },
   {
     "tag": "a",
@@ -102,7 +132,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 15
+    "y": 15,
+    "className": "HWB10a_logo"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 12186,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0,
+    "y": 17,
+    "className": "HWB10a_links"
   },
   {
     "tag": "button",
@@ -129,7 +188,8 @@
     ],
     "gap": 8,
     "borderRadius": 4,
-    "y": 17
+    "y": 17,
+    "className": "HWB10a_link HWB10a_dropdownTrigger"
   },
   {
     "tag": "span",
@@ -155,7 +215,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 22
+    "y": 22,
+    "className": "s4Stoa_typography"
   },
   {
     "tag": "button",
@@ -182,7 +243,8 @@
     ],
     "gap": 8,
     "borderRadius": 4,
-    "y": 17
+    "y": 17,
+    "className": "HWB10a_link HWB10a_dropdownTrigger"
   },
   {
     "tag": "span",
@@ -208,7 +270,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 22
+    "y": 22,
+    "className": "s4Stoa_typography"
   },
   {
     "tag": "a",
@@ -235,7 +298,8 @@
     ],
     "gap": 8,
     "borderRadius": 4,
-    "y": 17
+    "y": 17,
+    "className": "HWB10a_link"
   },
   {
     "tag": "span",
@@ -261,7 +325,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 22
+    "y": 22,
+    "className": "s4Stoa_typography"
   },
   {
     "tag": "a",
@@ -288,7 +353,8 @@
     ],
     "gap": 8,
     "borderRadius": 4,
-    "y": 17
+    "y": 17,
+    "className": "HWB10a_link"
   },
   {
     "tag": "span",
@@ -314,7 +380,64 @@
       0
     ],
     "borderRadius": 0,
-    "y": 22
+    "y": 22,
+    "className": "s4Stoa_typography"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 7522,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 14,
+    "className": "HWB10a_actions"
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1816,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 12,
+    "borderRadius": 0,
+    "y": 17,
+    "className": "HWB10a_secondaryActions"
   },
   {
     "tag": "a",
@@ -341,7 +464,8 @@
     ],
     "gap": 8,
     "borderRadius": 4,
-    "y": 17
+    "y": 17,
+    "className": "HWB10a_link"
   },
   {
     "tag": "span",
@@ -367,7 +491,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 22
+    "y": 22,
+    "className": "s4Stoa_typography"
   },
   {
     "tag": "a",
@@ -394,7 +519,8 @@
       0
     ],
     "borderRadius": 8,
-    "y": 14
+    "y": 14,
+    "className": "pIQ4pG_button pIQ4pG_buttonVariantPrimary pIQ4pG_buttonSizeM HWB10a_tryFreeCta"
   },
   {
     "tag": "span",
@@ -420,7 +546,35 @@
       0
     ],
     "borderRadius": 0,
-    "y": 22
+    "y": 22,
+    "className": "s4Stoa_typography HWB10a_noWrap"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1913558,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 64,
+    "className": "KlQGRG_heroContainer"
   },
   {
     "tag": "h1",
@@ -447,7 +601,8 @@
     ],
     "borderRadius": 0,
     "y": 144,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalTitle KlQGRG_title"
   },
   {
     "tag": "span",
@@ -475,7 +630,8 @@
     "gap": 12,
     "borderRadius": 9999.01,
     "y": 251,
-    "inHeading": true
+    "inHeading": true,
+    "className": "KlQGRG_productPillAnimation"
   },
   {
     "tag": "span",
@@ -502,7 +658,8 @@
     ],
     "borderRadius": 0,
     "y": 259,
-    "inHeading": true
+    "inHeading": true,
+    "className": "KlQGRG_productPillLabelMeasure"
   },
   {
     "tag": "p",
@@ -528,7 +685,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 366
+    "y": 366,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalDeck _5TkrBW_description KlQGRG_de"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 12440,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      462.31,
+      0,
+      462.31
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 414,
+    "className": "VyImpW_nav"
   },
   {
     "tag": "a",
@@ -557,7 +743,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 280,
-    "y": 414
+    "y": 414,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button Vy"
   },
   {
     "tag": "a",
@@ -586,7 +773,35 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 280,
-    "y": 414
+    "y": 414,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button Vy"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 576720,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      80,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 532,
+    "className": "Zc4oCG_item Zc4oCG_regionCenter KlQGRG_media"
   },
   {
     "tag": "div",
@@ -614,7 +829,8 @@
     ],
     "borderRadius": 8,
     "boxShadow": "rgba(0, 0, 0, 0.008) 0px 0.667px 3.502px 0px, rgba(0, 0, 0, 0.016) 0px 2.933px 7.252px 0px, rgba(0, 0, 0, 0.02) 0px 7.2px 14.462px 0px, rgba(0, 0, 0, 0.024) 0px 13.867px 28.348px 0px, rgba(0, 0, 0, 0.03) 0px 23.333px 52.123px 0px, rgba(0, 0, 0, 0.04) 0px 36px 89px 0px",
-    "y": 532
+    "y": 532,
+    "className": "t-AqdW_productImage"
   },
   {
     "tag": "p",
@@ -641,7 +857,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 1184,
-    "y": 1245
+    "y": 1245,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalContext PDRQGa_eyebrow"
   },
   {
     "tag": "div",
@@ -667,7 +884,37 @@
       0
     ],
     "borderRadius": 0,
-    "y": 852
+    "y": 852,
+    "className": "PDRQGa_logoWallMarqueeWrapper"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 104192,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      4,
+      0,
+      4,
+      0
+    ],
+    "margin": [
+      0,
+      128,
+      0,
+      128
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "maxWidth": 1184,
+    "y": 856,
+    "className": "_4H5qWW_logoWallMarquee _4H5qWW_variantMarquee _4H5qWW_variantMarqueeSm _4H5qWW_"
   },
   {
     "tag": "a",
@@ -696,7 +943,8 @@
     "gap": 8,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -722,7 +970,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -751,7 +1000,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -777,7 +1027,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "a",
@@ -806,7 +1057,8 @@
     "gap": 8,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -832,7 +1084,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -861,7 +1114,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -887,7 +1141,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "a",
@@ -916,7 +1171,8 @@
     "gap": 8,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -942,7 +1198,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "a",
@@ -971,7 +1228,8 @@
     "gap": 8,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -997,7 +1255,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -1026,7 +1285,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1052,7 +1312,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -1081,7 +1342,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1107,7 +1369,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "a",
@@ -1136,7 +1399,8 @@
     "gap": 8,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 860
+    "y": 860,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1162,7 +1426,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 866
+    "y": 866,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "a",
@@ -1191,7 +1456,8 @@
     "gap": 8,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 904
+    "y": 904,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1217,7 +1483,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 910
+    "y": 910,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -1246,7 +1513,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 904
+    "y": 904,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1272,7 +1540,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 910
+    "y": 910,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -1301,7 +1570,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 904
+    "y": 904,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1327,7 +1597,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 910
+    "y": 910,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "a",
@@ -1356,7 +1627,8 @@
     "gap": 8,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 904
+    "y": 904,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1382,7 +1654,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 910
+    "y": 910,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "a",
@@ -1411,7 +1684,8 @@
     "gap": 8,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 904
+    "y": 904,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1437,7 +1711,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 910
+    "y": 910,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -1466,7 +1741,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 904
+    "y": 904,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1492,7 +1768,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 910
+    "y": 910,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -1521,7 +1798,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 904
+    "y": 904,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1547,7 +1825,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 910
+    "y": 910,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "span",
@@ -1576,7 +1855,8 @@
     "gap": 12,
     "borderRadius": 8,
     "maxWidth": 116,
-    "y": 904
+    "y": 904,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button _4"
   },
   {
     "tag": "img",
@@ -1602,7 +1882,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 910
+    "y": 910,
+    "className": "gQ6u1q_artworkImage"
   },
   {
     "tag": "div",
@@ -1628,7 +1909,65 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1393
+    "y": 1393,
+    "className": "-Qs3Ha_main -Qs3Ha_mainLoose"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1543638,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 32,
+    "borderRadius": 0,
+    "maxWidth": 1252,
+    "y": 1489,
+    "className": "-Qs3Ha_section -Qs3Ha_tightSpacing"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 68814,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 24,
+    "borderRadius": 0,
+    "y": 1489,
+    "className": "FoZ42q_header FoZ42q_alignStart -Qs3Ha_bentoSectionHeader"
   },
   {
     "tag": "h2",
@@ -1656,7 +1995,36 @@
     "borderRadius": 0,
     "maxWidth": 891.92,
     "y": 1489,
-    "inHeading": true
+    "inHeading": true,
+    "className": "FoZ42q_heading"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1165164,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 24,
+    "borderRadius": 0,
+    "y": 1577,
+    "className": "KqyldW_bentoGrid KqyldW_bentoGridAccentMuted"
   },
   {
     "tag": "article",
@@ -1682,7 +2050,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 1577
+    "y": 1577,
+    "className": "xvimDq_bento QPCBRq_theme _6FCNga_theme thoEPa_theme"
   },
   {
     "tag": "div",
@@ -1708,7 +2077,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 1577
+    "y": 1577,
+    "className": "xvimDq_bentoInner"
   },
   {
     "tag": "a",
@@ -1734,7 +2104,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 1577
+    "y": 1577,
+    "className": "xvimDq_bentoAnchor"
   },
   {
     "tag": "header",
@@ -1761,7 +2132,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 1577
+    "y": 1577,
+    "className": "xvimDq_bentoHeader KqyldW_bentoHeader"
   },
   {
     "tag": "div",
@@ -1788,7 +2160,36 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 1601
+    "y": 1601,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalCaption xvimDq_bentoEyebrow"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 17741,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 1629,
+    "className": "xvimDq_bentoTitleWrapper"
   },
   {
     "tag": "h2",
@@ -1815,7 +2216,8 @@
     ],
     "borderRadius": 0,
     "y": 1629,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantCardTitle xvimDq_bentoTitle"
   },
   {
     "tag": "span",
@@ -1841,7 +2243,8 @@
       60.48
     ],
     "borderRadius": 32,
-    "y": 1629
+    "y": 1629,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl xvimDq_bentoArrow"
   },
   {
     "tag": "div",
@@ -1867,7 +2270,35 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1685
+    "y": 1685,
+    "className": "xvimDq_bentoMedia KqyldW_bentoMedia xvimDq_noBezel"
+  },
+  {
+    "tag": "picture",
+    "role": "container",
+    "area": 348436,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      24,
+      0,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1686,
+    "className": "xvimDq_bentoImagePicture xvimDq_alignCenter"
   },
   {
     "tag": "img",
@@ -1894,7 +2325,8 @@
     ],
     "borderRadius": 12,
     "boxShadow": "rgba(0, 0, 0, 0.01) 0px 0.175px 1.041px 0px, rgba(0, 0, 0, 0.02) 0px 0.8px 2.925px 0px, rgba(0, 0, 0, 0.027) 0px 2.025px 7.847px 0px, rgba(0, 0, 0, 0.04) 0px 4px 18px 0px",
-    "y": 1710
+    "y": 1710,
+    "className": "next-image xvimDq_bentoImage"
   },
   {
     "tag": "article",
@@ -1920,7 +2352,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 1577
+    "y": 1577,
+    "className": "xvimDq_bento QPCBRq_theme _6FCNga_theme thoEPa_theme"
   },
   {
     "tag": "div",
@@ -1946,7 +2379,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 1577
+    "y": 1577,
+    "className": "xvimDq_bentoInner"
   },
   {
     "tag": "a",
@@ -1972,7 +2406,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 1577
+    "y": 1577,
+    "className": "xvimDq_bentoAnchor"
   },
   {
     "tag": "header",
@@ -1999,7 +2434,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 1577
+    "y": 1577,
+    "className": "xvimDq_bentoHeader KqyldW_bentoHeader"
   },
   {
     "tag": "div",
@@ -2026,7 +2462,36 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 1601
+    "y": 1601,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalCaption xvimDq_bentoEyebrow"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 17741,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 1629,
+    "className": "xvimDq_bentoTitleWrapper"
   },
   {
     "tag": "h2",
@@ -2053,7 +2518,8 @@
     ],
     "borderRadius": 0,
     "y": 1629,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantCardTitle xvimDq_bentoTitle"
   },
   {
     "tag": "span",
@@ -2079,7 +2545,8 @@
       107.8
     ],
     "borderRadius": 32,
-    "y": 1629
+    "y": 1629,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl xvimDq_bentoArrow"
   },
   {
     "tag": "div",
@@ -2105,7 +2572,35 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1685
+    "y": 1685,
+    "className": "xvimDq_bentoMedia KqyldW_bentoMedia xvimDq_noBezel"
+  },
+  {
+    "tag": "picture",
+    "role": "container",
+    "area": 348436,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      24,
+      0,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1686,
+    "className": "xvimDq_bentoImagePicture xvimDq_alignCenter"
   },
   {
     "tag": "img",
@@ -2132,7 +2627,8 @@
     ],
     "borderRadius": 12,
     "boxShadow": "rgba(0, 0, 0, 0.01) 0px 0.175px 1.041px 0px, rgba(0, 0, 0, 0.02) 0px 0.8px 2.925px 0px, rgba(0, 0, 0, 0.027) 0px 2.025px 7.847px 0px, rgba(0, 0, 0, 0.04) 0px 4px 18px 0px",
-    "y": 1710
+    "y": 1710,
+    "className": "next-image xvimDq_bentoImage"
   },
   {
     "tag": "article",
@@ -2158,7 +2654,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 2161
+    "y": 2161,
+    "className": "xvimDq_bento QPCBRq_theme _6FCNga_theme thoEPa_theme KqyldW_bentoWide xvimDq_lay"
   },
   {
     "tag": "div",
@@ -2184,7 +2681,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 2161
+    "y": 2161,
+    "className": "xvimDq_bentoInner"
   },
   {
     "tag": "a",
@@ -2210,7 +2708,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 2161
+    "y": 2161,
+    "className": "xvimDq_bentoAnchor"
   },
   {
     "tag": "header",
@@ -2238,7 +2737,8 @@
     "gap": 8,
     "borderRadius": 0,
     "maxWidth": 500,
-    "y": 2161
+    "y": 2161,
+    "className": "xvimDq_bentoHeader KqyldW_bentoHeader"
   },
   {
     "tag": "div",
@@ -2265,7 +2765,36 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 2185
+    "y": 2185,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalCaption xvimDq_bentoEyebrow"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 30736,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 2213,
+    "className": "xvimDq_bentoTitleWrapper"
   },
   {
     "tag": "h2",
@@ -2292,7 +2821,8 @@
     ],
     "borderRadius": 0,
     "y": 2213,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantCardTitle xvimDq_bentoTitle"
   },
   {
     "tag": "span",
@@ -2318,7 +2848,8 @@
       0
     ],
     "borderRadius": 32,
-    "y": 2249
+    "y": 2249,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl xvimDq_bentoArrow"
   },
   {
     "tag": "div",
@@ -2344,7 +2875,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2161
+    "y": 2161,
+    "className": "xvimDq_bentoMedia KqyldW_bentoMedia xvimDq_stackedImages"
   },
   {
     "tag": "picture",
@@ -2371,7 +2903,8 @@
     ],
     "borderRadius": 12,
     "boxShadow": "rgba(0, 0, 0, 0.01) 0px 0.175px 1.041px 0px, rgba(0, 0, 0, 0.02) 0px 0.8px 2.925px 0px, rgba(0, 0, 0, 0.027) 0px 2.025px 7.847px 0px, rgba(0, 0, 0, 0.04) 0px 4px 18px 0px",
-    "y": 2186
+    "y": 2186,
+    "className": "xvimDq_bentoImagePicture xvimDq_alignRight"
   },
   {
     "tag": "picture",
@@ -2398,7 +2931,64 @@
     ],
     "borderRadius": 12,
     "boxShadow": "rgba(0, 0, 0, 0.01) 0px 0.175px 1.041px 0px, rgba(0, 0, 0, 0.02) 0px 0.8px 2.925px 0px, rgba(0, 0, 0, 0.027) 0px 2.025px 7.847px 0px, rgba(0, 0, 0, 0.04) 0px 4px 18px 0px",
-    "y": 2258
+    "y": 2258,
+    "className": "xvimDq_bentoImagePicture xvimDq_alignCenter"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 231017,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 32,
+    "borderRadius": 0,
+    "y": 2557,
+    "className": "-Qs3Ha_customAgentsSection"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 231017,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 2557,
+    "className": "flex flex-col items-stretch justify-start flex-nowrap inline-full gap-8"
   },
   {
     "tag": "h3",
@@ -2425,7 +3015,36 @@
     ],
     "borderRadius": 0,
     "y": 2557,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalContext"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 196610,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 2585,
+    "className": "flex flex-col lg:flex-row items-stretch justify-start flex-nowrap inline-full ga"
   },
   {
     "tag": "div",
@@ -2453,7 +3072,8 @@
     ],
     "gap": 16,
     "borderRadius": 12,
-    "y": 2585
+    "y": 2585,
+    "className": "flex flex-row items-center lg:items-start justify-start flex-nowrap lg:flex-wrap"
   },
   {
     "tag": "a",
@@ -2479,7 +3099,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2586
+    "y": 2586,
+    "className": "Dps_Ta_cardCompactAnchor"
   },
   {
     "tag": "span",
@@ -2505,7 +3126,8 @@
       0
     ],
     "borderRadius": 9999.01,
-    "y": 2610
+    "y": 2610,
+    "className": "pohIQa_graphic pohIQa_isFilled"
   },
   {
     "tag": "h3",
@@ -2532,7 +3154,8 @@
     ],
     "borderRadius": 0,
     "y": 2672,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantCardTitleSummary Dps_Ta_cardCompactTitle"
   },
   {
     "tag": "span",
@@ -2559,7 +3182,8 @@
     ],
     "borderRadius": 0,
     "y": 2696,
-    "inHeading": true
+    "inHeading": true,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl Dps_Ta_cardCompactTitleArrow"
   },
   {
     "tag": "div",
@@ -2587,7 +3211,8 @@
     ],
     "gap": 16,
     "borderRadius": 12,
-    "y": 2585
+    "y": 2585,
+    "className": "flex flex-row items-center lg:items-start justify-start flex-nowrap lg:flex-wrap"
   },
   {
     "tag": "a",
@@ -2613,7 +3238,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2586
+    "y": 2586,
+    "className": "Dps_Ta_cardCompactAnchor"
   },
   {
     "tag": "span",
@@ -2639,7 +3265,8 @@
       0
     ],
     "borderRadius": 9999.01,
-    "y": 2610
+    "y": 2610,
+    "className": "pohIQa_graphic pohIQa_isFilled"
   },
   {
     "tag": "h3",
@@ -2666,7 +3293,8 @@
     ],
     "borderRadius": 0,
     "y": 2672,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantCardTitleSummary Dps_Ta_cardCompactTitle"
   },
   {
     "tag": "span",
@@ -2693,7 +3321,8 @@
     ],
     "borderRadius": 0,
     "y": 2696,
-    "inHeading": true
+    "inHeading": true,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl Dps_Ta_cardCompactTitleArrow"
   },
   {
     "tag": "div",
@@ -2721,7 +3350,8 @@
     ],
     "gap": 16,
     "borderRadius": 12,
-    "y": 2585
+    "y": 2585,
+    "className": "flex flex-row items-center lg:items-start justify-start flex-nowrap lg:flex-wrap"
   },
   {
     "tag": "a",
@@ -2747,7 +3377,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2586
+    "y": 2586,
+    "className": "Dps_Ta_cardCompactAnchor"
   },
   {
     "tag": "span",
@@ -2773,7 +3404,8 @@
       0
     ],
     "borderRadius": 9999.01,
-    "y": 2610
+    "y": 2610,
+    "className": "pohIQa_graphic pohIQa_isFilled"
   },
   {
     "tag": "h3",
@@ -2800,7 +3432,8 @@
     ],
     "borderRadius": 0,
     "y": 2672,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantCardTitleSummary Dps_Ta_cardCompactTitle"
   },
   {
     "tag": "span",
@@ -2827,7 +3460,8 @@
     ],
     "borderRadius": 0,
     "y": 2696,
-    "inHeading": true
+    "inHeading": true,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl Dps_Ta_cardCompactTitleArrow"
   },
   {
     "tag": "div",
@@ -2855,7 +3489,8 @@
     ],
     "gap": 16,
     "borderRadius": 12,
-    "y": 2585
+    "y": 2585,
+    "className": "flex flex-row items-center lg:items-start justify-start flex-nowrap lg:flex-wrap"
   },
   {
     "tag": "a",
@@ -2881,7 +3516,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2586
+    "y": 2586,
+    "className": "Dps_Ta_cardCompactAnchor"
   },
   {
     "tag": "span",
@@ -2907,7 +3543,8 @@
       0
     ],
     "borderRadius": 9999.01,
-    "y": 2610
+    "y": 2610,
+    "className": "pohIQa_graphic pohIQa_isFilled"
   },
   {
     "tag": "h3",
@@ -2934,7 +3571,8 @@
     ],
     "borderRadius": 0,
     "y": 2672,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantCardTitleSummary Dps_Ta_cardCompactTitle"
   },
   {
     "tag": "span",
@@ -2961,7 +3599,8 @@
     ],
     "borderRadius": 0,
     "y": 2696,
-    "inHeading": true
+    "inHeading": true,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl Dps_Ta_cardCompactTitleArrow"
   },
   {
     "tag": "div",
@@ -2989,7 +3628,8 @@
     ],
     "gap": 16,
     "borderRadius": 12,
-    "y": 2585
+    "y": 2585,
+    "className": "flex flex-row items-center lg:items-start justify-start flex-nowrap lg:flex-wrap"
   },
   {
     "tag": "a",
@@ -3015,7 +3655,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2586
+    "y": 2586,
+    "className": "Dps_Ta_cardCompactAnchor"
   },
   {
     "tag": "span",
@@ -3041,7 +3682,8 @@
       0
     ],
     "borderRadius": 9999.01,
-    "y": 2610
+    "y": 2610,
+    "className": "pohIQa_graphic pohIQa_isFilled"
   },
   {
     "tag": "h3",
@@ -3068,7 +3710,8 @@
     ],
     "borderRadius": 0,
     "y": 2672,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantCardTitleSummary Dps_Ta_cardCompactTitle"
   },
   {
     "tag": "span",
@@ -3095,7 +3738,8 @@
     ],
     "borderRadius": 0,
     "y": 2696,
-    "inHeading": true
+    "inHeading": true,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl Dps_Ta_cardCompactTitleArrow"
   },
   {
     "tag": "div",
@@ -3121,7 +3765,65 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2841
+    "y": 2841,
+    "className": "-Qs3Ha_main -Qs3Ha_mainLoose"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 712711,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 64,
+    "borderRadius": 0,
+    "maxWidth": 1252,
+    "y": 2937,
+    "className": "-Qs3Ha_section"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 68814,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "gap": 24,
+    "borderRadius": 0,
+    "y": 2937,
+    "className": "FoZ42q_header FoZ42q_alignStart"
   },
   {
     "tag": "h2",
@@ -3149,7 +3851,36 @@
     "borderRadius": 0,
     "maxWidth": 891.92,
     "y": 2937,
-    "inHeading": true
+    "inHeading": true,
+    "className": "FoZ42q_heading"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 604576,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 24,
+    "borderRadius": 0,
+    "y": 3025,
+    "className": "XB4X_a_cards"
   },
   {
     "tag": "a",
@@ -3175,7 +3906,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_card XB4X_a_brandCursor"
   },
   {
     "tag": "span",
@@ -3202,7 +3934,8 @@
     ],
     "borderRadius": 0,
     "opacity": 0.42,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_screen"
   },
   {
     "tag": "span",
@@ -3229,7 +3962,64 @@
     ],
     "borderRadius": 0,
     "opacity": 0.8,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_multiply"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 193648,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      24,
+      24,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 3025,
+    "className": "XB4X_a_cardContent"
+  },
+  {
+    "tag": "figure",
+    "role": "container",
+    "area": 38707,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 3381,
+    "className": "_2NYrkq_quote XB4X_a_quote _2NYrkq_quoteAlignStart"
   },
   {
     "tag": "blockquote",
@@ -3255,7 +4045,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3381
+    "y": 3381,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalQuote _2NYrkq_blockquote XB4X_a_qu"
   },
   {
     "tag": "span",
@@ -3281,7 +4072,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3474
+    "y": 3474,
+    "className": "rJjRWG_infoName XB4X_a_attributionName"
   },
   {
     "tag": "span",
@@ -3307,7 +4099,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3474
+    "y": 3474,
+    "className": "rJjRWG_infoMeta"
   },
   {
     "tag": "a",
@@ -3333,7 +4126,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_card XB4X_a_brandFaire"
   },
   {
     "tag": "span",
@@ -3360,7 +4154,8 @@
     ],
     "borderRadius": 0,
     "opacity": 0.42,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_screen"
   },
   {
     "tag": "span",
@@ -3387,7 +4182,64 @@
     ],
     "borderRadius": 0,
     "opacity": 0.8,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_multiply"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 193656,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      24,
+      24,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 3025,
+    "className": "XB4X_a_cardContent"
+  },
+  {
+    "tag": "figure",
+    "role": "container",
+    "area": 38708,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 3381,
+    "className": "_2NYrkq_quote XB4X_a_quote _2NYrkq_quoteAlignStart"
   },
   {
     "tag": "blockquote",
@@ -3413,7 +4265,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3381
+    "y": 3381,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalQuote _2NYrkq_blockquote XB4X_a_qu"
   },
   {
     "tag": "span",
@@ -3439,7 +4292,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3474
+    "y": 3474,
+    "className": "rJjRWG_infoName XB4X_a_attributionName"
   },
   {
     "tag": "span",
@@ -3465,7 +4319,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3474
+    "y": 3474,
+    "className": "rJjRWG_infoMeta"
   },
   {
     "tag": "a",
@@ -3491,7 +4346,8 @@
       0
     ],
     "borderRadius": 12,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_card XB4X_a_brandRamp"
   },
   {
     "tag": "span",
@@ -3518,7 +4374,8 @@
     ],
     "borderRadius": 0,
     "opacity": 0.42,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_screen"
   },
   {
     "tag": "span",
@@ -3545,7 +4402,64 @@
     ],
     "borderRadius": 0,
     "opacity": 0.8,
-    "y": 3025
+    "y": 3025,
+    "className": "XB4X_a_multiply"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 193648,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      24,
+      24,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 3025,
+    "className": "XB4X_a_cardContent"
+  },
+  {
+    "tag": "figure",
+    "role": "container",
+    "area": 38707,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 3381,
+    "className": "_2NYrkq_quote XB4X_a_quote _2NYrkq_quoteAlignStart"
   },
   {
     "tag": "blockquote",
@@ -3571,7 +4485,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3381
+    "y": 3381,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalQuote _2NYrkq_blockquote XB4X_a_qu"
   },
   {
     "tag": "span",
@@ -3597,7 +4512,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3474
+    "y": 3474,
+    "className": "rJjRWG_infoName XB4X_a_attributionName"
   },
   {
     "tag": "span",
@@ -3623,7 +4539,64 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3474
+    "y": 3474,
+    "className": "rJjRWG_infoMeta"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 34560,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      12,
+      0,
+      12,
+      0
+    ],
+    "gap": 20,
+    "borderRadius": 0,
+    "y": 3625,
+    "className": "X75v-G_marqueeContainer YXu32q_statsMarquee -Qs3Ha_statsMarquee"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 34560,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 0,
+    "fontWeight": 400,
+    "lineHeight": 0,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 36,
+    "borderRadius": 0,
+    "y": 3625,
+    "className": "X75v-G_marquee"
   },
   {
     "tag": "p",
@@ -3650,7 +4623,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3625
+    "y": 3625,
+    "className": "s4Stoa_typography YXu32q_stat"
   },
   {
     "tag": "span",
@@ -3676,7 +4650,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 3625
+    "y": 3625,
+    "className": "pohIQa_graphic YXu32q_statIcon"
   },
   {
     "tag": "p",
@@ -3703,7 +4678,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3625
+    "y": 3625,
+    "className": "s4Stoa_typography YXu32q_stat"
   },
   {
     "tag": "span",
@@ -3729,7 +4705,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 3625
+    "y": 3625,
+    "className": "pohIQa_graphic YXu32q_statIcon"
   },
   {
     "tag": "p",
@@ -3756,7 +4733,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3625
+    "y": 3625,
+    "className": "s4Stoa_typography YXu32q_stat"
   },
   {
     "tag": "span",
@@ -3782,7 +4760,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 3625
+    "y": 3625,
+    "className": "pohIQa_graphic YXu32q_statIcon"
   },
   {
     "tag": "p",
@@ -3809,7 +4788,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3625
+    "y": 3625,
+    "className": "s4Stoa_typography YXu32q_stat"
   },
   {
     "tag": "span",
@@ -3835,7 +4815,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 3625
+    "y": 3625,
+    "className": "pohIQa_graphic YXu32q_statIcon"
   },
   {
     "tag": "p",
@@ -3862,7 +4843,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 3625
+    "y": 3625,
+    "className": "s4Stoa_typography YXu32q_stat"
   },
   {
     "tag": "span",
@@ -3888,7 +4870,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 3625
+    "y": 3625,
+    "className": "pohIQa_graphic YXu32q_statIcon"
   },
   {
     "tag": "div",
@@ -3915,7 +4898,8 @@
     ],
     "gap": 12,
     "borderRadius": 0,
-    "y": 3661
+    "y": 3661,
+    "className": "flex flex-col items-center inline-full gap-12 pt-64 pb-64 ps-32 pe-32 ms-auto me"
   },
   {
     "tag": "h2",
@@ -3942,7 +4926,36 @@
     ],
     "borderRadius": 0,
     "y": 3925,
-    "inHeading": true
+    "inHeading": true,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalHeadingSubtle _0m6-va_endcapTitle"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 12036,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 12,
+    "borderRadius": 0,
+    "y": 3989,
+    "className": "flex flex-col sm:flex-row items-stretch sm:items-center justify-center flex-nowr"
   },
   {
     "tag": "a",
@@ -3970,7 +4983,8 @@
     ],
     "gap": 12,
     "borderRadius": 8,
-    "y": 3989
+    "y": 3989,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button HF"
   },
   {
     "tag": "a",
@@ -3998,7 +5012,8 @@
     ],
     "gap": 12,
     "borderRadius": 8,
-    "y": 3989
+    "y": 3989,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionButtonMedium HFeN3a_button HF"
   },
   {
     "tag": "footer",
@@ -4024,7 +5039,92 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4291
+    "y": 4291,
+    "className": "surface surfaceBase CFFfpW_surfaceBase U-iC1W_footer cwVo7a_footer cwVo7a_hideSe"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 402960,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      30,
+      0,
+      30
+    ],
+    "borderRadius": 0,
+    "maxWidth": 1380,
+    "y": 4371,
+    "className": "e_tYXa_layout"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 365584,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 40,
+    "borderRadius": 0,
+    "y": 4371,
+    "className": "lgnKUW_grid U-iC1W_grid"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 85884,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 4371,
+    "className": "U-iC1W_brand cwVo7a_brand"
   },
   {
     "tag": "a",
@@ -4050,7 +5150,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4371
+    "y": 4371,
+    "className": "cwVo7a_logo"
+  },
+  {
+    "tag": "figure",
+    "role": "container",
+    "area": 35317,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      12,
+      0,
+      0
+    ],
+    "margin": [
+      71,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 4497,
+    "className": "_2NYrkq_quote cwVo7a_quote cwVo7a_quoteMcLuhan _2NYrkq_quoteAlignStart"
   },
   {
     "tag": "blockquote",
@@ -4077,7 +5206,8 @@
     ],
     "borderRadius": 0,
     "maxWidth": 268.8,
-    "y": 4497
+    "y": 4497,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalQuoteDeemphasized _2NYrkq_blockquo"
   },
   {
     "tag": "span",
@@ -4103,7 +5233,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4565
+    "y": 4565,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalContext"
+  },
+  {
+    "tag": "nav",
+    "role": "container",
+    "area": 176908,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 80,
+    "borderRadius": 0,
+    "y": 4371,
+    "className": "U-iC1W_nav"
   },
   {
     "tag": "li",
@@ -4129,7 +5288,8 @@
       -8
     ],
     "borderRadius": 0,
-    "y": 4371
+    "y": 4371,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantNavigationHeading qf-KyW_heading"
   },
   {
     "tag": "a",
@@ -4156,7 +5316,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4395
+    "y": 4395,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4182,7 +5343,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4398
+    "y": 4398,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4209,7 +5371,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4421
+    "y": 4421,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4235,7 +5398,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4424
+    "y": 4424,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4262,7 +5426,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4447
+    "y": 4447,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4288,7 +5453,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4450
+    "y": 4450,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4315,7 +5481,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4473
+    "y": 4473,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4341,7 +5508,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4476
+    "y": 4476,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4368,7 +5536,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4499
+    "y": 4499,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4394,7 +5563,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4502
+    "y": 4502,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4421,7 +5591,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4525
+    "y": 4525,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4447,7 +5618,35 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4528
+    "y": 4528,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
+  },
+  {
+    "tag": "li",
+    "role": "container",
+    "area": 3374,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      8,
+      -8,
+      0,
+      -8
+    ],
+    "borderRadius": 0,
+    "y": 4559,
+    "className": "inline-fit qf-KyW_menuListItem cwVo7a_exploreMoreListItem cwVo7a_exploreMoreList"
   },
   {
     "tag": "a",
@@ -4474,7 +5673,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4559
+    "y": 4559,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4500,7 +5700,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4562
+    "y": 4562,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "span",
@@ -4526,7 +5727,8 @@
       4.52
     ],
     "borderRadius": 0,
-    "y": 4562
+    "y": 4562,
+    "className": "WbIAoq_arrow WbIAoq_arrowFlipRtl cwVo7a_exploreMoreArrow"
   },
   {
     "tag": "li",
@@ -4552,7 +5754,8 @@
       -8
     ],
     "borderRadius": 0,
-    "y": 4371
+    "y": 4371,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantNavigationHeading qf-KyW_heading"
   },
   {
     "tag": "a",
@@ -4579,7 +5782,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4395
+    "y": 4395,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4605,7 +5809,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4398
+    "y": 4398,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4632,7 +5837,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4421
+    "y": 4421,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4658,7 +5864,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4424
+    "y": 4424,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4685,7 +5892,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4447
+    "y": 4447,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4711,7 +5919,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4450
+    "y": 4450,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4738,7 +5947,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4473
+    "y": 4473,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4764,7 +5974,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4476
+    "y": 4476,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4791,7 +6002,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4499
+    "y": 4499,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4817,7 +6029,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4502
+    "y": 4502,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4844,7 +6057,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4525
+    "y": 4525,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4870,7 +6084,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4528
+    "y": 4528,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "li",
@@ -4896,7 +6111,8 @@
       -8
     ],
     "borderRadius": 0,
-    "y": 4371
+    "y": 4371,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantNavigationHeading qf-KyW_heading"
   },
   {
     "tag": "a",
@@ -4923,7 +6139,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4395
+    "y": 4395,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -4949,7 +6166,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4398
+    "y": 4398,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -4976,7 +6194,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4421
+    "y": 4421,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5002,7 +6221,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4424
+    "y": 4424,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -5029,7 +6249,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4447
+    "y": 4447,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5055,7 +6276,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4450
+    "y": 4450,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -5082,7 +6304,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4473
+    "y": 4473,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5108,7 +6331,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4476
+    "y": 4476,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -5135,7 +6359,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4499
+    "y": 4499,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5161,7 +6386,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4502
+    "y": 4502,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -5188,7 +6414,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4525
+    "y": 4525,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5214,7 +6441,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4528
+    "y": 4528,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "li",
@@ -5240,7 +6468,8 @@
       -8
     ],
     "borderRadius": 0,
-    "y": 4371
+    "y": 4371,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantNavigationHeading qf-KyW_heading"
   },
   {
     "tag": "a",
@@ -5267,7 +6496,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4395
+    "y": 4395,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5293,7 +6523,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4398
+    "y": 4398,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -5320,7 +6551,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4421
+    "y": 4421,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5346,7 +6578,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4424
+    "y": 4424,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -5373,7 +6606,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4447
+    "y": 4447,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5399,7 +6633,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4450
+    "y": 4450,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "a",
@@ -5426,7 +6661,8 @@
     ],
     "gap": 8,
     "borderRadius": 8,
-    "y": 4473
+    "y": 4473,
+    "className": "inline-full qf-KyW_menuListItemAnchor qf-KyW_variantSecondary"
   },
   {
     "tag": "span",
@@ -5452,7 +6688,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4476
+    "y": 4476,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel qf-KyW_labe"
   },
   {
     "tag": "button",
@@ -5479,7 +6716,36 @@
       0
     ],
     "borderRadius": 9999.01,
-    "y": 4625
+    "y": 4625,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuButton RVGGvq_menuButton "
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 2199,
+    "color": "rgba(0, 0, 0, 0.95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 4634,
+    "className": "inline-flex flex-row items-center justify-start flex-nowrap inline-full gap-8"
   },
   {
     "tag": "span",
@@ -5505,7 +6771,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4634
+    "y": 4634,
+    "className": "RVGGvq_label"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 11639,
+    "color": "rgba(0, 0, 0, 0.898)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "NotionInter, Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      9,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 4625,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantInteractionMenuListItemLabel U-iC1W_lega"
   },
   {
     "tag": "button",
@@ -5531,7 +6826,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4634
+    "y": 4634,
+    "className": "Db2fhq_semanticTypography z5BaEa_linkText z5BaEa_colorVariantSecondary"
   },
   {
     "tag": "span",
@@ -5558,7 +6854,8 @@
     ],
     "gap": 8,
     "borderRadius": 0,
-    "y": 4634
+    "y": 4634,
+    "className": "z5BaEa_linkContent"
   },
   {
     "tag": "p",
@@ -5584,6 +6881,7 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4625
+    "y": 4625,
+    "className": "Db2fhq_semanticTypography Db2fhq_variantGlobalContext U-iC1W_copyright cwVo7a_co"
   }
 ]

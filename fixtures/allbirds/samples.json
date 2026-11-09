@@ -23,7 +23,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 0
+    "y": 0,
+    "className": "h-full"
   },
   {
     "tag": "body",
@@ -49,7 +50,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 0
+    "y": 0,
+    "className": "bg-natural-white-60 min-h-full global-banner-active global-banner-in-view"
   },
   {
     "tag": "div",
@@ -75,7 +77,35 @@
       0
     ],
     "borderRadius": 0,
-    "y": 0
+    "y": 0,
+    "className": "relative"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 46080,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      32,
+      8,
+      32
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 0,
+    "className": "swiper-slide !flex !h-auto items-center justify-center px-8 py-2 swiper-slide-vi"
   },
   {
     "tag": "p",
@@ -101,7 +131,62 @@
       0
     ],
     "borderRadius": 0,
-    "y": 8
+    "y": 8,
+    "className": "text-center text-[10px] tracking-wider md:text-xs"
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 4,
+    "className": "swiper-prev-button z-content absolute top-1/2 left-0 size-6 -translate-y-1/2 tex"
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 4,
+    "className": "swiper-next-button z-content absolute top-1/2 right-0 size-6 -translate-y-1/2 te"
   },
   {
     "tag": "div",
@@ -129,7 +214,8 @@
     "borderRadius": 12,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
     "maxWidth": 2560,
-    "y": 52
+    "y": 52,
+    "className": "absolute top-5 right-5 left-5 z-50 mx-auto max-w-[2560px] overflow-hidden rounde"
   },
   {
     "tag": "a",
@@ -155,12 +241,41 @@
       0
     ],
     "borderRadius": 0,
-    "y": 64
+    "y": 64,
+    "className": "flex items-center justify-center"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 7254,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 32,
+    "borderRadius": 0,
+    "y": 68,
+    "className": "flex flex-1 justify-center gap-8"
   },
   {
     "tag": "a",
     "role": "interactive",
-    "area": 1546,
+    "area": 1463,
     "color": "rgb(33, 33, 33)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Geograph, system-ui, sans-serif",
@@ -181,7 +296,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 68
+    "y": 68,
+    "className": "cursor-pointer items-center text-xs font-medium tracking-wider text-black upperc"
   },
   {
     "tag": "a",
@@ -207,7 +323,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 68
+    "y": 68,
+    "className": "cursor-pointer items-center text-xs font-medium tracking-wider text-black upperc"
   },
   {
     "tag": "button",
@@ -233,7 +350,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 68
+    "y": 68,
+    "className": "cursor-pointer items-center text-xs font-medium tracking-wider text-black upperc"
   },
   {
     "tag": "button",
@@ -259,7 +377,64 @@
       0
     ],
     "borderRadius": 0,
-    "y": 68
+    "y": 68,
+    "className": "cursor-pointer items-center text-xs font-medium tracking-wider text-black upperc"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 10880,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 64,
+    "className": "flex flex-1 items-center justify-end gap-4"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 1344,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 64,
+    "className": "align-center flex items-center gap-2"
   },
   {
     "tag": "a",
@@ -311,7 +486,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 64
+    "y": 64,
+    "className": "relative flex cursor-pointer items-center"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 212800,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      112,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "maxWidth": 2560,
+    "y": 0,
+    "className": "fixed inset-x-0 top-0 right-5 left-5 z-30 mx-auto hidden max-w-[2560px] pt-[calc"
   },
   {
     "tag": "div",
@@ -337,7 +541,35 @@
       10
     ],
     "borderRadius": 20,
-    "y": 42
+    "y": 42,
+    "className": "hero-height-dynamic relative m-2.5 overflow-hidden rounded text-white opacity-0"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1113280,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      80,
+      64,
+      64,
+      64
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 42,
+    "className": "pointer-events-none absolute inset-0 flex size-full flex-col p-8 !pt-20 opacity-"
   },
   {
     "tag": "p",
@@ -363,12 +595,13 @@
       0
     ],
     "borderRadius": 0,
-    "y": 637
+    "y": 637,
+    "className": "z-content relative mb-4 font-mono text-xs/5 font-medium tracking-widest uppercas"
   },
   {
     "tag": "h1",
     "role": "heading",
-    "area": 13265,
+    "area": 14816,
     "color": "rgb(255, 255, 255)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Geograph, system-ui, sans-serif",
@@ -390,7 +623,36 @@
     ],
     "borderRadius": 0,
     "y": 673,
-    "inHeading": true
+    "inHeading": true,
+    "className": "z-content relative mb-6 text-2xl/8 tracking-wide"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 8333,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 729,
+    "className": "z-content pointer-events-auto relative grid gap-2 grid-cols-2"
   },
   {
     "tag": "a",
@@ -417,7 +679,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 729
+    "y": 729,
+    "className": "btn btn-primary"
   },
   {
     "tag": "a",
@@ -444,7 +707,63 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 729
+    "y": 729,
+    "className": "btn btn-primary"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 678668,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 836,
+    "className": "relative overflow-hidden p-2.5 text-white opacity-0"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 640842,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 846,
+    "className": "swiper-wrapper md:!flex md:gap-2.5"
   },
   {
     "tag": "li",
@@ -470,7 +789,8 @@
       0
     ],
     "borderRadius": 20,
-    "y": 846
+    "y": 846,
+    "className": "swiper-slide category-row-item group/category-row-item relative aspect-[0.77] !o"
   },
   {
     "tag": "div",
@@ -496,7 +816,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 846
+    "y": 846,
+    "className": "pointer-events-none absolute z-10 inset-0"
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 14607,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      168.14,
+      110.25,
+      168.16,
+      110.23
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 1049,
+    "className": "absolute inset-0 z-20 m-auto flex h-fit w-fit flex-col items-center justify-cent"
   },
   {
     "tag": "h2",
@@ -524,7 +873,8 @@
     ],
     "borderRadius": 33554400,
     "y": 1049,
-    "inHeading": true
+    "inHeading": true,
+    "className": "category-row-item-title btn btn-outline-white pointer-events-none"
   },
   {
     "tag": "li",
@@ -550,7 +900,8 @@
       0
     ],
     "borderRadius": 20,
-    "y": 846
+    "y": 846,
+    "className": "swiper-slide category-row-item group/category-row-item relative aspect-[0.77] !o"
   },
   {
     "tag": "div",
@@ -576,7 +927,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 846
+    "y": 846,
+    "className": "pointer-events-none absolute z-10 inset-0"
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 7415,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      188.64,
+      123.66,
+      188.66,
+      123.64
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 1057,
+    "className": "absolute inset-0 z-20 m-auto flex h-fit w-fit flex-col items-center justify-cent"
   },
   {
     "tag": "h2",
@@ -604,7 +984,8 @@
     ],
     "borderRadius": 33554400,
     "y": 1057,
-    "inHeading": true
+    "inHeading": true,
+    "className": "category-row-item-title btn btn-outline-white pointer-events-none"
   },
   {
     "tag": "li",
@@ -630,7 +1011,8 @@
       0
     ],
     "borderRadius": 20,
-    "y": 846
+    "y": 846,
+    "className": "swiper-slide category-row-item group/category-row-item relative aspect-[0.77] !o"
   },
   {
     "tag": "div",
@@ -656,7 +1038,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 846
+    "y": 846,
+    "className": "pointer-events-none absolute z-10 inset-0"
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 9047,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      188.64,
+      112.63,
+      188.66,
+      112.63
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 1057,
+    "className": "absolute inset-0 z-20 m-auto flex h-fit w-fit flex-col items-center justify-cent"
   },
   {
     "tag": "h2",
@@ -684,7 +1095,8 @@
     ],
     "borderRadius": 33554400,
     "y": 1057,
-    "inHeading": true
+    "inHeading": true,
+    "className": "category-row-item-title btn btn-outline-white pointer-events-none"
   },
   {
     "tag": "li",
@@ -710,7 +1122,8 @@
       0
     ],
     "borderRadius": 20,
-    "y": 846
+    "y": 846,
+    "className": "swiper-slide category-row-item group/category-row-item relative aspect-[0.77] !o"
   },
   {
     "tag": "div",
@@ -736,7 +1149,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 846
+    "y": 846,
+    "className": "pointer-events-none absolute z-10 inset-0"
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 14059,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      168.14,
+      112.63,
+      168.16,
+      112.63
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 1049,
+    "className": "absolute inset-0 z-20 m-auto flex h-fit w-fit flex-col items-center justify-cent"
   },
   {
     "tag": "h2",
@@ -764,7 +1206,90 @@
     ],
     "borderRadius": 33554400,
     "y": 1049,
-    "inHeading": true
+    "inHeading": true,
+    "className": "category-row-item-title btn btn-outline-white pointer-events-none"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 813600,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      40,
+      0,
+      40,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1347,
+    "className": "relative my-10 opacity-0"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 57600,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      24,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1347,
+    "className": "mb-6 flex items-center justify-between"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 4385,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      20,
+      0,
+      20
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 40,
+    "borderRadius": 0,
+    "y": 1354,
+    "className": "scrollbar-hidden relative flex items-center justify-start gap-5 overflow-x-auto "
   },
   {
     "tag": "button",
@@ -791,7 +1316,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1354
+    "y": 1354,
+    "className": "transition-border-color pointer-events-auto cursor-pointer border-b-2 border-tra"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 3600,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      40,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 1347,
+    "className": "mr-10 hidden items-center justify-end gap-2.5 md:flex"
   },
   {
     "tag": "button",
@@ -818,7 +1372,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1347
+    "y": 1347,
+    "className": "btn swiper-prev-button btn-icon-black swiper-nav-disabled-state size-10"
   },
   {
     "tag": "button",
@@ -845,7 +1400,35 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1347
+    "y": 1347,
+    "className": "btn swiper-next-button btn-icon-black swiper-nav-disabled-state size-10"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 195390,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      10,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1411,
+    "className": "swiper-slide swiper-slide-active"
   },
   {
     "tag": "div",
@@ -871,12 +1454,41 @@
       0
     ],
     "borderRadius": 16,
-    "y": 1411
+    "y": 1411,
+    "className": "group relative flex h-full flex-col rounded-2xl transition-all duration-300 ease"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 2471,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 6,
+    "borderRadius": 0,
+    "y": 1431,
+    "className": "flex flex-wrap items-center gap-1.5"
   },
   {
     "tag": "span",
     "role": "body",
-    "area": 1310,
+    "area": 2471,
     "color": "rgb(33, 33, 33)",
     "backgroundColor": "rgb(224, 218, 207)",
     "fontFamily": "Geograph, system-ui, sans-serif",
@@ -897,7 +1509,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1431
+    "y": 1431,
+    "className": "bg-natural-white rounded-full text-[10px] leading-none md:text-xs font-medium tr"
   },
   {
     "tag": "a",
@@ -923,7 +1536,36 @@
       0
     ],
     "borderRadius": 16,
-    "y": 1411
+    "y": 1411,
+    "className": "absolute inset-0 overflow-hidden rounded-t-2xl"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 43290,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      16,
+      16,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 1801,
+    "className": "ab-qa-home-info mt-auto flex flex-col gap-2.5 justify-self-end p-2.5 sm:p-4"
   },
   {
     "tag": "a",
@@ -950,7 +1592,8 @@
     ],
     "gap": 4,
     "borderRadius": 0,
-    "y": 1817
+    "y": 1817,
+    "className": "flex h-full flex-col gap-1"
   },
   {
     "tag": "p",
@@ -976,7 +1619,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1817
+    "y": 1817,
+    "className": "font-sans text-xs font-medium tracking-wider uppercase md:truncate md:overflow-h"
   },
   {
     "tag": "p",
@@ -1002,7 +1646,63 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1841
+    "y": 1841,
+    "className": "min-h-[1.5em] truncate text-xs tracking-wider text-ellipsis md:text-sm"
+  },
+  {
+    "tag": "p",
+    "role": "container",
+    "area": 1516,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0,
+    "y": 1874,
+    "className": "hidden items-center gap-1 font-sans text-sm font-medium tracking-wider uppercase"
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 945,
+    "color": "rgb(156, 15, 15)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1874,
+    "className": "text-red"
   },
   {
     "tag": "span",
@@ -1028,7 +1728,9 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1874
+    "opacity": 0.65,
+    "y": 1874,
+    "className": "line-through opacity-65"
   },
   {
     "tag": "button",
@@ -1051,11 +1753,12 @@
       0,
       0,
       0,
-      241.48
+      190.25
     ],
     "gap": 4,
     "borderRadius": 0,
-    "y": 1872
+    "y": 1872,
+    "className": "ab-qa-link"
   },
   {
     "tag": "span",
@@ -1088,6 +1791,33 @@
     "role": "container",
     "area": 195390,
     "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      10,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1411,
+    "className": "swiper-slide swiper-slide-next"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 195390,
+    "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgb(255, 255, 255)",
     "fontFamily": "Geograph, system-ui, sans-serif",
     "fontSize": 16,
@@ -1107,7 +1837,36 @@
       0
     ],
     "borderRadius": 16,
-    "y": 1411
+    "y": 1411,
+    "className": "group relative flex h-full flex-col rounded-2xl transition-all duration-300 ease"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1310,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 6,
+    "borderRadius": 0,
+    "y": 1431,
+    "className": "flex flex-wrap items-center gap-1.5"
   },
   {
     "tag": "span",
@@ -1133,7 +1892,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1431
+    "y": 1431,
+    "className": "bg-natural-white rounded-full text-[10px] leading-none md:text-xs font-medium tr"
   },
   {
     "tag": "a",
@@ -1159,7 +1919,36 @@
       0
     ],
     "borderRadius": 16,
-    "y": 1411
+    "y": 1411,
+    "className": "absolute inset-0 overflow-hidden rounded-t-2xl"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 43290,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      16,
+      16,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 1801,
+    "className": "ab-qa-home-info mt-auto flex flex-col gap-2.5 justify-self-end p-2.5 sm:p-4"
   },
   {
     "tag": "a",
@@ -1186,7 +1975,8 @@
     ],
     "gap": 4,
     "borderRadius": 0,
-    "y": 1817
+    "y": 1817,
+    "className": "flex h-full flex-col gap-1"
   },
   {
     "tag": "p",
@@ -1212,7 +2002,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1817
+    "y": 1817,
+    "className": "font-sans text-xs font-medium tracking-wider uppercase md:truncate md:overflow-h"
   },
   {
     "tag": "p",
@@ -1238,7 +2029,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1841
+    "y": 1841,
+    "className": "min-h-[1.5em] truncate text-xs tracking-wider text-ellipsis md:text-sm"
+  },
+  {
+    "tag": "p",
+    "role": "container",
+    "area": 698,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0,
+    "y": 1874,
+    "className": "hidden items-center gap-1 font-sans text-sm font-medium tracking-wider uppercase"
   },
   {
     "tag": "span",
@@ -1291,7 +2111,8 @@
     ],
     "gap": 4,
     "borderRadius": 0,
-    "y": 1872
+    "y": 1872,
+    "className": "ab-qa-link"
   },
   {
     "tag": "span",
@@ -1324,6 +2145,33 @@
     "role": "container",
     "area": 195390,
     "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      10,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1411,
+    "className": "swiper-slide"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 195390,
+    "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgb(255, 255, 255)",
     "fontFamily": "Geograph, system-ui, sans-serif",
     "fontSize": 16,
@@ -1343,12 +2191,41 @@
       0
     ],
     "borderRadius": 16,
-    "y": 1411
+    "y": 1411,
+    "className": "group relative flex h-full flex-col rounded-2xl transition-all duration-300 ease"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 2471,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 6,
+    "borderRadius": 0,
+    "y": 1431,
+    "className": "flex flex-wrap items-center gap-1.5"
   },
   {
     "tag": "span",
     "role": "body",
-    "area": 1310,
+    "area": 2471,
     "color": "rgb(33, 33, 33)",
     "backgroundColor": "rgb(224, 218, 207)",
     "fontFamily": "Geograph, system-ui, sans-serif",
@@ -1369,7 +2246,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1431
+    "y": 1431,
+    "className": "bg-natural-white rounded-full text-[10px] leading-none md:text-xs font-medium tr"
   },
   {
     "tag": "a",
@@ -1395,7 +2273,36 @@
       0
     ],
     "borderRadius": 16,
-    "y": 1411
+    "y": 1411,
+    "className": "absolute inset-0 overflow-hidden rounded-t-2xl"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 43290,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      16,
+      16,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 1801,
+    "className": "ab-qa-home-info mt-auto flex flex-col gap-2.5 justify-self-end p-2.5 sm:p-4"
   },
   {
     "tag": "a",
@@ -1422,7 +2329,8 @@
     ],
     "gap": 4,
     "borderRadius": 0,
-    "y": 1817
+    "y": 1817,
+    "className": "flex h-full flex-col gap-1"
   },
   {
     "tag": "p",
@@ -1448,7 +2356,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1817
+    "y": 1817,
+    "className": "font-sans text-xs font-medium tracking-wider uppercase md:truncate md:overflow-h"
   },
   {
     "tag": "p",
@@ -1474,7 +2383,63 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1841
+    "y": 1841,
+    "className": "min-h-[1.5em] truncate text-xs tracking-wider text-ellipsis md:text-sm"
+  },
+  {
+    "tag": "p",
+    "role": "container",
+    "area": 1683,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0,
+    "y": 1874,
+    "className": "hidden items-center gap-1 font-sans text-sm font-medium tracking-wider uppercase"
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 947,
+    "color": "rgb(156, 15, 15)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1874,
+    "className": "text-red"
   },
   {
     "tag": "span",
@@ -1500,7 +2465,9 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1874
+    "opacity": 0.65,
+    "y": 1874,
+    "className": "line-through opacity-65"
   },
   {
     "tag": "button",
@@ -1523,11 +2490,12 @@
       0,
       0,
       0,
-      233.27
+      181.92
     ],
     "gap": 4,
     "borderRadius": 0,
-    "y": 1872
+    "y": 1872,
+    "className": "ab-qa-link"
   },
   {
     "tag": "span",
@@ -1560,6 +2528,33 @@
     "role": "container",
     "area": 115230,
     "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      10,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1411,
+    "className": "swiper-slide"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 115230,
+    "color": "rgb(0, 0, 0)",
     "backgroundColor": "rgb(255, 255, 255)",
     "fontFamily": "Geograph, system-ui, sans-serif",
     "fontSize": 16,
@@ -1579,12 +2574,41 @@
       0
     ],
     "borderRadius": 16,
-    "y": 1411
+    "y": 1411,
+    "className": "group relative flex h-full flex-col rounded-2xl transition-all duration-300 ease"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 2471,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 6,
+    "borderRadius": 0,
+    "y": 1431,
+    "className": "flex flex-wrap items-center gap-1.5"
   },
   {
     "tag": "span",
     "role": "body",
-    "area": 1310,
+    "area": 2471,
     "color": "rgb(33, 33, 33)",
     "backgroundColor": "rgb(224, 218, 207)",
     "fontFamily": "Geograph, system-ui, sans-serif",
@@ -1605,7 +2629,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 1431
+    "y": 1431,
+    "className": "bg-natural-white rounded-full text-[10px] leading-none md:text-xs font-medium tr"
   },
   {
     "tag": "a",
@@ -1631,7 +2656,36 @@
       0
     ],
     "borderRadius": 16,
-    "y": 1411
+    "y": 1411,
+    "className": "absolute inset-0 overflow-hidden rounded-t-2xl"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 25530,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      16,
+      16,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 1801,
+    "className": "ab-qa-home-info mt-auto flex flex-col gap-2.5 justify-self-end p-2.5 sm:p-4"
   },
   {
     "tag": "a",
@@ -1658,7 +2712,8 @@
     ],
     "gap": 4,
     "borderRadius": 0,
-    "y": 1817
+    "y": 1817,
+    "className": "flex h-full flex-col gap-1"
   },
   {
     "tag": "p",
@@ -1684,7 +2739,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1817
+    "y": 1817,
+    "className": "font-sans text-xs font-medium tracking-wider uppercase md:truncate md:overflow-h"
   },
   {
     "tag": "p",
@@ -1710,7 +2766,63 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1841
+    "y": 1841,
+    "className": "min-h-[1.5em] truncate text-xs tracking-wider text-ellipsis md:text-sm"
+  },
+  {
+    "tag": "p",
+    "role": "container",
+    "area": 1683,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0,
+    "y": 1874,
+    "className": "hidden items-center gap-1 font-sans text-sm font-medium tracking-wider uppercase"
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 947,
+    "color": "rgb(156, 15, 15)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1874,
+    "className": "text-red"
   },
   {
     "tag": "span",
@@ -1736,7 +2848,64 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1874
+    "opacity": 0.65,
+    "y": 1874,
+    "className": "line-through opacity-65"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 960008,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      10,
+      0,
+      10
+    ],
+    "margin": [
+      40,
+      0,
+      40,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 1952,
+    "className": "my-10 px-2.5 opacity-0"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 946674,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 1952,
+    "className": "grid gap-8 md:grid-cols-3 md:gap-2.5"
   },
   {
     "tag": "div",
@@ -1762,7 +2931,36 @@
       0
     ],
     "borderRadius": 24,
-    "y": 1952
+    "y": 1952,
+    "className": "group relative aspect-7/10 w-full overflow-hidden rounded-3xl bg-white"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 24475,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 2256,
+    "className": "flex flex-col gap-4 text-center"
   },
   {
     "tag": "h2",
@@ -1789,7 +2987,36 @@
     ],
     "borderRadius": 0,
     "y": 2256,
-    "inHeading": true
+    "inHeading": true,
+    "className": "font-serif text-[1.875rem] select-none md:text-[2.5rem] text-white"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 14080,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 2566,
+    "className": "absolute right-2.5 bottom-2.5 left-2.5 flex gap-2.5 md:right-5 md:bottom-5 md:le"
   },
   {
     "tag": "a",
@@ -1816,7 +3043,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 2566
+    "y": 2566,
+    "className": "btn btn-outline-white w-full text-xs"
   },
   {
     "tag": "a",
@@ -1843,7 +3071,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 2566
+    "y": 2566,
+    "className": "btn btn-outline-white w-full text-xs"
   },
   {
     "tag": "div",
@@ -1869,7 +3098,36 @@
       0
     ],
     "borderRadius": 24,
-    "y": 1952
+    "y": 1952,
+    "className": "group relative aspect-7/10 w-full overflow-hidden rounded-3xl bg-white"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 15217,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 2256,
+    "className": "flex flex-col gap-4 text-center"
   },
   {
     "tag": "h2",
@@ -1896,7 +3154,36 @@
     ],
     "borderRadius": 0,
     "y": 2256,
-    "inHeading": true
+    "inHeading": true,
+    "className": "font-serif text-[1.875rem] select-none md:text-[2.5rem] text-white"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 14080,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 2566,
+    "className": "absolute right-2.5 bottom-2.5 left-2.5 flex gap-2.5 md:right-5 md:bottom-5 md:le"
   },
   {
     "tag": "a",
@@ -1923,7 +3210,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 2566
+    "y": 2566,
+    "className": "btn btn-outline-white w-full text-xs"
   },
   {
     "tag": "a",
@@ -1950,7 +3238,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 2566
+    "y": 2566,
+    "className": "btn btn-outline-white w-full text-xs"
   },
   {
     "tag": "div",
@@ -1976,7 +3265,36 @@
       0
     ],
     "borderRadius": 24,
-    "y": 1952
+    "y": 1952,
+    "className": "group relative aspect-7/10 w-full overflow-hidden rounded-3xl bg-white"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 13911,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 2256,
+    "className": "flex flex-col gap-4 text-center"
   },
   {
     "tag": "h2",
@@ -2003,7 +3321,36 @@
     ],
     "borderRadius": 0,
     "y": 2256,
-    "inHeading": true
+    "inHeading": true,
+    "className": "font-serif text-[1.875rem] select-none md:text-[2.5rem] text-white"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 14080,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 2566,
+    "className": "absolute right-2.5 bottom-2.5 left-2.5 flex gap-2.5 md:right-5 md:bottom-5 md:le"
   },
   {
     "tag": "a",
@@ -2030,7 +3377,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 2566
+    "y": 2566,
+    "className": "btn btn-outline-white w-full text-xs"
   },
   {
     "tag": "a",
@@ -2057,7 +3405,36 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 2566
+    "y": 2566,
+    "className": "btn btn-outline-white w-full text-xs"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 345600,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 10,
+    "borderRadius": 0,
+    "y": 2659,
+    "className": "grid grid-cols-1 gap-2.5 p-2.5 md:min-h-60 md:grid-cols-3"
   },
   {
     "tag": "div",
@@ -2084,7 +3461,8 @@
     ],
     "gap": 20,
     "borderRadius": 16,
-    "y": 2669
+    "y": 2669,
+    "className": "flex flex-col justify-center gap-5 rounded-2xl bg-white px-5 pt-10 pb-8 md:justi"
   },
   {
     "tag": "p",
@@ -2110,7 +3488,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2701
+    "y": 2701,
+    "className": "font-mono text-xs tracking-widest uppercase"
   },
   {
     "tag": "p",
@@ -2163,7 +3542,8 @@
     ],
     "gap": 20,
     "borderRadius": 16,
-    "y": 2669
+    "y": 2669,
+    "className": "flex flex-col justify-center gap-5 rounded-2xl bg-white px-5 pt-10 pb-8 md:justi"
   },
   {
     "tag": "p",
@@ -2189,7 +3569,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2701
+    "y": 2701,
+    "className": "font-mono text-xs tracking-widest uppercase"
   },
   {
     "tag": "p",
@@ -2242,7 +3623,8 @@
     ],
     "gap": 20,
     "borderRadius": 16,
-    "y": 2669
+    "y": 2669,
+    "className": "flex flex-col justify-center gap-5 rounded-2xl bg-white px-5 pt-10 pb-8 md:justi"
   },
   {
     "tag": "p",
@@ -2268,7 +3650,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2701
+    "y": 2701,
+    "className": "font-mono text-xs tracking-widest uppercase"
   },
   {
     "tag": "p",
@@ -2320,7 +3703,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2899
+    "y": 2899,
+    "className": "bg-black px-5 py-[3.125rem] text-white md:px-10 md:pt-20 md:pb-5"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 715360,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      40,
+      0
+    ],
+    "gap": 32,
+    "borderRadius": 0,
+    "y": 2979,
+    "className": "mb-10 grid grid-cols-1 gap-8 lg:grid-cols-2"
   },
   {
     "tag": "p",
@@ -2346,7 +3758,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2979
+    "y": 2979,
+    "className": "mb-8 font-mono text-xs tracking-widest uppercase max-md:text-center"
+  },
+  {
+    "tag": "form",
+    "role": "container",
+    "area": 27888,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 0,
+    "y": 3027,
+    "className": "flex flex-col gap-2"
   },
   {
     "tag": "button",
@@ -2372,7 +3813,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 3032
+    "y": 3032,
+    "className": "btn btn-outline z-content absolute top-1/2 right-1 -translate-y-1/2 font-bold te"
   },
   {
     "tag": "input",
@@ -2399,7 +3841,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 3027
+    "y": 3027,
+    "className": "h-full w-full rounded-full border bg-white px-3 py-2.5 pr-20 font-sans text-base"
   },
   {
     "tag": "p",
@@ -2425,7 +3868,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2979
+    "y": 2979,
+    "className": "mb-8 hidden font-mono text-xs tracking-wider uppercase md:block"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 15936,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 12,
+    "borderRadius": 0,
+    "y": 3027,
+    "className": "grid gap-3"
   },
   {
     "tag": "a",
@@ -2451,7 +3923,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3033
+    "y": 3033,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2477,7 +3950,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3069
+    "y": 3069,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2503,7 +3977,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3105
+    "y": 3105,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "p",
@@ -2529,7 +4004,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2979
+    "y": 2979,
+    "className": "mb-8 hidden font-mono text-xs tracking-wider uppercase md:block"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 21912,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 12,
+    "borderRadius": 0,
+    "y": 3027,
+    "className": "grid gap-3"
   },
   {
     "tag": "a",
@@ -2555,7 +4059,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3033
+    "y": 3033,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2581,7 +4086,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3069
+    "y": 3069,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2607,7 +4113,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3105
+    "y": 3105,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2633,7 +4140,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3141
+    "y": 3141,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "p",
@@ -2659,7 +4167,64 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2979
+    "y": 2979,
+    "className": "mb-8 hidden font-mono text-xs tracking-wider uppercase md:block"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 107568,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 40,
+    "borderRadius": 0,
+    "y": 3027,
+    "className": "md:grid md:grid-cols-2 md:items-start md:gap-x-10"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 47304,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 12,
+    "borderRadius": 0,
+    "y": 3027,
+    "className": "grid gap-3"
   },
   {
     "tag": "a",
@@ -2685,7 +4250,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3033
+    "y": 3033,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2711,7 +4277,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3069
+    "y": 3069,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2737,7 +4304,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3105
+    "y": 3105,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2763,7 +4331,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3141
+    "y": 3141,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2789,7 +4358,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3177
+    "y": 3177,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2815,7 +4385,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3213
+    "y": 3213,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2841,7 +4412,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3273
+    "y": 3273,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2867,7 +4439,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3333
+    "y": 3333,
+    "className": "text-xs hover:underline"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 8760,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 12,
+    "borderRadius": 0,
+    "y": 3027,
+    "className": "mt-3 grid gap-3 md:mt-0"
   },
   {
     "tag": "a",
@@ -2893,7 +4494,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3033
+    "y": 3033,
+    "className": "text-xs hover:underline"
   },
   {
     "tag": "a",
@@ -2919,7 +4521,35 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3069
+    "y": 3069,
+    "className": "text-xs hover:underline"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 54448,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      40,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 3383,
+    "className": "mb-10 flex flex-col items-center justify-center md:items-start"
   },
   {
     "tag": "h3",
@@ -2946,7 +4576,36 @@
     ],
     "borderRadius": 0,
     "y": 3383,
-    "inHeading": true
+    "inHeading": true,
+    "className": "mb-6 font-mono text-xs tracking-wider uppercase max-md:text-center"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 13944,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 3423,
+    "className": "flex justify-center gap-4"
   },
   {
     "tag": "a",
@@ -2972,7 +4631,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3423
+    "y": 3423,
+    "className": "social-icon"
   },
   {
     "tag": "div",
@@ -2999,7 +4659,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 3423
+    "y": 3423,
+    "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
     "tag": "a",
@@ -3025,7 +4686,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3423
+    "y": 3423,
+    "className": "social-icon"
   },
   {
     "tag": "div",
@@ -3052,7 +4714,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 3423
+    "y": 3423,
+    "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
     "tag": "a",
@@ -3078,7 +4741,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3423
+    "y": 3423,
+    "className": "social-icon"
   },
   {
     "tag": "div",
@@ -3105,7 +4769,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 3423
+    "y": 3423,
+    "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
     "tag": "a",
@@ -3131,7 +4796,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3423
+    "y": 3423,
+    "className": "social-icon"
   },
   {
     "tag": "div",
@@ -3158,7 +4824,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 3423
+    "y": 3423,
+    "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
     "tag": "a",
@@ -3184,7 +4851,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3423
+    "y": 3423,
+    "className": "social-icon"
   },
   {
     "tag": "div",
@@ -3211,7 +4879,8 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 3423
+    "y": 3423,
+    "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
     "tag": "a",
@@ -3237,7 +4906,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3423
+    "y": 3423,
+    "className": "social-icon"
   },
   {
     "tag": "div",
@@ -3264,7 +4934,36 @@
       0
     ],
     "borderRadius": 33554400,
-    "y": 3423
+    "y": 3423,
+    "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 43520,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      24,
+      0
+    ],
+    "gap": 32,
+    "borderRadius": 0,
+    "y": 3545,
+    "className": "mb-6 flex flex-col items-center gap-8 md:flex-row"
   },
   {
     "tag": "select",
@@ -3291,7 +4990,8 @@
     ],
     "gap": 8,
     "borderRadius": 4,
-    "y": 3545
+    "y": 3545,
+    "className": "flex appearance-none items-center justify-center gap-2 rounded-sm px-2 py-1 pr-8"
   },
   {
     "tag": "div",
@@ -3318,7 +5018,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3601
+    "y": 3601,
+    "className": "border-t border-neutral-500 pt-6"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 21760,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 3626,
+    "className": "grid justify-center gap-2 text-xs text-white max-md:grid-cols-2 md:flex md:justi"
   },
   {
     "tag": "div",
@@ -3370,7 +5099,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3626
+    "y": 3626,
+    "className": "cursor-pointer hover:text-white hover:underline"
   },
   {
     "tag": "a",
@@ -3396,7 +5126,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3626
+    "y": 3626,
+    "className": "cursor-pointer hover:text-white hover:underline"
   },
   {
     "tag": "a",
@@ -3422,7 +5153,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3626
+    "y": 3626,
+    "className": "cursor-pointer hover:text-white hover:underline"
   },
   {
     "tag": "a",
@@ -3448,7 +5180,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3626
+    "y": 3626,
+    "className": "cursor-pointer hover:text-white hover:underline"
   },
   {
     "tag": "button",
@@ -3474,7 +5207,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3626
+    "y": 3626,
+    "className": "ot-sdk-show-settings text-left"
   },
   {
     "tag": "a",
@@ -3500,6 +5234,7 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3626
+    "y": 3626,
+    "className": "hover:text-white"
   }
 ]

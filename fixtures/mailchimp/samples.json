@@ -23,7 +23,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 0
+    "y": 0,
+    "className": "js"
   },
   {
     "tag": "body",
@@ -49,7 +50,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 0
+    "y": 0,
+    "className": "plums-migrate-svg-color-fills-currentcolor tally-preview"
   },
   {
     "tag": "a",
@@ -103,7 +105,35 @@
       0
     ],
     "borderRadius": 0,
-    "y": 0
+    "y": 0,
+    "className": "coBrandedNav desktopNav"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 33984,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      6,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 2,
+    "className": "coBrandedLinks coBrandedLinks--oneIntuit"
   },
   {
     "tag": "a",
@@ -158,6 +188,34 @@
     "y": 4
   },
   {
+    "tag": "span",
+    "role": "container",
+    "area": 703,
+    "color": "rgb(0, 78, 86)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 0,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 2.34,
+    "borderRadius": 0,
+    "y": 10,
+    "className": "coBrandedLinks__logo coBrandedLinks__logo--lockup"
+  },
+  {
     "tag": "a",
     "role": "interactive",
     "area": 1035,
@@ -184,6 +242,34 @@
     "y": 4
   },
   {
+    "tag": "span",
+    "role": "container",
+    "area": 647,
+    "color": "rgb(0, 78, 86)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 0,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 2.34,
+    "borderRadius": 0,
+    "y": 10,
+    "className": "coBrandedLinks__logo coBrandedLinks__logo--lockup"
+  },
+  {
     "tag": "aside",
     "role": "container",
     "area": 59828,
@@ -207,7 +293,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 29
+    "y": 29,
+    "className": "freeTrial--banner discount__banner--global flex flex--center flex--middle iaNav "
   },
   {
     "tag": "p",
@@ -263,6 +350,61 @@
     "y": 42
   },
   {
+    "tag": "nav",
+    "role": "container",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      12,
+      16,
+      12,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 71,
+    "className": "iaNav__nav"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 40837,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 14.4,
+    "borderRadius": 0,
+    "y": 81,
+    "className": "holder holder__left globalNavResponsivenessFlagOn"
+  },
+  {
     "tag": "a",
     "role": "interactive",
     "area": 7473,
@@ -286,7 +428,8 @@
       0
     ],
     "borderRadius": 3,
-    "y": 81
+    "y": 81,
+    "className": "iaNav__cta"
   },
   {
     "tag": "button",
@@ -312,7 +455,8 @@
       0
     ],
     "borderRadius": 3,
-    "y": 89
+    "y": 89,
+    "className": "iaNav__cta"
   },
   {
     "tag": "button",
@@ -338,7 +482,8 @@
       0
     ],
     "borderRadius": 3,
-    "y": 89
+    "y": 89,
+    "className": "iaNav__cta"
   },
   {
     "tag": "button",
@@ -364,7 +509,8 @@
       0
     ],
     "borderRadius": 3,
-    "y": 89
+    "y": 89,
+    "className": "iaNav__cta"
   },
   {
     "tag": "a",
@@ -390,7 +536,8 @@
       0
     ],
     "borderRadius": 3,
-    "y": 89
+    "y": 89,
+    "className": "iaNav__cta"
   },
   {
     "tag": "a",
@@ -416,7 +563,36 @@
       0
     ],
     "borderRadius": 3,
-    "y": 89
+    "y": 89,
+    "className": "iaNav__cta"
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 22630,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 14.4,
+    "borderRadius": 0,
+    "y": 83,
+    "className": "holder holder__right globalNavResponsivenessFlagOn"
   },
   {
     "tag": "a",
@@ -442,7 +618,8 @@
       0
     ],
     "borderRadius": 3,
-    "y": 86
+    "y": 86,
+    "className": "iaNav__cta iaNav__search"
   },
   {
     "tag": "summary",
@@ -469,7 +646,8 @@
     ],
     "gap": 2,
     "borderRadius": 3,
-    "y": 86
+    "y": 86,
+    "className": "iaNav__cta"
   },
   {
     "tag": "span",
@@ -522,7 +700,8 @@
       0
     ],
     "borderRadius": 3,
-    "y": 89
+    "y": 89,
+    "className": "iaNav__cta"
   },
   {
     "tag": "span",
@@ -574,7 +753,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 96
+    "y": 96,
+    "className": "contactSales_phoneNumber"
   },
   {
     "tag": "a",
@@ -601,7 +781,8 @@
     ],
     "borderRadius": 26,
     "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px",
-    "y": 83
+    "y": 83,
+    "className": "ctaSecondary"
   },
   {
     "tag": "a",
@@ -628,7 +809,35 @@
     ],
     "borderRadius": 26,
     "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px",
-    "y": 83
+    "y": 83,
+    "className": "ctaPrimary gse_signup_experiment_button"
+  },
+  {
+    "tag": "section",
+    "role": "container",
+    "area": 1034775,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      68,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 71,
+    "className": "cxpMarketingHero module module--noPadding fs-unmask cxpMarketingHero--contentGro"
   },
   {
     "tag": "div",
@@ -654,7 +863,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 139
+    "y": 139,
+    "className": "cxpMarketingHero__mediaContainer__media_fullbleed"
   },
   {
     "tag": "div",
@@ -680,7 +890,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 139
+    "y": 139,
+    "className": "cxpMarketingHero__overlay"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 936855,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      40,
+      0,
+      40,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 24,
+    "borderRadius": 0,
+    "y": 139,
+    "className": "cxpMarketingHero__layout"
   },
   {
     "tag": "h1",
@@ -708,7 +947,8 @@
     "borderRadius": 0,
     "maxWidth": 960,
     "y": 179,
-    "inHeading": true
+    "inHeading": true,
+    "className": "cxpMarketingHero__title h1"
   },
   {
     "tag": "em",
@@ -738,6 +978,34 @@
     "inHeading": true
   },
   {
+    "tag": "div",
+    "role": "container",
+    "area": 63360,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 20,
+    "fontWeight": 400,
+    "lineHeight": 32,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "maxWidth": 800,
+    "y": 332,
+    "className": "cxpMarketingHero__description"
+  },
+  {
     "tag": "p",
     "role": "body",
     "area": 46080,
@@ -764,6 +1032,35 @@
     "y": 356
   },
   {
+    "tag": "div",
+    "role": "container",
+    "area": 43904,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      40,
+      0,
+      40,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "maxWidth": 343,
+    "y": 420,
+    "className": "cxpMarketingHero__ctaRow"
+  },
+  {
     "tag": "a",
     "role": "interactive",
     "area": 16464,
@@ -788,7 +1085,121 @@
     ],
     "borderRadius": 40,
     "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px",
-    "y": 460
+    "y": 460,
+    "className": "ctaPrimary"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 114972,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      72,
+      24,
+      24,
+      24
+    ],
+    "margin": [
+      0,
+      194,
+      0,
+      194
+    ],
+    "gap": 32,
+    "borderRadius": 0,
+    "maxWidth": 524,
+    "y": 548,
+    "className": "cxpMarketingHero__socialProofWrapper"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 55020,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 32,
+    "borderRadius": 0,
+    "y": 620,
+    "className": "cxpMarketingHero__socialProof"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 15720,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 24,
+    "borderRadius": 0,
+    "y": 620,
+    "className": "cxpMarketingHero__socialProofRating flex flex--middle"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 5220,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      4,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "maxWidth": 180,
+    "y": 620,
+    "className": "cxpMarketingHero__socialProofStars margin--right-1"
   },
   {
     "tag": "p",
@@ -814,7 +1225,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 628
+    "y": 628,
+    "className": "cxpMarketingHero__socialProofCopy copy-small"
   },
   {
     "tag": "b",
@@ -843,6 +1255,34 @@
     "y": 629
   },
   {
+    "tag": "ul",
+    "role": "container",
+    "area": 19436,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 32,
+    "borderRadius": 0,
+    "y": 682,
+    "className": "cxpMarketingHero__socialProofLogos flex"
+  },
+  {
     "tag": "section",
     "role": "container",
     "area": 159638,
@@ -866,7 +1306,63 @@
       0
     ],
     "borderRadius": 0,
-    "y": 789
+    "y": 789,
+    "className": "p23HorizontalGrid module backgroundJasmine fs-unmask"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 39500,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      80,
+      0,
+      80
+    ],
+    "borderRadius": 0,
+    "maxWidth": 1280,
+    "y": 869,
+    "className": "module--content"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 39500,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      64,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 869,
+    "className": "p23HorizontalGrid__customize-container margin--bottom-6"
   },
   {
     "tag": "h2",
@@ -893,7 +1389,8 @@
     ],
     "borderRadius": 0,
     "y": 869,
-    "inHeading": true
+    "inHeading": true,
+    "className": "h2"
   },
   {
     "tag": "button",
@@ -920,7 +1417,8 @@
     ],
     "borderRadius": 26,
     "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px",
-    "y": 873
+    "y": 873,
+    "className": "ctaSecondary cta--small p23HorizontalGrid__customize-btn"
   },
   {
     "tag": "div",
@@ -946,7 +1444,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 0
+    "y": 0,
+    "className": "surveyModal__overlay"
   },
   {
     "tag": "div",
@@ -974,7 +1473,8 @@
     "borderRadius": 16,
     "boxShadow": "rgba(35, 30, 21, 0.2) 0px 8px 32px 0px",
     "maxWidth": 1166,
-    "y": 52
+    "y": 52,
+    "className": "surveyModal__container"
   },
   {
     "tag": "button",
@@ -1000,7 +1500,35 @@
       0
     ],
     "borderRadius": 4,
-    "y": 84
+    "y": 84,
+    "className": "surveyModal__closeButton"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 59920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 100,
+    "className": "surveyModal__header"
   },
   {
     "tag": "h2",
@@ -1027,7 +1555,8 @@
     ],
     "borderRadius": 0,
     "y": 100,
-    "inHeading": true
+    "inHeading": true,
+    "className": "surveyModal__title"
   },
   {
     "tag": "span",
@@ -1054,7 +1583,8 @@
     ],
     "borderRadius": 0,
     "y": 100,
-    "inHeading": true
+    "inHeading": true,
+    "className": "highlight-en"
   },
   {
     "tag": "p",
@@ -1106,7 +1636,119 @@
       0
     ],
     "borderRadius": 0,
-    "y": 175
+    "y": 175,
+    "className": "strong"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 517880,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 14,
+    "borderRadius": 0,
+    "y": 220,
+    "className": "surveyModal__body"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 273920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      56,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 276,
+    "className": "surveyModal__content"
+  },
+  {
+    "tag": "form",
+    "role": "container",
+    "area": 273920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 56,
+    "borderRadius": 0,
+    "y": 276,
+    "className": "surveyModal__form"
+  },
+  {
+    "tag": "legend",
+    "role": "container",
+    "area": 20480,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      24,
+      0
+    ],
+    "gap": 12,
+    "borderRadius": 0,
+    "y": 276,
+    "className": "surveyModal__questionLegend"
   },
   {
     "tag": "span",
@@ -1132,7 +1774,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 276
+    "y": 276,
+    "className": "surveyModal__questionText"
   },
   {
     "tag": "button",
@@ -1159,7 +1802,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 332
+    "y": 332,
+    "className": "surveyModal__customDropdownButton"
   },
   {
     "tag": "span",
@@ -1185,7 +1829,63 @@
       0
     ],
     "borderRadius": 0,
-    "y": 342
+    "y": 342,
+    "className": "surveyModal__customDropdownText"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 384,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      12
+    ],
+    "borderRadius": 0,
+    "y": 342,
+    "className": "surveyModal__customDropdownArrow"
+  },
+  {
+    "tag": "legend",
+    "role": "container",
+    "area": 40960,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      24,
+      0
+    ],
+    "gap": 12,
+    "borderRadius": 0,
+    "y": 432,
+    "className": "surveyModal__questionLegend"
   },
   {
     "tag": "span",
@@ -1211,7 +1911,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 432
+    "y": 432,
+    "className": "surveyModal__questionText"
   },
   {
     "tag": "span",
@@ -1237,7 +1938,36 @@
       0
     ],
     "borderRadius": 0,
-    "y": 476
+    "y": 476,
+    "className": "surveyModal__helperText"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 117760,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 24,
+    "borderRadius": 0,
+    "y": 520,
+    "className": "surveyModal__checkboxGrid"
   },
   {
     "tag": "input",
@@ -1264,7 +1994,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 520
+    "y": 520,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1290,7 +2021,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 520
+    "y": 520,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1317,7 +2049,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 520
+    "y": 520,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1343,7 +2076,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 520
+    "y": 520,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1370,7 +2104,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 560
+    "y": 560,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1396,7 +2131,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 560
+    "y": 560,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1423,7 +2159,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 560
+    "y": 560,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1449,7 +2186,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 560
+    "y": 560,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1476,7 +2214,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 600
+    "y": 600,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1502,7 +2241,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 600
+    "y": 600,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1529,7 +2269,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 600
+    "y": 600,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1555,7 +2296,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 600
+    "y": 600,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1582,7 +2324,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 640
+    "y": 640,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1608,7 +2351,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 640
+    "y": 640,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1635,7 +2379,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 640
+    "y": 640,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1661,7 +2406,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 640
+    "y": 640,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1688,7 +2434,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 680
+    "y": 680,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1714,7 +2461,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 680
+    "y": 680,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "input",
@@ -1741,7 +2489,8 @@
       0
     ],
     "borderRadius": 4,
-    "y": 680
+    "y": 680,
+    "className": "surveyModal__checkbox av-checkbox"
   },
   {
     "tag": "span",
@@ -1767,7 +2516,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 680
+    "y": 680,
+    "className": "surveyModal__checkboxText"
   },
   {
     "tag": "div",
@@ -1794,7 +2544,36 @@
     ],
     "borderRadius": 208,
     "maxWidth": 416,
-    "y": 220
+    "y": 220,
+    "className": "surveyModal__illustration"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 102185,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      52,
+      16,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0,
+    "y": 704,
+    "className": "surveyModal__footer"
   },
   {
     "tag": "button",
@@ -1821,7 +2600,8 @@
     ],
     "borderRadius": 26,
     "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px",
-    "y": 756
+    "y": 756,
+    "className": "ctaSecondary surveyModal__skipButton"
   },
   {
     "tag": "button",
@@ -1848,7 +2628,8 @@
     ],
     "borderRadius": 26,
     "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px, rgb(35, 30, 21) 0px 0px 0px 0px",
-    "y": 756
+    "y": 756,
+    "className": "ctaPrimary surveyModal__submitButton"
   },
   {
     "tag": "div",
@@ -1875,7 +2656,62 @@
     ],
     "borderRadius": 0,
     "boxShadow": "rgba(0, 0, 0, 0.2) 0px 0px 18px 0px",
-    "y": 824
+    "y": 824,
+    "className": "otFlat bottom ot-wo-title vertical-align-content"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 19.2,
+    "letterSpacing": 0,
+    "padding": [
+      10,
+      0,
+      10,
+      20
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 824,
+    "className": "ot-sdk-container"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 52483,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 19.2,
+    "letterSpacing": 0,
+    "padding": [
+      10,
+      0,
+      10,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 834,
+    "className": "ot-sdk-eight ot-sdk-columns"
   },
   {
     "tag": "div",
@@ -1927,7 +2763,62 @@
       5
     ],
     "borderRadius": 0,
-    "y": 864
+    "y": 864,
+    "className": "ot-cookie-policy-link"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 23898,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 19.2,
+    "letterSpacing": 0,
+    "padding": [
+      10,
+      0,
+      10,
+      0
+    ],
+    "margin": [
+      2.5,
+      7.11,
+      2.5,
+      7.11
+    ],
+    "borderRadius": 0,
+    "y": 837,
+    "className": "ot-sdk-three ot-sdk-columns"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 4864,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 19.2,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      55,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 847,
+    "className": "ot-button-order-container"
   },
   {
     "tag": "button",
@@ -1954,7 +2845,8 @@
       0
     ],
     "borderRadius": 0,
-    "y": 847
+    "y": 847,
+    "className": "cookie-setting-link ot-button-order-0"
   },
   {
     "tag": "button",
@@ -1980,7 +2872,8 @@
       0
     ],
     "borderRadius": 2,
-    "y": 848
+    "y": 848,
+    "className": "onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button ot-close-ic"
   },
   {
     "tag": "button",
@@ -2085,7 +2978,8 @@
       0
     ],
     "borderRadius": 20,
-    "y": 830
+    "y": 830,
+    "className": "LPMcontainer LPMoverlay"
   },
   {
     "tag": "div",
@@ -2111,6 +3005,7 @@
       0
     ],
     "borderRadius": 0,
-    "y": 846
+    "y": 846,
+    "className": "LPMlabel"
   }
 ]
