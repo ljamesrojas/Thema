@@ -1,0 +1,20 @@
+{
+  "source": "recorded",
+  "url": "https://www.notion.com/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#0d0d0d",
+    "ink-muted": "#615d59",
+    "primary": "#0075de"
+  },
+  "typography": {
+    "families": {
+      "sans": "NotionInter"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Primary: 'Get Notion free' #0075de (header, hero, footer). Ink = black at 95% (#0d0d0d on white); body copy #615d59. Lyon Text appears on 3 small elements only, not counted. Spacing 60% multiples of 8."
+}

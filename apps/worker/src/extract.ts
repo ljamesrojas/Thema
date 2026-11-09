@@ -1,8 +1,9 @@
 import { canvasFlipsInDark, type StyleSample } from "@thema/engine";
 import { chromium, type APIRequestContext, type Browser, type Route } from "playwright";
-import { inFrame, settle } from "./browser.js";
+import { inFrame, SCROLL_PAUSE_MS, scrollThrough, settle } from "./browser.js";
 import { collectSamples } from "./collect.js";
 import { dismissConsent } from "./consent.js";
+import { dismissLocaleModal } from "./locale-modal.js";
 import {
   assertPublicUrl,
   BlockedUrlError,
@@ -55,6 +56,8 @@ export interface Extraction {
   screenshot: Buffer;
   /** What was clicked to dismiss a cookie banner in each pass, if anything. */
   consent: { light: string | null; dark: string | null };
+  /** What closed a "where are we shipping to?" style location modal in each pass, if any. */
+  localeModal: { light: string | null; dark: string | null };
   /** Request URLs (including redirect hops) that the SSRF guard blocked. */
   blocked: string[];
 }
@@ -133,6 +136,7 @@ interface Pass {
   samples: StyleSample[];
   screenshot?: Buffer;
   consent: string | null;
+  localeModal: string | null;
 }
 
 async function capture(
@@ -167,16 +171,24 @@ async function capture(
     await page.goto(start.url, { waitUntil: "load", timeout: deps.timeoutMs });
     await settle(page, 10_000);
     const consent = await dismissConsent(page);
+    const localeModal = await dismissLocaleModal(page);
 
-    // Scroll once to trigger lazy content, then return to the top for sampling.
-    await inFrame(page, () => window.scrollTo(0, document.documentElement.scrollHeight), undefined);
-    await settle(page, 5_000);
+    // Scroll down gradually so scroll-triggered and lazy content renders, then return to the
+    // top and wait for network idle (the lazy content's requests) before sampling.
+    await scrollThrough(page);
     await inFrame(page, () => window.scrollTo(0, 0), undefined);
-    await page.waitForTimeout(300);
+    await page.waitForTimeout(SCROLL_PAUSE_MS);
+    await settle(page, 10_000);
 
     const samples = await inFrame(page, collectSamples, { maxSamples: MAX_SAMPLES });
     const screenshot = withScreenshot ? await page.screenshot({ fullPage: true }) : undefined;
-    return { url: page.url(), samples, consent, ...(screenshot ? { screenshot } : {}) };
+    return {
+      url: page.url(),
+      samples,
+      consent,
+      localeModal,
+      ...(screenshot ? { screenshot } : {}),
+    };
   } finally {
     await context.close();
   }
@@ -241,6 +253,7 @@ export async function extract(rawUrl: string, options: ExtractOptions = {}): Pro
       ...(canvasFlipsInDark(light.samples, dark.samples) ? { dark: dark.samples } : {}),
       screenshot: light.screenshot,
       consent: { light: light.consent, dark: dark.consent },
+      localeModal: { light: light.localeModal, dark: dark.localeModal },
       blocked: deps.blocked,
     };
   } finally {

@@ -45,9 +45,13 @@ Copy this template:
 2. Use its computed `background-color` (or its text color, for outlined or text-only CTAs). Paste it as hex, like `"#635bff"`. `rgb()` works too.
 3. Check that it's also the color of the other buttons and links. If several buttons disagree, choose the color most buttons and links use, not the biggest single button.
 4. **Never** use the color of a cookie-banner button, an ad, a "Sale" or "New" badge, or a gradient's end color.
-5. If the site's CTAs are all black, white or gray, write `"primary": null`.
+5. If the site's CTAs are all black, white or gray, it's a **monochrome** site: add `"monochrome": true` at the top level of `expected.json`. Still write the CTA's actual color under `roles.primary` (e.g. `"#141414"`) for reference, since it isn't scored.
 
 The check passes when the engine's primary is within ΔE 5 of yours.
+
+**Monochrome sites** are scored differently: primary passes when the engine finds no primary, or one with OKLCH chroma below 0.03 (a neutral). It fails when the engine returns any saturated color. A monochrome page usually still has some color somewhere, like a blue button inside an embedded demo email, a colored illustration, or a badge, and none of those is the site's primary. The report shows the engine's color and its chroma, e.g. `✗ C 0.180 (saturated)`.
+
+`"primary": null` (no monochrome flag) still works and is stricter: it passes only when the engine finds no primary at all. Prefer `"monochrome": true` for new sites.
 
 ### Font families
 

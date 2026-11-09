@@ -1,0 +1,22 @@
+{
+  "source": "recorded",
+  "url": "https://react.dev/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#23272f",
+    "ink-muted": "#404756",
+    "primary": "#087ea4"
+  },
+  "typography": {
+    "families": {
+      "sans": "Optimistic Text",
+      "display": "Optimistic Display",
+      "mono": "Source Code Pro"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified by hand 2026-11-09 (light theme). Primary = 'Learn React' button bg, also link color. Ink = headings; ink-muted = body text. Display font on h1/h2 only. Has a dark theme (not covered here)."
+}

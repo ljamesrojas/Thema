@@ -138,3 +138,23 @@ describe("fetchGuarded", () => {
     expect(seen[1]).toMatchObject({ method: "GET", postData: null });
   });
 });
+
+describe("extract: scroll-triggered content", () => {
+  // A section 2400px down only gets its color when it scrolls into view (IntersectionObserver).
+  // A single jump from top to bottom never intersects it; scrolling in steps does.
+  const REVEAL = `<!doctype html><html><body style="margin:0;background:#fff">
+    <p style="height:2400px">Top</p>
+    <section id="reveal" style="height:300px"></section>
+    <p style="height:3000px">Bottom</p>
+    <script>
+      new IntersectionObserver((entries) => {
+        for (const e of entries) if (e.isIntersecting) e.target.style.background = "rgb(37, 99, 235)";
+      }).observe(document.getElementById("reveal"));
+    </script></body></html>`;
+
+  it("renders content revealed mid-page before sampling", async () => {
+    const site = website({ "https://reveal.test/": html(REVEAL) });
+    const result = await extract("https://reveal.test/", { lookup, upstream: site.upstream });
+    expect(result.light.some((s) => s.backgroundColor === "rgb(37, 99, 235)")).toBe(true);
+  });
+});

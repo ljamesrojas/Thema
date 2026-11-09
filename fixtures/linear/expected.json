@@ -1,0 +1,21 @@
+{
+  "source": "recorded",
+  "url": "https://linear.app/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "#08090a",
+    "ink": "#f7f8f8",
+    "primary": "#e5e5e6"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "Inter Variable",
+      "mono": "Berkeley Mono"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Dark-first. Monochrome: Sign up / Get started are #e5e5e6 with dark text. The only indigo (#5e6ad2) is a hidden 'Skip to content' link and must not win primary. Body copy #d0d6e0, secondary #8a8f98. Spacing 40% multiples of 8."
+}

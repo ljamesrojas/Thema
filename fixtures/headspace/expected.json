@@ -1,0 +1,20 @@
+{
+  "source": "recorded",
+  "url": "https://www.headspace.com/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#2d2c2b",
+    "ink-muted": "#44423f",
+    "primary": "#0061ef"
+  },
+  "typography": {
+    "families": {
+      "sans": "Headspace Apercu"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Primary: 'Try for free' #0061ef (header, hero, footer). Dark #2d2c2b buttons are neutral. Spacing 61-69% multiples of 8."
+}

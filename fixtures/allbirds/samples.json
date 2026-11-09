@@ -1,0 +1,3372 @@
+[
+  {
+    "tag": "html",
+    "role": "container",
+    "area": 5273280,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(236, 233, 226)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "body",
+    "role": "container",
+    "area": 5273235,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(236, 233, 226)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 46080,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(33, 33, 33)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 4145,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 67200,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      20,
+      0,
+      20
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 12,
+    "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+    "maxWidth": 2560
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1776,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1546,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 988,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 487,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 849,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1113280,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "borderRadius": 20
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 4838,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 1.2,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h1",
+    "role": "heading",
+    "area": 13265,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 400,
+    "lineHeight": 32,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      24,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 4034,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 4034,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "li",
+    "role": "container",
+    "area": 156826,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 20
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 156826,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0.15)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 4192,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "li",
+    "role": "container",
+    "area": 156826,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 20
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 156826,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0.15)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 2324,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "li",
+    "role": "container",
+    "area": 156826,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 20
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 156826,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0.15)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 3051,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "li",
+    "role": "container",
+    "area": 156826,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 20
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 156826,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0.15)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 3838,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 3345,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(33, 33, 33)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 16,
+    "fontWeight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0.8,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 1600,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(33, 33, 33)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 1600,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(33, 33, 33)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 195390,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1310,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgb(224, 218, 207)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 12,
+    "letterSpacing": 0.6,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 152100,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 16110,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 7160,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 7518,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 491,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 2207,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      241.48
+    ],
+    "gap": 4,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1151,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 195390,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1310,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgb(224, 218, 207)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 12,
+    "letterSpacing": 0.6,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 152100,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 16110,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 7160,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 7518,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 698,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 2207,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      231.16
+    ],
+    "gap": 4,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1151,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 195390,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1310,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgb(224, 218, 207)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 12,
+    "letterSpacing": 0.6,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 152100,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 16110,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 7160,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 7518,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 656,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 2207,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      233.27
+    ],
+    "gap": 4,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1151,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 115230,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1310,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgb(224, 218, 207)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 12,
+    "letterSpacing": 0.6,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 89700,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 9630,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 4280,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 4494,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 656,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.7,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 311092,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 24
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 24475,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Self Modern\", ui-serif, serif",
+    "fontSize": 40,
+    "fontWeight": 400,
+    "lineHeight": 60,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.99
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 6875,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400,
+    "opacity": 0.99
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 6875,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400,
+    "opacity": 0.99
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 311117,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 24
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 15217,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Self Modern\", ui-serif, serif",
+    "fontSize": 40,
+    "fontWeight": 400,
+    "lineHeight": 60,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.98
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 6875,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400,
+    "opacity": 0.98
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 6875,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400,
+    "opacity": 0.98
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 311092,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 24
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 13911,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Self Modern\", ui-serif, serif",
+    "fontSize": 40,
+    "fontWeight": 400,
+    "lineHeight": 60,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.96
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 6875,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400,
+    "opacity": 0.96
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 6875,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 500,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400,
+    "opacity": 0.96
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 102664,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      32,
+      32,
+      32,
+      32
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 20,
+    "borderRadius": 16
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 6443,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 1.2,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 25367,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 102668,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      32,
+      32,
+      32,
+      32
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 20,
+    "borderRadius": 16
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 6443,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 1.2,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 16912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 102664,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      32,
+      32,
+      32,
+      32
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 20,
+    "borderRadius": 16
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 6443,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 1.2,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 33823,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "footer",
+    "role": "container",
+    "area": 1098720,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(33, 33, 33)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      80,
+      40,
+      20,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 10624,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 1.2,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 2529,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 700,
+    "lineHeight": 15,
+    "letterSpacing": 0.3,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 16128,
+    "color": "rgb(33, 33, 33)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(33, 33, 33)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      10,
+      80,
+      10,
+      12
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 2656,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1564,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1358,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1639,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 2656,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1044,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1312,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1226,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1494,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 5312,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 814,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1150,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1645,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 849,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 426,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 4465,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 5119,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1553,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 745,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 629,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 2058,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Akkurat Mono\", ui-monospace, monospace",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      24,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 33554400
+  },
+  {
+    "tag": "select",
+    "role": "interactive",
+    "area": 2144,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      4,
+      32,
+      4,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 8,
+    "borderRadius": 4
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 55760,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "oklch(0.556 0 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3785,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1242,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1232,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1451,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1400,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 3249,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 2454,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  }
+]

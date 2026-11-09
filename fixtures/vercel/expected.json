@@ -1,0 +1,22 @@
+{
+  "source": "recorded",
+  "url": "https://vercel.com/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#fafafa",
+    "ink": "#171717",
+    "ink-muted": "#4d4d4d",
+    "primary": "#171717"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "GeistSans",
+      "mono": "Geist Mono"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Monochrome: 'Deploy now' / 'Sign Up' are #171717 with white text. ink-muted = --ds-gray-900. Hundreds of tiny repeated decorative elements (2px/6px) skew spacing counts; real layout spacing is on a 4px grid."
+}

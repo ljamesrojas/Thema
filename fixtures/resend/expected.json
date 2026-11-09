@@ -1,0 +1,23 @@
+{
+  "source": "recorded",
+  "url": "https://resend.com/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "#000000",
+    "ink": "#f0f0f0",
+    "ink-muted": "#a1a4a5",
+    "primary": "#141414"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "Inter Website",
+      "display": "domaine",
+      "mono": "Commit Mono Website"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified by hand 2026-11-09. Monochrome site: hero 'Get started' CTA is a dark glass button (fill ~#0f0f0f to #181818 gradient, #1f1f1f edge, white text); the fill is not on the <a> itself, so the recorder missed it. #00a3ff button belongs to an embedded ACME email demo, not Resend's UI. Section headings use aBCFavorit. 553 of 905 samples are code-highlight spans."
+}

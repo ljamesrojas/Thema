@@ -1,0 +1,21 @@
+{
+  "source": "recorded",
+  "url": "https://www.duolingo.com/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#4b4b4b",
+    "ink-muted": "#777777",
+    "primary": "#58cc02"
+  },
+  "typography": {
+    "families": {
+      "sans": "duolingo-sans",
+      "display": "feather"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Primary: GET STARTED green #58cc02, painted by the button's ::before (the button itself is transparent). feather only on h1/h2 (display). Spacing 63-70% multiples of 8."
+}

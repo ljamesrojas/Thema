@@ -1,0 +1,2055 @@
+[
+  {
+    "tag": "html",
+    "role": "container",
+    "area": 1296000,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Times New Roman\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "body",
+    "role": "container",
+    "area": 1296000,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1188,
+    "color": "rgb(0, 78, 86)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.01
+  },
+  {
+    "tag": "section",
+    "role": "container",
+    "area": 41760,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(222, 222, 222)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      2,
+      12,
+      2,
+      12
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 681,
+    "color": "rgb(0, 78, 86)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 0,
+    "letterSpacing": 0,
+    "padding": [
+      6,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      24,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1126,
+    "color": "rgb(0, 78, 86)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 0,
+    "letterSpacing": 0,
+    "padding": [
+      6,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      24,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1035,
+    "color": "rgb(0, 78, 86)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 0,
+    "letterSpacing": 0,
+    "padding": [
+      6,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      24,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "aside",
+    "role": "container",
+    "area": 59828,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(35, 30, 21)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 400,
+    "lineHeight": 17.55,
+    "letterSpacing": 0,
+    "padding": [
+      12,
+      16,
+      12,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 6159,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 400,
+    "lineHeight": 17.55,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1627,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 400,
+    "lineHeight": 17.55,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 7473,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 3
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 5643,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 3
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 3430,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 3
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 3069,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 3
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 4236,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 3
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1786,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 3
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1296,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 3
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "summary",
+    "role": "interactive",
+    "area": 2739,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 2,
+    "borderRadius": 3
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1202,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 11,
+    "fontWeight": 500,
+    "lineHeight": 12.1,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 2,
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 5089,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 3
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 544,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1687,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 14.3,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 3722,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(35, 30, 21, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 19.5,
+    "letterSpacing": 0,
+    "padding": [
+      12,
+      24,
+      12,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 26,
+    "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px"
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 4133,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgb(255, 224, 27)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 19.5,
+    "letterSpacing": 0,
+    "padding": [
+      12,
+      24,
+      12,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 26,
+    "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 936855,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(35, 30, 21)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 936855,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0.25)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h1",
+    "role": "heading",
+    "area": 147450,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Means Web\", Georgia, Times, \"Times New Roman\", serif",
+    "fontSize": 64,
+    "fontWeight": 400,
+    "lineHeight": 76.8,
+    "letterSpacing": -1.2,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "maxWidth": 960
+  },
+  {
+    "tag": "em",
+    "role": "body",
+    "area": 26556,
+    "color": "rgb(255, 224, 27)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Means Web\", Georgia, Times, \"Times New Roman\", serif",
+    "fontSize": 64,
+    "fontWeight": 400,
+    "lineHeight": 76.8,
+    "letterSpacing": -1.2,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 46080,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 20,
+    "fontWeight": 400,
+    "lineHeight": 32,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 16464,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgb(255, 224, 27)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 15,
+    "fontWeight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      12,
+      24,
+      12,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 40,
+    "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px"
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 3335,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 1141,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "section",
+    "role": "container",
+    "area": 159638,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(245, 245, 245)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      80,
+      0,
+      80,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 18224,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Means Web\", Georgia, Times, \"Times New Roman\", serif",
+    "fontSize": 40,
+    "fontWeight": 400,
+    "lineHeight": 40,
+    "letterSpacing": -0.5,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 5015,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(35, 30, 21, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 19.5,
+    "letterSpacing": 0,
+    "padding": [
+      6,
+      16,
+      6,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 26,
+    "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1296000,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(35, 30, 21, 0.6)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      16,
+      16,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 927553,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      48,
+      48,
+      48,
+      48
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 16,
+    "boxShadow": "rgba(35, 30, 21, 0.2) 0px 8px 32px 0px",
+    "maxWidth": 1166
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 900,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 59920,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Means Web\", Georgia, Times, \"Times New Roman\", serif",
+    "fontSize": 48,
+    "fontWeight": 400,
+    "lineHeight": 56,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 15928,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Means Web\", Georgia, Times, \"Times New Roman\", serif",
+    "fontSize": 48,
+    "fontWeight": 400,
+    "lineHeight": 56,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      2,
+      0,
+      2
+    ],
+    "margin": [
+      0,
+      -2,
+      0,
+      -2
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 32640,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 2884,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 20480,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 400,
+    "lineHeight": 32,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 17600,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgba(35, 30, 21, 0.65)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      10,
+      16,
+      10,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 8112,
+    "color": "rgba(35, 30, 21, 0.65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 20480,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 400,
+    "lineHeight": 32,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 12800,
+    "color": "rgb(64, 59, 59)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(219, 217, 210)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 4
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 7392,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      40
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 173056,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 208,
+    "maxWidth": 416
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 5589,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgba(35, 30, 21, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 19.5,
+    "letterSpacing": 0,
+    "padding": [
+      12,
+      24,
+      12,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 26,
+    "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px"
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 9005,
+    "color": "rgb(35, 30, 21)",
+    "backgroundColor": "rgb(255, 224, 27)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 13,
+    "fontWeight": 700,
+    "lineHeight": 19.5,
+    "letterSpacing": 0,
+    "padding": [
+      12,
+      24,
+      12,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 26,
+    "boxShadow": "rgb(35, 30, 21) 0px 0px 0px 1px, rgb(35, 30, 21) 0px 0px 0px 0px"
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(36, 28, 21)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 21.6,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "boxShadow": "rgba(0, 0, 0, 0.2) 0px 0px 18px 0px"
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 33739,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 200,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1313,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 200,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      5
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 4817,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(36, 28, 21)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 11,
+    "fontWeight": 200,
+    "lineHeight": 5,
+    "letterSpacing": 0.11,
+    "padding": [
+      12,
+      30,
+      12,
+      30
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 576,
+    "color": "rgb(85, 85, 85)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 14.4,
+    "fontWeight": 400,
+    "lineHeight": 38,
+    "letterSpacing": 0.14,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 2
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 2400,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 18.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 2400,
+    "color": "rgb(36, 28, 21)",
+    "backgroundColor": "rgb(239, 238, 234)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 15,
+    "fontWeight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "padding": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 6
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 708,
+    "color": "rgb(36, 28, 21)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Tally, \"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, Verdana, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 14.4,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  }
+]

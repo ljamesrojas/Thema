@@ -53,16 +53,19 @@ function cell(check: AccuracyCheck, result: CheckResult): string {
 }
 
 function printTable(rows: Row[]): void {
-  const width = Math.max(8, ...rows.map((r) => r.name.length));
-  const header = `${"fixture".padEnd(width)}  ${"source".padEnd(9)}  ${"primary".padEnd(14)}  ${"fonts".padEnd(12)}  spacing`;
-  console.log(header);
-  console.log("─".repeat(header.length + 4));
-  for (const { name, source, score } of rows) {
-    const cells = ACCURACY_CHECKS.map((check) => cell(check, score[check]));
-    console.log(
-      `${name.padEnd(width)}  ${(source === "recorded" ? "real" : source).padEnd(9)}  ${(cells[0] ?? "").padEnd(14)}  ${(cells[1] ?? "").padEnd(12)}  ${cells[2] ?? ""}`,
-    );
-  }
+  // Each column is as wide as its widest cell, so long misses don't push the next column.
+  const table = rows.map(({ name, source, score }) => [
+    name,
+    source === "recorded" ? "real" : source,
+    ...ACCURACY_CHECKS.map((check) => cell(check, score[check])),
+  ]);
+  const header = ["fixture", "source", ...ACCURACY_CHECKS];
+  const widths = header.map((h, i) => Math.max(h.length, ...table.map((r) => (r[i] ?? "").length)));
+  const line = (cells: string[]) =>
+    cells.map((c, i) => (i === cells.length - 1 ? c : c.padEnd(widths[i] ?? 0))).join("  ");
+  console.log(line(header));
+  console.log("─".repeat(widths.reduce((n, w) => n + w + 2, 0)));
+  for (const row of table) console.log(line(row));
 
   const failures = rows.flatMap(({ name, score }) =>
     ACCURACY_CHECKS.filter((check) => score[check].status === "fail").map((check) => {

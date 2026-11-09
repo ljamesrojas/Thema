@@ -1,0 +1,20 @@
+{
+  "source": "recorded",
+  "url": "https://stripe.com/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#061b31",
+    "ink-muted": "#50617a",
+    "primary": "#533afd"
+  },
+  "typography": {
+    "families": {
+      "sans": "sohne-var"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified 2026-11-09 from a DevTools check of the hero CTA and the full recorded samples. Primary = 'Get started' button bg (also 27 links). Ink = heading color; ink-muted = most common body/link text. Spacing base 4: frequent 6/12 values rule out 8."
+}

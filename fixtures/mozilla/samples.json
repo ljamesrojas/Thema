@@ -1,0 +1,5822 @@
+[
+  {
+    "tag": "html",
+    "role": "container",
+    "area": 11230560,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Times New Roman\"",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 19.2,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "body",
+    "role": "container",
+    "area": 11230560,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "nav",
+    "role": "container",
+    "area": 81360,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderColor": "rgb(232, 232, 232)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 2910,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1800,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1749,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 966510,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 4019,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "borderColor": "rgb(65, 65, 65)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 600,
+    "lineHeight": 9,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 770,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 600,
+    "lineHeight": 9,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h1",
+    "role": "heading",
+    "area": 233472,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 128,
+    "fontWeight": 600,
+    "lineHeight": 128,
+    "letterSpacing": -1.28,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 54720,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 400,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      64,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 8580,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 129600,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 1408883,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 103480,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 80,
+    "fontWeight": 600,
+    "lineHeight": 80,
+    "letterSpacing": -0.8,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 54720,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 500,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "li",
+    "role": "container",
+    "area": 104576,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      32,
+      24,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "strong",
+    "role": "body",
+    "area": 7932,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      48
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 181,
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 900,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 21792,
+    "color": "rgb(65, 65, 65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 400,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      32,
+      24,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "strong",
+    "role": "body",
+    "area": 7932,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      48
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 181,
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 900,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 21792,
+    "color": "rgb(65, 65, 65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 400,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      32,
+      24,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "strong",
+    "role": "body",
+    "area": 7932,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      48
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 181,
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 900,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 21792,
+    "color": "rgb(65, 65, 65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 400,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      32,
+      24,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "strong",
+    "role": "body",
+    "area": 7932,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      48
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 181,
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 900,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 21792,
+    "color": "rgb(65, 65, 65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 400,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      32,
+      24,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "strong",
+    "role": "body",
+    "area": 7932,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      48
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 181,
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 900,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 21792,
+    "color": "rgb(65, 65, 65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 400,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      32,
+      24,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "strong",
+    "role": "body",
+    "area": 7932,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      48
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 181,
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 900,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 21792,
+    "color": "rgb(65, 65, 65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 400,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 109440,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      24,
+      32,
+      24,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "strong",
+    "role": "body",
+    "area": 7932,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      48
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 181,
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 900,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 21792,
+    "color": "rgb(65, 65, 65)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 400,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 12131,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 687150,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 241, 248)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 108800,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 80,
+    "fontWeight": 600,
+    "lineHeight": 80,
+    "letterSpacing": -0.8,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 107100,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 400,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 4067,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 129600,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "section",
+    "role": "container",
+    "area": 2290433,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 103480,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 80,
+    "fontWeight": 600,
+    "lineHeight": 80,
+    "letterSpacing": -0.8,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "b",
+    "role": "body",
+    "area": 37246,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 700,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 2257,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 700,
+    "lineHeight": 17.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      8,
+      0,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 17920,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 2016,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 2257,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 700,
+    "lineHeight": 17.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      8,
+      0,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 8960,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 2615,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 2064,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 700,
+    "lineHeight": 17.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      8,
+      0,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 8960,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 2021,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 2382,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 700,
+    "lineHeight": 17.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      8,
+      0,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 26880,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 2054,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1744,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 700,
+    "lineHeight": 17.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      8,
+      0,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 26880,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 2135,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 15764,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 2257,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 700,
+    "lineHeight": 17.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      8,
+      0,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 26880,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 2227,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 41388,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 32,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "li",
+    "role": "container",
+    "area": 45408,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 47520,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      32,
+      8,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1161,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 2577,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 2870,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 11184,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 151, 226)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 151, 226)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 97920,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      16,
+      32,
+      16,
+      32
+    ],
+    "margin": [
+      -2,
+      -32,
+      0,
+      -32
+    ],
+    "gap": 32,
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "container",
+    "area": 1024,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(0, 210, 48)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 1548,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3436,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 3827,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "body",
+    "area": 14912,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "section",
+    "role": "container",
+    "area": 1483200,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 121088,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 80,
+    "fontWeight": 600,
+    "lineHeight": 88,
+    "letterSpacing": -0.8,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 82080,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 24,
+    "fontWeight": 500,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 40800,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 48,
+    "fontWeight": 600,
+    "lineHeight": 60,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 8940,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 213560,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 80,
+    "fontWeight": 600,
+    "lineHeight": 80,
+    "letterSpacing": -0.8,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 23928,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 23928,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 23928,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 27200,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 3034,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h3",
+    "role": "heading",
+    "area": 23928,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 23928,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 23928,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 32,
+    "fontWeight": 600,
+    "lineHeight": 35.2,
+    "letterSpacing": -0.32,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 27200,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      4,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1908,
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "lineHeight": 22.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "footer",
+    "role": "container",
+    "area": 1458990,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      64,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 239682,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(65, 65, 65)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 27577,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 20.8,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "label",
+    "role": "body",
+    "area": 3501,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      8,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "input",
+    "role": "interactive",
+    "area": 27200,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(65, 65, 65)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "button",
+    "role": "interactive",
+    "area": 5358,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      16,
+      8,
+      16
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "maxWidth": 800
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1959,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 4663,
+    "color": "rgb(179, 179, 179)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 17.6,
+    "letterSpacing": -0.16,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      8,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1656,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1931,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1181,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1842,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1187,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 4662,
+    "color": "rgb(179, 179, 179)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 17.6,
+    "letterSpacing": -0.16,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      8,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1937,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1433,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 2371,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1271,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 4662,
+    "color": "rgb(179, 179, 179)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Headline\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 17.6,
+    "letterSpacing": -0.16,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      8,
+      8,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 2637,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1580,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 788,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 710,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 3229,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 2196,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 17.6,
+    "letterSpacing": -0.16,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 3400,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "h2",
+    "role": "heading",
+    "area": 2166,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 17.6,
+    "letterSpacing": -0.16,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      16,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "ul",
+    "role": "container",
+    "area": 2700,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 600,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "opacity": 0.45
+  },
+  {
+    "tag": "div",
+    "role": "container",
+    "area": 101824,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderColor": "rgb(65, 65, 65)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      32,
+      0
+    ],
+    "gap": 16,
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 5323,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "borderColor": "rgb(255, 255, 255)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      24,
+      8,
+      24
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "maxWidth": 800
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 1058,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "label",
+    "role": "body",
+    "area": 1,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 700,
+    "lineHeight": 17.5,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "select",
+    "role": "interactive",
+    "area": 10240,
+    "color": "rgb(250, 250, 250)",
+    "backgroundColor": "rgb(22, 22, 22)",
+    "borderColor": "rgb(250, 250, 250)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 16,
+    "fontWeight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      8,
+      40,
+      8,
+      36
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "p",
+    "role": "body",
+    "area": 43320,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      137.59,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 2718,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 3822,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 2689,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 933,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 634,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 4184,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1695,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "\"Mozilla Text\", \"Helvetica Neue\", Arial, X-LocaleSpecific, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0
+  }
+]

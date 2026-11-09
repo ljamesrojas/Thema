@@ -65,6 +65,7 @@ async function main(argv: string[]): Promise<number> {
     `  dark          ${result.dark ? `${result.dark.length} samples (canvas flips)` : "none (no dark theme)"}`,
   );
   console.log(`  cookie banner ${result.consent.light ?? "none found"}`);
+  console.log(`  locale modal  ${result.localeModal.light ?? "none found"}`);
   if (result.blocked.length > 0) {
     console.log(`  blocked       ${result.blocked.length} request(s) to non-public addresses`);
   }

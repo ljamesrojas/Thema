@@ -1,0 +1,22 @@
+{
+  "source": "recorded",
+  "url": "https://medium.com/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#f7f4ed",
+    "ink": "#242424",
+    "ink-muted": "#6b6b6b",
+    "primary": "#191919"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "sohne",
+      "display": "gt-super"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Monochrome: Get started / Start reading are #191919. Cream #f7f4ed layer covers a white body. gt-super only on the hero heading (display). Very sparse page (13 spacing values); 20/25/75px break the 8 grid -> 4 (draft said 8)."
+}

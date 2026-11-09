@@ -1,0 +1,22 @@
+{
+  "source": "recorded",
+  "url": "https://www.allbirds.com/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "#ece9e2",
+    "ink": "#000000",
+    "primary": "#212121"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "Geograph",
+      "display": "Self Modern",
+      "mono": "Akkurat Mono"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Monochrome: SHOP CTAs are #212121 with white text. Self Modern = 40px section h2s only (display). Akkurat Mono = 12px labels and footer headings. Spacing 63% multiples of 8 -> 4 (draft said 8). A 'Where are we shipping to?' modal still covers the page; re-record with it dismissed."
+}

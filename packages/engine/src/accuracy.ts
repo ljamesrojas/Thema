@@ -1,6 +1,6 @@
 import { analyzeColors } from "./colors.js";
 import { deltaEOK, parseCssColor } from "./color-math.js";
-import { PRIMARY_MAX_DELTA_E } from "./constants.js";
+import { MONOCHROME_MAX_CHROMA, PRIMARY_MAX_DELTA_E } from "./constants.js";
 import { analyzeSpacing } from "./spacing.js";
 import type { ColorRole, StyleSample, ThemaSystem } from "./types.js";
 import { analyzeTypography } from "./typography.js";
@@ -9,9 +9,12 @@ import { analyzeTypography } from "./typography.js";
  * A fixture's expected.json. Synthetic fixtures specify everything; recorded real sites need
  * at least roles.primary, typography.families and spacing.base for the accuracy report.
  * Colors may be any CSS color (hex is fine). `"primary": null` means "this site has none".
+ * `"monochrome": true` (black/white/gray CTAs) scores primary by saturation instead of by the
+ * expected value, which is then informational only: see judgeMonochromePrimary.
  */
 export interface FixtureExpected {
   source: "synthetic" | "recorded";
+  monochrome?: boolean;
   description?: string;
   url?: string;
   recordedAt?: string;
@@ -56,8 +59,28 @@ const describeFamilies = (families: Partial<Families>): string =>
     .map(([category, name]) => `${category} ${String(name)}`)
     .join(", ");
 
+/**
+ * Monochrome sites (black/white/gray CTAs): the engine is right when it finds no saturated
+ * primary. It passes with no primary or a near-neutral one (chroma < MONOCHROME_MAX_CHROMA),
+ * and fails on anything saturated, e.g. a demo widget's blue winning.
+ */
+export function judgeMonochromePrimary(got: string | undefined): CheckResult {
+  const expected = "monochrome";
+  if (got === undefined) return { status: "pass", expected, got: "none" };
+  const color = parseCssColor(got);
+  if (!color) return { status: "fail", expected, got, detail: "unparseable" };
+  const neutral = color.c < MONOCHROME_MAX_CHROMA;
+  return {
+    status: neutral ? "pass" : "fail",
+    expected,
+    got,
+    detail: `C ${color.c.toFixed(3)}${neutral ? "" : " (saturated)"}`,
+  };
+}
+
 function checkPrimary(samples: readonly StyleSample[], expected: FixtureExpected): CheckResult {
   const got = analyzeColors(samples).roles.primary;
+  if (expected.monochrome === true) return judgeMonochromePrimary(got);
   const want = expected.roles?.primary;
   const gotText = got ?? "none";
   if (want === undefined) return { status: "missing", expected: "?", got: gotText };

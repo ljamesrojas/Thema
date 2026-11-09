@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  judgeMonochromePrimary,
   scoreFixture,
   summarizeAccuracy,
   type FixtureExpected,
@@ -71,6 +72,42 @@ describe("scoreFixture: primary", () => {
   it("is missing when primary isn't filled in", () => {
     expect(scoreFixture(site(), expected({ roles: {} })).primary.status).toBe("missing");
     expect(scoreFixture(site(), { source: "recorded" }).primary.status).toBe("missing");
+  });
+});
+
+describe("scoreFixture: monochrome sites", () => {
+  const mono = (overrides: Partial<FixtureExpected> = {}) =>
+    expected({ monochrome: true, roles: { primary: "#141414" }, ...overrides });
+
+  it("passes when the engine finds no saturated primary", () => {
+    // Dark-gray buttons: no saturated color for the engine to pick.
+    expect(scoreFixture(site("#141414"), mono()).primary).toMatchObject({
+      status: "pass",
+      expected: "monochrome",
+      got: "none",
+    });
+  });
+
+  it("fails when a saturated color wins, ignoring the expected primary value", () => {
+    // e.g. Resend's demo-email blue #00a3ff winning primary.
+    const result = scoreFixture(site("#00a3ff"), mono()).primary;
+    expect(result.status).toBe("fail");
+    expect(result.detail).toMatch(/^C 0\.\d{3} \(saturated\)$/);
+  });
+
+  it("doesn't need roles.primary to be filled in", () => {
+    expect(scoreFixture(site("#141414"), mono({ roles: {} })).primary.status).toBe("pass");
+  });
+
+  it("judges by chroma: below 0.03 passes, at or above fails", () => {
+    expect(judgeMonochromePrimary("oklch(0.2 0.02 250)").status).toBe("pass");
+    expect(judgeMonochromePrimary("oklch(0.2 0.03 250)").status).toBe("fail");
+    expect(judgeMonochromePrimary("#3b9eff").status).toBe("fail");
+    expect(judgeMonochromePrimary(undefined)).toMatchObject({ status: "pass", got: "none" });
+  });
+
+  it("leaves non-monochrome fixtures on the ΔE rule", () => {
+    expect(scoreFixture(site(), expected({ monochrome: false })).primary.detail).toBe("ΔE 0.0");
   });
 });
 

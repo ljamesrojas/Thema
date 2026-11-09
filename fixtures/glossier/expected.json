@@ -1,0 +1,22 @@
+{
+  "source": "recorded",
+  "url": "https://www.glossier.com/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#000000",
+    "ink-muted": "#666666",
+    "primary": "#000000"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "Apercu",
+      "mono": "Apercu Mono"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Checked the en-ph site (same design as the recorded US page). Monochrome: CTAs are white or light gray with black text and black outlines. Apercu Mono on small tag labels (added). Spacing 55-57% multiples of 8 -> 4 (draft said 8)."
+}

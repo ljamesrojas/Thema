@@ -1,0 +1,21 @@
+{
+  "source": "recorded",
+  "url": "https://substack.com/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#363737",
+    "ink-muted": "#777777",
+    "primary": "#ff6719"
+  },
+  "typography": {
+    "families": {
+      "sans": "system-ui",
+      "display": "Cahuenga"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Primary: 'Start your Substack' / 'Create' #ff6719 (33 buttons). Body is the system-ui stack; Cahuenga only on headings (display). Spacing 65% multiples of 8."
+}

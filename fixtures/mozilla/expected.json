@@ -1,0 +1,21 @@
+{
+  "source": "recorded",
+  "url": "https://www.mozilla.org/en-US/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#000000",
+    "primary": "#000000"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "Mozilla Text",
+      "display": "Mozilla Headline"
+    }
+  },
+  "spacing": {
+    "base": 8
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Monochrome: CTAs are black/white (some drawn as gradients, #161616 outlined buttons). Bright green is decoration. Mozilla Headline on headings (display). Spacing 90% multiples of 8."
+}

@@ -116,5 +116,11 @@ export const DARK_CANVAS_LIGHTNESS = 0.5;
 /** A recorded site's primary is correct when within this ΔE OK of the hand-verified value. */
 export const PRIMARY_MAX_DELTA_E = 5;
 
+/**
+ * On a monochrome fixture, the engine's primary passes only if it's none or below this OKLCH
+ * chroma (any saturated color, e.g. a demo widget's blue, fails).
+ */
+export const MONOCHROME_MAX_CHROMA = 0.03;
+
 /** Share of checks (primary, fonts, spacing base) that must pass across real sites. SPEC. */
 export const ACCURACY_GATE = 0.9;

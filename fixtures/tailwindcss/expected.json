@@ -1,0 +1,21 @@
+{
+  "source": "recorded",
+  "url": "https://tailwindcss.com/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#030712",
+    "primary": "#000000"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "inter",
+      "mono": "plexMono"
+    }
+  },
+  "spacing": {
+    "base": 8
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Monochrome: 'Get started' is black with white text; the one pink button and sky/pink labels belong to demos. Ink = gray-950. Spacing 78-83% multiples of 8."
+}

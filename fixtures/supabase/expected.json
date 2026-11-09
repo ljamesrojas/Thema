@@ -1,0 +1,22 @@
+{
+  "source": "recorded",
+  "url": "https://supabase.com/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "oklch(0.995 0 337.5)",
+    "ink": "oklch(0.1 0 337.5)",
+    "ink-muted": "oklch(0.52065 0 337.5)",
+    "primary": "oklch(0.525 0.12 157.5)"
+  },
+  "typography": {
+    "families": {
+      "sans": "Inter",
+      "display": "Manrope",
+      "mono": "Source Code Pro"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Primary: 'Start your project' green. Manrope = headings, footer h6 titles and 22px testimonial quotes (display face, though only ~70% of its uses are h1-h4). Spacing 64-72% multiples of 8 -> 4 (draft said 8)."
+}

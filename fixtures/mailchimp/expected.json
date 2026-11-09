@@ -1,0 +1,20 @@
+{
+  "source": "recorded",
+  "url": "https://mailchimp.com/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#231e15",
+    "primary": "#ffe01b"
+  },
+  "typography": {
+    "families": {
+      "sans": "Tally",
+      "display": "Means Web"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Primary: yellow Sign Up #ffe01b (6 buttons direct, 7 more via ::before). Means Web only on h1/h2 (display). Spacing is borderline: 74% raw / 58% deduped multiples of 8 -> 4."
+}

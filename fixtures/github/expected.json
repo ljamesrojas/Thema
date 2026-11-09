@@ -1,0 +1,21 @@
+{
+  "source": "recorded",
+  "url": "https://github.com/",
+  "recordedAt": "2026-11-09",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#000000",
+    "ink-muted": "#58635b",
+    "primary": "#08872b"
+  },
+  "typography": {
+    "families": {
+      "sans": "Mona Sans VF",
+      "mono": "Mona Sans Mono"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Primary: 'Sign up for GitHub' #08872b. Body paragraphs use Mona Sans VF; nav and headings use 'Mona Sans' (same typeface, two family names). Mona Sans Mono on code and some h3s. Spacing 40-50% multiples of 8, 12px most common -> 4 (draft said 8)."
+}

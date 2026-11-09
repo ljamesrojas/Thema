@@ -1,0 +1,22 @@
+{
+  "source": "recorded",
+  "url": "https://cal.com/",
+  "recordedAt": "2026-11-08",
+  "roles": {
+    "canvas": "#ffffff",
+    "ink": "#242424",
+    "ink-muted": "#5f6570",
+    "primary": "#242424"
+  },
+  "monochrome": true,
+  "typography": {
+    "families": {
+      "sans": "calSans",
+      "mono": "ui-monospace"
+    }
+  },
+  "spacing": {
+    "base": 4
+  },
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Monochrome: Get started / Sign up are #242424 with white text. calSans carries headings and most text; some UI uses the system stack (Segoe UI Variable Text on Windows), not counted as a separate family. Spacing 40% multiples of 8."
+}
