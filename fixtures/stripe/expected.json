@@ -10,11 +10,12 @@
   },
   "typography": {
     "families": {
-      "sans": "sohne-var"
+      "sans": "sohne-var",
+      "mono": "SourceCodePro"
     }
   },
   "spacing": {
     "base": 4
   },
-  "_notes": "Verified 2026-11-09 from a DevTools check of the hero CTA and the full recorded samples. Primary = 'Get started' button bg (also 27 links). Ink = heading color; ink-muted = most common body/link text. Spacing base 4: frequent 6/12 values rule out 8."
+  "_notes": "Verified 2026-11-09 from a DevTools check of the hero CTA and the full recorded samples. Primary = 'Get started' button bg (also 27 links). Ink = heading color; ink-muted = most common body/link text. Spacing base 4: frequent 6/12 values rule out 8. Mono: SourceCodePro, re-checked live 2026-11-09 — a visible 400x194 API code sample in the developers section (const stripe = require('stripe')...) plus small code snippets in product illustrations. Visible design content, so it counts."
 }
