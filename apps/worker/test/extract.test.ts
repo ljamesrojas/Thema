@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { analyzeColors, deltaEOK, parseCssColor } from "@thema/engine";
 import {
   extract,
   fetchGuarded,
@@ -156,5 +157,29 @@ describe("extract: scroll-triggered content", () => {
     const site = website({ "https://reveal.test/": html(REVEAL) });
     const result = await extract("https://reveal.test/", { lookup, upstream: site.upstream });
     expect(result.light.some((s) => s.backgroundColor === "rgb(37, 99, 235)")).toBe(true);
+  });
+});
+
+describe("extract + engine: a big gradient card doesn't steal primary (Supabase)", () => {
+  const SUPABASE = `<!doctype html><html><body style="margin:0;background:#fcfcfc;font:16px Arial">
+    <header style="height:64px"><a href="/start" class="cta">Start your project</a></header>
+    <main><h1>Build in a weekend</h1>
+      <a href="/start" class="cta">Start your project</a>
+      <div style="height:3000px"></div>
+      <div role="link" style="width:940px;height:384px;background-image:linear-gradient(90deg, rgb(253, 73, 168), rgb(249, 115, 22))">Lovable</div>
+      <a href="/start" class="cta">Start your project</a>
+    </main>
+    <style>.cta{display:inline-block;padding:8px 16px;background:rgb(36, 180, 126);color:#fff;border-radius:8px}</style>
+  </body></html>`;
+
+  it("keeps the green CTAs as primary", async () => {
+    const site = website({ "https://supabase.test/": html(SUPABASE) });
+    const result = await extract("https://supabase.test/", { lookup, upstream: site.upstream });
+    const primary = analyzeColors(result.light).roles.primary;
+    expect(primary).toBeDefined();
+    const green = parseCssColor("rgb(36, 180, 126)");
+    const got = parseCssColor(primary ?? "");
+    if (!green || !got) throw new Error("colors must parse");
+    expect(deltaEOK(green, got)).toBeLessThan(2);
   });
 });

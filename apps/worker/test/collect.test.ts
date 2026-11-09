@@ -306,3 +306,47 @@ describe("collectSamples: position", () => {
     expect(one(samples, "html").y).toBe(0);
   });
 });
+
+describe("collectSamples: fill only on button-sized elements", () => {
+  const before = (selector: string, color: string) =>
+    `<style>${selector}{position:relative;display:block;background:transparent} ${selector}::before{content:"";position:absolute;inset:0;background:${color};z-index:-1}</style>`;
+
+  it("records fill up to 480×80 (the largest real CTAs are 435×78)", async () => {
+    const samples = await collect(
+      page(
+        `<a href="/x" class="b" style="width:480px;height:80px">Big button</a>`,
+        before(".b", "rgb(0, 97, 239)"),
+      ),
+    );
+    expect(one(samples, "a").fill).toBe("rgb(0, 97, 239)");
+  });
+
+  it("records no fill on a tall card link (Supabase's testimonial card)", async () => {
+    const samples = await collect(
+      page(
+        `<div role="link" class="card" style="width:940px;height:384px;background-image:linear-gradient(90deg, rgb(253, 73, 168), rgb(249, 115, 22))">Lovable</div>`,
+      ),
+    );
+    expect(one(samples, "div").fill).toBeUndefined();
+  });
+
+  it("records no fill on a wide row link (Mozilla's 1440×76 product rows)", async () => {
+    const samples = await collect(
+      page(
+        `<a href="/firefox" class="row" style="width:1440px;height:76px">Firefox</a>`,
+        before(".row", "rgb(0, 0, 0)"),
+      ),
+    );
+    expect(one(samples, "a").fill).toBeUndefined();
+  });
+
+  it("records no fill just over the height limit", async () => {
+    const samples = await collect(
+      page(
+        `<a href="/x" class="b" style="width:200px;height:81px">Tall</a>`,
+        before(".b", "rgb(0, 97, 239)"),
+      ),
+    );
+    expect(one(samples, "a").fill).toBeUndefined();
+  });
+});

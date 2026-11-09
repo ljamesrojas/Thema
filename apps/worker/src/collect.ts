@@ -45,6 +45,14 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
   ]);
   const SIDES = ["top", "right", "bottom", "left"] as const;
   const CORNERS = ["top-left", "top-right", "bottom-right", "bottom-left"] as const;
+  /**
+   * `fill` is only recorded on button-sized elements. Across our 19 sites the tallest real CTA
+   * is 78px (Headspace's tiles) and the widest 435px; cards and sections are hundreds of px tall
+   * (Supabase's gradient testimonial card, 360,960 px², stole primary before this limit), and
+   * full-width row links are 1440px wide (Mozilla).
+   */
+  const FILL_MAX_WIDTH = 480;
+  const FILL_MAX_HEIGHT = 80;
 
   const round = (n: number): number => Math.round(n * 100) / 100;
   const px = (value: string): number => {
@@ -217,8 +225,9 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     const cs = getComputedStyle(el);
     const role = roleOf(el, tag);
     const backgroundColor = el === root ? canvasColor() : cs.backgroundColor;
+    const buttonSized = rect.width <= FILL_MAX_WIDTH && rect.height <= FILL_MAX_HEIGHT;
     const fill =
-      role === "interactive" && el !== root && isTransparent(backgroundColor)
+      role === "interactive" && el !== root && buttonSized && isTransparent(backgroundColor)
         ? fillBehind(el, cs, rect)
         : undefined;
     const borderColor = visibleBorderColor(cs);
