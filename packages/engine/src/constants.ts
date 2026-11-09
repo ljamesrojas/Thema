@@ -188,3 +188,20 @@ export const CTA_MIN_DELTA_E = 10;
 
 /** When every first-screen CTA is below this chroma, the site is monochrome: no primary. */
 export const CTA_NEUTRAL_CHROMA = 0.03;
+
+/**
+ * …and is opaque: paint alpha (after opacity) at least this. Every real saturated first-screen
+ * CTA on our 19 sites is fully opaque; Resend's decorative gradient glow (0.44) is the only
+ * translucent one.
+ */
+export const CTA_MIN_ALPHA = 0.9;
+
+/** …and is button-sized: at most 480 × 80 px (the recorder's fill limit). */
+export const CTA_MAX_AREA = 480 * 80;
+
+/**
+ * In primary scoring, a first-screen CTA's paint weighs this many times more. Duolingo's hero
+ * green flips at ×6 and GitHub's at ×8.7 (one 7,948 px² button vs five ~17k px² violet card
+ * links); no other site changes up to ×50. 12 leaves GitHub's green 30% ahead.
+ */
+export const CTA_WEIGHT = 12;

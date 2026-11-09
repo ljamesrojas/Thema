@@ -143,3 +143,83 @@ describe("primary: monochrome first screen", () => {
     );
   });
 });
+
+describe("primary: first-screen CTAs weigh more", () => {
+  it("lets a small hero CTA beat large card links lower down (GitHub)", () => {
+    expectPrimary(
+      [
+        page(),
+        button("#08872b", { y: 350 }),
+        link("#08872b", { y: 3000 }),
+        link("#08872b", { y: 4000 }),
+        // Five big violet card links: 255,000 weight vs the green's 36,000 before the boost.
+        ...Array.from({ length: 5 }, (_, i) =>
+          link("#8534f3", { area: 17_000, y: 2000 + i * 500 }),
+        ),
+      ],
+      "#08872b",
+    );
+  });
+
+  it("lets a filled hero CTA beat many lighter links (Duolingo GET STARTED)", () => {
+    expectPrimary(
+      [
+        page(),
+        button("rgba(0, 0, 0, 0)", { fill: "rgb(88, 204, 2)", area: 16_500, y: 453 }),
+        button("rgba(0, 0, 0, 0)", { fill: "rgb(88, 204, 2)", y: 2000 }),
+        button("rgba(0, 0, 0, 0)", { fill: "rgb(88, 204, 2)", y: 3000 }),
+        ...Array.from({ length: 20 }, (_, i) =>
+          link("rgb(165, 237, 110)", { area: 3500, y: 4000 + i * 40 }),
+        ),
+      ],
+      "#58cc02",
+    );
+  });
+
+  it("doesn't overturn a color used heavily across the page (GOV.UK's link blue)", () => {
+    expectPrimary(
+      [
+        page(),
+        ...Array.from({ length: 10 }, (_, i) =>
+          link("rgb(26, 101, 166)", { area: 37_000, y: 300 + i * 600 }),
+        ),
+        button("rgb(15, 122, 82)", { area: 8800, y: 255 }),
+        button("rgb(15, 122, 82)", { area: 8800, y: 255 }),
+      ],
+      "#1a65a6",
+    );
+  });
+
+  it("ignores a translucent glow: no extra weight, and not a CTA for the monochrome rule", () => {
+    const glow = (y: number) => link("#ffffff", { fill: "rgba(2, 252, 239, 0.44)", area: 6000, y });
+    // White page: the glow would win with the extra weight; the orange buttons are heavier.
+    expectPrimary(
+      [
+        page(),
+        glow(263),
+        glow(2000),
+        glow(2500),
+        ...[3000, 3500, 4000].map((y) => button("#ff6719", { y })),
+      ],
+      "#ff6719",
+    );
+    // Black page (Resend): with the glow ignored, the only first-screen CTA is neutral.
+    expectPrimary(
+      [
+        page("#000000"),
+        glow(263),
+        button("#ffffff", { color: "#000000", area: 7000, y: 400 }),
+        ...[6000, 6500, 7000].map((y) => button("rgb(0, 163, 255)", { area: 6000, y })),
+      ],
+      undefined,
+    );
+  });
+
+  it("gives no extra weight to large boxes, the second screen, or samples without y", () => {
+    const blue = [1000, 1500, 2000].map((y) => button("#2563eb", { y })); // 72,000 weight
+    // 40,000 px² is above button size (480 × 80 = 38,400).
+    expectPrimary([page(), button("#dc2626", { area: 40_000, y: 100 }), ...blue], "#2563eb");
+    expectPrimary([page(), button("#dc2626", { area: 30_000, y: 900 }), ...blue], "#2563eb");
+    expectPrimary([page(), button("#dc2626", { area: 30_000 }), ...blue], "#2563eb");
+  });
+});

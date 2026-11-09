@@ -11,9 +11,12 @@ import {
 } from "./color-math.js";
 import {
   ACCENT_MIN_HUE_DELTA,
+  CTA_MAX_AREA,
+  CTA_MIN_ALPHA,
   CTA_MIN_AREA,
   CTA_MIN_DELTA_E,
   CTA_NEUTRAL_CHROMA,
+  CTA_WEIGHT,
   FIRST_SCREEN_MAX_Y,
   INK_MIN_SHARE,
   OCCURRENCE_TARGET,
@@ -46,6 +49,10 @@ interface ColorEntry {
   weight: number;
   /** Index of the source sample, for counting distinct occurrences. */
   sample: number;
+  /** Alpha of the painted color (incl. opacity) before compositing onto the canvas. */
+  alpha: number;
+  /** Top of the source sample's box, px (absent in older recordings). */
+  y?: number;
 }
 
 type Cluster = ColorCluster<ColorEntry>;
@@ -80,7 +87,16 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
       // Fold in CSS opacity: a faded element paints a translucent color (composited later).
       const color = withOpacity(parsed, sample.opacity);
       if (alphaOf(color) > 0) {
-        entries.push({ color, channel, role, area: sample.area, weight, sample: index });
+        entries.push({
+          color,
+          channel,
+          role,
+          area: sample.area,
+          weight,
+          sample: index,
+          alpha: alphaOf(color),
+          ...(sample.y !== undefined ? { y: sample.y } : {}),
+        });
       }
     };
     push(paintedBackground(sample), "background");
@@ -105,7 +121,9 @@ function firstScreenIsMonochrome(samples: readonly StyleSample[], canvas: Oklch)
     const css = paintedBackground(sample);
     const parsed = css === undefined ? null : parseCssColor(css);
     if (!parsed) continue;
-    const fill = compositeOver(withOpacity(parsed, sample.opacity), canvas);
+    const painted = withOpacity(parsed, sample.opacity);
+    if (alphaOf(painted) < CTA_MIN_ALPHA) continue; // a decorative glow, not a CTA's fill
+    const fill = compositeOver(painted, canvas);
     if (deltaEOK(fill, canvas) >= CTA_MIN_DELTA_E) ctas.push(fill);
   }
   return ctas.length > 0 && ctas.every((fill) => fill.c < CTA_NEUTRAL_CHROMA);
@@ -142,6 +160,29 @@ const INTERACTIVE: Evidence = {
   measure: (e) => e.weight,
 };
 const ANY: Evidence = { members: (c) => c.members, measure: (e) => e.weight };
+
+/**
+ * A first-screen call-to-action's paint: an opaque, button-sized fill on an interactive element
+ * near the top of the page that stands out from the canvas.
+ */
+const isFirstScreenCta = (e: ColorEntry, canvas: Oklch): boolean =>
+  e.channel === "background" &&
+  e.role === "interactive" &&
+  e.y !== undefined &&
+  e.y < FIRST_SCREEN_MAX_Y &&
+  e.area >= CTA_MIN_AREA &&
+  e.area <= CTA_MAX_AREA &&
+  e.alpha >= CTA_MIN_ALPHA &&
+  deltaEOK(e.color, canvas) >= CTA_MIN_DELTA_E;
+
+/**
+ * Primary evidence: interactive use, with first-screen CTAs weighing CTA_WEIGHT times more, so a
+ * hero button beats large card links further down (GitHub) or many lighter links (Duolingo).
+ */
+const primaryEvidence = (canvas: Oklch): Evidence => ({
+  members: INTERACTIVE.members,
+  measure: (e) => e.weight * (isFirstScreenCta(e, canvas) ? CTA_WEIGHT : 1),
+});
 
 /** Score: summed evidence. */
 const total =
@@ -274,7 +315,11 @@ export function analyzeColors(samples: readonly StyleSample[]): ColorAnalysis {
   const saturated = clusters.filter((c) => !isNeutral(c) && !taken.has(c));
   const primary = firstScreenIsMonochrome(samples, canvas.color)
     ? null
-    : assign("primary", INTERACTIVE, pickBest(saturated, scaledTotal(INTERACTIVE)));
+    : assign(
+        "primary",
+        INTERACTIVE,
+        pickBest(saturated, scaledTotal(primaryEvidence(canvas.color))),
+      );
 
   assign(
     "accent",
