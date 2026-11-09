@@ -41,6 +41,7 @@ A relative `--out` is resolved against the repo root. The CLI writes:
      - `opacity` is the effective opacity (multiplied through ancestors), sent only below 1 and never on `html`.
      - `fill`: for a transparent button or link, the color painted behind it by its gradient, a covering `::before`/`::after`, or a child covering half its area.
      - `y`: the top of the box from the top of the document (the engine uses it to find first-screen calls-to-action).
+     - `inHeading` / `inCode`: the element is, or is inside, a heading (h1–h6, `role="heading"`) or `pre`/`code`/`kbd`/`samp`. A styled span inside an h1 records as body text by its tag; this flag tells the engine it's heading text.
      - `html` reports the color that actually paints the canvas (html, else body, else the browser's `Canvas` color).
    - **Skipped:** visually hidden elements (sr-only `clip`/`clip-path` on the element or a parent, or boxes 1px or smaller), such as skip links.
 

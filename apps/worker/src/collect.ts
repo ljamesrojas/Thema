@@ -43,6 +43,8 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     "switch",
     "option",
   ]);
+  const HEADING_SELECTOR = "h1, h2, h3, h4, h5, h6, [role='heading' i]";
+  const CODE_SELECTOR = "pre, code, kbd, samp";
   const SIDES = ["top", "right", "bottom", "left"] as const;
   const CORNERS = ["top-left", "top-right", "bottom-right", "bottom-left"] as const;
   /**
@@ -253,6 +255,9 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
     const maxWidth = cs.maxWidth.endsWith("px") ? px(cs.maxWidth) : undefined;
     // Computed colors ignore CSS opacity; record it so the engine can fold it in.
     const opacity = round(effectiveOpacity(el));
+    // Ancestry the tag alone doesn't show: a styled span inside an h1, a highlight span in a pre.
+    const inHeading = el.closest(HEADING_SELECTOR) !== null;
+    const inCode = el.closest(CODE_SELECTOR) !== null;
 
     const sample: StyleSample = {
       tag,
@@ -285,6 +290,8 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
       ...(opacity < 1 ? { opacity } : {}),
       ...(fill !== undefined ? { fill } : {}),
       y: el === root ? 0 : Math.max(0, Math.round(rect.top + window.scrollY)),
+      ...(inHeading ? { inHeading } : {}),
+      ...(inCode ? { inCode } : {}),
     };
     found.push({ sample, index });
   });

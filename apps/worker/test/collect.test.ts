@@ -307,6 +307,40 @@ describe("collectSamples: position", () => {
   });
 });
 
+describe("collectSamples: heading and code ancestry", () => {
+  it("marks headings and text nested inside them, however deep", async () => {
+    const samples = await collect(
+      page(`
+        <h1>Plain <span class="a">styled <em>deep</em></span></h1>
+        <div role="heading" aria-level="2"><b>Aria</b></div>
+        <p>Body <span>text</span></p>
+      `),
+    );
+    expect(one(samples, "h1").inHeading).toBe(true);
+    expect(one(samples, "em").inHeading).toBe(true);
+    expect(one(samples, "b").inHeading).toBe(true);
+    const spans = byTag(samples, "span");
+    expect(spans.map((s) => s.inHeading)).toEqual([true, undefined]);
+    expect(one(samples, "p")).not.toHaveProperty("inHeading");
+  });
+
+  it("marks pre/code/kbd/samp and the highlight spans inside them", async () => {
+    const samples = await collect(
+      page(`
+        <pre style="background:#f4f4f4"><code><span style="color:#c00">const</span> x = 1;</code></pre>
+        <p>Press <kbd>K</kbd> or see <samp>output</samp></p>
+        <p>Plain <span>text</span></p>
+      `),
+    );
+    expect(one(samples, "pre").inCode).toBe(true);
+    expect(one(samples, "code").inCode).toBe(true);
+    expect(one(samples, "kbd").inCode).toBe(true);
+    expect(one(samples, "samp").inCode).toBe(true);
+    expect(byTag(samples, "span").map((s) => s.inCode)).toEqual([true, undefined]);
+    expect(byTag(samples, "p").every((s) => !("inCode" in s))).toBe(true);
+  });
+});
+
 describe("collectSamples: fill only on button-sized elements", () => {
   const before = (selector: string, color: string) =>
     `<style>${selector}{position:relative;display:block;background:transparent} ${selector}::before{content:"";position:absolute;inset:0;background:${color};z-index:-1}</style>`;
