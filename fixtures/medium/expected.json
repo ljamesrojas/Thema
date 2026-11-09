@@ -16,7 +16,7 @@
     }
   },
   "spacing": {
-    "base": 4
+    "base": 8
   },
-  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Monochrome: Get started / Start reading are #191919. Cream #f7f4ed layer covers a white body. gt-super only on the hero heading (display). Very sparse page (13 spacing values); 20/25/75px break the 8 grid -> 4 (draft said 8)."
+  "_notes": "Verified live 2026-11-09 (light theme, 1440px, full page scrolled). Monochrome: Get started / Start reading are #191919. Cream #f7f4ed layer covers a white body. gt-super only on the hero heading (display). Spacing corrected to 8 on 2026-11-09 recheck: the logged-out page is tiny (~90 elements). Values are 8/16/24/48/64 plus 20 (one button) and 25/75. 25 and 75 aren't multiples of 4 either, so they're off-grid noise, not evidence for base 4; ignoring them, ~89% of values are multiples of 8. My first verdict (4) wrongly counted 25/75 against the 8 grid."
 }
