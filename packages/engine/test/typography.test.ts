@@ -49,6 +49,55 @@ describe("parseFontFamily", () => {
     });
     expect(parseFontFamily("")).toBeNull();
   });
+
+  it("reports a leading system keyword as system-ui, never a font listed after it", () => {
+    // The browser resolves these to the machine's font (Segoe UI, San Francisco…), so the
+    // result would depend on the OS that recorded the page.
+    const stacks = [
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      'BlinkMacSystemFont, "Segoe UI", Helvetica, Arial',
+      'system-ui, "Segoe UI", Roboto',
+    ];
+    for (const stack of stacks) {
+      expect(parseFontFamily(stack), stack).toEqual({ name: "system-ui", category: "sans" });
+    }
+  });
+
+  it("keeps a leading ui-* keyword as is", () => {
+    expect(
+      parseFontFamily('ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace'),
+    ).toEqual({ name: "ui-monospace", category: "mono" });
+    expect(parseFontFamily("ui-serif, Georgia, Cambria, serif")).toEqual({
+      name: "ui-serif",
+      category: "serif",
+    });
+    expect(parseFontFamily("ui-sans-serif, system-ui, Arial")).toEqual({
+      name: "ui-sans-serif",
+      category: "sans",
+    });
+  });
+
+  it("reads Apple's -apple-system-ui-serif as ui-serif", () => {
+    expect(parseFontFamily("-apple-system-ui-serif, ui-serif, Georgia, serif")).toEqual({
+      name: "ui-serif",
+      category: "serif",
+    });
+  });
+
+  it("still takes the first named family when it comes before the generics", () => {
+    expect(parseFontFamily('"Inter", -apple-system, system-ui, sans-serif')?.name).toBe("Inter");
+  });
+
+  it("strips variable-font suffixes", () => {
+    expect(parseFontFamily('"Mona Sans VF", -apple-system, sans-serif')?.name).toBe("Mona Sans");
+    expect(parseFontFamily('"Inter Variable", sans-serif')?.name).toBe("Inter");
+    expect(parseFontFamily("sohne-var, Helvetica Neue, Arial")?.name).toBe("sohne");
+    expect(parseFontFamily("Recursive var, monospace")?.name).toBe("Recursive");
+    // "Variable" in the middle is part of the name.
+    expect(parseFontFamily('"Segoe UI Variable Text", sans-serif')?.name).toBe(
+      "Segoe UI Variable Text",
+    );
+  });
 });
 
 describe("analyzeTypography: families", () => {
@@ -57,7 +106,8 @@ describe("analyzeTypography: families", () => {
       text(16, 50_000),
       text(16, 10_000, { fontFamily: "Roboto, sans-serif" }),
       text(19, 80_000, { fontFamily: '"Source Serif 4", Georgia, serif' }),
-      text(14, 5000, { fontFamily: '"Geist Mono", monospace' }),
+      // In code: a single mono element only counts there (see "minimum family share").
+      text(14, 5000, { tag: "code", fontFamily: '"Geist Mono", monospace', inCode: true }),
     ]);
     expect(families).toEqual({ sans: "Inter", serif: "Source Serif 4", mono: "Geist Mono" });
   });
@@ -99,6 +149,141 @@ describe("analyzeTypography: families", () => {
       text(16, 1000),
     ]);
     expect(families.sans).toBe("Inter");
+  });
+
+  it("merges variable-font names with the base family, summing their weight", () => {
+    // Inter alone (30k) loses to Roboto (40k); with "Inter Variable" (20k) it wins.
+    const { families } = analyzeTypography([
+      text(16, 30_000),
+      text(16, 20_000, { fontFamily: '"Inter Variable", sans-serif' }),
+      text(16, 40_000, { fontFamily: "Roboto, sans-serif" }),
+    ]);
+    expect(families.sans).toBe("Inter");
+  });
+});
+
+describe("analyzeTypography: minimum family share", () => {
+  const SERIF = '"Lyon Text", Georgia, serif';
+  const MONO = '"Geist Mono", ui-monospace, monospace';
+
+  it("drops non-mono families under 2% of text weight", () => {
+    // Notion: Lyon Text is 1.3% of text weight.
+    const { families } = analyzeTypography([
+      text(16, 98_700),
+      text(16, 1300, { fontFamily: SERIF }),
+    ]);
+    expect(families).toEqual({ sans: "Inter" });
+  });
+
+  it("keeps a family at 2% or more", () => {
+    const { families } = analyzeTypography([
+      text(16, 97_000),
+      text(16, 3000, { fontFamily: SERIF }),
+    ]);
+    expect(families).toEqual({ sans: "Inter", serif: "Lyon Text" });
+  });
+
+  it("drops a single stray mono element (a chat widget, a cookie banner)", () => {
+    const { families } = analyzeTypography([
+      text(16, 99_600),
+      text(12, 400, { tag: "span", fontFamily: MONO }),
+    ]);
+    expect(families).toEqual({ sans: "Inter" });
+  });
+
+  it("keeps a tiny mono family on 3 label spans, ignoring the 2% share", () => {
+    // Glossier: Apercu Mono tag labels are 0.05% of text weight.
+    const label = () => text(12, 50, { tag: "span", fontFamily: MONO });
+    const { families } = analyzeTypography([text(16, 99_850), label(), label(), label()]);
+    expect(families).toEqual({ sans: "Inter", mono: "Geist Mono" });
+  });
+
+  it("keeps a mono family used in a single code block", () => {
+    const { families } = analyzeTypography([
+      text(16, 99_600),
+      text(14, 400, { tag: "code", fontFamily: MONO, inCode: true }),
+    ]);
+    expect(families).toEqual({ sans: "Inter", mono: "Geist Mono" });
+  });
+
+  it("drops a non-mono family under 2% even on many elements", () => {
+    const stray = () => text(14, 100, { fontFamily: SERIF });
+    const { families } = analyzeTypography([
+      text(16, 99_000),
+      ...Array.from({ length: 10 }, stray),
+    ]);
+    expect(families).toEqual({ sans: "Inter" });
+  });
+});
+
+describe("analyzeTypography: display and heading", () => {
+  const h = (tag: string, fontFamily: string, fontSize: number, area: number) =>
+    sample({ tag, fontFamily, fontSize, area });
+
+  it("counts text inside a heading as heading-like, including nested spans", () => {
+    // Mozilla: the headline face is set on spans inside the h1/h2, which record as body.
+    const HEADLINE = '"Mozilla Headline", sans-serif';
+    const { families } = analyzeTypography([
+      text(16, 100_000),
+      text(18, 20_000, { tag: "span", fontFamily: HEADLINE, inHeading: true }),
+      h("h2", HEADLINE, 18, 5000),
+    ]);
+    expect(families).toEqual({ sans: "Inter", display: "Mozilla Headline" });
+  });
+
+  it("counts large text (20px and up) as heading-like", () => {
+    // Supabase: Manrope on headings and on 22px quotes in plain paragraphs.
+    const MANROPE = "Manrope, sans-serif";
+    const { families } = analyzeTypography([
+      text(16, 100_000),
+      h("h2", MANROPE, 36, 6000),
+      text(22, 4000, { fontFamily: MANROPE }),
+    ]);
+    expect(families).toEqual({ sans: "Inter", display: "Manrope" });
+  });
+
+  it("keeps a 21px body serif as the serif family, not display", () => {
+    // Editorial sites with large body text: 21px paragraphs are the body, not headings.
+    const SERIF = '"Source Serif 4", Georgia, serif';
+    const { families } = analyzeTypography([
+      text(21, 120_000, { fontFamily: SERIF }),
+      h("h1", SERIF, 48, 20_000),
+      text(14, 30_000), // sans UI text: captions, nav
+      sample({ tag: "a", fontFamily: INTER, fontSize: 14, area: 10_000 }),
+    ]);
+    expect(families).toEqual({ sans: "Inter", serif: "Source Serif 4" });
+  });
+
+  it("makes the family of the largest heading text display, and the next one heading", () => {
+    // Resend: Domaine on the 96px hero, ABC Favorit on the h2/h3s (more area, smaller).
+    const { families } = analyzeTypography([
+      text(16, 100_000, { fontFamily: '"Inter Website", sans-serif' }),
+      h("h1", "domaine, serif", 96, 15_000),
+      h("h2", "aBCFavorit, sans-serif", 56, 25_000),
+      h("h3", "aBCFavorit, sans-serif", 24, 15_000),
+    ]);
+    expect(families).toEqual({ sans: "Inter Website", display: "domaine", heading: "aBCFavorit" });
+  });
+
+  it("reports no heading slot when only one family is heading-only", () => {
+    const { families } = analyzeTypography([
+      text(16, 100_000),
+      h("h1", '"Playfair Display", serif', 56, 30_000),
+    ]);
+    expect(families).toEqual({ sans: "Inter", display: "Playfair Display" });
+    expect(families).not.toHaveProperty("heading");
+  });
+
+  it("never makes a mono family display, even when it sets the largest heading", () => {
+    // GitHub: Mona Sans Mono reaches 64px, above any Mona Sans text.
+    const MONO = '"Mona Sans Mono", monospace';
+    const { families } = analyzeTypography([
+      text(16, 100_000, { fontFamily: '"Mona Sans VF", sans-serif' }),
+      h("h2", MONO, 64, 6000),
+      h("h2", MONO, 48, 3000),
+      h("h3", MONO, 32, 2000),
+    ]);
+    expect(families).toEqual({ sans: "Mona Sans", mono: "Mona Sans Mono" });
   });
 });
 

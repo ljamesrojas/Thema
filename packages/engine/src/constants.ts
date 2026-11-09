@@ -59,8 +59,31 @@ export const OCCURRENCE_TARGET = 3;
 /** Font sizes with less than this share of total text weight are outliers and dropped. */
 export const MIN_SIZE_SHARE = 0.01;
 
-/** A family is "display" when at least this share of its weight comes from headings. */
+/** A family is "display" (or "heading") when at least this share of its weight is heading-like. */
 export const DISPLAY_HEADING_SHARE = 0.8;
+
+/**
+ * Heading-like text: a heading, text inside one, or text at least this large (and larger than
+ * the base body size, so 21px editorial body copy stays body).
+ */
+export const HEADING_LIKE_MIN_SIZE = 20;
+
+/**
+ * Non-mono families under this share of text weight are dropped. Measured on the 19 recorded
+ * sites: Notion's stray Lyon Text is 1.3% (must drop); the smallest real non-mono family is
+ * Allbirds' Self Modern headings (4.1%).
+ */
+export const FAMILY_MIN_SHARE = 0.02;
+
+/**
+ * Mono families skip the share rule (real ones are tiny: Glossier's Apercu Mono labels are 0.05%,
+ * Vercel's Geist Mono 0.18%), but need at least this many visible elements, or any use inside
+ * code, so one stray monospace element (a chat widget, a cookie banner) can't add a mono font.
+ */
+export const MONO_MIN_ELEMENTS = 3;
+
+/** "Mona Sans VF", "Inter Variable", "sohne-var": the same family as "Mona Sans", "Inter", "sohne". */
+export const VARIABLE_FONT_SUFFIX = /[\s-]+(?:vf|variable|var)$/i;
 
 /** Scale slots on each side of base: xs, sm below; lg … 4xl above. */
 export const MAX_STEPS_BELOW = 2;
@@ -76,10 +99,21 @@ export const GENERIC_FAMILY: Record<string, "sans" | "serif" | "mono" | "display
   "ui-rounded": "sans",
   serif: "serif",
   "ui-serif": "serif",
+  "-apple-system-ui-serif": "serif",
   monospace: "mono",
   "ui-monospace": "mono",
   cursive: "display",
   fantasy: "display",
+};
+
+/**
+ * Generic keywords reported under another name. The system-font aliases all mean "the OS UI
+ * font", which the browser resolves per machine, so they're reported as the keyword itself.
+ */
+export const GENERIC_ALIAS: Record<string, string> = {
+  "-apple-system": "system-ui",
+  blinkmacsystemfont: "system-ui",
+  "-apple-system-ui-serif": "ui-serif",
 };
 
 /** Used to classify a family when its stack has no generic fallback. */

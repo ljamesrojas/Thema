@@ -50,9 +50,13 @@ Each role reports the heaviest exact color among the members that count for that
 
 Returns `ThemaSystem["typography"]`: families, a size scale and its ratio. Only text samples count; containers only inherit their font.
 
-- **Families.** Each `font-family` stack is reduced to its first real family. Quotes are stripped and icon fonts skipped.
+- **Families.** Each `font-family` stack is reduced to its first entry. Quotes are stripped and icon fonts skipped.
+  - A leading generic keyword is reported as the keyword, never as a font listed after it, so results don't depend on the recording machine's OS: `-apple-system` and `BlinkMacSystemFont` become `system-ui`, `-apple-system-ui-serif` becomes `ui-serif`, and `ui-monospace`/`ui-serif`/`ui-sans-serif` stay as they are.
+  - Variable-font names merge with their family: "Mona Sans VF", "Inter Variable" and "sohne-var" count (and are reported) as "Mona Sans", "Inter", "sohne".
   - The category comes from the stack's generic fallback (`monospace`, `serif`, `sans-serif`, …), or from the family name when there is none.
-  - A family used ≥ 80% on headings becomes `display`, as long as another family carries the body text.
+  - Non-mono families under 2% of text weight are dropped (a stray serif on one widget). Mono families skip that share, since real ones are tiny (Glossier's labels are 0.05%), but need at least 3 elements or any use inside code (`inCode`), so one stray monospace element can't add a mono font.
+  - Heading-like text: a heading, text inside one (`inHeading`, e.g. a styled span in an h1), or text of 20px or more that's larger than the base body size (so 21px editorial body copy stays body).
+  - Non-mono families that are ≥ 80% heading-like, while another family carries the body text, are headings-only: the one with the largest heading text becomes `display`, the heaviest other one becomes `heading`. They leave their category.
   - Each category keeps its heaviest family. `sans` falls back to `system-ui`.
   - Values are family names only (`"Inter"`); exporters add the fallback stacks.
 - **Scale.** Sizes are weighted by area × importance, and sizes under 1% of text weight are dropped.

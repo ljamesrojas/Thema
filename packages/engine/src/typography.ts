@@ -1,13 +1,18 @@
 import { round } from "./color-math.js";
 import {
   DISPLAY_HEADING_SHARE,
+  FAMILY_MIN_SHARE,
+  GENERIC_ALIAS,
   GENERIC_FAMILY,
+  HEADING_LIKE_MIN_SIZE,
   ICON_FONT_NAME,
   MAX_STEPS_ABOVE,
   MAX_STEPS_BELOW,
   MIN_SIZE_SHARE,
+  MONO_MIN_ELEMENTS,
   MONO_NAME,
   SERIF_NAME,
+  VARIABLE_FONT_SUFFIX,
 } from "./constants.js";
 import { byScoreThenKey, isTextSample, sampleRole, sampleWeight } from "./samples.js";
 import type { StyleSample, ThemaSystem } from "./types.js";
@@ -31,8 +36,12 @@ export interface ParsedFamily {
 
 /**
  * Parse a computed `font-family` stack into its primary family and category.
- * The family is the first entry that isn't a generic keyword or an icon font.
- * The category comes from the stack's first generic fallback, else from the family name.
+ * The family is the stack's first entry, skipping icon fonts:
+ * - A generic keyword is reported as the keyword, never as a font listed after it, so the result
+ *   doesn't depend on the OS that recorded the page. The system-font aliases (-apple-system,
+ *   BlinkMacSystemFont) become "system-ui"; -apple-system-ui-serif becomes "ui-serif".
+ * - A named family loses any variable-font suffix ("Inter Variable" → "Inter"). Its category
+ *   comes from the stack's first generic fallback, else from the name.
  * Returns null for an empty stack or one made only of icon fonts.
  */
 export function parseFontFamily(css: string): ParsedFamily | null {
@@ -45,51 +54,88 @@ export function parseFontFamily(css: string): ParsedFamily | null {
         .replace(/\s+/g, " ")
         .trim(),
     )
-    .filter((part) => part.length > 0);
+    .filter((part) => part.length > 0 && !ICON_FONT_NAME.test(part));
 
-  let name: string | undefined;
-  let generic: FamilyCategory | undefined;
-  let firstGeneric: string | undefined;
-  for (const entry of entries) {
-    const category = GENERIC_FAMILY[entry.toLowerCase()];
-    if (category) {
-      generic ??= category;
-      firstGeneric ??= entry.toLowerCase();
-      continue;
-    }
-    if (!ICON_FONT_NAME.test(entry)) name ??= entry;
-  }
+  const first = entries[0];
+  if (first === undefined) return null;
+  const keyword = first.toLowerCase();
+  const generic = GENERIC_FAMILY[keyword];
+  if (generic) return { name: GENERIC_ALIAS[keyword] ?? keyword, category: generic };
 
-  if (name === undefined) {
-    return firstGeneric !== undefined && generic !== undefined
-      ? { name: firstGeneric, category: generic }
-      : null;
-  }
+  const name = first.replace(VARIABLE_FONT_SUFFIX, "") || first;
+  const fallback = entries
+    .map((entry) => GENERIC_FAMILY[entry.toLowerCase()])
+    .find((category) => category !== undefined);
   const byName: FamilyCategory = MONO_NAME.test(name)
     ? "mono"
     : SERIF_NAME.test(name)
       ? "serif"
       : "sans";
-  return { name, category: generic ?? byName };
+  return { name, category: fallback ?? byName };
 }
 
 interface FamilyStats {
   category: FamilyCategory;
   total: number;
-  heading: number;
+  /** Weight of heading-like text: see isHeadingLike. */
+  headingLike: number;
+  /** Largest heading-like font size, px. */
+  largestHeading: number;
+  /** Weight used inside pre/code/kbd/samp. */
+  inCode: number;
+  /** Number of visible text elements (samples) set in this family. */
+  elements: number;
 }
 
-function detectFamilies(samples: readonly StyleSample[]): Families {
+/** A heading, text inside one, or large text above the base body size. */
+function isHeadingLike(sample: StyleSample, baseSize: number): boolean {
+  if (sampleRole(sample) === "heading" || sample.inHeading === true) return true;
+  const size = roundSize(sample.fontSize);
+  return size >= HEADING_LIKE_MIN_SIZE && size > baseSize;
+}
+
+/**
+ * Families by category, plus display and heading:
+ * 1. Non-mono families under FAMILY_MIN_SHARE of text weight are dropped. Mono families are kept
+ *    at any share, as long as they're on MONO_MIN_ELEMENTS elements or used inside code.
+ * 2. Candidates for display/heading: non-mono families whose weight is ≥ DISPLAY_HEADING_SHARE
+ *    heading-like, as long as another family carries the body text.
+ * 3. display = the candidate with the largest heading text; heading = the heaviest other one.
+ *    Every candidate leaves its category, so it's never also reported as sans or serif.
+ */
+function detectFamilies(samples: readonly StyleSample[], baseSize: number): Families {
   const stats = new Map<string, FamilyStats>();
+  let totalWeight = 0;
   for (const sample of samples) {
     const weight = sampleWeight(sample);
     if (weight <= 0 || !isTextSample(sample)) continue;
     const family = parseFontFamily(sample.fontFamily);
     if (!family) continue;
-    const entry = stats.get(family.name) ?? { category: family.category, total: 0, heading: 0 };
+    const entry = stats.get(family.name) ?? {
+      category: family.category,
+      total: 0,
+      headingLike: 0,
+      largestHeading: 0,
+      inCode: 0,
+      elements: 0,
+    };
     entry.total += weight;
-    if (sampleRole(sample) === "heading") entry.heading += weight;
+    entry.elements += 1;
+    totalWeight += weight;
+    if (isHeadingLike(sample, baseSize)) {
+      entry.headingLike += weight;
+      entry.largestHeading = Math.max(entry.largestHeading, sample.fontSize);
+    }
+    if (sample.inCode === true) entry.inCode += weight;
     stats.set(family.name, entry);
+  }
+
+  for (const [name, s] of stats) {
+    const kept =
+      s.category === "mono"
+        ? s.elements >= MONO_MIN_ELEMENTS || s.inCode > 0
+        : s.total >= totalWeight * FAMILY_MIN_SHARE;
+    if (!kept) stats.delete(name);
   }
 
   const heaviest = (pick: (s: FamilyStats) => number, filter: (s: FamilyStats) => boolean) =>
@@ -99,15 +145,28 @@ function detectFamilies(samples: readonly StyleSample[]): Families {
       .filter(([, score]) => score > 0)
       .sort(byScoreThenKey)[0]?.[0];
 
-  // Display: a headings-only family, as long as some other family carries the body text.
   const bodyFamily = heaviest(
-    (s) => s.total - s.heading,
+    (s) => s.total - s.headingLike,
     () => true,
   );
-  for (const [name, s] of stats) {
-    const headingOnly = s.heading / s.total >= DISPLAY_HEADING_SHARE;
-    if (headingOnly && bodyFamily !== undefined && name !== bodyFamily) s.category = "display";
-  }
+  const candidates = [...stats].filter(
+    ([name, s]) =>
+      bodyFamily !== undefined &&
+      name !== bodyFamily &&
+      s.category !== "mono" &&
+      s.headingLike / s.total >= DISPLAY_HEADING_SHARE,
+  );
+  const largestFirst = [...candidates].sort(
+    ([nameA, a], [nameB, b]) =>
+      b.largestHeading - a.largestHeading ||
+      byScoreThenKey([nameA, a.total] as const, [nameB, b.total] as const),
+  );
+  const display = largestFirst[0]?.[0];
+  const heading = candidates
+    .filter(([name]) => name !== display)
+    .map(([name, s]) => [name, s.total] as const)
+    .sort(byScoreThenKey)[0]?.[0];
+  for (const [name] of candidates) stats.delete(name);
 
   const inCategory = (category: FamilyCategory) =>
     heaviest(
@@ -117,10 +176,12 @@ function detectFamilies(samples: readonly StyleSample[]): Families {
   const families: Families = { sans: inCategory("sans") ?? FALLBACK_SANS };
   const serif = inCategory("serif");
   const mono = inCategory("mono");
-  const display = inCategory("display");
+  // A generic decorative family (cursive, fantasy) is display when no candidate is.
+  const displayFamily = display ?? inCategory("display");
   if (serif !== undefined) families.serif = serif;
   if (mono !== undefined) families.mono = mono;
-  if (display !== undefined) families.display = display;
+  if (displayFamily !== undefined) families.display = displayFamily;
+  if (heading !== undefined) families.heading = heading;
   return families;
 }
 
@@ -158,12 +219,15 @@ function median(values: readonly number[]): number {
   return sorted.length % 2 === 1 ? hi : ((sorted[mid - 1] ?? hi) + hi) / 2;
 }
 
+/** Font sizes are compared at 0.5px. */
+const roundSize = (fontSize: number): number => Math.round(fontSize * 2) / 2;
+
 function collectSizes(samples: readonly StyleSample[]): Map<number, SizeStats> {
   const sizes = new Map<number, SizeStats>();
   for (const sample of samples) {
     const weight = sampleWeight(sample);
     if (weight <= 0 || !isTextSample(sample) || !(sample.fontSize > 0)) continue;
-    const size = Math.round(sample.fontSize * 2) / 2;
+    const size = roundSize(sample.fontSize);
     const stats = sizes.get(size) ?? {
       weight: 0,
       bodyWeight: 0,
@@ -172,7 +236,8 @@ function collectSizes(samples: readonly StyleSample[]): Map<number, SizeStats> {
       letterSpacing: new Map<number, number>(),
     };
     stats.weight += weight;
-    if (sampleRole(sample) === "body") stats.bodyWeight += weight;
+    // A span inside a heading records as body text, but it's heading text.
+    if (sampleRole(sample) === "body" && sample.inHeading !== true) stats.bodyWeight += weight;
     addTo(stats.lineHeight, sample.lineHeight, sample.area);
     addTo(stats.fontWeight, sample.fontWeight, sample.area);
     addTo(stats.letterSpacing, sample.letterSpacing, sample.area);
@@ -194,17 +259,28 @@ function heaviestSizes(
     .sort((a, b) => a - b);
 }
 
-function buildScale(samples: readonly StyleSample[]): Pick<Typography, "scale" | "ratio"> {
-  const all = collectSizes(samples);
+/** Sizes with at least MIN_SIZE_SHARE of text weight. */
+function keptSizes(all: ReadonlyMap<number, SizeStats>): [number, SizeStats][] {
   const total = [...all.values()].reduce((acc, s) => acc + s.weight, 0);
-  const kept = [...all].filter(([, s]) => s.weight >= total * MIN_SIZE_SHARE);
+  return [...all].filter(([, s]) => s.weight >= total * MIN_SIZE_SHARE);
+}
 
-  const base =
+/** The heaviest body-text size, else the heaviest size; undefined when there's no text. */
+function baseSize(kept: readonly (readonly [number, SizeStats])[]): number | undefined {
+  return (
     kept
       .map(([size, s]) => [size, s.bodyWeight] as const)
       .filter(([, w]) => w > 0)
       .sort(byScoreThenKey)[0]?.[0] ??
-    kept.map(([size, s]) => [size, s.weight] as const).sort(byScoreThenKey)[0]?.[0];
+    kept.map(([size, s]) => [size, s.weight] as const).sort(byScoreThenKey)[0]?.[0]
+  );
+}
+
+function buildScale(
+  all: ReadonlyMap<number, SizeStats>,
+  kept: readonly (readonly [number, SizeStats])[],
+  base: number | undefined,
+): Pick<Typography, "scale" | "ratio"> {
   if (base === undefined) return { scale: [], ratio: 1 };
 
   const below = heaviestSizes(
@@ -248,5 +324,8 @@ function buildScale(samples: readonly StyleSample[]): Pick<Typography, "scale" |
  * Pure and deterministic.
  */
 export function analyzeTypography(samples: readonly StyleSample[]): Typography {
-  return { families: detectFamilies(samples), ...buildScale(samples) };
+  const sizes = collectSizes(samples);
+  const kept = keptSizes(sizes);
+  const base = baseSize(kept);
+  return { families: detectFamilies(samples, base ?? 0), ...buildScale(sizes, kept, base) };
 }

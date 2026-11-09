@@ -1,6 +1,6 @@
 import { analyzeColors } from "./colors.js";
 import { deltaEOK, parseCssColor } from "./color-math.js";
-import { MONOCHROME_MAX_CHROMA, PRIMARY_MAX_DELTA_E } from "./constants.js";
+import { MONOCHROME_MAX_CHROMA, PRIMARY_MAX_DELTA_E, VARIABLE_FONT_SUFFIX } from "./constants.js";
 import { analyzeSpacing } from "./spacing.js";
 import type { ColorRole, StyleSample, ThemaSystem } from "./types.js";
 import { analyzeTypography } from "./typography.js";
@@ -43,9 +43,17 @@ export type FixtureScore = Record<AccuracyCheck, CheckResult>;
 
 type Families = ThemaSystem["typography"]["families"];
 
-/** Lowercase, unquoted, single-spaced family name, so "Inter" matches "'inter'". */
+/**
+ * Lowercase, unquoted, single-spaced family name without a variable-font suffix, so "Inter"
+ * matches "'inter'" and "Mona Sans VF" matches "Mona Sans".
+ */
 const normalizeFamily = (name: string): string =>
-  name.replace(/["']/g, "").replace(/\s+/g, " ").trim().toLowerCase();
+  name
+    .replace(/["']/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(VARIABLE_FONT_SUFFIX, "")
+    .toLowerCase();
 
 const familyEntries = (families: Partial<Families>): [string, string][] =>
   Object.entries(families)

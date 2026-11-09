@@ -135,6 +135,25 @@ describe("scoreFixture: fonts", () => {
   it("is missing when families aren't filled in", () => {
     expect(scoreFixture(site(), expected({ typography: {} })).fonts.status).toBe("missing");
   });
+
+  it("strips variable-font suffixes on both sides", () => {
+    for (const name of ["Inter VF", "Inter Variable", "inter-var", "Inter var"]) {
+      const want = expected({ typography: { families: { sans: name } } });
+      expect(scoreFixture(site(), want).fonts.status, name).toBe("pass");
+    }
+    const variable = site().map((s) =>
+      s.tag === "p" ? { ...s, fontFamily: '"Inter Variable", sans-serif' } : s,
+    );
+    expect(scoreFixture(variable, expected()).fonts.status).toBe("pass");
+  });
+
+  it("compares the heading slot like the others", () => {
+    const want = expected({ typography: { families: { sans: "Inter", heading: "aBCFavorit" } } });
+    expect(scoreFixture(site(), want).fonts).toMatchObject({
+      status: "fail",
+      expected: "sans Inter, heading aBCFavorit",
+    });
+  });
 });
 
 describe("scoreFixture: spacing", () => {

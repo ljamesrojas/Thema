@@ -92,7 +92,7 @@ Deterministic code decides every number. The LLM only names, describes and write
 - Sample computed styles from visible elements: color, background, border colors, font family/size/weight/line-height/letter-spacing, padding, margin, gap, border-radius, box-shadow, max-width.
 - Weight each value by visible area and element importance (buttons, headings and links count more).
 - Colors: convert to OKLCH, cluster with a perceptual distance (ΔE < 4), then assign roles by rules: largest background = `canvas`, highest-contrast text among the substantially used text colors = `ink` (so muted copy that outweighs the main text stays `ink-muted`), most-used saturated color on interactive elements = `primary`, ignoring browser-default link colors; no `primary` when every filled call-to-action in the first screen is neutral (a monochrome site).
-- Type: detect families (including Google Fonts and @font-face sources), build the size scale from the distinct sizes, and estimate the ratio.
+- Type: detect families (including Google Fonts and @font-face sources), build the size scale from the distinct sizes, and estimate the ratio. A family is the first entry of its stack: a leading generic keyword is reported as the keyword (`system-ui` for the system-font aliases), never the font the machine resolves it to, and variable-font names ("X VF", "X Variable", "X-var") count as "X". Non-mono families under 2% of text weight are dropped; a mono family is kept at any share when it's on at least 3 elements or used inside code. `display` = the headings-only family with the largest heading text; `heading` = another headings-only family, reported only when it differs from `display` and `sans`.
 - Spacing: find the base unit (4 or 8) from the GCD of common values, then snap to a scale.
 - Capture a full-page screenshot for the reference card and preview comparison.
 - Dark mode: re-run with `prefers-color-scheme: dark` and keep it if the canvas lightness flips.
@@ -139,7 +139,7 @@ interface ThemaSystem {
   meta: { name: string; version: string; sources: SourceRef[]; createdAt: string };
   color: { light: Record<ColorRole, string>; dark: Record<ColorRole, string> };
   typography: {
-    families: { sans: string; serif?: string; mono?: string; display?: string };
+    families: { sans: string; serif?: string; mono?: string; display?: string; heading?: string }; // heading: a second headings-only face
     scale: { name: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
              size: number; lineHeight: number; weight: number; tracking: number }[];
     ratio: number; // e.g. 1.25
@@ -184,6 +184,8 @@ interface StyleSample {
   opacity?: number;                  // effective opacity incl. ancestors, 0–1; omitted when 1
   fill?: string;                     // transparent buttons/links: color painted by ::before/::after, gradient or covering child
   y?: number;                        // top of the box from the top of the document, px
+  inHeading?: boolean;               // is or is inside h1–h6 / role=heading; omitted otherwise
+  inCode?: boolean;                  // is or is inside pre, code, kbd, samp; omitted otherwise
 }
 ```
 

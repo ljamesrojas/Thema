@@ -20,7 +20,8 @@ export interface ThemaSystem {
   meta: { name: string; version: string; sources: SourceRef[]; createdAt: string };
   color: { light: Record<ColorRole, string>; dark: Record<ColorRole, string> };
   typography: {
-    families: { sans: string; serif?: string; mono?: string; display?: string };
+    // display: the face of the largest headings; heading: a second headings-only face, if any.
+    families: { sans: string; serif?: string; mono?: string; display?: string; heading?: string };
     scale: {
       name: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
       size: number;
@@ -106,4 +107,8 @@ export interface StyleSample {
   fill?: string;
   /** Top of the element's box from the top of the document, px. */
   y?: number;
+  /** The element is, or is inside, h1–h6 or role="heading". Omitted otherwise. */
+  inHeading?: boolean;
+  /** The element is, or is inside, pre, code, kbd or samp. Omitted otherwise. */
+  inCode?: boolean;
 }
