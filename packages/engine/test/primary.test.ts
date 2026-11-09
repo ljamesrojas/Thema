@@ -223,3 +223,48 @@ describe("primary: first-screen CTAs weigh more", () => {
     expectPrimary([page(), button("#dc2626", { area: 30_000 }), ...blue], "#2563eb");
   });
 });
+
+describe("primary: only the page's own fonts count", () => {
+  // 2,000,000 px² of Inter body text: a family needs 2% of text weight to be a page family.
+  const body = (): StyleSample =>
+    sample({ tag: "p", role: "body", area: 2_000_000, color: "#111111" });
+  const green = () => [0, 1, 2].map(() => button("#16a34a", { area: 2000 })); // 18,000
+
+  it("ignores interactive samples in a font the page doesn't use (Resend's Helvetica demo link)", () => {
+    // 36,000 weight of blue, but in Helvetica: 1.75% of text weight, not a page family.
+    const demo = () =>
+      link("rgb(0, 163, 255)", { area: 4000, fontFamily: "Helvetica, Arial, sans-serif" });
+    expectPrimary([page(), body(), demo(), demo(), demo(), ...green()], "#16a34a");
+  });
+
+  it("still counts samples whose stack has no readable family (icon-only buttons)", () => {
+    const icon = () => button("#dc2626", { fontFamily: '"Material Symbols Outlined"' });
+    expectPrimary([page(), body(), icon(), icon(), icon()], "#dc2626");
+  });
+
+  it("counts the page's display, heading, mono and serif families", () => {
+    const families = {
+      display: '"Playfair Display", serif',
+      heading: "aBCFavorit, sans-serif",
+      mono: '"Geist Mono", monospace',
+      serif: '"Source Serif 4", Georgia, serif',
+    };
+    for (const [slot, fontFamily] of Object.entries(families)) {
+      // Make the family a page family: headings for display/heading, body text for serif,
+      // code for mono.
+      const uses =
+        slot === "display"
+          ? [sample({ tag: "h1", fontFamily, fontSize: 64, area: 120_000 })]
+          : slot === "heading"
+            ? [
+                sample({ tag: "h1", fontFamily: families.display, fontSize: 64, area: 120_000 }),
+                sample({ tag: "h2", fontFamily, fontSize: 40, area: 120_000 }),
+              ]
+            : slot === "mono"
+              ? [sample({ tag: "code", role: "body", fontFamily, area: 5000, inCode: true })]
+              : [sample({ tag: "p", role: "body", fontFamily, area: 200_000 })];
+      const violet = () => link("#7c3aed", { area: 4000, fontFamily });
+      expectPrimary([page(), body(), ...uses, violet(), violet(), violet(), ...green()], "#7c3aed");
+    }
+  });
+});

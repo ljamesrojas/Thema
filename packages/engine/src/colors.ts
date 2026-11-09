@@ -29,6 +29,7 @@ import {
 } from "./constants.js";
 import { sampleRole } from "./samples.js";
 import type { ColorRole, StyleSample } from "./types.js";
+import { analyzeTypography, parseFontFamily } from "./typography.js";
 
 export interface ColorAnalysis {
   /** OKLCH strings per role. A role is omitted when the samples give no candidate for it. */
@@ -51,6 +52,11 @@ interface ColorEntry {
   sample: number;
   /** Alpha of the painted color (incl. opacity) before compositing onto the canvas. */
   alpha: number;
+  /**
+   * The sample's font is one of the page's detected families, or its stack names no readable
+   * family (icon-only buttons). Only these count for primary.
+   */
+  ownFont: boolean;
   /** Top of the source sample's box, px (absent in older recordings). */
   y?: number;
 }
@@ -73,12 +79,23 @@ function paintedBackground(sample: StyleSample): string | undefined {
   return parseCssColor(sample.backgroundColor) ? sample.backgroundColor : sample.fill;
 }
 
+/** The page's own font families (sans, serif, mono, display, heading), lowercased. */
+function pageFamilies(samples: readonly StyleSample[]): Set<string> {
+  const families = Object.values(analyzeTypography(samples).families).filter(
+    (name): name is string => typeof name === "string",
+  );
+  return new Set(families.map((name) => name.toLowerCase()));
+}
+
 function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
   const entries: ColorEntry[] = [];
+  const families = pageFamilies(samples);
   samples.forEach((sample, index) => {
     if (!(sample.area > 0)) return;
     const role = sampleRole(sample);
     const weight = sample.area * ROLE_WEIGHT[role];
+    const family = parseFontFamily(sample.fontFamily);
+    const ownFont = family === null || families.has(family.name.toLowerCase());
     const push = (css: string | undefined, channel: Channel): void => {
       if (css === undefined) return;
       const parsed = parseCssColor(css);
@@ -95,6 +112,7 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
           weight,
           sample: index,
           alpha: alphaOf(color),
+          ownFont,
           ...(sample.y !== undefined ? { y: sample.y } : {}),
         });
       }
@@ -176,11 +194,13 @@ const isFirstScreenCta = (e: ColorEntry, canvas: Oklch): boolean =>
   deltaEOK(e.color, canvas) >= CTA_MIN_DELTA_E;
 
 /**
- * Primary evidence: interactive use, with first-screen CTAs weighing CTA_WEIGHT times more, so a
- * hero button beats large card links further down (GitHub) or many lighter links (Duolingo).
+ * Primary evidence: interactive use in the page's own fonts, with first-screen CTAs weighing
+ * CTA_WEIGHT times more, so a hero button beats large card links further down (GitHub) or many
+ * lighter links (Duolingo).
  */
 const primaryEvidence = (canvas: Oklch): Evidence => ({
-  members: INTERACTIVE.members,
+  // Embedded demos set their own font (Resend's Helvetica email preview): not the site's UI.
+  members: (c) => INTERACTIVE.members(c).filter((e) => e.ownFont),
   measure: (e) => e.weight * (isFirstScreenCta(e, canvas) ? CTA_WEIGHT : 1),
 });
 
