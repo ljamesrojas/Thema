@@ -83,6 +83,8 @@ It returns `roles: Partial<Record<ColorRole, string>>` (OKLCH strings) and a `co
 
 For `primary` and `accent`, a color seen on fewer than 3 distinct samples has its score scaled down. That keeps a one-off cookie button or ad from winning.
 
+For `primary`, two kinds of interactive samples don't count: those set in a font the page doesn't otherwise use (an embedded demo, like Resend's Helvetica email preview), and small near-square controls of 48×48 or less (color swatches, radio dots, icon buttons: Glossier's product swatches). Opaque first-screen calls-to-action count 12×.
+
 Each role reports the heaviest exact color among the members that count for that role. If a navy footer and the body text land in the same cluster, `ink` still reports the text color.
 
 ### Notes for the worker

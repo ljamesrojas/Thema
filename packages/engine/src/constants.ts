@@ -206,6 +206,14 @@ export const CTA_MAX_AREA = 480 * 80;
  */
 export const CTA_WEIGHT = 12;
 
+/**
+ * Interactive elements at most this size (px) on both sides and near-square (sides within
+ * SWATCH_SQUARE_TOLERANCE) are swatches, radio dots or icon buttons: they don't count for primary.
+ * Glossier's red product color swatches (34×34) otherwise became its primary.
+ */
+export const SWATCH_MAX_SIZE = 48;
+export const SWATCH_SQUARE_TOLERANCE = 4;
+
 // --- complete system (extractSystem) ------------------------------------------------------
 
 /** Thema's version, written to meta.version. */

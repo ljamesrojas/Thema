@@ -268,3 +268,42 @@ describe("primary: only the page's own fonts count", () => {
     }
   });
 });
+
+describe("primary: small square controls don't count", () => {
+  const body = (): StyleSample =>
+    sample({ tag: "p", role: "body", area: 200_000, color: "#111111" });
+  /** A product color swatch: an interactive 34×34 square (Glossier's li.config__option). */
+  const swatch = (bg: string) =>
+    sample({
+      tag: "li",
+      role: "interactive",
+      backgroundColor: bg,
+      width: 34,
+      height: 34,
+      area: 1156,
+    });
+
+  it("ignores color swatches, so a product's colors aren't the site's primary (Glossier)", () => {
+    const swatches = ["#9d2235", "#c8102e", "#9d2235", "#c8102e"].map(swatch);
+    expectPrimary([page(), body(), ...swatches], undefined);
+  });
+
+  it("still counts real buttons in the same color", () => {
+    const buttons = [0, 1, 2].map(() =>
+      button("#c8102e", { width: 160, height: 44, area: 160 * 44 }),
+    );
+    expectPrimary([page(), body(), swatch("#2563eb"), swatch("#2563eb"), ...buttons], "#c8102e");
+  });
+
+  it("counts small controls that aren't square, and samples without a recorded size", () => {
+    const pill = () => button("#16a34a", { width: 48, height: 24, area: 48 * 24 });
+    expectPrimary([page(), body(), pill(), pill(), pill()], "#16a34a");
+    const unsized = () => button("#16a34a", { area: 1156 });
+    expectPrimary([page(), body(), unsized(), unsized(), unsized()], "#16a34a");
+  });
+
+  it("counts squares above 48px (a large tile is a real control)", () => {
+    const tile = () => button("#7c3aed", { width: 64, height: 64, area: 64 * 64 });
+    expectPrimary([page(), body(), tile(), tile(), tile()], "#7c3aed");
+  });
+});

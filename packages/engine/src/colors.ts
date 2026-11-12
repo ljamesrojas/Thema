@@ -23,6 +23,8 @@ import {
   ROLE_WEIGHT,
   SATURATED_CHROMA,
   SURFACE_MAX_DELTA_E,
+  SWATCH_MAX_SIZE,
+  SWATCH_SQUARE_TOLERANCE,
   UA_LINK_COLORS,
   UA_LINK_MAX_DELTA_E,
   type SampleRole,
@@ -57,6 +59,8 @@ interface ColorEntry {
    * family (icon-only buttons). Only these count for primary.
    */
   ownFont: boolean;
+  /** A small near-square control (swatch, radio dot, icon button): doesn't count for primary. */
+  smallSquare: boolean;
   /** Top of the source sample's box, px (absent in older recordings). */
   y?: number;
 }
@@ -73,6 +77,21 @@ const UA_LINKS = UA_LINK_COLORS.map((css) => parseCssColor(css)).filter(
 /** Browser-default link colors (unstyled links) aren't design decisions. */
 const isUaLinkColor = (color: Oklch): boolean =>
   UA_LINKS.some((ua) => deltaEOK(color, ua) < UA_LINK_MAX_DELTA_E);
+
+/**
+ * Interactive, at most SWATCH_MAX_SIZE on both sides and near-square: a color swatch, radio dot
+ * or icon button. False without a recorded size (older recordings, synthetic fixtures).
+ */
+function isSmallSquare(sample: StyleSample): boolean {
+  const { width, height } = sample;
+  if (width === undefined || height === undefined) return false;
+  return (
+    sampleRole(sample) === "interactive" &&
+    width <= SWATCH_MAX_SIZE &&
+    height <= SWATCH_MAX_SIZE &&
+    Math.abs(width - height) <= SWATCH_SQUARE_TOLERANCE
+  );
+}
 
 /** The background a sample actually paints: its own if visible, else the recorded fill. */
 export function paintedBackground(sample: StyleSample): string | undefined {
@@ -96,6 +115,7 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
     const weight = sample.area * ROLE_WEIGHT[role];
     const family = parseFontFamily(sample.fontFamily);
     const ownFont = family === null || families.has(family.name.toLowerCase());
+    const smallSquare = isSmallSquare(sample);
     const push = (css: string | undefined, channel: Channel): void => {
       if (css === undefined) return;
       const parsed = parseCssColor(css);
@@ -113,6 +133,7 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
           sample: index,
           alpha: alphaOf(color),
           ownFont,
+          smallSquare,
           ...(sample.y !== undefined ? { y: sample.y } : {}),
         });
       }
@@ -216,7 +237,8 @@ const isFirstScreenCta = (e: ColorEntry, canvas: Oklch): boolean =>
  */
 const primaryEvidence = (canvas: Oklch): Evidence => ({
   // Embedded demos set their own font (Resend's Helvetica email preview): not the site's UI.
-  members: (c) => INTERACTIVE.members(c).filter((e) => e.ownFont),
+  // Small square controls show a product's colors (Glossier's swatches), not the brand's.
+  members: (c) => INTERACTIVE.members(c).filter((e) => e.ownFont && !e.smallSquare),
   measure: (e) => e.weight * (isFirstScreenCta(e, canvas) ? CTA_WEIGHT : 1),
 });
 
