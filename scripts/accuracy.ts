@@ -8,10 +8,13 @@ import { parseArgs } from "node:util";
 import {
   ACCURACY_CHECKS,
   ACCURACY_GATE,
+  COLOR_ROLE_CHECKS,
+  scoreColorRoles,
   scoreFixture,
   summarizeAccuracy,
   type AccuracyCheck,
   type CheckResult,
+  type ColorRoleCheck,
   type FixtureExpected,
   type FixtureScore,
   type StyleSample,
@@ -23,6 +26,8 @@ interface Row {
   name: string;
   source: FixtureExpected["source"];
   score: FixtureScore;
+  /** Informational color-role checks (not gated). */
+  roles: Record<ColorRoleCheck, CheckResult>;
 }
 
 interface Baseline {
@@ -40,7 +45,12 @@ function loadRows(dir: string): Row[] {
       const expected = readJson<FixtureExpected>(join(dir, name, "expected.json"));
       const samplesPath = join(dir, name, "samples.json");
       const samples = existsSync(samplesPath) ? readJson<StyleSample[]>(samplesPath) : [];
-      return { name, source: expected.source, score: scoreFixture(samples, expected) };
+      return {
+        name,
+        source: expected.source,
+        score: scoreFixture(samples, expected),
+        roles: scoreColorRoles(samples, expected),
+      };
     });
 }
 
@@ -74,6 +84,25 @@ function printTable(rows: Row[]): void {
     }),
   );
   if (failures.length > 0) console.log(`\nMisses\n${failures.join("\n")}`);
+}
+
+/** canvas / ink / ink-muted on real sites: totals and misses. Informational: not gated. */
+function printColorRoles(real: Row[]): void {
+  const totals = COLOR_ROLE_CHECKS.map((check) => {
+    const scored = real.filter((r) => r.roles[check].status !== "missing");
+    const passed = scored.filter((r) => r.roles[check].status === "pass").length;
+    return `${check} ${passed}/${scored.length}`;
+  });
+  console.log(`\nColor roles (informational, not gated): ${totals.join(" · ")}`);
+  for (const { name, roles } of real) {
+    for (const check of COLOR_ROLE_CHECKS) {
+      const r = roles[check];
+      if (r.status !== "fail") continue;
+      console.log(
+        `  ${name} ${check}: expected ${r.expected}, got ${r.got}${r.detail ? ` (${r.detail})` : ""}`,
+      );
+    }
+  }
 }
 
 /** Prettier-compatible JSON: objects expanded, short arrays inline. */
@@ -141,6 +170,8 @@ function main(): number {
     console.log("\nNo recorded real sites yet. See docs/fixtures-checklist.md.");
     return 1;
   }
+
+  printColorRoles(real);
 
   const summary = summarizeAccuracy(real.map((r) => r.score));
   const percent = (summary.ratio * 100).toFixed(1);

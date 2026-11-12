@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  COLOR_ROLE_CHECKS,
   judgeMonochromePrimary,
+  scoreColorRoles,
   scoreFixture,
   summarizeAccuracy,
   type FixtureExpected,
@@ -190,5 +192,33 @@ describe("summarizeAccuracy", () => {
 
   it("is 0 with nothing to score", () => {
     expect(summarizeAccuracy([])).toEqual({ passed: 0, total: 0, missing: 0, ratio: 0 });
+  });
+});
+
+describe("scoreColorRoles (informational, not gated)", () => {
+  // site(): white canvas, #111111 paragraphs, blue buttons with white text.
+  it("passes canvas and ink within ΔE 5 of the verified values", () => {
+    const roles = scoreColorRoles(
+      site(),
+      expected({ roles: { canvas: "#ffffff", ink: "#141414" } }),
+    );
+    expect(roles.canvas.status).toBe("pass");
+    expect(roles.ink).toMatchObject({ status: "pass", expected: "#141414" });
+  });
+
+  it("fails a role found more than ΔE 5 away and reports the distance", () => {
+    const roles = scoreColorRoles(site(), expected({ roles: { ink: "#061b31" } }));
+    expect(roles.ink.status).toBe("fail");
+    expect(roles.ink.detail).toMatch(/^ΔE \d+\.\d$/);
+  });
+
+  it("fails a verified role the engine doesn't find, and skips roles not verified", () => {
+    const roles = scoreColorRoles(site(), expected({ roles: { "ink-muted": "#666666" } }));
+    expect(roles["ink-muted"]).toMatchObject({ status: "fail", got: "none" });
+    expect(roles.canvas.status).toBe("missing");
+  });
+
+  it("covers canvas, ink and ink-muted only", () => {
+    expect(COLOR_ROLE_CHECKS).toEqual(["canvas", "ink", "ink-muted"]);
   });
 });

@@ -127,6 +127,43 @@ function checkSpacing(samples: readonly StyleSample[], expected: FixtureExpected
   return { status: want === got ? "pass" : "fail", expected: String(want), got: String(got) };
 }
 
+/**
+ * Color roles checked against expected.json for information only: not part of the 90% gate or the
+ * ratchet. They make regressions in the roles the fixer builds on (canvas, ink) visible.
+ */
+export const COLOR_ROLE_CHECKS = ["canvas", "ink", "ink-muted"] as const;
+export type ColorRoleCheck = (typeof COLOR_ROLE_CHECKS)[number];
+
+/**
+ * canvas / ink / ink-muted from analyzeColors vs the verified values: pass within ΔE 5 (the
+ * primary tolerance), fail when farther or not found, "missing" when the role isn't verified.
+ */
+export function scoreColorRoles(
+  samples: readonly StyleSample[],
+  expected: FixtureExpected,
+): Record<ColorRoleCheck, CheckResult> {
+  const { roles } = analyzeColors(samples);
+  const score = (role: ColorRoleCheck): CheckResult => {
+    const want = expected.roles?.[role];
+    const got = roles[role];
+    const gotText = got ?? "none";
+    if (want === undefined || want === null) {
+      return { status: "missing", expected: "?", got: gotText };
+    }
+    const a = parseCssColor(want);
+    const b = got === undefined ? null : parseCssColor(got);
+    if (!a || !b) return { status: "fail", expected: want, got: gotText };
+    const d = deltaEOK(a, b);
+    return {
+      status: d < PRIMARY_MAX_DELTA_E ? "pass" : "fail",
+      expected: want,
+      got: gotText,
+      detail: `ΔE ${d.toFixed(1)}`,
+    };
+  };
+  return { canvas: score("canvas"), ink: score("ink"), "ink-muted": score("ink-muted") };
+}
+
 /** Score one fixture on the three gate checks: primary color, font families, spacing base. */
 export function scoreFixture(
   samples: readonly StyleSample[],

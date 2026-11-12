@@ -42,12 +42,15 @@ export {
 export { isTextSample, sampleRole, sampleWeight } from "./samples.js";
 export {
   ACCURACY_CHECKS,
+  COLOR_ROLE_CHECKS,
+  scoreColorRoles,
   scoreFixture,
   summarizeAccuracy,
   type AccuracyCheck,
   type AccuracySummary,
   type CheckResult,
   type CheckStatus,
+  type ColorRoleCheck,
   type FixtureExpected,
   type FixtureScore,
 } from "./accuracy.js";
