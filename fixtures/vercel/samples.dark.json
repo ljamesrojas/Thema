@@ -24,7 +24,10 @@
     ],
     "borderRadius": 0,
     "y": 0,
-    "className": "VEU71W_className gb9FOq_className VEU71W_variable gb9FOq_variable dark-theme"
+    "x": 0,
+    "width": 1440,
+    "height": 5930,
+    "className": "VEU71W_className _MjUWG_className VEU71W_variable _MjUWG_variable dark-theme"
   },
   {
     "tag": "body",
@@ -52,6 +55,9 @@
     "borderRadius": 0,
     "maxWidth": 1440,
     "y": 0,
+    "x": 0,
+    "width": 1440,
+    "height": 5930,
     "className": "root isolate relative"
   },
   {
@@ -81,6 +87,9 @@
     "borderRadius": 0,
     "maxWidth": 1448,
     "y": 0,
+    "x": 0,
+    "width": 1440,
+    "height": 64,
     "className": "mx-auto flex h-full w-full items-center gap-3 px-(--geist-page-margin) max-w-(--"
   },
   {
@@ -108,6 +117,9 @@
     ],
     "borderRadius": 0,
     "y": 15,
+    "x": 16,
+    "width": 37,
+    "height": 34,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -135,6 +147,9 @@
     ],
     "borderRadius": 0,
     "y": 16,
+    "x": 65,
+    "width": 94,
+    "height": 32,
     "className": "group flex cursor-pointer items-center border-none bg-transparent text-copy-14 t"
   },
   {
@@ -163,6 +178,9 @@
     "gap": 3,
     "borderRadius": 0,
     "y": 16,
+    "x": 65,
+    "width": 94,
+    "height": 32,
     "className": "flex items-center gap-0.75 py-1.5 pr-2 pl-3 group-focus-visible:!text-gray-1000 "
   },
   {
@@ -190,6 +208,9 @@
     ],
     "borderRadius": 0,
     "y": 16,
+    "x": 159,
+    "width": 104,
+    "height": 32,
     "className": "group flex cursor-pointer items-center border-none bg-transparent text-copy-14 t"
   },
   {
@@ -218,6 +239,9 @@
     "gap": 3,
     "borderRadius": 0,
     "y": 16,
+    "x": 159,
+    "width": 104,
+    "height": 32,
     "className": "flex items-center gap-0.75 py-1.5 pr-2 pl-3 group-focus-visible:!text-gray-1000 "
   },
   {
@@ -245,6 +269,9 @@
     ],
     "borderRadius": 0,
     "y": 16,
+    "x": 264,
+    "width": 89,
+    "height": 32,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -272,6 +299,9 @@
     ],
     "borderRadius": 0,
     "y": 16,
+    "x": 264,
+    "width": 89,
+    "height": 32,
     "className": "flex items-center px-3 py-1.5 group-hover:!text-gray-1000 group-focus-visible:!t"
   },
   {
@@ -299,6 +329,9 @@
     ],
     "borderRadius": 0,
     "y": 16,
+    "x": 353,
+    "width": 68,
+    "height": 32,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -326,6 +359,9 @@
     ],
     "borderRadius": 0,
     "y": 16,
+    "x": 353,
+    "width": 68,
+    "height": 32,
     "className": "flex items-center px-3 py-1.5 group-hover:!text-gray-1000 group-focus-visible:!t"
   },
   {
@@ -354,6 +390,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 16,
+    "x": 1152,
+    "width": 264,
+    "height": 32,
     "className": "ml-auto flex shrink-0 items-center gap-3"
   },
   {
@@ -382,6 +421,9 @@
     "borderRadius": 6,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(46, 46, 46) 0px 0px 0px 1px",
     "y": 16,
+    "x": 1152,
+    "width": 101,
+    "height": 32,
     "className": "outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative"
   },
   {
@@ -409,6 +451,9 @@
     ],
     "borderRadius": 0,
     "y": 22,
+    "x": 1158,
+    "width": 89,
+    "height": 21,
     "className": "truncate inline-block px-1.5"
   },
   {
@@ -437,6 +482,9 @@
     "borderRadius": 6,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(46, 46, 46) 0px 0px 0px 1px",
     "y": 16,
+    "x": 1265,
+    "width": 64,
+    "height": 32,
     "className": "outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative"
   },
   {
@@ -464,6 +512,9 @@
     ],
     "borderRadius": 0,
     "y": 22,
+    "x": 1271,
+    "width": 52,
+    "height": 21,
     "className": "truncate inline-block px-1.5"
   },
   {
@@ -491,6 +542,9 @@
     ],
     "borderRadius": 6,
     "y": 16,
+    "x": 1341,
+    "width": 75,
+    "height": 32,
     "className": "outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative"
   },
   {
@@ -518,6 +572,9 @@
     ],
     "borderRadius": 0,
     "y": 22,
+    "x": 1347,
+    "width": 63,
+    "height": 21,
     "className": "truncate inline-block px-1.5"
   },
   {
@@ -546,6 +603,9 @@
     "borderRadius": 0,
     "maxWidth": 1448,
     "y": 64,
+    "x": 0,
+    "width": 1440,
+    "height": 64,
     "className": "max-w-(--ds-page-width-with-margin) px-(--geist-page-margin) mx-auto relative z-"
   },
   {
@@ -574,6 +634,9 @@
     "borderRadius": 0,
     "maxWidth": 1448,
     "y": 64,
+    "x": 0,
+    "width": 1440,
+    "height": 5020,
     "className": "max-w-(--ds-page-width-with-margin) px-(--geist-page-margin) mx-auto relative z-"
   },
   {
@@ -601,6 +664,9 @@
     ],
     "borderRadius": 0,
     "y": 64,
+    "x": 24,
+    "width": 1392,
+    "height": 728,
     "className": "group/hero relative flex min-h-0 flex-1 flex-col items-center justify-center pb-"
   },
   {
@@ -628,6 +694,9 @@
     ],
     "borderRadius": 0,
     "y": 88,
+    "x": 180,
+    "width": 1080,
+    "height": 720,
     "className": "absolute inset-0 z-0 overflow-hidden pointer-events-none dark:bg-black"
   },
   {
@@ -657,6 +726,9 @@
     "borderRadius": 0,
     "maxWidth": 444,
     "y": 328,
+    "x": 24,
+    "width": 444,
+    "height": 200,
     "className": "relative z-10 mx-auto flex w-full max-w-[444px] flex-col items-center gap-4 text"
   },
   {
@@ -684,6 +756,9 @@
     ],
     "borderRadius": 0,
     "y": 328,
+    "x": 24,
+    "width": 444,
+    "height": 128,
     "inHeading": true,
     "className": "mb-0 mt-0 @[608px]:@max-lg:mt-4 @xl:mt-0 text-balance font-normal! text-heading-"
   },
@@ -713,6 +788,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 488,
+    "x": 24,
+    "width": 266,
+    "height": 40,
     "className": "flex w-full flex-col items-center justify-center gap-3 @sm:flex-row @md:w-min mt"
   },
   {
@@ -740,6 +818,9 @@
     ],
     "borderRadius": 33554400,
     "y": 488,
+    "x": 24,
+    "width": 124,
+    "height": 40,
     "className": "outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative"
   },
   {
@@ -767,6 +848,9 @@
     ],
     "borderRadius": 0,
     "y": 496,
+    "x": 36,
+    "width": 100,
+    "height": 24,
     "className": "truncate inline-block px-1.5"
   },
   {
@@ -795,6 +879,9 @@
     "borderRadius": 33554400,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(46, 46, 46) 0px 0px 0px 1px",
     "y": 488,
+    "x": 160,
+    "width": 130,
+    "height": 40,
     "className": "outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative"
   },
   {
@@ -822,6 +909,9 @@
     ],
     "borderRadius": 0,
     "y": 496,
+    "x": 172,
+    "width": 106,
+    "height": 24,
     "className": "truncate inline-block px-1.5"
   },
   {
@@ -850,6 +940,9 @@
     "gap": 8,
     "borderRadius": 0,
     "y": 352,
+    "x": 1052,
+    "width": 364,
+    "height": 152,
     "className": "flex flex-col w-full gap-2 px-2 py-8"
   },
   {
@@ -877,6 +970,9 @@
     ],
     "borderRadius": 0,
     "y": 385,
+    "x": 1060,
+    "width": 127,
+    "height": 21,
     "className": "inline text-heading-16 transition-colors duration-500 ease-out shrink-0 text-gra"
   },
   {
@@ -904,6 +1000,9 @@
     ],
     "borderRadius": 0,
     "y": 417,
+    "x": 1060,
+    "width": 171,
+    "height": 21,
     "className": "inline text-heading-16 transition-colors duration-500 ease-out shrink-0 text-gra"
   },
   {
@@ -931,6 +1030,9 @@
     ],
     "borderRadius": 0,
     "y": 449,
+    "x": 1060,
+    "width": 152,
+    "height": 21,
     "className": "inline text-heading-16 transition-colors duration-500 ease-out shrink-0 text-gra"
   },
   {
@@ -958,6 +1060,9 @@
     ],
     "borderRadius": 0,
     "y": 792,
+    "x": 24,
+    "width": 1392,
+    "height": 108,
     "className": "relative z-10 shrink-0 w-full pb-12 @md:pb-10 @md:pt-6"
   },
   {
@@ -986,6 +1091,9 @@
     "gap": 32,
     "borderRadius": 0,
     "y": 816,
+    "x": 24,
+    "width": 1392,
+    "height": 44,
     "className": "hidden @lg:flex @lg:h-11 @lg:w-full @lg:items-center @lg:justify-between @lg:gap"
   },
   {
@@ -1013,6 +1121,9 @@
     ],
     "borderRadius": 0,
     "y": 1108,
+    "x": 24,
+    "width": 1392,
+    "height": 2362,
     "className": "mt-40 @md:mt-52"
   },
   {
@@ -1041,6 +1152,9 @@
     "gap": 256,
     "borderRadius": 0,
     "y": 1108,
+    "x": 24,
+    "width": 1392,
+    "height": 2362,
     "className": "flex flex-col gap-20 @md:gap-64"
   },
   {
@@ -1069,6 +1183,9 @@
     "gap": 44,
     "borderRadius": 0,
     "y": 1108,
+    "x": 24,
+    "width": 1392,
+    "height": 617,
     "className": "flex flex-col gap-11"
   },
   {
@@ -1097,6 +1214,9 @@
     "gap": 20,
     "borderRadius": 0,
     "y": 1108,
+    "x": 24,
+    "width": 1392,
+    "height": 112,
     "className": "flex flex-col @lg:grid w-full @lg:grid-cols-12 gap-x-5 gap-y-1 items-baseline"
   },
   {
@@ -1125,6 +1245,9 @@
     "borderRadius": 0,
     "maxWidth": 673.34,
     "y": 1108,
+    "x": 24,
+    "width": 673,
+    "height": 112,
     "inHeading": true,
     "className": "row-start-1 m-0 text-balance tracking-tighter @lg:leading-none text-heading-32 @"
   },
@@ -1154,6 +1277,9 @@
     "gap": 20,
     "borderRadius": 0,
     "y": 1264,
+    "x": 24,
+    "width": 1392,
+    "height": 461,
     "className": "relative grid grid-cols-12 gap-x-0 @xl:gap-x-5 items-center"
   },
   {
@@ -1182,6 +1308,9 @@
     "borderRadius": 33554400,
     "opacity": 0.15,
     "y": 1264,
+    "x": 24,
+    "width": 921,
+    "height": 160,
     "className": "absolute inset-0 bg-gray-1000 w-full h-40 rounded-full blur-xl @md:blur-[120px] "
   },
   {
@@ -1210,6 +1339,9 @@
     "gap": 40,
     "borderRadius": 0,
     "y": 1380,
+    "x": 1083,
+    "width": 333,
+    "height": 228,
     "className": "flex min-h-0 min-w-0 flex-col gap-10 col-start-1 col-span-12 row-start-2 @lg:col"
   },
   {
@@ -1237,6 +1369,9 @@
     ],
     "borderRadius": 0,
     "y": 1380,
+    "x": 1083,
+    "width": 333,
+    "height": 64,
     "className": "m-0 mt-10 @lg:mt-0 text-heading-24 text-balance text-gray-900"
   },
   {
@@ -1264,6 +1399,9 @@
     ],
     "borderRadius": 0,
     "y": 1380,
+    "x": 1083,
+    "width": 231,
+    "height": 31,
     "className": "text-gray-1000"
   },
   {
@@ -1292,6 +1430,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 1484,
+    "x": 1083,
+    "width": 333,
+    "height": 124,
     "className": "m-0 flex list-none flex-col gap-1.5 p-0 text-label-14 font-medium"
   },
   {
@@ -1319,6 +1460,9 @@
     ],
     "borderRadius": 0,
     "y": 1484,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-900 font-normal"
   },
   {
@@ -1346,6 +1490,9 @@
     ],
     "borderRadius": 0,
     "y": 1510,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -1373,6 +1520,9 @@
     ],
     "borderRadius": 0,
     "y": 1536,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -1400,6 +1550,9 @@
     ],
     "borderRadius": 0,
     "y": 1562,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -1427,6 +1580,9 @@
     ],
     "borderRadius": 0,
     "y": 1588,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -1455,6 +1611,9 @@
     "gap": 44,
     "borderRadius": 0,
     "y": 1981,
+    "x": 24,
+    "width": 1392,
+    "height": 617,
     "className": "flex flex-col gap-11"
   },
   {
@@ -1483,6 +1642,9 @@
     "gap": 20,
     "borderRadius": 0,
     "y": 1981,
+    "x": 24,
+    "width": 1392,
+    "height": 112,
     "className": "flex flex-col @lg:grid w-full @lg:grid-cols-12 gap-x-5 gap-y-1 items-baseline"
   },
   {
@@ -1510,6 +1672,9 @@
     ],
     "borderRadius": 0,
     "y": 1981,
+    "x": 495,
+    "width": 921,
+    "height": 112,
     "inHeading": true,
     "className": "row-start-1 m-0 text-balance tracking-tighter @lg:leading-none text-heading-32 @"
   },
@@ -1539,6 +1704,9 @@
     "gap": 20,
     "borderRadius": 0,
     "y": 2137,
+    "x": 24,
+    "width": 1392,
+    "height": 461,
     "className": "relative grid grid-cols-12 gap-x-0 @xl:gap-x-5 items-center"
   },
   {
@@ -1567,6 +1735,9 @@
     "borderRadius": 33554400,
     "opacity": 0.15,
     "y": 2137,
+    "x": 495,
+    "width": 921,
+    "height": 160,
     "className": "absolute inset-0 bg-gray-1000 w-full h-40 rounded-full blur-xl @md:blur-[120px] "
   },
   {
@@ -1595,6 +1766,9 @@
     "gap": 40,
     "borderRadius": 0,
     "y": 2253,
+    "x": 24,
+    "width": 333,
+    "height": 228,
     "className": "flex min-h-0 min-w-0 flex-col gap-10 col-start-1 col-span-12 row-start-2 @lg:col"
   },
   {
@@ -1622,6 +1796,9 @@
     ],
     "borderRadius": 0,
     "y": 2253,
+    "x": 24,
+    "width": 333,
+    "height": 64,
     "className": "m-0 mt-10 @lg:mt-0 text-heading-24 text-balance text-gray-900"
   },
   {
@@ -1649,6 +1826,9 @@
     ],
     "borderRadius": 0,
     "y": 2253,
+    "x": 24,
+    "width": 300,
+    "height": 31,
     "className": "text-gray-1000"
   },
   {
@@ -1677,6 +1857,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 2357,
+    "x": 24,
+    "width": 333,
+    "height": 124,
     "className": "m-0 flex list-none flex-col gap-1.5 p-0 text-label-14 font-medium"
   },
   {
@@ -1704,6 +1887,9 @@
     ],
     "borderRadius": 0,
     "y": 2357,
+    "x": 24,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-900 font-normal"
   },
   {
@@ -1731,6 +1917,9 @@
     ],
     "borderRadius": 0,
     "y": 2383,
+    "x": 24,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -1758,6 +1947,9 @@
     ],
     "borderRadius": 0,
     "y": 2409,
+    "x": 24,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -1785,6 +1977,9 @@
     ],
     "borderRadius": 0,
     "y": 2435,
+    "x": 24,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -1812,6 +2007,9 @@
     ],
     "borderRadius": 0,
     "y": 2461,
+    "x": 24,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -1840,6 +2038,9 @@
     "gap": 44,
     "borderRadius": 0,
     "y": 2853,
+    "x": 24,
+    "width": 1392,
+    "height": 617,
     "className": "flex flex-col gap-11"
   },
   {
@@ -1868,6 +2069,9 @@
     "gap": 20,
     "borderRadius": 0,
     "y": 2853,
+    "x": 24,
+    "width": 1392,
+    "height": 112,
     "className": "flex flex-col @lg:grid w-full @lg:grid-cols-12 gap-x-5 gap-y-1 items-baseline"
   },
   {
@@ -1895,6 +2099,9 @@
     ],
     "borderRadius": 0,
     "y": 2853,
+    "x": 24,
+    "width": 921,
+    "height": 112,
     "inHeading": true,
     "className": "row-start-1 m-0 text-balance tracking-tighter @lg:leading-none text-heading-32 @"
   },
@@ -1924,6 +2131,9 @@
     "gap": 20,
     "borderRadius": 0,
     "y": 3009,
+    "x": 24,
+    "width": 1392,
+    "height": 461,
     "className": "relative grid grid-cols-12 gap-x-0 @xl:gap-x-5 items-center"
   },
   {
@@ -1952,6 +2162,9 @@
     "borderRadius": 33554400,
     "opacity": 0.15,
     "y": 3009,
+    "x": 24,
+    "width": 921,
+    "height": 160,
     "className": "absolute inset-0 bg-gray-1000 w-full h-40 rounded-full blur-xl @md:blur-[120px] "
   },
   {
@@ -1980,6 +2193,9 @@
     "gap": 40,
     "borderRadius": 0,
     "y": 3110,
+    "x": 1083,
+    "width": 333,
+    "height": 260,
     "className": "flex min-h-0 min-w-0 flex-col gap-10 col-start-1 col-span-12 row-start-2 @lg:col"
   },
   {
@@ -2007,6 +2223,9 @@
     ],
     "borderRadius": 0,
     "y": 3110,
+    "x": 1083,
+    "width": 333,
+    "height": 96,
     "className": "m-0 mt-10 @lg:mt-0 text-heading-24 text-balance text-gray-900"
   },
   {
@@ -2034,6 +2253,9 @@
     ],
     "borderRadius": 0,
     "y": 3110,
+    "x": 1083,
+    "width": 238,
+    "height": 95,
     "className": "text-gray-1000"
   },
   {
@@ -2062,6 +2284,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 3246,
+    "x": 1083,
+    "width": 333,
+    "height": 124,
     "className": "m-0 flex list-none flex-col gap-1.5 p-0 text-label-14 font-medium"
   },
   {
@@ -2089,6 +2314,9 @@
     ],
     "borderRadius": 0,
     "y": 3246,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-900 font-normal"
   },
   {
@@ -2116,6 +2344,9 @@
     ],
     "borderRadius": 0,
     "y": 3272,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -2143,6 +2374,9 @@
     ],
     "borderRadius": 0,
     "y": 3298,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -2170,6 +2404,9 @@
     ],
     "borderRadius": 0,
     "y": 3324,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -2197,6 +2434,9 @@
     ],
     "borderRadius": 0,
     "y": 3350,
+    "x": 1083,
+    "width": 333,
+    "height": 20,
     "className": "text-gray-1000"
   },
   {
@@ -2224,6 +2464,9 @@
     ],
     "borderRadius": 0,
     "y": 3678,
+    "x": 24,
+    "width": 1392,
+    "height": 718,
     "className": "mt-40 @md:mt-52"
   },
   {
@@ -2252,6 +2495,9 @@
     "gap": 20,
     "borderRadius": 0,
     "y": 3678,
+    "x": 24,
+    "width": 1392,
+    "height": 56,
     "className": "flex flex-col @lg:grid w-full @lg:grid-cols-12 gap-x-5 gap-y-1 items-baseline"
   },
   {
@@ -2279,6 +2525,9 @@
     ],
     "borderRadius": 0,
     "y": 3678,
+    "x": 24,
+    "width": 921,
+    "height": 56,
     "inHeading": true,
     "className": "row-start-1 m-0 text-balance tracking-tighter @lg:leading-none text-heading-32 @"
   },
@@ -2307,6 +2556,9 @@
     ],
     "borderRadius": 0,
     "y": 3814,
+    "x": 24,
+    "width": 1392,
+    "height": 582,
     "className": "@container mt-20 p-px"
   },
   {
@@ -2335,6 +2587,9 @@
     "gap": 20,
     "borderRadius": 0,
     "y": 3815,
+    "x": 25,
+    "width": 1390,
+    "height": 580,
     "className": "grid grid-cols-1 gap-5 @smd:grid-cols-12"
   },
   {
@@ -2362,6 +2617,9 @@
     ],
     "borderRadius": 6,
     "y": 3815,
+    "x": 25,
+    "width": 685,
+    "height": 580,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -2389,6 +2647,9 @@
     ],
     "borderRadius": 4,
     "y": 3815,
+    "x": 25,
+    "width": 685,
+    "height": 580,
     "className": "absolute inset-0 overflow-hidden rounded-sm"
   },
   {
@@ -2417,6 +2678,9 @@
     "borderRadius": 7,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.18) 0px 1px 2px 0px inset, rgba(0, 0, 0, 0.14) 0px 0px 24px 0px inset",
     "y": 3815,
+    "x": 25,
+    "width": 685,
+    "height": 580,
     "className": "size-full rounded-t-[calc(var(--radius-md)+1px)] rounded-bl-[calc(var(--radius-m"
   },
   {
@@ -2446,6 +2710,9 @@
     "gap": 10,
     "borderRadius": 8,
     "y": 4299,
+    "x": 435,
+    "width": 131,
+    "height": 48,
     "className": "absolute flex h-12 w-max items-center gap-2.5 rounded-lg border border-white/40 "
   },
   {
@@ -2472,7 +2739,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4313
+    "y": 4313,
+    "x": 482,
+    "width": 67,
+    "height": 20
   },
   {
     "tag": "div",
@@ -2501,6 +2771,9 @@
     "gap": 10,
     "borderRadius": 8,
     "y": 4203,
+    "x": 502,
+    "width": 112,
+    "height": 48,
     "className": "absolute flex h-12 w-max items-center gap-2.5 rounded-lg border border-white/40 "
   },
   {
@@ -2527,7 +2800,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4217
+    "y": 4217,
+    "x": 549,
+    "width": 48,
+    "height": 20
   },
   {
     "tag": "div",
@@ -2556,6 +2832,9 @@
     "gap": 10,
     "borderRadius": 8,
     "y": 4107,
+    "x": 540,
+    "width": 122,
+    "height": 48,
     "className": "absolute flex h-12 w-max items-center gap-2.5 rounded-lg border border-white/40 "
   },
   {
@@ -2582,7 +2861,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 4121
+    "y": 4121,
+    "x": 587,
+    "width": 58,
+    "height": 20
   },
   {
     "tag": "div",
@@ -2609,6 +2891,9 @@
     ],
     "borderRadius": 0,
     "y": 3815,
+    "x": 25,
+    "width": 685,
+    "height": 580,
     "className": "relative size-full bg-background-200"
   },
   {
@@ -2637,6 +2922,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 4303,
+    "x": 45,
+    "width": 685,
+    "height": 72,
     "className": "absolute z-10 flex w-full flex-col gap-1.5 p-0 m-0 bottom-5 left-5"
   },
   {
@@ -2664,6 +2952,9 @@
     ],
     "borderRadius": 0,
     "y": 4303,
+    "x": 45,
+    "width": 685,
+    "height": 26,
     "className": "m-0 text-heading-24 tracking-tighter font-medium leading-[1.1] text-gray-1000"
   },
   {
@@ -2692,6 +2983,9 @@
     "borderRadius": 0,
     "maxWidth": 288,
     "y": 4335,
+    "x": 45,
+    "width": 288,
+    "height": 40,
     "className": "m-0 max-w-1/2 text-copy-14 text-balance text-gray-900 @md:max-w-72"
   },
   {
@@ -2719,6 +3013,9 @@
     ],
     "borderRadius": 4,
     "y": 4283,
+    "x": 598,
+    "width": 580,
+    "height": 685,
     "className": "absolute top-96 left-96 right-0 bottom-0 origin-bottom-right rounded-sm [--peel-"
   },
   {
@@ -2746,6 +3043,9 @@
     ],
     "borderRadius": 6,
     "y": 3815,
+    "x": 730,
+    "width": 685,
+    "height": 280,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -2774,6 +3074,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 3839,
+    "x": 1051,
+    "width": 340,
+    "height": 222,
     "className": "absolute top-3 right-3 flex w-[340px] origin-top-right scale-[0.6] flex-col gap-"
   },
   {
@@ -2802,6 +3105,9 @@
     "borderRadius": 20,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.145) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 1px",
     "y": 3839,
+    "x": 1176,
+    "width": 215,
+    "height": 68,
     "className": "relative shrink-0 rounded-[20px] bg-background-100 p-4 text-copy-13 whitespace-p"
   },
   {
@@ -2829,6 +3135,9 @@
     ],
     "borderRadius": 0,
     "y": 3855,
+    "x": 1192,
+    "width": 81,
+    "height": 17,
     "className": "font-semibold whitespace-nowrap"
   },
   {
@@ -2856,6 +3165,9 @@
     ],
     "borderRadius": 20,
     "y": 3839,
+    "x": 1176,
+    "width": 215,
+    "height": 68,
     "className": "pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]"
   },
   {
@@ -2884,6 +3196,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 3919,
+    "x": 1051,
+    "width": 340,
+    "height": 142,
     "className": "hidden items-end gap-3 [@container(min-height:14rem)]:flex"
   },
   {
@@ -2912,6 +3227,9 @@
     "borderRadius": 33554400,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.145) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 1px",
     "y": 4029,
+    "x": 1051,
+    "width": 32,
+    "height": 32,
     "className": "flex size-8 shrink-0 items-center justify-center rounded-full bg-background-100 "
   },
   {
@@ -2940,6 +3258,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 3919,
+    "x": 1095,
+    "width": 265,
+    "height": 142,
     "className": "flex flex-col gap-1.5"
   },
   {
@@ -2968,6 +3289,9 @@
     "borderRadius": 20,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.145) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 1px",
     "y": 3919,
+    "x": 1095,
+    "width": 265,
+    "height": 68,
     "className": "relative shrink-0 rounded-[20px] bg-background-100 p-4 text-copy-13 whitespace-p"
   },
   {
@@ -2995,6 +3319,9 @@
     ],
     "borderRadius": 20,
     "y": 3919,
+    "x": 1095,
+    "width": 265,
+    "height": 68,
     "className": "pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]"
   },
   {
@@ -3023,6 +3350,9 @@
     "borderRadius": 20,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.145) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 1px",
     "y": 3993,
+    "x": 1095,
+    "width": 265,
+    "height": 68,
     "className": "relative shrink-0 rounded-[20px] bg-background-100 p-4 text-copy-13 whitespace-p"
   },
   {
@@ -3050,6 +3380,9 @@
     ],
     "borderRadius": 20,
     "y": 3993,
+    "x": 1095,
+    "width": 265,
+    "height": 68,
     "className": "pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]"
   },
   {
@@ -3078,6 +3411,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 4003,
+    "x": 750,
+    "width": 685,
+    "height": 72,
     "className": "absolute z-10 flex w-full flex-col gap-1.5 p-0 m-0 bottom-5 left-5"
   },
   {
@@ -3105,6 +3441,9 @@
     ],
     "borderRadius": 0,
     "y": 4003,
+    "x": 750,
+    "width": 685,
+    "height": 26,
     "className": "m-0 text-heading-24 tracking-tighter font-medium leading-[1.1] text-gray-1000"
   },
   {
@@ -3133,6 +3472,9 @@
     "borderRadius": 0,
     "maxWidth": 288,
     "y": 4035,
+    "x": 750,
+    "width": 288,
+    "height": 40,
     "className": "m-0 max-w-1/2 text-copy-14 text-balance text-gray-900 @md:max-w-72"
   },
   {
@@ -3160,6 +3502,9 @@
     ],
     "borderRadius": 6,
     "y": 4115,
+    "x": 730,
+    "width": 685,
+    "height": 280,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -3188,6 +3533,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 4323,
+    "x": 750,
+    "width": 685,
+    "height": 52,
     "className": "absolute z-10 flex w-full flex-col gap-1.5 p-0 m-0 bottom-5 left-5"
   },
   {
@@ -3215,6 +3563,9 @@
     ],
     "borderRadius": 0,
     "y": 4323,
+    "x": 750,
+    "width": 685,
+    "height": 26,
     "className": "m-0 text-heading-24 tracking-tighter font-medium leading-[1.1] text-gray-1000"
   },
   {
@@ -3243,6 +3594,9 @@
     "borderRadius": 0,
     "maxWidth": 288,
     "y": 4355,
+    "x": 750,
+    "width": 288,
+    "height": 20,
     "className": "m-0 max-w-1/2 text-copy-14 text-balance text-gray-900 @md:max-w-72"
   },
   {
@@ -3270,6 +3624,9 @@
     ],
     "borderRadius": 0,
     "y": 4396,
+    "x": 23,
+    "width": 1394,
+    "height": 688,
     "className": "px-px -mx-px"
   },
   {
@@ -3297,6 +3654,9 @@
     ],
     "borderRadius": 0,
     "y": 4672,
+    "x": 24,
+    "width": 1392,
+    "height": 136,
     "className": "mt-53 mb-53 @md:mt-69 @md:mb-69"
   },
   {
@@ -3325,6 +3685,9 @@
     "gap": 16,
     "borderRadius": 0,
     "y": 4672,
+    "x": 24,
+    "width": 1392,
+    "height": 56,
     "className": "flex w-full flex-col items-center gap-y-3 text-center @lg:gap-y-4"
   },
   {
@@ -3353,6 +3716,9 @@
     "borderRadius": 0,
     "maxWidth": 1024,
     "y": 4672,
+    "x": 401,
+    "width": 638,
+    "height": 56,
     "inHeading": true,
     "className": "m-0 max-w-5xl px-4 text-heading-32 @sm:text-heading-48 tracking-tighter text-bal"
   },
@@ -3382,6 +3748,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 4768,
+    "x": 24,
+    "width": 1392,
+    "height": 40,
     "className": "mx-auto mt-10 flex flex-col items-center justify-center gap-3"
   },
   {
@@ -3410,6 +3779,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 4768,
+    "x": 521,
+    "width": 398,
+    "height": 40,
     "className": "flex flex-col items-center justify-center gap-3 @md:flex-row @md:items-center"
   },
   {
@@ -3437,6 +3809,9 @@
     ],
     "borderRadius": 33554400,
     "y": 4768,
+    "x": 521,
+    "width": 124,
+    "height": 40,
     "className": "outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative"
   },
   {
@@ -3464,6 +3839,9 @@
     ],
     "borderRadius": 0,
     "y": 4776,
+    "x": 533,
+    "width": 100,
+    "height": 24,
     "className": "truncate inline-block px-1.5"
   },
   {
@@ -3492,6 +3870,9 @@
     "borderRadius": 33554400,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.145) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 1px 2px 0px, rgb(0, 0, 0) 0px 0px 0px 1px",
     "y": 4768,
+    "x": 657,
+    "width": 262,
+    "height": 40,
     "className": "outline-none m-0 p-0 border-0 align-baseline no-underline group/trigger relative"
   },
   {
@@ -3519,6 +3900,9 @@
     ],
     "borderRadius": 0,
     "y": 4776,
+    "x": 665,
+    "width": 56,
+    "height": 24,
     "className": "mr-[3px] min-w-5 shrink-0 flex items-center justify-center [&_svg[data-slot=geis"
   },
   {
@@ -3547,6 +3931,9 @@
     "borderRadius": 33554400,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.14) 0px 0px 0px 1px",
     "y": 4776,
+    "x": 665,
+    "width": 24,
+    "height": 24,
     "className": "flex size-6 items-center justify-center rounded-full bg-background-100 shadow-[0"
   },
   {
@@ -3575,6 +3962,9 @@
     "borderRadius": 33554400,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.14) 0px 0px 0px 1px",
     "y": 4776,
+    "x": 681,
+    "width": 24,
+    "height": 24,
     "className": "flex size-6 items-center justify-center rounded-full bg-background-100 shadow-[0"
   },
   {
@@ -3603,6 +3993,9 @@
     "borderRadius": 33554400,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.14) 0px 0px 0px 1px",
     "y": 4776,
+    "x": 697,
+    "width": 24,
+    "height": 24,
     "className": "flex size-6 items-center justify-center rounded-full bg-background-100 shadow-[0"
   },
   {
@@ -3630,6 +4023,9 @@
     ],
     "borderRadius": 0,
     "y": 4776,
+    "x": 724,
+    "width": 161,
+    "height": 24,
     "className": "truncate inline-block px-1.5"
   },
   {
@@ -3657,6 +4053,9 @@
     ],
     "borderRadius": 0,
     "y": 4776,
+    "x": 730,
+    "width": 149,
+    "height": 24,
     "className": "col-start-1 row-start-1 whitespace-nowrap transition-[opacity,filter] duration-2"
   },
   {
@@ -3684,6 +4083,9 @@
     ],
     "borderRadius": 0,
     "y": 4780,
+    "x": 889,
+    "width": 16,
+    "height": 16,
     "className": "ml-1 shrink-0 mr-0.5 flex items-center justify-center [&_svg[data-slot=geist-ico"
   },
   {
@@ -3712,6 +4114,9 @@
     "borderRadius": 0,
     "maxWidth": 1448,
     "y": 5084,
+    "x": 0,
+    "width": 1440,
+    "height": 846,
     "className": "max-w-[var(--ds-page-width-with-margin)] mx-auto px-[var(--geist-page-margin)] p"
   },
   {
@@ -3740,6 +4145,9 @@
     "gap": 24,
     "borderRadius": 0,
     "y": 5124,
+    "x": 24,
+    "width": 1392,
+    "height": 700,
     "className": "grid gap-x-6 gap-y-6 grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 ["
   },
   {
@@ -3767,6 +4175,9 @@
     ],
     "borderRadius": 0,
     "y": 5136,
+    "x": 24,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -3795,6 +4206,9 @@
     ],
     "borderRadius": 0,
     "y": 5168,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -3823,6 +4237,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5170,
+    "x": 22,
+    "width": 50,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -3850,6 +4267,9 @@
     ],
     "borderRadius": 0,
     "y": 5196,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -3878,6 +4298,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5198,
+    "x": 22,
+    "width": 79,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -3905,6 +4328,9 @@
     ],
     "borderRadius": 0,
     "y": 5224,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -3933,6 +4359,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5226,
+    "x": 22,
+    "width": 60,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -3960,6 +4389,9 @@
     ],
     "borderRadius": 0,
     "y": 5252,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -3988,6 +4420,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5254,
+    "x": 22,
+    "width": 72,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4015,6 +4450,9 @@
     ],
     "borderRadius": 0,
     "y": 5280,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4043,6 +4481,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5282,
+    "x": 22,
+    "width": 104,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4071,6 +4512,9 @@
     "gap": 4,
     "borderRadius": 33554400,
     "y": 5284,
+    "x": 84,
+    "width": 40,
+    "height": 20,
     "className": "inline-flex shrink-0 items-center justify-center rounded-full whitespace-nowrap "
   },
   {
@@ -4098,6 +4542,9 @@
     ],
     "borderRadius": 0,
     "y": 5308,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4126,6 +4573,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5310,
+    "x": 22,
+    "width": 107,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4154,6 +4604,9 @@
     "gap": 4,
     "borderRadius": 33554400,
     "y": 5312,
+    "x": 87,
+    "width": 40,
+    "height": 20,
     "className": "inline-flex shrink-0 items-center justify-center rounded-full whitespace-nowrap "
   },
   {
@@ -4181,6 +4634,9 @@
     ],
     "borderRadius": 0,
     "y": 5336,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4209,6 +4665,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5338,
+    "x": 22,
+    "width": 72,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4237,6 +4696,9 @@
     "gap": 4,
     "borderRadius": 33554400,
     "y": 5340,
+    "x": 53,
+    "width": 40,
+    "height": 20,
     "className": "inline-flex shrink-0 items-center justify-center rounded-full whitespace-nowrap "
   },
   {
@@ -4264,6 +4726,9 @@
     ],
     "borderRadius": 0,
     "y": 5136,
+    "x": 260,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -4292,12 +4757,15 @@
     ],
     "borderRadius": 0,
     "y": 5168,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
     "tag": "a",
     "role": "interactive",
-    "area": 1042,
+    "area": 2650,
     "color": "rgb(161, 161, 161)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "GeistSans, \"GeistSans Fallback\"",
@@ -4320,6 +4788,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5170,
+    "x": 258,
+    "width": 110,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4347,12 +4818,15 @@
     ],
     "borderRadius": 0,
     "y": 5196,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
     "tag": "a",
     "role": "interactive",
-    "area": 2656,
+    "area": 2575,
     "color": "rgb(161, 161, 161)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "GeistSans, \"GeistSans Fallback\"",
@@ -4375,7 +4849,41 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5198,
+    "x": 258,
+    "width": 107,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
+  },
+  {
+    "tag": "span",
+    "role": "body",
+    "area": 797,
+    "color": "rgb(237, 237, 237)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "GeistSans, \"GeistSans Fallback\"",
+    "fontSize": 11,
+    "fontWeight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0.2,
+    "padding": [
+      2,
+      8,
+      2,
+      8
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gap": 4,
+    "borderRadius": 33554400,
+    "y": 5200,
+    "x": 323,
+    "width": 40,
+    "height": 20,
+    "className": "inline-flex shrink-0 items-center justify-center rounded-full whitespace-nowrap "
   },
   {
     "tag": "li",
@@ -4402,6 +4910,9 @@
     ],
     "borderRadius": 0,
     "y": 5224,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4430,6 +4941,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5226,
+    "x": 258,
+    "width": 97,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4457,6 +4971,70 @@
     ],
     "borderRadius": 0,
     "y": 5252,
+    "x": 260,
+    "width": 212,
+    "height": 28,
+    "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 2656,
+    "color": "rgb(161, 161, 161)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "GeistSans, \"GeistSans Fallback\"",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      -2
+    ],
+    "gap": 6,
+    "borderRadius": 0,
+    "y": 5254,
+    "x": 258,
+    "width": 111,
+    "height": 24,
+    "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
+  },
+  {
+    "tag": "li",
+    "role": "container",
+    "area": 5936,
+    "color": "rgb(161, 161, 161)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "GeistSans, \"GeistSans Fallback\"",
+    "fontSize": 14,
+    "fontWeight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "padding": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 5280,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4484,7 +5062,10 @@
     ],
     "gap": 6,
     "borderRadius": 0,
-    "y": 5254,
+    "y": 5282,
+    "x": 258,
+    "width": 88,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4512,6 +5093,9 @@
     ],
     "borderRadius": 0,
     "y": 5136,
+    "x": 496,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -4540,6 +5124,9 @@
     ],
     "borderRadius": 0,
     "y": 5168,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4568,6 +5155,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5170,
+    "x": 494,
+    "width": 115,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4595,6 +5185,9 @@
     ],
     "borderRadius": 0,
     "y": 5196,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4623,6 +5216,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5198,
+    "x": 494,
+    "width": 33,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4650,6 +5246,9 @@
     ],
     "borderRadius": 0,
     "y": 5224,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4678,6 +5277,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5226,
+    "x": 494,
+    "width": 114,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4705,6 +5307,9 @@
     ],
     "borderRadius": 0,
     "y": 5252,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4733,6 +5338,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5254,
+    "x": 494,
+    "width": 40,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4760,6 +5368,9 @@
     ],
     "borderRadius": 0,
     "y": 5136,
+    "x": 732,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -4788,6 +5399,9 @@
     ],
     "borderRadius": 0,
     "y": 5168,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4816,6 +5430,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5170,
+    "x": 730,
+    "width": 78,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4843,6 +5460,9 @@
     ],
     "borderRadius": 0,
     "y": 5196,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4871,6 +5491,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5198,
+    "x": 730,
+    "width": 86,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4898,6 +5521,9 @@
     ],
     "borderRadius": 0,
     "y": 5224,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4926,6 +5552,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5226,
+    "x": 730,
+    "width": 88,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -4953,6 +5582,9 @@
     ],
     "borderRadius": 0,
     "y": 5252,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -4981,6 +5613,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5254,
+    "x": 730,
+    "width": 80,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5008,6 +5643,9 @@
     ],
     "borderRadius": 0,
     "y": 5280,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5036,6 +5674,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5282,
+    "x": 730,
+    "width": 60,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5063,6 +5704,9 @@
     ],
     "borderRadius": 0,
     "y": 5308,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5091,6 +5735,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5310,
+    "x": 730,
+    "width": 21,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5118,6 +5765,9 @@
     ],
     "borderRadius": 0,
     "y": 5136,
+    "x": 968,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -5146,6 +5796,9 @@
     ],
     "borderRadius": 0,
     "y": 5168,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5174,6 +5827,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5170,
+    "x": 966,
+    "width": 72,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5202,6 +5858,9 @@
     "gap": 4,
     "borderRadius": 33554400,
     "y": 5172,
+    "x": 997,
+    "width": 40,
+    "height": 20,
     "className": "inline-flex shrink-0 items-center justify-center rounded-full whitespace-nowrap "
   },
   {
@@ -5229,6 +5888,9 @@
     ],
     "borderRadius": 0,
     "y": 5196,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5257,6 +5919,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5198,
+    "x": 966,
+    "width": 48,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5284,6 +5949,9 @@
     ],
     "borderRadius": 0,
     "y": 5224,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5312,6 +5980,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5226,
+    "x": 966,
+    "width": 35,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5339,6 +6010,9 @@
     ],
     "borderRadius": 0,
     "y": 5252,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5367,6 +6041,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5254,
+    "x": 966,
+    "width": 61,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5394,6 +6071,9 @@
     ],
     "borderRadius": 0,
     "y": 5280,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5422,6 +6102,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5282,
+    "x": 966,
+    "width": 35,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5449,6 +6132,9 @@
     ],
     "borderRadius": 0,
     "y": 5308,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5477,6 +6163,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5310,
+    "x": 966,
+    "width": 68,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5504,6 +6193,9 @@
     ],
     "borderRadius": 0,
     "y": 5336,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5532,6 +6224,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5338,
+    "x": 966,
+    "width": 97,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5559,6 +6254,9 @@
     ],
     "borderRadius": 0,
     "y": 5364,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5587,6 +6285,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5366,
+    "x": 966,
+    "width": 54,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5614,6 +6315,9 @@
     ],
     "borderRadius": 0,
     "y": 5392,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5642,6 +6346,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5394,
+    "x": 966,
+    "width": 100,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5669,6 +6376,9 @@
     ],
     "borderRadius": 0,
     "y": 5136,
+    "x": 1204,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -5697,6 +6407,9 @@
     ],
     "borderRadius": 0,
     "y": 5168,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5725,6 +6438,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5170,
+    "x": 1202,
+    "width": 75,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5752,6 +6468,9 @@
     ],
     "borderRadius": 0,
     "y": 5196,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5780,6 +6499,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5198,
+    "x": 1202,
+    "width": 96,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5807,6 +6529,9 @@
     ],
     "borderRadius": 0,
     "y": 5224,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5835,6 +6560,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5226,
+    "x": 1202,
+    "width": 70,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5862,6 +6590,9 @@
     ],
     "borderRadius": 0,
     "y": 5252,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5890,6 +6621,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5254,
+    "x": 1202,
+    "width": 66,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5917,6 +6651,9 @@
     ],
     "borderRadius": 0,
     "y": 5280,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -5945,6 +6682,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5282,
+    "x": 1202,
+    "width": 84,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -5972,6 +6712,9 @@
     ],
     "borderRadius": 0,
     "y": 5308,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6000,6 +6743,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5310,
+    "x": 1202,
+    "width": 86,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6027,6 +6773,9 @@
     ],
     "borderRadius": 0,
     "y": 5456,
+    "x": 24,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -6055,6 +6804,9 @@
     ],
     "borderRadius": 0,
     "y": 5488,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6083,6 +6835,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5490,
+    "x": 22,
+    "width": 56,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6110,6 +6865,9 @@
     ],
     "borderRadius": 0,
     "y": 5516,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6138,6 +6896,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5518,
+    "x": 22,
+    "width": 69,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6165,6 +6926,9 @@
     ],
     "borderRadius": 0,
     "y": 5544,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6193,6 +6957,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5546,
+    "x": 22,
+    "width": 104,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6220,6 +6987,9 @@
     ],
     "borderRadius": 0,
     "y": 5572,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6248,6 +7018,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5574,
+    "x": 22,
+    "width": 66,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6275,6 +7048,9 @@
     ],
     "borderRadius": 0,
     "y": 5600,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6303,6 +7079,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5602,
+    "x": 22,
+    "width": 74,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6330,6 +7109,9 @@
     ],
     "borderRadius": 0,
     "y": 5628,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6358,6 +7140,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5630,
+    "x": 22,
+    "width": 126,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6385,6 +7170,9 @@
     ],
     "borderRadius": 0,
     "y": 5656,
+    "x": 24,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6413,6 +7201,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5658,
+    "x": 22,
+    "width": 115,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6440,6 +7231,9 @@
     ],
     "borderRadius": 0,
     "y": 5456,
+    "x": 260,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -6468,6 +7262,9 @@
     ],
     "borderRadius": 0,
     "y": 5488,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6496,6 +7293,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5490,
+    "x": 258,
+    "width": 37,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6523,6 +7323,9 @@
     ],
     "borderRadius": 0,
     "y": 5516,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6551,6 +7354,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5518,
+    "x": 258,
+    "width": 33,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6578,6 +7384,9 @@
     ],
     "borderRadius": 0,
     "y": 5544,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6606,6 +7415,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5546,
+    "x": 258,
+    "width": 73,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6633,6 +7445,9 @@
     ],
     "borderRadius": 0,
     "y": 5572,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6661,6 +7476,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5574,
+    "x": 258,
+    "width": 111,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6688,6 +7506,9 @@
     ],
     "borderRadius": 0,
     "y": 5600,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6716,6 +7537,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5602,
+    "x": 258,
+    "width": 64,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6743,6 +7567,9 @@
     ],
     "borderRadius": 0,
     "y": 5628,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6771,6 +7598,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5630,
+    "x": 258,
+    "width": 52,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6798,6 +7628,9 @@
     ],
     "borderRadius": 0,
     "y": 5656,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6826,6 +7659,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5658,
+    "x": 258,
+    "width": 78,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6853,6 +7689,9 @@
     ],
     "borderRadius": 0,
     "y": 5684,
+    "x": 260,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6881,6 +7720,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5686,
+    "x": 258,
+    "width": 67,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6908,6 +7750,9 @@
     ],
     "borderRadius": 0,
     "y": 5456,
+    "x": 496,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -6936,6 +7781,9 @@
     ],
     "borderRadius": 0,
     "y": 5488,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -6964,6 +7812,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5490,
+    "x": 494,
+    "width": 73,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -6991,6 +7842,9 @@
     ],
     "borderRadius": 0,
     "y": 5516,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7019,6 +7873,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5518,
+    "x": 494,
+    "width": 84,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7046,6 +7903,9 @@
     ],
     "borderRadius": 0,
     "y": 5544,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7074,6 +7934,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5546,
+    "x": 494,
+    "width": 70,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7101,6 +7964,9 @@
     ],
     "borderRadius": 0,
     "y": 5572,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7129,6 +7995,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5574,
+    "x": 494,
+    "width": 96,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7156,6 +8025,9 @@
     ],
     "borderRadius": 0,
     "y": 5600,
+    "x": 496,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7184,6 +8056,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5602,
+    "x": 494,
+    "width": 89,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7211,6 +8086,9 @@
     ],
     "borderRadius": 0,
     "y": 5456,
+    "x": 732,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -7239,6 +8117,9 @@
     ],
     "borderRadius": 0,
     "y": 5488,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7267,6 +8148,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5490,
+    "x": 730,
+    "width": 42,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7294,6 +8178,9 @@
     ],
     "borderRadius": 0,
     "y": 5516,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7322,6 +8209,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5518,
+    "x": 730,
+    "width": 54,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7349,6 +8239,9 @@
     ],
     "borderRadius": 0,
     "y": 5544,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7377,6 +8270,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5546,
+    "x": 730,
+    "width": 40,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7404,6 +8300,9 @@
     ],
     "borderRadius": 0,
     "y": 5572,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7432,6 +8331,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5574,
+    "x": 730,
+    "width": 47,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7459,6 +8361,9 @@
     ],
     "borderRadius": 0,
     "y": 5600,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7487,6 +8392,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5602,
+    "x": 730,
+    "width": 59,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7514,6 +8422,9 @@
     ],
     "borderRadius": 0,
     "y": 5628,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7542,6 +8453,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5630,
+    "x": 730,
+    "width": 120,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7569,6 +8483,9 @@
     ],
     "borderRadius": 0,
     "y": 5656,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7597,6 +8514,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5658,
+    "x": 730,
+    "width": 145,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7624,6 +8544,9 @@
     ],
     "borderRadius": 0,
     "y": 5684,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7652,6 +8575,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5686,
+    "x": 730,
+    "width": 69,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7679,6 +8605,9 @@
     ],
     "borderRadius": 0,
     "y": 5712,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7707,6 +8636,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5714,
+    "x": 730,
+    "width": 48,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7734,6 +8666,9 @@
     ],
     "borderRadius": 0,
     "y": 5740,
+    "x": 732,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7762,6 +8697,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5742,
+    "x": 730,
+    "width": 34,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7789,6 +8727,9 @@
     ],
     "borderRadius": 0,
     "y": 5456,
+    "x": 968,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -7817,6 +8758,9 @@
     ],
     "borderRadius": 0,
     "y": 5488,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7845,6 +8789,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5490,
+    "x": 966,
+    "width": 93,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7872,6 +8819,9 @@
     ],
     "borderRadius": 0,
     "y": 5516,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7900,6 +8850,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5518,
+    "x": 966,
+    "width": 110,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7927,6 +8880,9 @@
     ],
     "borderRadius": 0,
     "y": 5544,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -7955,6 +8911,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5546,
+    "x": 966,
+    "width": 90,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -7982,6 +8941,9 @@
     ],
     "borderRadius": 0,
     "y": 5572,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8010,6 +8972,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5574,
+    "x": 966,
+    "width": 31,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8037,6 +9002,9 @@
     ],
     "borderRadius": 0,
     "y": 5600,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8065,6 +9033,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5602,
+    "x": 966,
+    "width": 146,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8092,6 +9063,9 @@
     ],
     "borderRadius": 0,
     "y": 5628,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8120,6 +9094,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5630,
+    "x": 966,
+    "width": 140,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8147,6 +9124,9 @@
     ],
     "borderRadius": 0,
     "y": 5656,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8175,6 +9155,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5658,
+    "x": 966,
+    "width": 83,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8202,6 +9185,9 @@
     ],
     "borderRadius": 0,
     "y": 5684,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8230,6 +9216,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5686,
+    "x": 966,
+    "width": 46,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8257,6 +9246,9 @@
     ],
     "borderRadius": 0,
     "y": 5712,
+    "x": 968,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8284,6 +9276,9 @@
     ],
     "borderRadius": 0,
     "y": 5456,
+    "x": 1204,
+    "width": 212,
+    "height": 20,
     "inHeading": true,
     "className": "text-gray-1000 text-label-14 font-medium my-[var(--geist-gap-half)]"
   },
@@ -8312,6 +9307,9 @@
     ],
     "borderRadius": 0,
     "y": 5488,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8340,6 +9338,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5490,
+    "x": 1202,
+    "width": 48,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8367,6 +9368,9 @@
     ],
     "borderRadius": 0,
     "y": 5516,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8395,6 +9399,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5518,
+    "x": 1202,
+    "width": 12,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8422,6 +9429,9 @@
     ],
     "borderRadius": 0,
     "y": 5544,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8450,6 +9460,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5546,
+    "x": 1202,
+    "width": 58,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8477,6 +9490,9 @@
     ],
     "borderRadius": 0,
     "y": 5572,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8505,6 +9521,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5574,
+    "x": 1202,
+    "width": 57,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8532,6 +9551,9 @@
     ],
     "borderRadius": 0,
     "y": 5600,
+    "x": 1204,
+    "width": 212,
+    "height": 28,
     "className": "text-gray-900 py-0.5 leading-5 focus-visible:rounded-sm focus-visible:outline-no"
   },
   {
@@ -8560,6 +9582,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5602,
+    "x": 1202,
+    "width": 69,
+    "height": 24,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8587,6 +9612,9 @@
     ],
     "borderRadius": 0,
     "y": 5792,
+    "x": 24,
+    "width": 212,
+    "height": 32,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
@@ -8614,12 +9642,15 @@
     ],
     "borderRadius": 0,
     "y": 5856,
+    "x": 24,
+    "width": 1392,
+    "height": 34,
     "className": "flex items-center justify-between mt-8 min-h-[34px]"
   },
   {
     "tag": "a",
     "role": "interactive",
-    "area": 5304,
+    "area": 6284,
     "color": "rgb(237, 237, 237)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "GeistSans, \"GeistSans Fallback\"",
@@ -8641,12 +9672,15 @@
     ],
     "borderRadius": 0,
     "y": 5856,
+    "x": 4,
+    "width": 185,
+    "height": 34,
     "className": "cursor-pointer focus-visible:outline-2 outline-[var(--ds-focus-color)] outline-o"
   },
   {
     "tag": "div",
     "role": "container",
-    "area": 5032,
+    "area": 6012,
     "color": "rgb(237, 237, 237)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "GeistSans, \"GeistSans Fallback\"",
@@ -8669,6 +9703,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 5856,
+    "x": 12,
+    "width": 177,
+    "height": 34,
     "className": "flex-[0_1_auto] min-w-0 w-auto h-[34px] max-[960px]:h-8 flex items-center px-[va"
   },
   {
@@ -8676,7 +9713,7 @@
     "role": "container",
     "area": 100,
     "color": "rgb(237, 237, 237)",
-    "backgroundColor": "rgb(136, 136, 136)",
+    "backgroundColor": "rgb(0, 112, 243)",
     "fontFamily": "GeistSans, \"GeistSans Fallback\"",
     "fontSize": 14,
     "fontWeight": 400,
@@ -8696,13 +9733,16 @@
     ],
     "borderRadius": 33554400,
     "y": 5868,
-    "className": "status-dot shrink-0 inline-block size-2.5 rounded-full bg-[var(--geist-secondary"
+    "x": 24,
+    "width": 10,
+    "height": 10,
+    "className": "status-dot shrink-0 inline-block size-2.5 rounded-full bg-[var(--geist-success)]"
   },
   {
     "tag": "p",
     "role": "body",
-    "area": 2160,
-    "color": "rgb(136, 136, 136)",
+    "area": 2736,
+    "color": "rgb(0, 112, 243)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "\"Geist Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, \"Liberation Mono\", \"DejaVu Sans Mono\", \"Courier New\", monospace, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
     "fontSize": 12,
@@ -8723,7 +9763,10 @@
     ],
     "borderRadius": 0,
     "y": 5863,
-    "className": "status-text text-copy-14 geist-ellipsis text-[var(--geist-secondary)] font-mono "
+    "x": 40,
+    "width": 137,
+    "height": 20,
+    "className": "status-text text-copy-14 geist-ellipsis text-[var(--geist-success)] font-mono fo"
   },
   {
     "tag": "div",
@@ -8746,11 +9789,14 @@
       0,
       0,
       0,
-      1152
+      1123.19
     ],
     "gap": 4,
     "borderRadius": 0,
     "y": 5861,
+    "x": 1312,
+    "width": 104,
+    "height": 24,
     "className": "flex items-center gap-1 ml-auto"
   },
   {
@@ -8779,6 +9825,9 @@
     "borderRadius": 33554400,
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.145) 0px 0px 0px 1px, rgb(0, 0, 0) 0px 0px 0px 1px",
     "y": 5861,
+    "x": 1312,
+    "width": 72,
+    "height": 24,
     "className": "isolate flex shadow-[var(--ds-shadow-border)] rounded-full h-8 w-fit p-0 border-"
   },
   {
@@ -8806,6 +9855,9 @@
     ],
     "borderRadius": 33554400,
     "y": 5861,
+    "x": 1312,
+    "width": 24,
+    "height": 24,
     "className": "group rounded-full flex items-center justify-center bg-none size-8 m-0 relative "
   },
   {
@@ -8833,6 +9885,9 @@
     ],
     "borderRadius": 33554400,
     "y": 5861,
+    "x": 1336,
+    "width": 24,
+    "height": 24,
     "className": "group rounded-full flex items-center justify-center bg-none size-8 m-0 relative "
   },
   {
@@ -8860,6 +9915,9 @@
     ],
     "borderRadius": 33554400,
     "y": 5861,
+    "x": 1360,
+    "width": 24,
+    "height": 24,
     "className": "group rounded-full flex items-center justify-center bg-none size-8 m-0 relative "
   },
   {
@@ -8887,6 +9945,9 @@
     ],
     "borderRadius": 4,
     "y": 5861,
+    "x": 1392,
+    "width": 24,
+    "height": 24,
     "className": "group/agent-view-trigger relative flex size-6 shrink-0 cursor-pointer touch-mani"
   }
 ]

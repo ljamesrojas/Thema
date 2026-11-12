@@ -24,6 +24,9 @@
     ],
     "borderRadius": 0,
     "y": 0,
+    "x": 0,
+    "width": 1440,
+    "height": 3662,
     "className": "h-full"
   },
   {
@@ -51,6 +54,9 @@
     ],
     "borderRadius": 0,
     "y": 0,
+    "x": 0,
+    "width": 1440,
+    "height": 3662,
     "className": "bg-natural-white-60 min-h-full global-banner-active global-banner-in-view"
   },
   {
@@ -78,6 +84,9 @@
     ],
     "borderRadius": 0,
     "y": 0,
+    "x": 0,
+    "width": 1440,
+    "height": 32,
     "className": "relative"
   },
   {
@@ -105,12 +114,15 @@
     ],
     "borderRadius": 0,
     "y": 0,
+    "x": 0,
+    "width": 1440,
+    "height": 32,
     "className": "swiper-slide !flex !h-auto items-center justify-center px-8 py-2 swiper-slide-vi"
   },
   {
     "tag": "p",
     "role": "body",
-    "area": 4145,
+    "area": 7613,
     "color": "rgb(255, 255, 255)",
     "backgroundColor": "rgba(0, 0, 0, 0)",
     "fontFamily": "Geograph, system-ui, sans-serif",
@@ -132,7 +144,68 @@
     ],
     "borderRadius": 0,
     "y": 8,
+    "x": 482,
+    "width": 476,
+    "height": 16,
     "className": "text-center text-[10px] tracking-wider md:text-xs"
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 937,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 8,
+    "x": 811,
+    "width": 62,
+    "height": 15
+  },
+  {
+    "tag": "a",
+    "role": "interactive",
+    "area": 1223,
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "fontFamily": "Geograph, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0.6,
+    "padding": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "margin": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "borderRadius": 0,
+    "y": 8,
+    "x": 876,
+    "width": 82,
+    "height": 15
   },
   {
     "tag": "button",
@@ -159,6 +232,9 @@
     ],
     "borderRadius": 0,
     "y": 4,
+    "x": 0,
+    "width": 24,
+    "height": 24,
     "className": "swiper-prev-button z-content absolute top-1/2 left-0 size-6 -translate-y-1/2 tex"
   },
   {
@@ -186,6 +262,9 @@
     ],
     "borderRadius": 0,
     "y": 4,
+    "x": 1416,
+    "width": 24,
+    "height": 24,
     "className": "swiper-next-button z-content absolute top-1/2 right-0 size-6 -translate-y-1/2 te"
   },
   {
@@ -215,6 +294,9 @@
     "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
     "maxWidth": 2560,
     "y": 52,
+    "x": 20,
+    "width": 1400,
+    "height": 48,
     "className": "absolute top-5 right-5 left-5 z-50 mx-auto max-w-[2560px] overflow-hidden rounde"
   },
   {
@@ -242,6 +324,9 @@
     ],
     "borderRadius": 0,
     "y": 64,
+    "x": 40,
+    "width": 74,
+    "height": 24,
     "className": "flex items-center justify-center"
   },
   {
@@ -270,6 +355,9 @@
     "gap": 32,
     "borderRadius": 0,
     "y": 68,
+    "x": 493,
+    "width": 453,
+    "height": 16,
     "className": "flex flex-1 justify-center gap-8"
   },
   {
@@ -297,6 +385,9 @@
     ],
     "borderRadius": 0,
     "y": 68,
+    "x": 554,
+    "width": 91,
+    "height": 16,
     "className": "cursor-pointer items-center text-xs font-medium tracking-wider text-black upperc"
   },
   {
@@ -324,6 +415,9 @@
     ],
     "borderRadius": 0,
     "y": 68,
+    "x": 677,
+    "width": 62,
+    "height": 16,
     "className": "cursor-pointer items-center text-xs font-medium tracking-wider text-black upperc"
   },
   {
@@ -351,6 +445,9 @@
     ],
     "borderRadius": 0,
     "y": 68,
+    "x": 771,
+    "width": 30,
+    "height": 16,
     "className": "cursor-pointer items-center text-xs font-medium tracking-wider text-black upperc"
   },
   {
@@ -378,6 +475,9 @@
     ],
     "borderRadius": 0,
     "y": 68,
+    "x": 833,
+    "width": 53,
+    "height": 16,
     "className": "cursor-pointer items-center text-xs font-medium tracking-wider text-black upperc"
   },
   {
@@ -406,6 +506,9 @@
     "gap": 16,
     "borderRadius": 0,
     "y": 64,
+    "x": 947,
+    "width": 453,
+    "height": 24,
     "className": "flex flex-1 items-center justify-end gap-4"
   },
   {
@@ -434,6 +537,9 @@
     "gap": 8,
     "borderRadius": 0,
     "y": 64,
+    "x": 1344,
+    "width": 56,
+    "height": 24,
     "className": "align-center flex items-center gap-2"
   },
   {
@@ -460,7 +566,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 64
+    "y": 64,
+    "x": 1344,
+    "width": 24,
+    "height": 24
   },
   {
     "tag": "button",
@@ -487,6 +596,9 @@
     ],
     "borderRadius": 0,
     "y": 64,
+    "x": 1376,
+    "width": 24,
+    "height": 24,
     "className": "relative flex cursor-pointer items-center"
   },
   {
@@ -515,6 +627,9 @@
     "borderRadius": 0,
     "maxWidth": 2560,
     "y": 0,
+    "x": 20,
+    "width": 1400,
+    "height": 152,
     "className": "fixed inset-x-0 top-0 right-5 left-5 z-30 mx-auto hidden max-w-[2560px] pt-[calc"
   },
   {
@@ -542,6 +657,9 @@
     ],
     "borderRadius": 20,
     "y": 42,
+    "x": 10,
+    "width": 1420,
+    "height": 784,
     "className": "hero-height-dynamic relative m-2.5 overflow-hidden rounded text-white opacity-0"
   },
   {
@@ -569,6 +687,9 @@
     ],
     "borderRadius": 0,
     "y": 42,
+    "x": 10,
+    "width": 1420,
+    "height": 784,
     "className": "pointer-events-none absolute inset-0 flex size-full flex-col p-8 !pt-20 opacity-"
   },
   {
@@ -596,6 +717,9 @@
     ],
     "borderRadius": 0,
     "y": 637,
+    "x": 1124,
+    "width": 242,
+    "height": 20,
     "className": "z-content relative mb-4 font-mono text-xs/5 font-medium tracking-widest uppercas"
   },
   {
@@ -623,6 +747,9 @@
     ],
     "borderRadius": 0,
     "y": 673,
+    "x": 903,
+    "width": 463,
+    "height": 32,
     "inHeading": true,
     "className": "z-content relative mb-6 text-2xl/8 tracking-wide"
   },
@@ -652,6 +779,9 @@
     "gap": 8,
     "borderRadius": 0,
     "y": 729,
+    "x": 1114,
+    "width": 253,
+    "height": 33,
     "className": "z-content pointer-events-auto relative grid gap-2 grid-cols-2"
   },
   {
@@ -680,6 +810,9 @@
     ],
     "borderRadius": 33554400,
     "y": 729,
+    "x": 1114,
+    "width": 122,
+    "height": 33,
     "className": "btn btn-primary"
   },
   {
@@ -708,6 +841,9 @@
     ],
     "borderRadius": 33554400,
     "y": 729,
+    "x": 1244,
+    "width": 122,
+    "height": 33,
     "className": "btn btn-primary"
   },
   {
@@ -735,6 +871,9 @@
     ],
     "borderRadius": 0,
     "y": 836,
+    "x": 0,
+    "width": 1440,
+    "height": 471,
     "className": "relative overflow-hidden p-2.5 text-white opacity-0"
   },
   {
@@ -763,6 +902,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 846,
+    "x": 10,
+    "width": 1420,
+    "height": 451,
     "className": "swiper-wrapper md:!flex md:gap-2.5"
   },
   {
@@ -790,6 +932,9 @@
     ],
     "borderRadius": 20,
     "y": 846,
+    "x": 10,
+    "width": 348,
+    "height": 451,
     "className": "swiper-slide category-row-item group/category-row-item relative aspect-[0.77] !o"
   },
   {
@@ -817,6 +962,9 @@
     ],
     "borderRadius": 0,
     "y": 846,
+    "x": 10,
+    "width": 348,
+    "height": 451,
     "className": "pointer-events-none absolute z-10 inset-0"
   },
   {
@@ -845,6 +993,9 @@
     "gap": 8,
     "borderRadius": 0,
     "y": 1049,
+    "x": 120,
+    "width": 127,
+    "height": 115,
     "className": "absolute inset-0 z-20 m-auto flex h-fit w-fit flex-col items-center justify-cent"
   },
   {
@@ -873,6 +1024,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1049,
+    "x": 120,
+    "width": 127,
+    "height": 33,
     "inHeading": true,
     "className": "category-row-item-title btn btn-outline-white pointer-events-none"
   },
@@ -901,6 +1055,9 @@
     ],
     "borderRadius": 20,
     "y": 846,
+    "x": 368,
+    "width": 348,
+    "height": 451,
     "className": "swiper-slide category-row-item group/category-row-item relative aspect-[0.77] !o"
   },
   {
@@ -928,6 +1085,9 @@
     ],
     "borderRadius": 0,
     "y": 846,
+    "x": 368,
+    "width": 348,
+    "height": 451,
     "className": "pointer-events-none absolute z-10 inset-0"
   },
   {
@@ -956,6 +1116,9 @@
     "gap": 8,
     "borderRadius": 0,
     "y": 1057,
+    "x": 491,
+    "width": 100,
+    "height": 74,
     "className": "absolute inset-0 z-20 m-auto flex h-fit w-fit flex-col items-center justify-cent"
   },
   {
@@ -984,6 +1147,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1057,
+    "x": 506,
+    "width": 70,
+    "height": 33,
     "inHeading": true,
     "className": "category-row-item-title btn btn-outline-white pointer-events-none"
   },
@@ -1012,6 +1178,9 @@
     ],
     "borderRadius": 20,
     "y": 846,
+    "x": 725,
+    "width": 348,
+    "height": 451,
     "className": "swiper-slide category-row-item group/category-row-item relative aspect-[0.77] !o"
   },
   {
@@ -1039,6 +1208,9 @@
     ],
     "borderRadius": 0,
     "y": 846,
+    "x": 725,
+    "width": 348,
+    "height": 451,
     "className": "pointer-events-none absolute z-10 inset-0"
   },
   {
@@ -1067,6 +1239,9 @@
     "gap": 8,
     "borderRadius": 0,
     "y": 1057,
+    "x": 838,
+    "width": 122,
+    "height": 74,
     "className": "absolute inset-0 z-20 m-auto flex h-fit w-fit flex-col items-center justify-cent"
   },
   {
@@ -1095,6 +1270,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1057,
+    "x": 853,
+    "width": 92,
+    "height": 33,
     "inHeading": true,
     "className": "category-row-item-title btn btn-outline-white pointer-events-none"
   },
@@ -1123,6 +1301,9 @@
     ],
     "borderRadius": 20,
     "y": 846,
+    "x": 1083,
+    "width": 348,
+    "height": 451,
     "className": "swiper-slide category-row-item group/category-row-item relative aspect-[0.77] !o"
   },
   {
@@ -1150,6 +1331,9 @@
     ],
     "borderRadius": 0,
     "y": 846,
+    "x": 1083,
+    "width": 348,
+    "height": 451,
     "className": "pointer-events-none absolute z-10 inset-0"
   },
   {
@@ -1178,6 +1362,9 @@
     "gap": 8,
     "borderRadius": 0,
     "y": 1049,
+    "x": 1195,
+    "width": 122,
+    "height": 115,
     "className": "absolute inset-0 z-20 m-auto flex h-fit w-fit flex-col items-center justify-cent"
   },
   {
@@ -1206,6 +1393,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1049,
+    "x": 1198,
+    "width": 116,
+    "height": 33,
     "inHeading": true,
     "className": "category-row-item-title btn btn-outline-white pointer-events-none"
   },
@@ -1234,6 +1424,9 @@
     ],
     "borderRadius": 0,
     "y": 1347,
+    "x": 0,
+    "width": 1440,
+    "height": 565,
     "className": "relative my-10 opacity-0"
   },
   {
@@ -1261,6 +1454,9 @@
     ],
     "borderRadius": 0,
     "y": 1347,
+    "x": 0,
+    "width": 1440,
+    "height": 40,
     "className": "mb-6 flex items-center justify-between"
   },
   {
@@ -1289,6 +1485,9 @@
     "gap": 40,
     "borderRadius": 0,
     "y": 1354,
+    "x": 0,
+    "width": 169,
+    "height": 26,
     "className": "scrollbar-hidden relative flex items-center justify-start gap-5 overflow-x-auto "
   },
   {
@@ -1317,6 +1516,9 @@
     ],
     "borderRadius": 0,
     "y": 1354,
+    "x": 20,
+    "width": 129,
+    "height": 26,
     "className": "transition-border-color pointer-events-auto cursor-pointer border-b-2 border-tra"
   },
   {
@@ -1345,6 +1547,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 1347,
+    "x": 1310,
+    "width": 90,
+    "height": 40,
     "className": "mr-10 hidden items-center justify-end gap-2.5 md:flex"
   },
   {
@@ -1373,6 +1578,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1347,
+    "x": 1310,
+    "width": 40,
+    "height": 40,
     "className": "btn swiper-prev-button btn-icon-black swiper-nav-disabled-state size-10"
   },
   {
@@ -1401,6 +1609,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1347,
+    "x": 1360,
+    "width": 40,
+    "height": 40,
     "className": "btn swiper-next-button btn-icon-black swiper-nav-disabled-state size-10"
   },
   {
@@ -1428,6 +1639,9 @@
     ],
     "borderRadius": 0,
     "y": 1411,
+    "x": 10,
+    "width": 390,
+    "height": 501,
     "className": "swiper-slide swiper-slide-active"
   },
   {
@@ -1455,6 +1669,9 @@
     ],
     "borderRadius": 16,
     "y": 1411,
+    "x": 10,
+    "width": 390,
+    "height": 501,
     "className": "group relative flex h-full flex-col rounded-2xl transition-all duration-300 ease"
   },
   {
@@ -1483,6 +1700,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 1431,
+    "x": 30,
+    "width": 88,
+    "height": 28,
     "className": "flex flex-wrap items-center gap-1.5"
   },
   {
@@ -1510,6 +1730,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1431,
+    "x": 30,
+    "width": 88,
+    "height": 28,
     "className": "bg-natural-white rounded-full text-[10px] leading-none md:text-xs font-medium tr"
   },
   {
@@ -1537,6 +1760,9 @@
     ],
     "borderRadius": 16,
     "y": 1411,
+    "x": 10,
+    "width": 390,
+    "height": 390,
     "className": "absolute inset-0 overflow-hidden rounded-t-2xl"
   },
   {
@@ -1565,6 +1791,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 1801,
+    "x": 10,
+    "width": 390,
+    "height": 111,
     "className": "ab-qa-home-info mt-auto flex flex-col gap-2.5 justify-self-end p-2.5 sm:p-4"
   },
   {
@@ -1593,6 +1822,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1817,
+    "x": 26,
+    "width": 358,
+    "height": 45,
     "className": "flex h-full flex-col gap-1"
   },
   {
@@ -1620,6 +1852,9 @@
     ],
     "borderRadius": 0,
     "y": 1817,
+    "x": 26,
+    "width": 358,
+    "height": 20,
     "className": "font-sans text-xs font-medium tracking-wider uppercase md:truncate md:overflow-h"
   },
   {
@@ -1647,6 +1882,9 @@
     ],
     "borderRadius": 0,
     "y": 1841,
+    "x": 26,
+    "width": 358,
+    "height": 21,
     "className": "min-h-[1.5em] truncate text-xs tracking-wider text-ellipsis md:text-sm"
   },
   {
@@ -1675,6 +1913,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1874,
+    "x": 26,
+    "width": 76,
+    "height": 20,
     "className": "hidden items-center gap-1 font-sans text-sm font-medium tracking-wider uppercase"
   },
   {
@@ -1702,6 +1943,9 @@
     ],
     "borderRadius": 0,
     "y": 1874,
+    "x": 26,
+    "width": 47,
+    "height": 20,
     "className": "text-red"
   },
   {
@@ -1730,6 +1974,9 @@
     "borderRadius": 0,
     "opacity": 0.65,
     "y": 1874,
+    "x": 77,
+    "width": 25,
+    "height": 20,
     "className": "line-through opacity-65"
   },
   {
@@ -1758,6 +2005,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1872,
+    "x": 292,
+    "width": 92,
+    "height": 24,
     "className": "ab-qa-link"
   },
   {
@@ -1784,7 +2034,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1876
+    "y": 1876,
+    "x": 312,
+    "width": 72,
+    "height": 16
   },
   {
     "tag": "div",
@@ -1811,6 +2064,9 @@
     ],
     "borderRadius": 0,
     "y": 1411,
+    "x": 410,
+    "width": 390,
+    "height": 501,
     "className": "swiper-slide swiper-slide-next"
   },
   {
@@ -1838,6 +2094,9 @@
     ],
     "borderRadius": 16,
     "y": 1411,
+    "x": 410,
+    "width": 390,
+    "height": 501,
     "className": "group relative flex h-full flex-col rounded-2xl transition-all duration-300 ease"
   },
   {
@@ -1866,6 +2125,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 1431,
+    "x": 430,
+    "width": 47,
+    "height": 28,
     "className": "flex flex-wrap items-center gap-1.5"
   },
   {
@@ -1893,6 +2155,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1431,
+    "x": 430,
+    "width": 47,
+    "height": 28,
     "className": "bg-natural-white rounded-full text-[10px] leading-none md:text-xs font-medium tr"
   },
   {
@@ -1920,6 +2185,9 @@
     ],
     "borderRadius": 16,
     "y": 1411,
+    "x": 410,
+    "width": 390,
+    "height": 390,
     "className": "absolute inset-0 overflow-hidden rounded-t-2xl"
   },
   {
@@ -1948,6 +2216,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 1801,
+    "x": 410,
+    "width": 390,
+    "height": 111,
     "className": "ab-qa-home-info mt-auto flex flex-col gap-2.5 justify-self-end p-2.5 sm:p-4"
   },
   {
@@ -1976,6 +2247,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1817,
+    "x": 426,
+    "width": 358,
+    "height": 45,
     "className": "flex h-full flex-col gap-1"
   },
   {
@@ -2003,6 +2277,9 @@
     ],
     "borderRadius": 0,
     "y": 1817,
+    "x": 426,
+    "width": 358,
+    "height": 20,
     "className": "font-sans text-xs font-medium tracking-wider uppercase md:truncate md:overflow-h"
   },
   {
@@ -2030,6 +2307,9 @@
     ],
     "borderRadius": 0,
     "y": 1841,
+    "x": 426,
+    "width": 358,
+    "height": 21,
     "className": "min-h-[1.5em] truncate text-xs tracking-wider text-ellipsis md:text-sm"
   },
   {
@@ -2058,6 +2338,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1874,
+    "x": 426,
+    "width": 35,
+    "height": 20,
     "className": "hidden items-center gap-1 font-sans text-sm font-medium tracking-wider uppercase"
   },
   {
@@ -2084,7 +2367,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1874
+    "y": 1874,
+    "x": 426,
+    "width": 35,
+    "height": 20
   },
   {
     "tag": "button",
@@ -2112,6 +2398,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1872,
+    "x": 692,
+    "width": 92,
+    "height": 24,
     "className": "ab-qa-link"
   },
   {
@@ -2138,7 +2427,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1876
+    "y": 1876,
+    "x": 712,
+    "width": 72,
+    "height": 16
   },
   {
     "tag": "div",
@@ -2165,6 +2457,9 @@
     ],
     "borderRadius": 0,
     "y": 1411,
+    "x": 810,
+    "width": 390,
+    "height": 501,
     "className": "swiper-slide"
   },
   {
@@ -2192,6 +2487,9 @@
     ],
     "borderRadius": 16,
     "y": 1411,
+    "x": 810,
+    "width": 390,
+    "height": 501,
     "className": "group relative flex h-full flex-col rounded-2xl transition-all duration-300 ease"
   },
   {
@@ -2220,6 +2518,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 1431,
+    "x": 830,
+    "width": 88,
+    "height": 28,
     "className": "flex flex-wrap items-center gap-1.5"
   },
   {
@@ -2247,6 +2548,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1431,
+    "x": 830,
+    "width": 88,
+    "height": 28,
     "className": "bg-natural-white rounded-full text-[10px] leading-none md:text-xs font-medium tr"
   },
   {
@@ -2274,6 +2578,9 @@
     ],
     "borderRadius": 16,
     "y": 1411,
+    "x": 810,
+    "width": 390,
+    "height": 390,
     "className": "absolute inset-0 overflow-hidden rounded-t-2xl"
   },
   {
@@ -2302,6 +2609,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 1801,
+    "x": 810,
+    "width": 390,
+    "height": 111,
     "className": "ab-qa-home-info mt-auto flex flex-col gap-2.5 justify-self-end p-2.5 sm:p-4"
   },
   {
@@ -2330,6 +2640,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1817,
+    "x": 826,
+    "width": 358,
+    "height": 45,
     "className": "flex h-full flex-col gap-1"
   },
   {
@@ -2357,6 +2670,9 @@
     ],
     "borderRadius": 0,
     "y": 1817,
+    "x": 826,
+    "width": 358,
+    "height": 20,
     "className": "font-sans text-xs font-medium tracking-wider uppercase md:truncate md:overflow-h"
   },
   {
@@ -2384,6 +2700,9 @@
     ],
     "borderRadius": 0,
     "y": 1841,
+    "x": 826,
+    "width": 358,
+    "height": 21,
     "className": "min-h-[1.5em] truncate text-xs tracking-wider text-ellipsis md:text-sm"
   },
   {
@@ -2412,6 +2731,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1874,
+    "x": 826,
+    "width": 84,
+    "height": 20,
     "className": "hidden items-center gap-1 font-sans text-sm font-medium tracking-wider uppercase"
   },
   {
@@ -2439,6 +2761,9 @@
     ],
     "borderRadius": 0,
     "y": 1874,
+    "x": 826,
+    "width": 47,
+    "height": 20,
     "className": "text-red"
   },
   {
@@ -2467,6 +2792,9 @@
     "borderRadius": 0,
     "opacity": 0.65,
     "y": 1874,
+    "x": 877,
+    "width": 33,
+    "height": 20,
     "className": "line-through opacity-65"
   },
   {
@@ -2495,6 +2823,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1872,
+    "x": 1092,
+    "width": 92,
+    "height": 24,
     "className": "ab-qa-link"
   },
   {
@@ -2521,7 +2852,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 1876
+    "y": 1876,
+    "x": 1112,
+    "width": 72,
+    "height": 16
   },
   {
     "tag": "div",
@@ -2548,6 +2882,9 @@
     ],
     "borderRadius": 0,
     "y": 1411,
+    "x": 1210,
+    "width": 390,
+    "height": 501,
     "className": "swiper-slide"
   },
   {
@@ -2575,6 +2912,9 @@
     ],
     "borderRadius": 16,
     "y": 1411,
+    "x": 1210,
+    "width": 390,
+    "height": 501,
     "className": "group relative flex h-full flex-col rounded-2xl transition-all duration-300 ease"
   },
   {
@@ -2603,6 +2943,9 @@
     "gap": 6,
     "borderRadius": 0,
     "y": 1431,
+    "x": 1230,
+    "width": 88,
+    "height": 28,
     "className": "flex flex-wrap items-center gap-1.5"
   },
   {
@@ -2630,6 +2973,9 @@
     ],
     "borderRadius": 33554400,
     "y": 1431,
+    "x": 1230,
+    "width": 88,
+    "height": 28,
     "className": "bg-natural-white rounded-full text-[10px] leading-none md:text-xs font-medium tr"
   },
   {
@@ -2657,6 +3003,9 @@
     ],
     "borderRadius": 16,
     "y": 1411,
+    "x": 1210,
+    "width": 390,
+    "height": 390,
     "className": "absolute inset-0 overflow-hidden rounded-t-2xl"
   },
   {
@@ -2685,6 +3034,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 1801,
+    "x": 1210,
+    "width": 390,
+    "height": 111,
     "className": "ab-qa-home-info mt-auto flex flex-col gap-2.5 justify-self-end p-2.5 sm:p-4"
   },
   {
@@ -2713,6 +3065,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1817,
+    "x": 1226,
+    "width": 358,
+    "height": 45,
     "className": "flex h-full flex-col gap-1"
   },
   {
@@ -2740,6 +3095,9 @@
     ],
     "borderRadius": 0,
     "y": 1817,
+    "x": 1226,
+    "width": 358,
+    "height": 20,
     "className": "font-sans text-xs font-medium tracking-wider uppercase md:truncate md:overflow-h"
   },
   {
@@ -2767,6 +3125,9 @@
     ],
     "borderRadius": 0,
     "y": 1841,
+    "x": 1226,
+    "width": 358,
+    "height": 21,
     "className": "min-h-[1.5em] truncate text-xs tracking-wider text-ellipsis md:text-sm"
   },
   {
@@ -2795,6 +3156,9 @@
     "gap": 4,
     "borderRadius": 0,
     "y": 1874,
+    "x": 1226,
+    "width": 84,
+    "height": 20,
     "className": "hidden items-center gap-1 font-sans text-sm font-medium tracking-wider uppercase"
   },
   {
@@ -2822,6 +3186,9 @@
     ],
     "borderRadius": 0,
     "y": 1874,
+    "x": 1226,
+    "width": 47,
+    "height": 20,
     "className": "text-red"
   },
   {
@@ -2850,6 +3217,9 @@
     "borderRadius": 0,
     "opacity": 0.65,
     "y": 1874,
+    "x": 1277,
+    "width": 33,
+    "height": 20,
     "className": "line-through opacity-65"
   },
   {
@@ -2877,6 +3247,9 @@
     ],
     "borderRadius": 0,
     "y": 1952,
+    "x": 0,
+    "width": 1440,
+    "height": 667,
     "className": "my-10 px-2.5 opacity-0"
   },
   {
@@ -2905,6 +3278,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 1952,
+    "x": 10,
+    "width": 1420,
+    "height": 667,
     "className": "grid gap-8 md:grid-cols-3 md:gap-2.5"
   },
   {
@@ -2932,6 +3308,9 @@
     ],
     "borderRadius": 24,
     "y": 1952,
+    "x": 10,
+    "width": 467,
+    "height": 667,
     "className": "group relative aspect-7/10 w-full overflow-hidden rounded-3xl bg-white"
   },
   {
@@ -2960,6 +3339,9 @@
     "gap": 16,
     "borderRadius": 0,
     "y": 2256,
+    "x": 39,
+    "width": 408,
+    "height": 60,
     "className": "flex flex-col gap-4 text-center"
   },
   {
@@ -2987,6 +3369,9 @@
     ],
     "borderRadius": 0,
     "y": 2256,
+    "x": 39,
+    "width": 408,
+    "height": 60,
     "inHeading": true,
     "className": "font-serif text-[1.875rem] select-none md:text-[2.5rem] text-white"
   },
@@ -3016,6 +3401,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 2566,
+    "x": 30,
+    "width": 427,
+    "height": 33,
     "className": "absolute right-2.5 bottom-2.5 left-2.5 flex gap-2.5 md:right-5 md:bottom-5 md:le"
   },
   {
@@ -3044,6 +3432,9 @@
     ],
     "borderRadius": 33554400,
     "y": 2566,
+    "x": 30,
+    "width": 208,
+    "height": 33,
     "className": "btn btn-outline-white w-full text-xs"
   },
   {
@@ -3072,6 +3463,9 @@
     ],
     "borderRadius": 33554400,
     "y": 2566,
+    "x": 248,
+    "width": 208,
+    "height": 33,
     "className": "btn btn-outline-white w-full text-xs"
   },
   {
@@ -3099,6 +3493,9 @@
     ],
     "borderRadius": 24,
     "y": 1952,
+    "x": 487,
+    "width": 467,
+    "height": 667,
     "className": "group relative aspect-7/10 w-full overflow-hidden rounded-3xl bg-white"
   },
   {
@@ -3126,7 +3523,11 @@
     ],
     "gap": 16,
     "borderRadius": 0,
+    "opacity": 0.98,
     "y": 2256,
+    "x": 593,
+    "width": 254,
+    "height": 60,
     "className": "flex flex-col gap-4 text-center"
   },
   {
@@ -3153,7 +3554,11 @@
       0
     ],
     "borderRadius": 0,
+    "opacity": 0.98,
     "y": 2256,
+    "x": 593,
+    "width": 254,
+    "height": 60,
     "inHeading": true,
     "className": "font-serif text-[1.875rem] select-none md:text-[2.5rem] text-white"
   },
@@ -3182,7 +3587,11 @@
     ],
     "gap": 10,
     "borderRadius": 0,
+    "opacity": 0.98,
     "y": 2566,
+    "x": 507,
+    "width": 427,
+    "height": 33,
     "className": "absolute right-2.5 bottom-2.5 left-2.5 flex gap-2.5 md:right-5 md:bottom-5 md:le"
   },
   {
@@ -3210,7 +3619,11 @@
       0
     ],
     "borderRadius": 33554400,
+    "opacity": 0.98,
     "y": 2566,
+    "x": 507,
+    "width": 208,
+    "height": 33,
     "className": "btn btn-outline-white w-full text-xs"
   },
   {
@@ -3238,7 +3651,11 @@
       0
     ],
     "borderRadius": 33554400,
+    "opacity": 0.98,
     "y": 2566,
+    "x": 725,
+    "width": 208,
+    "height": 33,
     "className": "btn btn-outline-white w-full text-xs"
   },
   {
@@ -3266,6 +3683,9 @@
     ],
     "borderRadius": 24,
     "y": 1952,
+    "x": 963,
+    "width": 467,
+    "height": 667,
     "className": "group relative aspect-7/10 w-full overflow-hidden rounded-3xl bg-white"
   },
   {
@@ -3293,7 +3713,11 @@
     ],
     "gap": 16,
     "borderRadius": 0,
+    "opacity": 0.96,
     "y": 2256,
+    "x": 1081,
+    "width": 232,
+    "height": 60,
     "className": "flex flex-col gap-4 text-center"
   },
   {
@@ -3320,7 +3744,11 @@
       0
     ],
     "borderRadius": 0,
+    "opacity": 0.96,
     "y": 2256,
+    "x": 1081,
+    "width": 232,
+    "height": 60,
     "inHeading": true,
     "className": "font-serif text-[1.875rem] select-none md:text-[2.5rem] text-white"
   },
@@ -3349,7 +3777,11 @@
     ],
     "gap": 10,
     "borderRadius": 0,
+    "opacity": 0.96,
     "y": 2566,
+    "x": 983,
+    "width": 427,
+    "height": 33,
     "className": "absolute right-2.5 bottom-2.5 left-2.5 flex gap-2.5 md:right-5 md:bottom-5 md:le"
   },
   {
@@ -3377,7 +3809,11 @@
       0
     ],
     "borderRadius": 33554400,
+    "opacity": 0.96,
     "y": 2566,
+    "x": 983,
+    "width": 208,
+    "height": 33,
     "className": "btn btn-outline-white w-full text-xs"
   },
   {
@@ -3405,7 +3841,11 @@
       0
     ],
     "borderRadius": 33554400,
+    "opacity": 0.96,
     "y": 2566,
+    "x": 1202,
+    "width": 208,
+    "height": 33,
     "className": "btn btn-outline-white w-full text-xs"
   },
   {
@@ -3434,6 +3874,9 @@
     "gap": 10,
     "borderRadius": 0,
     "y": 2659,
+    "x": 0,
+    "width": 1440,
+    "height": 240,
     "className": "grid grid-cols-1 gap-2.5 p-2.5 md:min-h-60 md:grid-cols-3"
   },
   {
@@ -3462,6 +3905,9 @@
     "gap": 20,
     "borderRadius": 16,
     "y": 2669,
+    "x": 10,
+    "width": 467,
+    "height": 220,
     "className": "flex flex-col justify-center gap-5 rounded-2xl bg-white px-5 pt-10 pb-8 md:justi"
   },
   {
@@ -3489,6 +3935,9 @@
     ],
     "borderRadius": 0,
     "y": 2701,
+    "x": 42,
+    "width": 403,
+    "height": 16,
     "className": "font-mono text-xs tracking-widest uppercase"
   },
   {
@@ -3515,7 +3964,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2737
+    "y": 2737,
+    "x": 42,
+    "width": 403,
+    "height": 63
   },
   {
     "tag": "div",
@@ -3543,6 +3995,9 @@
     "gap": 20,
     "borderRadius": 16,
     "y": 2669,
+    "x": 487,
+    "width": 467,
+    "height": 220,
     "className": "flex flex-col justify-center gap-5 rounded-2xl bg-white px-5 pt-10 pb-8 md:justi"
   },
   {
@@ -3570,6 +4025,9 @@
     ],
     "borderRadius": 0,
     "y": 2701,
+    "x": 519,
+    "width": 403,
+    "height": 16,
     "className": "font-mono text-xs tracking-widest uppercase"
   },
   {
@@ -3596,7 +4054,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2737
+    "y": 2737,
+    "x": 519,
+    "width": 403,
+    "height": 42
   },
   {
     "tag": "div",
@@ -3624,6 +4085,9 @@
     "gap": 20,
     "borderRadius": 16,
     "y": 2669,
+    "x": 963,
+    "width": 467,
+    "height": 220,
     "className": "flex flex-col justify-center gap-5 rounded-2xl bg-white px-5 pt-10 pb-8 md:justi"
   },
   {
@@ -3651,6 +4115,9 @@
     ],
     "borderRadius": 0,
     "y": 2701,
+    "x": 995,
+    "width": 403,
+    "height": 16,
     "className": "font-mono text-xs tracking-widest uppercase"
   },
   {
@@ -3677,7 +4144,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 2737
+    "y": 2737,
+    "x": 995,
+    "width": 403,
+    "height": 84
   },
   {
     "tag": "footer",
@@ -3704,6 +4174,9 @@
     ],
     "borderRadius": 0,
     "y": 2899,
+    "x": 0,
+    "width": 1440,
+    "height": 763,
     "className": "bg-black px-5 py-[3.125rem] text-white md:px-10 md:pt-20 md:pb-5"
   },
   {
@@ -3732,6 +4205,9 @@
     "gap": 32,
     "borderRadius": 0,
     "y": 2979,
+    "x": 40,
+    "width": 1360,
+    "height": 526,
     "className": "mb-10 grid grid-cols-1 gap-8 lg:grid-cols-2"
   },
   {
@@ -3759,6 +4235,9 @@
     ],
     "borderRadius": 0,
     "y": 2979,
+    "x": 40,
+    "width": 664,
+    "height": 16,
     "className": "mb-8 font-mono text-xs tracking-widest uppercase max-md:text-center"
   },
   {
@@ -3787,6 +4266,9 @@
     "gap": 8,
     "borderRadius": 0,
     "y": 3027,
+    "x": 40,
+    "width": 664,
+    "height": 42,
     "className": "flex flex-col gap-2"
   },
   {
@@ -3814,6 +4296,9 @@
     ],
     "borderRadius": 33554400,
     "y": 3032,
+    "x": 338,
+    "width": 82,
+    "height": 31,
     "className": "btn btn-outline z-content absolute top-1/2 right-1 -translate-y-1/2 font-bold te"
   },
   {
@@ -3842,6 +4327,9 @@
     ],
     "borderRadius": 33554400,
     "y": 3027,
+    "x": 40,
+    "width": 384,
+    "height": 42,
     "className": "h-full w-full rounded-full border bg-white px-3 py-2.5 pr-20 font-sans text-base"
   },
   {
@@ -3869,6 +4357,9 @@
     ],
     "borderRadius": 0,
     "y": 2979,
+    "x": 736,
+    "width": 166,
+    "height": 16,
     "className": "mb-8 hidden font-mono text-xs tracking-wider uppercase md:block"
   },
   {
@@ -3897,6 +4388,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 3027,
+    "x": 736,
+    "width": 166,
+    "height": 96,
     "className": "grid gap-3"
   },
   {
@@ -3924,6 +4418,9 @@
     ],
     "borderRadius": 0,
     "y": 3033,
+    "x": 736,
+    "width": 104,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -3951,6 +4448,9 @@
     ],
     "borderRadius": 0,
     "y": 3069,
+    "x": 736,
+    "width": 91,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -3978,6 +4478,9 @@
     ],
     "borderRadius": 0,
     "y": 3105,
+    "x": 736,
+    "width": 109,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4005,6 +4508,9 @@
     ],
     "borderRadius": 0,
     "y": 2979,
+    "x": 902,
+    "width": 166,
+    "height": 16,
     "className": "mb-8 hidden font-mono text-xs tracking-wider uppercase md:block"
   },
   {
@@ -4033,6 +4539,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 3027,
+    "x": 902,
+    "width": 166,
+    "height": 132,
     "className": "grid gap-3"
   },
   {
@@ -4060,6 +4569,9 @@
     ],
     "borderRadius": 0,
     "y": 3033,
+    "x": 902,
+    "width": 70,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4087,6 +4599,9 @@
     ],
     "borderRadius": 0,
     "y": 3069,
+    "x": 902,
+    "width": 87,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4114,6 +4629,9 @@
     ],
     "borderRadius": 0,
     "y": 3105,
+    "x": 902,
+    "width": 82,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4141,6 +4659,9 @@
     ],
     "borderRadius": 0,
     "y": 3141,
+    "x": 902,
+    "width": 100,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4168,6 +4689,9 @@
     ],
     "borderRadius": 0,
     "y": 2979,
+    "x": 1068,
+    "width": 332,
+    "height": 16,
     "className": "mb-8 hidden font-mono text-xs tracking-wider uppercase md:block"
   },
   {
@@ -4196,6 +4720,9 @@
     "gap": 40,
     "borderRadius": 0,
     "y": 3027,
+    "x": 1068,
+    "width": 332,
+    "height": 324,
     "className": "md:grid md:grid-cols-2 md:items-start md:gap-x-10"
   },
   {
@@ -4224,6 +4751,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 3027,
+    "x": 1068,
+    "width": 146,
+    "height": 324,
     "className": "grid gap-3"
   },
   {
@@ -4251,6 +4781,9 @@
     ],
     "borderRadius": 0,
     "y": 3033,
+    "x": 1068,
+    "width": 54,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4278,6 +4811,9 @@
     ],
     "borderRadius": 0,
     "y": 3069,
+    "x": 1068,
+    "width": 77,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4305,6 +4841,9 @@
     ],
     "borderRadius": 0,
     "y": 3105,
+    "x": 1068,
+    "width": 110,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4332,6 +4871,9 @@
     ],
     "borderRadius": 0,
     "y": 3141,
+    "x": 1068,
+    "width": 57,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4359,6 +4901,9 @@
     ],
     "borderRadius": 0,
     "y": 3177,
+    "x": 1068,
+    "width": 28,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4386,6 +4931,9 @@
     ],
     "borderRadius": 0,
     "y": 3213,
+    "x": 1068,
+    "width": 114,
+    "height": 39,
     "className": "text-xs hover:underline"
   },
   {
@@ -4413,6 +4961,9 @@
     ],
     "borderRadius": 0,
     "y": 3273,
+    "x": 1068,
+    "width": 131,
+    "height": 39,
     "className": "text-xs hover:underline"
   },
   {
@@ -4440,6 +4991,9 @@
     ],
     "borderRadius": 0,
     "y": 3333,
+    "x": 1068,
+    "width": 104,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4468,6 +5022,9 @@
     "gap": 12,
     "borderRadius": 0,
     "y": 3027,
+    "x": 1254,
+    "width": 146,
+    "height": 60,
     "className": "mt-3 grid gap-3 md:mt-0"
   },
   {
@@ -4495,6 +5052,9 @@
     ],
     "borderRadius": 0,
     "y": 3033,
+    "x": 1254,
+    "width": 50,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4522,6 +5082,9 @@
     ],
     "borderRadius": 0,
     "y": 3069,
+    "x": 1254,
+    "width": 42,
+    "height": 15,
     "className": "text-xs hover:underline"
   },
   {
@@ -4549,6 +5112,9 @@
     ],
     "borderRadius": 0,
     "y": 3383,
+    "x": 40,
+    "width": 664,
+    "height": 82,
     "className": "mb-10 flex flex-col items-center justify-center md:items-start"
   },
   {
@@ -4576,6 +5142,9 @@
     ],
     "borderRadius": 0,
     "y": 3383,
+    "x": 40,
+    "width": 129,
+    "height": 16,
     "inHeading": true,
     "className": "mb-6 font-mono text-xs tracking-wider uppercase max-md:text-center"
   },
@@ -4605,6 +5174,9 @@
     "gap": 16,
     "borderRadius": 0,
     "y": 3423,
+    "x": 40,
+    "width": 332,
+    "height": 42,
     "className": "flex justify-center gap-4"
   },
   {
@@ -4632,6 +5204,9 @@
     ],
     "borderRadius": 0,
     "y": 3423,
+    "x": 40,
+    "width": 42,
+    "height": 42,
     "className": "social-icon"
   },
   {
@@ -4660,6 +5235,9 @@
     ],
     "borderRadius": 33554400,
     "y": 3423,
+    "x": 40,
+    "width": 42,
+    "height": 42,
     "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
@@ -4687,6 +5265,9 @@
     ],
     "borderRadius": 0,
     "y": 3423,
+    "x": 98,
+    "width": 42,
+    "height": 42,
     "className": "social-icon"
   },
   {
@@ -4715,6 +5296,9 @@
     ],
     "borderRadius": 33554400,
     "y": 3423,
+    "x": 98,
+    "width": 42,
+    "height": 42,
     "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
@@ -4742,6 +5326,9 @@
     ],
     "borderRadius": 0,
     "y": 3423,
+    "x": 156,
+    "width": 42,
+    "height": 42,
     "className": "social-icon"
   },
   {
@@ -4770,6 +5357,9 @@
     ],
     "borderRadius": 33554400,
     "y": 3423,
+    "x": 156,
+    "width": 42,
+    "height": 42,
     "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
@@ -4797,6 +5387,9 @@
     ],
     "borderRadius": 0,
     "y": 3423,
+    "x": 214,
+    "width": 42,
+    "height": 42,
     "className": "social-icon"
   },
   {
@@ -4825,6 +5418,9 @@
     ],
     "borderRadius": 33554400,
     "y": 3423,
+    "x": 214,
+    "width": 42,
+    "height": 42,
     "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
@@ -4852,6 +5448,9 @@
     ],
     "borderRadius": 0,
     "y": 3423,
+    "x": 272,
+    "width": 42,
+    "height": 42,
     "className": "social-icon"
   },
   {
@@ -4880,6 +5479,9 @@
     ],
     "borderRadius": 33554400,
     "y": 3423,
+    "x": 272,
+    "width": 42,
+    "height": 42,
     "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
@@ -4907,6 +5509,9 @@
     ],
     "borderRadius": 0,
     "y": 3423,
+    "x": 330,
+    "width": 42,
+    "height": 42,
     "className": "social-icon"
   },
   {
@@ -4935,6 +5540,9 @@
     ],
     "borderRadius": 33554400,
     "y": 3423,
+    "x": 330,
+    "width": 42,
+    "height": 42,
     "className": "flex items-center justify-center rounded-full border border-white p-2 transition"
   },
   {
@@ -4963,6 +5571,9 @@
     "gap": 32,
     "borderRadius": 0,
     "y": 3545,
+    "x": 40,
+    "width": 1360,
+    "height": 32,
     "className": "mb-6 flex flex-col items-center gap-8 md:flex-row"
   },
   {
@@ -4991,6 +5602,9 @@
     "gap": 8,
     "borderRadius": 4,
     "y": 3545,
+    "x": 40,
+    "width": 67,
+    "height": 32,
     "className": "flex appearance-none items-center justify-center gap-2 rounded-sm px-2 py-1 pr-8"
   },
   {
@@ -5019,6 +5633,9 @@
     ],
     "borderRadius": 0,
     "y": 3601,
+    "x": 40,
+    "width": 1360,
+    "height": 41,
     "className": "border-t border-neutral-500 pt-6"
   },
   {
@@ -5047,6 +5664,9 @@
     "gap": 16,
     "borderRadius": 0,
     "y": 3626,
+    "x": 40,
+    "width": 1360,
+    "height": 16,
     "className": "grid justify-center gap-2 text-xs text-white max-md:grid-cols-2 md:flex md:justi"
   },
   {
@@ -5073,7 +5693,10 @@
       0
     ],
     "borderRadius": 0,
-    "y": 3626
+    "y": 3626,
+    "x": 40,
+    "width": 237,
+    "height": 16
   },
   {
     "tag": "a",
@@ -5100,6 +5723,9 @@
     ],
     "borderRadius": 0,
     "y": 3626,
+    "x": 349,
+    "width": 78,
+    "height": 16,
     "className": "cursor-pointer hover:text-white hover:underline"
   },
   {
@@ -5127,6 +5753,9 @@
     ],
     "borderRadius": 0,
     "y": 3626,
+    "x": 499,
+    "width": 77,
+    "height": 16,
     "className": "cursor-pointer hover:text-white hover:underline"
   },
   {
@@ -5154,6 +5783,9 @@
     ],
     "borderRadius": 0,
     "y": 3626,
+    "x": 648,
+    "width": 91,
+    "height": 16,
     "className": "cursor-pointer hover:text-white hover:underline"
   },
   {
@@ -5181,6 +5813,9 @@
     ],
     "borderRadius": 0,
     "y": 3626,
+    "x": 811,
+    "width": 88,
+    "height": 16,
     "className": "cursor-pointer hover:text-white hover:underline"
   },
   {
@@ -5208,6 +5843,9 @@
     ],
     "borderRadius": 0,
     "y": 3626,
+    "x": 971,
+    "width": 203,
+    "height": 16,
     "className": "ot-sdk-show-settings text-left"
   },
   {
@@ -5235,6 +5873,9 @@
     ],
     "borderRadius": 0,
     "y": 3626,
+    "x": 1247,
+    "width": 153,
+    "height": 16,
     "className": "hover:text-white"
   }
 ]
