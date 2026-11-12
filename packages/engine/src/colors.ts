@@ -75,7 +75,7 @@ const isUaLinkColor = (color: Oklch): boolean =>
   UA_LINKS.some((ua) => deltaEOK(color, ua) < UA_LINK_MAX_DELTA_E);
 
 /** The background a sample actually paints: its own if visible, else the recorded fill. */
-function paintedBackground(sample: StyleSample): string | undefined {
+export function paintedBackground(sample: StyleSample): string | undefined {
   return parseCssColor(sample.backgroundColor) ? sample.backgroundColor : sample.fill;
 }
 
@@ -132,7 +132,23 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
  * has only links) or no position data (older recordings, synthetic fixtures).
  */
 function firstScreenIsMonochrome(samples: readonly StyleSample[], canvas: Oklch): boolean {
-  const ctas: Oklch[] = [];
+  const ctas = firstScreenCtas(samples, canvas);
+  return ctas.length > 0 && ctas.every((cta) => cta.fill.c < CTA_NEUTRAL_CHROMA);
+}
+
+/** A filled call-to-action in the first screen: its fill composited onto the canvas. */
+export interface FirstScreenCta {
+  fill: Oklch;
+  area: number;
+}
+
+/**
+ * Filled calls-to-action in the first screen: interactive, y < FIRST_SCREEN_MAX_Y, at least
+ * CTA_MIN_AREA, an opaque fill (a decorative glow isn't one) standing out from the canvas.
+ * Samples without position data give none.
+ */
+export function firstScreenCtas(samples: readonly StyleSample[], canvas: Oklch): FirstScreenCta[] {
+  const ctas: FirstScreenCta[] = [];
   for (const sample of samples) {
     if (sample.y === undefined || sample.y >= FIRST_SCREEN_MAX_Y) continue;
     if (sample.area < CTA_MIN_AREA || sampleRole(sample) !== "interactive") continue;
@@ -142,9 +158,9 @@ function firstScreenIsMonochrome(samples: readonly StyleSample[], canvas: Oklch)
     const painted = withOpacity(parsed, sample.opacity);
     if (alphaOf(painted) < CTA_MIN_ALPHA) continue; // a decorative glow, not a CTA's fill
     const fill = compositeOver(painted, canvas);
-    if (deltaEOK(fill, canvas) >= CTA_MIN_DELTA_E) ctas.push(fill);
+    if (deltaEOK(fill, canvas) >= CTA_MIN_DELTA_E) ctas.push({ fill, area: sample.area });
   }
-  return ctas.length > 0 && ctas.every((fill) => fill.c < CTA_NEUTRAL_CHROMA);
+  return ctas;
 }
 
 // --- cluster measurements ---------------------------------------------------------------

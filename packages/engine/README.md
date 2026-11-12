@@ -1,8 +1,52 @@
 # @thema/engine
 
-The pure analysis core of Thema. It turns raw `StyleSample[]` from the worker into design tokens. Later it will also blend and fix them.
+The pure analysis core of Thema. It turns raw `StyleSample[]` from the worker into design tokens: one complete `ThemaSystem` per reference (`extractSystem`). Later it will also blend and fix them.
 
 **Pure** means no network, file system, browser, clock or randomness: data in, data out. The same samples always give the same tokens, which is why the engine is testable with recorded fixtures.
+
+## `extractSystem(input)`
+
+```ts
+import { extractSystem } from "@thema/engine";
+
+const { system, warnings, derived } = extractSystem({
+  samples,
+  darkSamples,
+  source,
+  name: "stripe.com",
+  createdAt: new Date().toISOString(),
+});
+```
+
+Builds one complete `ThemaSystem` for one reference from the analyzers below. `createdAt` is passed in because the engine has no clock.
+
+- **Colors:** `completePalette` (below), for light and, when the site has a real dark theme (`canvasFlipsInDark`), dark. Without one, `color.dark` is a copy of `color.light` until the fixer generates a dark theme.
+- **Layout:** `analyzeLayout` (below). **Motion** isn't extracted: documented defaults (`MOTION_DEFAULTS`: 150 ms, 250 ms, `cubic-bezier(0.2, 0, 0, 1)`). The recorder runs with reduced motion, under which many sites switch transitions off.
+- `voice` is empty (no LLM in the engine), `locks` is `[]`, and `a11y` is `{ fixes: [], passes: false }` until the fixer runs.
+- **`warnings`:** `no-headings` (no h1–h6 at all: possibly a page variant), `few-samples` (< 20: a blocked or empty page), `no-dark-theme`, `monochrome` (no saturated primary).
+- **`derived`:** every token path filled by a fallback or default instead of measured, e.g. `layout.gutter`, `color.light.accent`, `motion.easing`.
+
+## `completePalette(samples)`
+
+Every `ColorRole` for one theme. Roles that `analyzeColors` finds are kept unchanged. Two more are measured here, and the rest fall back to documented rules (listed in `derived`):
+
+| Role                                | Measured                                                                                            | Fallback                                                                                                     |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `surface-raised`                    | heaviest neutral background near the canvas (ΔE 4–15) other than canvas and surface, on ≥ 2 samples | one lightness step above the lighter of canvas and surface                                                   |
+| `primary-ink`                       | heaviest text color on interactive samples painted in the primary                                   | canvas or ink, whichever has more contrast on primary                                                        |
+| `primary` (monochrome sites)        | the heaviest neutral first-screen CTA fill (Vercel's black button)                                  | ink                                                                                                          |
+| `surface`                           | (from `analyzeColors`)                                                                              | canvas one step darker (light) or lighter (dark)                                                             |
+| `accent` / `ink-muted` / `hairline` | (from `analyzeColors`)                                                                              | primary / ink mixed 45% toward canvas / 85% toward canvas                                                    |
+| `success` `warning` `danger` `info` | —                                                                                                   | fixed hues 145 / 75 / 25 / 250 at the primary's lightness (0.5–0.7) and chroma (0.1–0.18), clamped into sRGB |
+
+## `analyzeLayout(samples)`
+
+Container width, gutter and section spacing from element boxes (`x`, `width`, recorded at 1440px). Each distinct element style counts once.
+
+- `containerMax`: the most common horizontally centered box shown at its own `max-width` (seen on ≥ 2 styles), else the most common centered box ≥ 600px wide that leaves 16px each side, else the most common `max-width`.
+- `gutter`: equal side padding (≥ 8px) on those containers, else on any centered box, else on full-width boxes; ties go to the smaller value.
+- `sectionY`: the most common top padding ≥ 32px on boxes at least 60% of the page wide.
+- Missing evidence falls back to 1280 / 24 / 64 and is listed in `derived`.
 
 ## `analyzeColors(samples)`
 

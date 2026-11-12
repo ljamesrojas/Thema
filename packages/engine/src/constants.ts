@@ -205,3 +205,69 @@ export const CTA_MAX_AREA = 480 * 80;
  * links); no other site changes up to ×50. 12 leaves GitHub's green 30% ahead.
  */
 export const CTA_WEIGHT = 12;
+
+// --- complete system (extractSystem) ------------------------------------------------------
+
+/** Thema's version, written to meta.version. */
+export const THEMA_VERSION = "0.1.0";
+
+/**
+ * Fallback lightness steps (OKLCH L) used when a role isn't measured. Light themes step down
+ * from the canvas, dark themes step up.
+ */
+export const SURFACE_STEP_LIGHT = 0.03;
+export const SURFACE_STEP_DARK = 0.05;
+export const RAISED_STEP_LIGHT = 0.02;
+export const RAISED_STEP_DARK = 0.05;
+
+/** Fallback ink when no text color is measured: near-black / near-white. */
+export const FALLBACK_INK_LIGHTNESS = { light: 0.15, dark: 0.95 } as const;
+
+/** Fallback mixes from ink toward the canvas (0 = ink, 1 = canvas). */
+export const INK_MUTED_MIX = 0.45;
+export const HAIRLINE_MIX = 0.85;
+
+/**
+ * Semantic colors: fixed OKLCH hues, at the primary's lightness and chroma clamped to these
+ * ranges (a neutral primary uses the defaults), then clamped into sRGB.
+ */
+export const SEMANTIC_HUE = { success: 145, warning: 75, danger: 25, info: 250 } as const;
+export const SEMANTIC_LIGHTNESS = { min: 0.5, max: 0.7, neutral: 0.6 } as const;
+export const SEMANTIC_CHROMA = { min: 0.1, max: 0.18, neutral: 0.15 } as const;
+
+/**
+ * Motion isn't extracted: the recorder runs with prefers-reduced-motion: reduce (many sites switch
+ * transitions off under it), and SPEC's extraction doesn't list motion. Documented defaults.
+ */
+export const MOTION_DEFAULTS = {
+  durationFast: 150,
+  durationBase: 250,
+  easing: "cubic-bezier(0.2, 0, 0, 1)",
+} as const;
+
+/** Below this many samples a recording is likely a blocked or empty page (warning). */
+export const MIN_CONFIDENT_SAMPLES = 20;
+
+// --- layout -------------------------------------------------------------------------------
+
+/** A page container is at least this wide (narrower centered boxes are cards or columns). */
+export const CONTAINER_MIN_WIDTH = 600;
+
+/** A box is horizontally centered when its left and right margins differ by at most this. */
+export const CENTER_TOLERANCE_PX = 2;
+
+/** A container leaves at least this much on each side; wider boxes are full-width (Linear 1436). */
+export const CONTAINER_MIN_MARGIN = 16;
+
+/** A capped container width must appear on at least this many element styles to win. */
+export const CAPPED_MIN_COUNT = 2;
+
+/** Side padding below this is a border trick, not a gutter (Vercel's 1px). */
+export const GUTTER_MIN = 8;
+
+/** Section spacing: top padding of at least this, on boxes at least this share of the page wide. */
+export const SECTION_MIN_PADDING = 32;
+export const SECTION_MIN_WIDTH_SHARE = 0.6;
+
+/** Used when the samples give no evidence (synthetic fixtures, recordings without boxes). */
+export const LAYOUT_DEFAULTS = { containerMax: 1280, gutter: 24, sectionY: 64 } as const;

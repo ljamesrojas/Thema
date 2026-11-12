@@ -1,0 +1,502 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`extractSystem: synthetic fixtures > dark-dev-tool 1`] = `
+{
+  "derived": [
+    "color.light.surface-raised",
+    "layout.containerMax",
+    "layout.gutter",
+    "layout.sectionY",
+    "motion.durationFast",
+    "motion.durationBase",
+    "motion.easing",
+  ],
+  "system": {
+    "a11y": {
+      "fixes": [],
+      "passes": false,
+    },
+    "color": {
+      "dark": {
+        "accent": "oklch(0.709 0.159 293.5)",
+        "canvas": "oklch(0.145 0 0)",
+        "danger": "oklch(0.7 0.18 25)",
+        "hairline": "oklch(0.269 0 0)",
+        "info": "oklch(0.7 0.163 250)",
+        "ink": "oklch(0.946 0 0)",
+        "ink-muted": "oklch(0.709 0 0)",
+        "primary": "oklch(0.723 0.192 149.6)",
+        "primary-ink": "oklch(0.145 0 0)",
+        "success": "oklch(0.7 0.18 145)",
+        "surface": "oklch(0.205 0 0)",
+        "surface-raised": "oklch(0.255 0 0)",
+        "warning": "oklch(0.7 0.147 75)",
+      },
+      "light": {
+        "accent": "oklch(0.709 0.159 293.5)",
+        "canvas": "oklch(0.145 0 0)",
+        "danger": "oklch(0.7 0.18 25)",
+        "hairline": "oklch(0.269 0 0)",
+        "info": "oklch(0.7 0.163 250)",
+        "ink": "oklch(0.946 0 0)",
+        "ink-muted": "oklch(0.709 0 0)",
+        "primary": "oklch(0.723 0.192 149.6)",
+        "primary-ink": "oklch(0.145 0 0)",
+        "success": "oklch(0.7 0.18 145)",
+        "surface": "oklch(0.205 0 0)",
+        "surface-raised": "oklch(0.255 0 0)",
+        "warning": "oklch(0.7 0.147 75)",
+      },
+    },
+    "layout": {
+      "containerMax": 1280,
+      "gutter": 24,
+      "sectionY": 64,
+    },
+    "locks": [],
+    "meta": {
+      "createdAt": "2026-11-13T00:00:00.000Z",
+      "name": "dark-dev-tool",
+      "sources": [
+        {
+          "borrowed": [
+            "colors",
+            "typography",
+            "spacing",
+            "shape",
+            "layout",
+          ],
+          "screenshot": "dark-dev-tool.png",
+          "url": "https://dark-dev-tool.example/",
+        },
+      ],
+      "version": "0.1.0",
+    },
+    "motion": {
+      "durationBase": 250,
+      "durationFast": 150,
+      "easing": "cubic-bezier(0.2, 0, 0, 1)",
+    },
+    "radius": {
+      "full": 9999,
+      "lg": 12,
+      "md": 12,
+      "sm": 8,
+    },
+    "shadow": {
+      "lg": "0px 8px 24px 0px oklch(0 0 0 / 0.4)",
+      "md": "0px 1px 2px 0px oklch(0 0 0 / 0.3)",
+      "sm": "0px 1px 2px 0px oklch(0 0 0 / 0.3)",
+    },
+    "spacing": {
+      "base": 8,
+      "scale": [
+        8,
+        16,
+        24,
+      ],
+    },
+    "typography": {
+      "families": {
+        "mono": "Geist Mono",
+        "sans": "Geist",
+      },
+      "ratio": 1.079,
+      "scale": [
+        {
+          "lineHeight": 1.67,
+          "name": "xs",
+          "size": 12,
+          "tracking": 0.042,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.54,
+          "name": "sm",
+          "size": 13,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.57,
+          "name": "base",
+          "size": 14,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.6,
+          "name": "lg",
+          "size": 15,
+          "tracking": 0,
+          "weight": 600,
+        },
+        {
+          "lineHeight": 1.5,
+          "name": "xl",
+          "size": 16,
+          "tracking": 0,
+          "weight": 600,
+        },
+        {
+          "lineHeight": 1.56,
+          "name": "2xl",
+          "size": 18,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.09,
+          "name": "3xl",
+          "size": 64,
+          "tracking": -0.039,
+          "weight": 600,
+        },
+      ],
+    },
+    "voice": {
+      "mood": [],
+      "summary": "",
+    },
+  },
+  "warnings": [
+    "no-dark-theme",
+  ],
+}
+`;
+
+exports[`extractSystem: synthetic fixtures > light-saas 1`] = `
+{
+  "derived": [
+    "color.light.surface-raised",
+    "layout.containerMax",
+    "layout.gutter",
+    "layout.sectionY",
+    "motion.durationFast",
+    "motion.durationBase",
+    "motion.easing",
+  ],
+  "system": {
+    "a11y": {
+      "fixes": [],
+      "passes": false,
+    },
+    "color": {
+      "dark": {
+        "accent": "oklch(0.541 0.247 293)",
+        "canvas": "oklch(1 0 0)",
+        "danger": "oklch(0.546 0.18 25)",
+        "hairline": "oklch(0.929 0.013 255.5)",
+        "info": "oklch(0.546 0.154 250)",
+        "ink": "oklch(0.208 0.04 265.8)",
+        "ink-muted": "oklch(0.554 0.041 257.4)",
+        "primary": "oklch(0.546 0.215 262.9)",
+        "primary-ink": "oklch(1 0 0)",
+        "success": "oklch(0.546 0.171 145)",
+        "surface": "oklch(0.96 0.008 253.9)",
+        "surface-raised": "oklch(1 0 0)",
+        "warning": "oklch(0.546 0.115 75)",
+      },
+      "light": {
+        "accent": "oklch(0.541 0.247 293)",
+        "canvas": "oklch(1 0 0)",
+        "danger": "oklch(0.546 0.18 25)",
+        "hairline": "oklch(0.929 0.013 255.5)",
+        "info": "oklch(0.546 0.154 250)",
+        "ink": "oklch(0.208 0.04 265.8)",
+        "ink-muted": "oklch(0.554 0.041 257.4)",
+        "primary": "oklch(0.546 0.215 262.9)",
+        "primary-ink": "oklch(1 0 0)",
+        "success": "oklch(0.546 0.171 145)",
+        "surface": "oklch(0.96 0.008 253.9)",
+        "surface-raised": "oklch(1 0 0)",
+        "warning": "oklch(0.546 0.115 75)",
+      },
+    },
+    "layout": {
+      "containerMax": 1280,
+      "gutter": 24,
+      "sectionY": 64,
+    },
+    "locks": [],
+    "meta": {
+      "createdAt": "2026-11-13T00:00:00.000Z",
+      "name": "light-saas",
+      "sources": [
+        {
+          "borrowed": [
+            "colors",
+            "typography",
+            "spacing",
+            "shape",
+            "layout",
+          ],
+          "screenshot": "light-saas.png",
+          "url": "https://light-saas.example/",
+        },
+      ],
+      "version": "0.1.0",
+    },
+    "motion": {
+      "durationBase": 250,
+      "durationFast": 150,
+      "easing": "cubic-bezier(0.2, 0, 0, 1)",
+    },
+    "radius": {
+      "full": 9999,
+      "lg": 12,
+      "md": 8,
+      "sm": 6,
+    },
+    "shadow": {
+      "lg": "0px 4px 12px 0px oklch(0.546 0.215 262.9 / 0.25)",
+      "md": "0px 1px 2px 0px oklch(0.208 0.04 265.8 / 0.06)",
+      "sm": "0px 1px 2px 0px oklch(0.208 0.04 265.8 / 0.06)",
+    },
+    "spacing": {
+      "base": 4,
+      "scale": [
+        4,
+        8,
+        12,
+        16,
+        24,
+        32,
+        64,
+        96,
+      ],
+    },
+    "typography": {
+      "families": {
+        "sans": "Inter",
+      },
+      "ratio": 1.143,
+      "scale": [
+        {
+          "lineHeight": 1.43,
+          "name": "sm",
+          "size": 14,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.5,
+          "name": "base",
+          "size": 16,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.56,
+          "name": "lg",
+          "size": 18,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.4,
+          "name": "xl",
+          "size": 20,
+          "tracking": 0,
+          "weight": 600,
+        },
+        {
+          "lineHeight": 1.2,
+          "name": "2xl",
+          "size": 40,
+          "tracking": -0.025,
+          "weight": 700,
+        },
+        {
+          "lineHeight": 1.2,
+          "name": "3xl",
+          "size": 60,
+          "tracking": -0.025,
+          "weight": 700,
+        },
+      ],
+    },
+    "voice": {
+      "mood": [],
+      "summary": "",
+    },
+  },
+  "warnings": [
+    "no-dark-theme",
+  ],
+}
+`;
+
+exports[`extractSystem: synthetic fixtures > warm-editorial 1`] = `
+{
+  "derived": [
+    "color.light.surface-raised",
+    "layout.gutter",
+    "layout.sectionY",
+    "motion.durationFast",
+    "motion.durationBase",
+    "motion.easing",
+  ],
+  "system": {
+    "a11y": {
+      "fixes": [],
+      "passes": false,
+    },
+    "color": {
+      "dark": {
+        "accent": "oklch(0.511 0.086 186.4)",
+        "canvas": "oklch(0.974 0.011 84.6)",
+        "danger": "oklch(0.553 0.174 25)",
+        "hairline": "oklch(0.888 0.025 83.4)",
+        "info": "oklch(0.553 0.156 250)",
+        "ink": "oklch(0.216 0.006 56)",
+        "ink-muted": "oklch(0.444 0.01 73.6)",
+        "primary": "oklch(0.553 0.174 38.4)",
+        "primary-ink": "oklch(1 0 0)",
+        "success": "oklch(0.553 0.173 145)",
+        "surface": "oklch(0.927 0.026 84.6)",
+        "surface-raised": "oklch(0.994 0.011 84.6)",
+        "warning": "oklch(0.553 0.116 75)",
+      },
+      "light": {
+        "accent": "oklch(0.511 0.086 186.4)",
+        "canvas": "oklch(0.974 0.011 84.6)",
+        "danger": "oklch(0.553 0.174 25)",
+        "hairline": "oklch(0.888 0.025 83.4)",
+        "info": "oklch(0.553 0.156 250)",
+        "ink": "oklch(0.216 0.006 56)",
+        "ink-muted": "oklch(0.444 0.01 73.6)",
+        "primary": "oklch(0.553 0.174 38.4)",
+        "primary-ink": "oklch(1 0 0)",
+        "success": "oklch(0.553 0.173 145)",
+        "surface": "oklch(0.927 0.026 84.6)",
+        "surface-raised": "oklch(0.994 0.011 84.6)",
+        "warning": "oklch(0.553 0.116 75)",
+      },
+    },
+    "layout": {
+      "containerMax": 720,
+      "gutter": 24,
+      "sectionY": 64,
+    },
+    "locks": [],
+    "meta": {
+      "createdAt": "2026-11-13T00:00:00.000Z",
+      "name": "warm-editorial",
+      "sources": [
+        {
+          "borrowed": [
+            "colors",
+            "typography",
+            "spacing",
+            "shape",
+            "layout",
+          ],
+          "screenshot": "warm-editorial.png",
+          "url": "https://warm-editorial.example/",
+        },
+      ],
+      "version": "0.1.0",
+    },
+    "motion": {
+      "durationBase": 250,
+      "durationFast": 150,
+      "easing": "cubic-bezier(0.2, 0, 0, 1)",
+    },
+    "radius": {
+      "full": 9999,
+      "lg": 4,
+      "md": 2,
+      "sm": 2,
+    },
+    "shadow": {
+      "lg": "none",
+      "md": "none",
+      "sm": "none",
+    },
+    "spacing": {
+      "base": 4,
+      "scale": [
+        12,
+        16,
+        20,
+        24,
+        40,
+        64,
+      ],
+    },
+    "typography": {
+      "families": {
+        "sans": "Source Sans 3",
+        "serif": "Source Serif 4",
+      },
+      "ratio": 1.158,
+      "scale": [
+        {
+          "lineHeight": 1.43,
+          "name": "xs",
+          "size": 14,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.5,
+          "name": "sm",
+          "size": 16,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.68,
+          "name": "base",
+          "size": 19,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.36,
+          "name": "lg",
+          "size": 22,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.33,
+          "name": "xl",
+          "size": 24,
+          "tracking": 0,
+          "weight": 600,
+        },
+        {
+          "lineHeight": 1.43,
+          "name": "2xl",
+          "size": 28,
+          "tracking": 0,
+          "weight": 400,
+        },
+        {
+          "lineHeight": 1.33,
+          "name": "3xl",
+          "size": 30,
+          "tracking": -0.017,
+          "weight": 700,
+        },
+        {
+          "lineHeight": 1.07,
+          "name": "4xl",
+          "size": 56,
+          "tracking": -0.018,
+          "weight": 600,
+        },
+      ],
+    },
+    "voice": {
+      "mood": [],
+      "summary": "",
+    },
+  },
+  "warnings": [
+    "no-dark-theme",
+  ],
+}
+`;

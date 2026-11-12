@@ -1,5 +1,19 @@
 export * from "./types.js";
-export { analyzeColors, type ColorAnalysis } from "./colors.js";
+export {
+  analyzeColors,
+  firstScreenCtas,
+  paintedBackground,
+  type ColorAnalysis,
+  type FirstScreenCta,
+} from "./colors.js";
+export { completePalette, type Palette } from "./palette.js";
+export { analyzeLayout, type LayoutAnalysis } from "./layout.js";
+export {
+  extractSystem,
+  type ExtractInput,
+  type ExtractResult,
+  type ExtractWarning,
+} from "./system.js";
 export { canvasFlipsInDark } from "./dark.js";
 export {
   analyzeTypography,
