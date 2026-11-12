@@ -308,6 +308,10 @@ export function collectSamples(options: CollectOptions): StyleSample[] {
       ...(opacity < 1 ? { opacity } : {}),
       ...(fill !== undefined ? { fill } : {}),
       y: el === root ? 0 : Math.max(0, Math.round(rect.top + window.scrollY)),
+      // The box in document coordinates; html's box is the whole document (it paints the canvas).
+      x: el === root ? 0 : Math.round(rect.left + window.scrollX),
+      width: el === root ? docWidth : Math.round(rect.width),
+      height: el === root ? docHeight : Math.round(rect.height),
       ...(inHeading ? { inHeading } : {}),
       ...(inCode ? { inCode } : {}),
       ...(className !== "" ? { className } : {}),

@@ -41,6 +41,7 @@ A relative `--out` is resolved against the repo root. The CLI writes:
      - `opacity` is the effective opacity (multiplied through ancestors), sent only below 1 and never on `html`.
      - `fill`: for a transparent button or link, the color painted behind it by its gradient, a covering `::before`/`::after`, or a child covering half its area.
      - `y`: the top of the box from the top of the document (the engine uses it to find first-screen calls-to-action).
+     - `x`, `width`, `height`: the rest of the box in document pixels (layout: container width, gutters, section spacing). `html`'s box is the whole document.
      - `className`: the class attribute, trimmed and single-spaced, at most 80 characters (the engine counts repeated identical elements once when finding the spacing base).
      - `inHeading` / `inCode`: the element is, or is inside, a heading (h1–h6, `role="heading"`) or `pre`/`code`/`kbd`/`samp`. A styled span inside an h1 records as body text by its tag; this flag tells the engine it's heading text.
      - `html` reports the color that actually paints the canvas (html, else body, else the browser's `Canvas` color).

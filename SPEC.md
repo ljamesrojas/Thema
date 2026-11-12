@@ -184,6 +184,7 @@ interface StyleSample {
   opacity?: number;                  // effective opacity incl. ancestors, 0–1; omitted when 1
   fill?: string;                     // transparent buttons/links: color painted by ::before/::after, gradient or covering child
   y?: number;                        // top of the box from the top of the document, px
+  x?: number; width?: number; height?: number; // rest of the box in document px (html: the whole document)
   inHeading?: boolean;               // is or is inside h1–h6 / role=heading; omitted otherwise
   inCode?: boolean;                  // is or is inside pre, code, kbd, samp; omitted otherwise
   className?: string;                // class attribute, trimmed, single-spaced, ≤ 80 chars; omitted when empty

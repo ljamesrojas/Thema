@@ -107,6 +107,11 @@ export interface StyleSample {
   fill?: string;
   /** Top of the element's box from the top of the document, px. */
   y?: number;
+  /** Left of the element's box from the left of the document, px (can be negative). */
+  x?: number;
+  /** Size of the element's box, px. */
+  width?: number;
+  height?: number;
   /** The element is, or is inside, h1–h6 or role="heading". Omitted otherwise. */
   inHeading?: boolean;
   /** The element is, or is inside, pre, code, kbd or samp. Omitted otherwise. */

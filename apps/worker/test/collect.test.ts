@@ -1,6 +1,8 @@
 import { parseCssColor, type StyleSample } from "@thema/engine";
 import { afterAll, describe, expect, it } from "vitest";
-import { closeBrowser, collect } from "./browser-helpers.js";
+import { inFrame } from "../src/browser.js";
+import { collectSamples } from "../src/collect.js";
+import { closeBrowser, collect, offlinePage } from "./browser-helpers.js";
 
 afterAll(closeBrowser);
 
@@ -304,6 +306,31 @@ describe("collectSamples: position", () => {
     );
     expect(one(samples, "h2").y).toBe(1200);
     expect(one(samples, "html").y).toBe(0);
+  });
+
+  it("records the box: x from the document's left edge, width and height", async () => {
+    const samples = await collect(
+      page(`<div style="width:600px;height:50px;margin:0 auto;background:#eee"></div>`),
+    );
+    // Centered in the 1440px viewport: (1440 − 600) / 2 = 420 on each side.
+    expect(one(samples, "div")).toMatchObject({ x: 420, y: 0, width: 600, height: 50 });
+  });
+
+  it("gives html the whole document as its box", async () => {
+    const samples = await collect(page(`<div style="height:2000px"></div>`));
+    expect(one(samples, "html")).toMatchObject({ x: 0, y: 0, width: 1440, height: 2000 });
+  });
+
+  it("measures boxes in the document, not the viewport, after scrolling", async () => {
+    const html = page(`<div style="height:3000px"></div><p style="margin:0 0 0 100px">End</p>`);
+    const p = await offlinePage(html);
+    try {
+      await p.evaluate(() => window.scrollTo(0, 1500));
+      const samples = await inFrame(p, collectSamples, { maxSamples: 2000, maxWrappers: 2000 });
+      expect(one(samples, "p")).toMatchObject({ x: 100, y: 3000, width: 1340 });
+    } finally {
+      await p.context().close();
+    }
   });
 });
 
