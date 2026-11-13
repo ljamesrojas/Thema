@@ -40,8 +40,10 @@ export function Faq() {
 
   return (
     <section id="faq" className={cn(styles.band, "border-y border-hairline")}>
-      <div className="mx-auto flex max-w-[1200px] flex-wrap gap-x-16 gap-y-12 px-8 py-26">
-        <div className="flex min-w-0 flex-[1_1_300px] flex-col gap-5 md:max-w-[340px]">
+      {/* The two columns are one centered group: fixed widths, top-aligned so opening a question
+          doesn't move the left column. Below xl they stack, full width. */}
+      <div className="mx-auto flex max-w-[1200px] flex-col gap-12 px-8 py-26 xl:flex-row xl:items-start xl:justify-center xl:gap-16">
+        <div className="flex min-w-0 flex-col gap-5 xl:w-[360px] xl:flex-none">
           <p className="m-0 text-eyebrow font-eyebrow uppercase text-primary-strong">FAQ</p>
           <h2 className="m-0 text-h2 font-h2">
             Questions, answered
@@ -66,7 +68,7 @@ export function Faq() {
           </div>
         </div>
 
-        <div className="min-w-0 flex-[1_1_480px] self-start rounded-lg border border-hairline bg-surface px-6 py-1 shadow-accordion md:max-w-[560px]">
+        <div className="min-w-0 rounded-lg border border-hairline bg-surface px-6 py-1 shadow-accordion xl:w-[600px] xl:flex-none">
           {QUESTIONS.map(([question, answer], index) => {
             const isOpen = open === index;
             const buttonId = `${id}-q${index}`;
