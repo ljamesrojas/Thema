@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@thema/engine": "workspace:*",
+    "@thema/url-guard": "workspace:*",
     "playwright": "^1.65.0"
   },
   "devDependencies": {
