@@ -2,13 +2,24 @@ import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import styles from "./agents-strip.module.css";
 
-/**
- * The agents Thema's exports work with. Generic line icons, never brand logos
- * (docs/landing-white.md → Agents strip). `color` names the DESIGN.md agent-* token.
- */
-export const AGENTS: { name: string; color: string; icon: ReactNode }[] = [
+export interface Agent {
+  name: string;
+  /** The DESIGN.md agent-* token the name turns on hover or focus. */
+  color: string;
+  /**
+   * The agent's official logo mark, served from public/agents/, shown in its own colors and never
+   * recolored (brand guidelines). Simple Icons' CC0 SVGs; the trademarks belong to their owners.
+   */
+  logo?: string;
+  /** A generic line icon, used only until an official logo file is added. */
+  icon: ReactNode;
+}
+
+/** The agents Thema's exports work with. */
+export const AGENTS: Agent[] = [
   {
     name: "Claude Code",
+    logo: "/agents/claude.svg",
     color: "agent-claude",
     icon: (
       <>
@@ -17,9 +28,15 @@ export const AGENTS: { name: string; color: string; icon: ReactNode }[] = [
       </>
     ),
   },
-  { name: "Cursor", color: "agent-cursor", icon: <path d="M5 3.5l13.5 7-6 1.8-2.3 6.2z" /> },
+  {
+    name: "Cursor",
+    logo: "/agents/cursor.svg",
+    color: "agent-cursor",
+    icon: <path d="M5 3.5l13.5 7-6 1.8-2.3 6.2z" />,
+  },
   {
     name: "v0",
+    logo: "/agents/v0.svg",
     color: "agent-v0",
     icon: <path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21M12 9.5l2.5 2.5-2.5 2.5-2.5-2.5z" />,
   },
@@ -32,11 +49,13 @@ export const AGENTS: { name: string; color: string; icon: ReactNode }[] = [
   },
   {
     name: "Windsurf",
+    logo: "/agents/windsurf.svg",
     color: "agent-windsurf",
     icon: <path d="M3 9.5c3-3 6 3 9 0s6 3 9 0M3 15.5c3-3 6 3 9 0s6 3 9 0" />,
   },
   {
     name: "GitHub Copilot",
+    logo: "/agents/githubcopilot.svg",
     color: "agent-copilot",
     icon: <path d="M21 3L3 10.5l7.2 2.8L13 21zM21 3L10.2 13.3" />,
   },
@@ -66,16 +85,21 @@ export function AgentsStrip({ className }: { className?: string }) {
         Reads into
       </span>
       <ul className={styles.items}>
-        {AGENTS.map(({ name, color, icon }) => (
+        {AGENTS.map(({ name, color, logo, icon }) => (
           <li key={name}>
             <a
               href="#agents"
               className={cn(styles.item, "text-label-md font-label-md")}
               style={{ "--agent-color": `var(--color-${color})` } as CSSProperties}
             >
-              <svg viewBox="0 0 24 24" className={styles.icon} aria-hidden="true">
-                {icon}
-              </svg>
+              {logo ? (
+                // A logo in its own colors; the name next to it is the accessible label.
+                <img src={logo} alt="" width={18} height={18} className={styles.logo} />
+              ) : (
+                <svg viewBox="0 0 24 24" className={styles.icon} aria-hidden="true">
+                  {icon}
+                </svg>
+              )}
               {name}
             </a>
           </li>

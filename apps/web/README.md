@@ -54,6 +54,10 @@ Route handlers in `src/app/api`, running the engine and exporters in-process (No
 
 Playwright, BullMQ and ioredis are dependencies of this app too: Next.js only keeps a package out of the bundle (`serverExternalPackages`) when the app can resolve it itself.
 
+## Agent logos
+
+The Landing's "Reads into" strip shows each agent's official logo mark from `public/agents/`, in its own colors (never grayed or recolored, per brand guidelines). Claude, Cursor, v0, Windsurf and GitHub Copilot are Simple Icons' CC0 SVGs, recolored only to each brand's own color; the trademarks belong to their owners. Lovable and Google Stitch show a generic icon until their official files arrive: put them in `public/agents/` (SVG preferred, or a PNG with a transparent background) and set `logo` for that agent in `src/components/agents-strip.tsx`.
+
 ## Workspace
 
 `/workspace` (`src/workspace/`): reference cards, the system on the stage, sliders and the accessibility report. `?url=` (from the Landing) adds that site once and is then dropped from the address.

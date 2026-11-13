@@ -37,7 +37,7 @@
   list-style: none;
 }
 
-/* At rest: subtle text, light gray icon, grayscale, no fill or border. */
+/* At rest: subtle text and the logo in its own colors (never recolored); no fill or border. */
 .item {
   display: inline-flex;
   align-items: center;
@@ -49,14 +49,19 @@
   background: transparent;
   color: var(--color-ink-subtle);
   text-decoration: none;
-  filter: grayscale(1);
   transition:
     color var(--duration-agent),
-    filter var(--duration-agent),
     opacity var(--duration-agent),
     transform var(--duration-agent) var(--ease-standard);
 }
 
+.logo {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+
+/* A generic line icon, only for agents without an official logo file yet. */
 .icon {
   flex: none;
   width: 18px;
@@ -72,7 +77,6 @@
 /* Keyboard focus works on every device. */
 .item:focus-visible {
   color: var(--agent-color);
-  filter: grayscale(0);
   transform: scale(1.14);
 }
 .item:focus-visible .icon {
@@ -86,7 +90,6 @@
 @media (hover: hover) {
   .item:hover {
     color: var(--agent-color);
-    filter: grayscale(0);
     transform: scale(1.14);
   }
   .item:hover .icon {

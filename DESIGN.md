@@ -283,7 +283,7 @@ All text pairs below pass WCAG 2.2 AA (4.5:1 for text, 3:1 for large text and UI
 
 **Status:** Success / Moss (#2F6B3F, 6.37:1 on canvas, 5.84:1 on stage), Warning / Ochre (#8A5A0B, 5.92:1), Danger / Crimson (#A51D3C, 7.39:1). Status only; warnings always carry an icon, because orange is already the brand accent.
 
-**Agent accents** (the "Reads into" strip only, on hover or keyboard focus, on surface subtle): Claude Code #B4431A 5.35:1, Cursor #2546C8 7.21:1, v0 #0A0A0A 18.97:1, Lovable #B8235A 5.87:1, Windsurf #0F766E 5.24:1, GitHub Copilot #5B39E8 6.30:1, Google Stitch #1F6F4A 5.86:1. At rest the items are ink subtle with #A3A3A3 icons (2.42:1; decorative, since the name beside each icon identifies the item). While one item is hovered or focused, the others fade to 0.35 opacity, which drops them below 4.5:1 for as long as the pointer or focus stays there.
+**Agent accents** (the "Reads into" strip only, on hover or keyboard focus, on surface subtle): Claude Code #B4431A 5.35:1, Cursor #2546C8 7.21:1, v0 #0A0A0A 18.97:1, Lovable #B8235A 5.87:1, Windsurf #0F766E 5.24:1, GitHub Copilot #5B39E8 6.30:1, Google Stitch #1F6F4A 5.86:1. At rest the names are ink subtle and each agent shows its official logo mark in its own colors (decorative: the name beside it identifies the item); an agent without an official logo file yet shows a generic line icon in #A3A3A3 (2.42:1, also decorative). While one item is hovered or focused, the others fade to 0.35 opacity, which drops them below 4.5:1 for as long as the pointer or focus stays there.
 
 **Dark mode** (app screens; unchanged): canvas #111111, surface #1A1917, hairline #2E2C28, ink #F3EEE3, soft #D8D1C4 (12.44:1 on canvas), muted #A39C90, links #E8673A. The dark primary button is a #D9541E fill with an #111111 label (4.71:1). Status: #6FBF85, #E0A94A, #F2788F.
 
@@ -332,7 +332,7 @@ Shadows inside the stage that belong to the user's system (a radius or shadow sa
 - **band / band-card:** the full-width black band; its card uses band surface with a band hairline border.
 - **row-highlight:** the one emphasised mono row in a card: primary tint background, primary deep text.
 - **Accordion (FAQ):** a white card with dividers between items; each question is a button with `aria-expanded`, all closed at first, one open at a time; on wide screens it is vertically centered on the intro beside it.
-- **Agent item:** a pill link with an 18px generic line icon (never a brand logo), at least 44px tall.
+- **Agent item:** a pill link with the agent's official 18px logo mark, at least 44px tall. Logos keep their own colors, never recolored or grayed (brand guidelines); they name compatible tools and are their owners' trademarks. A generic line icon stands in only until an official file is added.
 
 ## Do's and Don'ts
 
@@ -350,7 +350,7 @@ Shadows inside the stage that belong to the user's system (a radius or shadow sa
 - Fast: 120ms for hover and press. Base: 200ms for panels and token updates. Easing: cubic-bezier(0.2, 0, 0, 1).
 - When blend sliders move, chips cross-fade their color over 200ms; nothing slides or bounces.
 - Respect `prefers-reduced-motion`: no transitions.
-- **Exception, the agents strip:** the hovered or keyboard-focused item takes its accent color, loses its grayscale filter and scales to 1.14, while the other items fade to 0.35 opacity. Color, filter and opacity transition over 240ms, the scale over 240ms with the standard easing. The 8px Kiln dot by the "Reads into" label pulses (a ring growing from 0 to 6px, 2s, ease-in-out, infinite). Under `prefers-reduced-motion` there is no scale, no pulse and no transition; the color change still happens. On devices without hover, items stay at rest.
+- **Exception, the agents strip:** the hovered or keyboard-focused item's name takes its accent color and the item scales to 1.14 (the logo keeps its own colors), while the other items fade to 0.35 opacity. Color and opacity transition over 240ms, the scale over 240ms with the standard easing. The 8px Kiln dot by the "Reads into" label pulses (a ring growing from 0 to 6px, 2s, ease-in-out, infinite). Under `prefers-reduced-motion` there is no scale, no pulse and no transition; the color change still happens. On devices without hover, items stay at rest.
 
 ## Agent rules
 

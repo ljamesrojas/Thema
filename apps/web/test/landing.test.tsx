@@ -92,8 +92,36 @@ describe("Agents strip", () => {
       expect(link.style.getPropertyValue("--agent-color")).toBe(
         `var(--color-${AGENTS[index]?.color ?? ""})`,
       );
-      expect(link.querySelector("svg")?.getAttribute("aria-hidden")).toBe("true");
+      // The official logo (decorative: the name labels the link), or a hidden generic icon.
+      const logo = link.querySelector("img");
+      if (AGENTS[index]?.logo) {
+        expect(logo?.getAttribute("src")).toBe(AGENTS[index]?.logo);
+        expect(logo?.getAttribute("alt")).toBe("");
+      } else {
+        expect(link.querySelector("svg")?.getAttribute("aria-hidden")).toBe("true");
+      }
     });
+  });
+
+  it("serves each official logo from public/agents, unscripted, and never grays or recolors it", () => {
+    const withLogos = AGENTS.filter((agent) => agent.logo);
+    expect(withLogos.map((a) => a.name)).toEqual([
+      "Claude Code",
+      "Cursor",
+      "v0",
+      "Windsurf",
+      "GitHub Copilot",
+    ]);
+    for (const { logo } of withLogos) {
+      const svg = readFileSync(join(import.meta.dirname, "../public", logo ?? ""), "utf8");
+      expect(svg).toMatch(/^<svg fill="#[0-9A-F]{6}" viewBox="0 0 24 24"/);
+      expect(svg).not.toMatch(/<script|href|on\w+=/i);
+    }
+    const css = readFileSync(
+      join(import.meta.dirname, "../src/components/agents-strip.module.css"),
+      "utf8",
+    );
+    expect(css).not.toMatch(/grayscale|filter/);
   });
 
   it("uses only DESIGN.md's agent tokens", () => {
