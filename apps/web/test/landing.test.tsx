@@ -114,6 +114,7 @@ describe("Agents strip", () => {
       "Windsurf",
       "GitHub Copilot",
       "Google Stitch",
+      "Google Antigravity",
     ]);
     for (const { logo } of withLogos) {
       const svg = readFileSync(join(import.meta.dirname, "../public", logo ?? ""), "utf8");

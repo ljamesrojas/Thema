@@ -73,8 +73,8 @@ export const AGENTS: Agent[] = [
   },
   {
     name: "Google Antigravity",
+    logo: "/agents/antigravity.svg",
     color: "agent-antigravity",
-    // Generic until the official file arrives: an upward chevron lifting off a dot.
     icon: <path d="M6 14l6-6 6 6M6 19l6-6 6 6" />,
   },
 ];
