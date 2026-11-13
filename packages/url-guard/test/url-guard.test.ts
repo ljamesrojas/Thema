@@ -1,6 +1,13 @@
 import { isIP as nodeIsIP } from "node:net";
 import { describe, expect, it } from "vitest";
-import { checkUrl, isIP, isPrivateAddress } from "../src/index.js";
+import {
+  assertPublicUrl,
+  BlockedUrlError,
+  checkUrl,
+  isIP,
+  isPrivateAddress,
+  type Lookup,
+} from "../src/index.js";
 
 describe("isIP", () => {
   it("matches node:net's isIP on a varied list, without needing Node", () => {
@@ -77,5 +84,44 @@ describe("checkUrl (no network: what a browser can check)", () => {
     const result = checkUrl(raw);
     expect(result.ok).toBe(false);
     if (!result.ok) expect(result.reason).toContain(reason);
+  });
+});
+
+describe("assertPublicUrl", () => {
+  const dns: Lookup = (host) => {
+    const table: Record<string, string[]> = {
+      "example.com": ["93.184.215.14", "2606:2800:21f:cb07:6820:80da:af6b:8b2c"],
+      "sneaky.example": ["93.184.215.14", "10.0.0.7"],
+      "empty.example": [],
+    };
+    const found = table[host];
+    return found ? Promise.resolve(found) : Promise.reject(new Error("ENOTFOUND"));
+  };
+
+  it("passes a host that resolves only to public addresses", async () => {
+    const url = await assertPublicUrl("https://example.com/pricing", dns);
+    expect(url.href).toBe("https://example.com/pricing");
+  });
+
+  it("blocks a host with any private address", async () => {
+    await expect(assertPublicUrl("https://sneaky.example/", dns)).rejects.toThrow(
+      /non-public address \(10\.0\.0\.7\)/,
+    );
+  });
+
+  it("blocks hosts that don't resolve or resolve to nothing", async () => {
+    await expect(assertPublicUrl("https://nowhere.example/", dns)).rejects.toBeInstanceOf(
+      BlockedUrlError,
+    );
+    await expect(assertPublicUrl("https://empty.example/", dns)).rejects.toBeInstanceOf(
+      BlockedUrlError,
+    );
+  });
+
+  it("applies the network-free rules first, without a lookup", async () => {
+    const never: Lookup = () => Promise.reject(new Error("should not be called"));
+    await expect(assertPublicUrl("http://localhost:3000", never)).rejects.toThrow(/Local host/);
+    await expect(assertPublicUrl("http://10.0.0.1/", never)).rejects.toThrow(/non-public/);
+    await expect(assertPublicUrl("http://8.8.8.8/", never)).resolves.toBeInstanceOf(URL);
   });
 });

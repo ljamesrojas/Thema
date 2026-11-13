@@ -125,7 +125,7 @@ export type UrlCheck =
 /**
  * Everything about a URL that can be checked without the network: http(s) only, no credentials,
  * no localhost, and an IP-literal host must be public. A host name passes with `needsLookup`;
- * only a server can resolve it (the worker's assertPublicUrl does).
+ * only a server can resolve it (assertPublicUrl below, with a DNS lookup passed in).
  */
 export function checkUrl(raw: string): UrlCheck {
   let url: URL;
@@ -150,4 +150,37 @@ export function checkUrl(raw: string): UrlCheck {
       : { ok: true, url, host, needsLookup: false };
   }
   return { ok: true, url, host, needsLookup: true };
+}
+
+// --- With DNS -------------------------------------------------------------------------------
+
+/**
+ * Resolves a hostname to all of its IP addresses. Passed in, so this package stays free of
+ * node:dns (it also runs in the browser) and tests need no network.
+ */
+export type Lookup = (hostname: string) => Promise<string[]>;
+
+/**
+ * Throw a BlockedUrlError unless `raw` passes checkUrl and its host resolves only to public
+ * addresses. Returns the parsed URL. Used by the worker before loading a page and by the API
+ * before enqueueing an extraction.
+ */
+export async function assertPublicUrl(raw: string, lookup: Lookup): Promise<URL> {
+  const check = checkUrl(raw);
+  if (!check.ok) throw new BlockedUrlError(check.reason);
+  if (!check.needsLookup) return check.url;
+
+  const { host, url } = check;
+  let addresses: string[];
+  try {
+    addresses = await lookup(host);
+  } catch {
+    throw new BlockedUrlError(`Could not resolve ${host}`);
+  }
+  if (addresses.length === 0) throw new BlockedUrlError(`Could not resolve ${host}`);
+  const blocked = addresses.find(isPrivateAddress);
+  if (blocked !== undefined) {
+    throw new BlockedUrlError(`${host} resolves to a non-public address (${blocked})`);
+  }
+  return url;
 }
