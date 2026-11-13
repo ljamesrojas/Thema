@@ -33,16 +33,16 @@ function Period() {
   return <span className="font-display-accent italic font-normal">.</span>;
 }
 
-/** FAQ: one item open at a time, the first open by default. Real buttons with aria-expanded. */
+/** FAQ: all closed at first, one item open at a time. Real buttons with aria-expanded. */
 export function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
   const id = useId();
 
   return (
     <section id="faq" className={cn(styles.band, "border-y border-hairline")}>
-      {/* The two columns are one centered group: fixed widths, top-aligned so opening a question
-          doesn't move the left column. Below xl they stack, full width. */}
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-12 px-8 py-26 xl:flex-row xl:items-start xl:justify-center xl:gap-16">
+      {/* The two columns are one centered group with fixed widths, vertically centered on each
+          other: closed, the questions box lines up with the intro. Below xl they stack. */}
+      <div className="mx-auto flex max-w-[1200px] flex-col gap-12 px-8 py-26 xl:flex-row xl:items-center xl:justify-center xl:gap-16">
         <div className="flex min-w-0 flex-col gap-5 xl:w-[360px] xl:flex-none">
           <p className="m-0 text-eyebrow font-eyebrow uppercase text-primary-strong">FAQ</p>
           <h2 className="m-0 text-h2 font-h2">

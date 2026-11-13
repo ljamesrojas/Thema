@@ -136,20 +136,20 @@ describe("FAQ", () => {
     return panel;
   };
 
-  it("has 5 questions as real buttons, numbered 01–05, the first open by default", () => {
+  it("has 5 questions as real buttons, numbered 01–05, all closed at first", () => {
     renderLanding();
     const buttons = faqButtons();
     expect(buttons.map((b) => b.tagName)).toEqual(Array(5).fill("BUTTON"));
     expect(buttons.map((b) => b.textContent?.slice(0, 2))).toEqual(["01", "02", "03", "04", "05"]);
-    expect(buttons.map((b) => b.textContent)).toEqual(
-      QUESTIONS.map(([q], i) => `0${i + 1}${q}${i === 0 ? "−" : "+"}`),
-    );
-    expect(expanded()).toEqual([true, false, false, false, false]);
-    const [first, second] = buttons;
-    if (!first || !second) throw new Error("missing buttons");
-    expect(panelOf(first).hidden).toBe(false);
-    expect(panelOf(second).hidden).toBe(true);
+    expect(buttons.map((b) => b.textContent)).toEqual(QUESTIONS.map(([q], i) => `0${i + 1}${q}+`));
+    expect(expanded()).toEqual([false, false, false, false, false]);
+    expect(buttons.map((b) => panelOf(b).hidden)).toEqual(Array(5).fill(true));
+    const [first] = buttons;
+    if (!first) throw new Error("missing buttons");
     expect(panelOf(first).getAttribute("aria-labelledby")).toBe(first.id);
+    fireEvent.click(first);
+    expect(expanded()).toEqual([true, false, false, false, false]);
+    expect(panelOf(first).hidden).toBe(false);
   });
 
   it("keeps one item open at a time, and the open number turns Kiln Deep", () => {
