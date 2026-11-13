@@ -46,6 +46,8 @@ export interface HeroBlend {
   /** A few pairs that already passed, with their ratio, for the before/after table. */
   passed: { pair: [ColorRole, ColorRole]; ratio: number }[];
   darkGenerated: boolean;
+  /** What was measured on the first reference: the rows of Feature 01's "reading styles" card. */
+  measured: { source: string; rows: [string, string][] };
 }
 
 const CHIPS: [string, ColorRole][] = [
@@ -62,7 +64,7 @@ function passingPairs(colors: Record<ColorRole, string>): number {
 }
 
 export function heroBlend(): HeroBlend {
-  const references = REFERENCES.map(({ label, borrowed, samples }) => ({
+  const extracted = REFERENCES.map(({ label, borrowed, samples }) => ({
     system: extractSystem({
       samples: samples as StyleSample[],
       source: { url: `https://${label}/`, borrowed, screenshot: "" },
@@ -72,7 +74,7 @@ export function heroBlend(): HeroBlend {
     borrowed,
   }));
   const blended = blend({
-    references,
+    references: extracted,
     settings: { density: 0, roundness: 0, contrast: 0, warmth: 0 },
     name: "Hero blend",
     createdAt: CREATED_AT,
@@ -102,5 +104,28 @@ export function heroBlend(): HeroBlend {
       ratio: Math.round(wcagContrast(light[pair[0]], light[pair[1]]) * 10) / 10,
     })),
     darkGenerated: fixed.generated === "dark",
+    measured: measuredRows(REFERENCES[0]?.label ?? "", extracted[0]?.system, system.a11y.fixes),
+  };
+}
+
+/** Feature 01's rows: real values from the first reference, then what the fixer did. */
+function measuredRows(
+  source: string,
+  system: ThemaSystem | undefined,
+  fixes: readonly ContrastFix[],
+): HeroBlend["measured"] {
+  if (!system) return { source, rows: [] };
+  const { light } = system.color;
+  return {
+    source,
+    rows: [
+      ["color.canvas", toHex(light.canvas)],
+      ["color.ink", toHex(light.ink)],
+      ["color.primary", toHex(light.primary)],
+      ["font.sans", system.typography.families.sans],
+      ["spacing.base", `${system.spacing.base}px`],
+      ["radius.md", `${system.radius.md}px`],
+      ["contrast", `${fixes.length} pairs fixed → AA`],
+    ],
   };
 }

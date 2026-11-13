@@ -1,0 +1,113 @@
+/* The "Reads into" strip (docs/landing-white.md → Agents strip; DESIGN.md → Motion exception).
+   CSS only: :hover, :focus-visible and :has() do the work, with each item's accent passed in as
+   --agent-color. No hex here: every color is a DESIGN.md token. */
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* The pulsing Kiln dot: a ring that grows from 0 to 6px and fades. */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--color-primary);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-primary) 35%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--color-primary) 0%, transparent);
+  }
+}
+
+.items {
+  display: flex;
+  flex: 1 1 640px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* At rest: subtle text, light gray icon, grayscale, no fill or border. */
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--color-ink-subtle);
+  text-decoration: none;
+  filter: grayscale(1);
+  transition:
+    color var(--duration-agent),
+    filter var(--duration-agent),
+    opacity var(--duration-agent),
+    transform var(--duration-agent) var(--ease-standard);
+}
+
+.icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--color-band-ink-muted);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke var(--duration-agent);
+}
+
+/* Keyboard focus works on every device. */
+.item:focus-visible {
+  color: var(--agent-color);
+  filter: grayscale(0);
+  transform: scale(1.14);
+}
+.item:focus-visible .icon {
+  stroke: var(--agent-color);
+}
+.items:has(.item:focus-visible) .item:not(:focus-visible) {
+  opacity: 0.35;
+}
+
+/* Hover only where there is a real pointer: touch devices keep every item at rest. */
+@media (hover: hover) {
+  .item:hover {
+    color: var(--agent-color);
+    filter: grayscale(0);
+    transform: scale(1.14);
+  }
+  .item:hover .icon {
+    stroke: var(--agent-color);
+  }
+  .items:has(.item:hover) .item:not(:hover) {
+    opacity: 0.35;
+  }
+}
+
+/* Reduced motion: no scale, no pulse, no transitions. The color change still happens. */
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .icon {
+    transition: none;
+  }
+  .item:hover,
+  .item:focus-visible {
+    transform: none;
+  }
+  .dot {
+    animation: none;
+  }
+}

@@ -1,0 +1,22 @@
+/* The FAQ band's dot grid: DESIGN.md's one decorative background. 1px dots 22px apart, faded out
+   behind the content by a radial overlay (docs/landing-white.md → FAQ). */
+.band {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-surface-subtle);
+  background-image: radial-gradient(var(--color-dot-grid) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 70% 85% at 55% 50%,
+    var(--color-surface-subtle) 40%,
+    transparent 85%
+  );
+}

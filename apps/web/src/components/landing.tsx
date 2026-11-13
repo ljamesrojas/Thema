@@ -1,5 +1,7 @@
 import type { ColorRole } from "@thema/engine";
+import { AgentsStrip } from "@/components/agents-strip";
 import { buttonVariants } from "@/components/button";
+import { Faq } from "@/components/faq";
 import { Logo } from "@/components/logo";
 import { PaintChip } from "@/components/paint-chip";
 import { TagLabel } from "@/components/tag";
@@ -20,7 +22,7 @@ const PAIR_LABEL: Partial<Record<ColorRole, string>> = {
 };
 const pairName = ([fg, bg]: [ColorRole, ColorRole]) => `${PAIR_LABEL[fg] ?? fg} on ${bg}`;
 
-/** The serif accent word: one per headline (DESIGN.md → Typography). */
+/** The serif italic accent: one per headline (DESIGN.md → Typography). */
 function Accent({ children, underline = false }: { children: string; underline?: boolean }) {
   return (
     <span
@@ -34,11 +36,25 @@ function Accent({ children, underline = false }: { children: string; underline?:
   );
 }
 
-function Eyebrow({ children, className }: { children: string; className?: string }) {
+const EYEBROW_TONE = {
+  subtle: "text-ink-subtle",
+  kiln: "text-primary-strong",
+  band: "text-band-accent",
+} as const;
+
+/**
+ * Mono eyebrow: Kiln Deep for numbered section labels, band accent on the black band, ink subtle
+ * otherwise. One color class only (no tailwind-merge, so two would fight over CSS order).
+ */
+function Eyebrow({
+  children,
+  tone = "subtle",
+}: {
+  children: string;
+  tone?: keyof typeof EYEBROW_TONE;
+}) {
   return (
-    <p className={cn("m-0 text-eyebrow font-eyebrow uppercase text-ink-muted", className)}>
-      {children}
-    </p>
+    <p className={cn("m-0 text-eyebrow font-eyebrow uppercase", EYEBROW_TONE[tone])}>{children}</p>
   );
 }
 
@@ -46,16 +62,16 @@ const container = "mx-auto max-w-[1200px] px-8";
 
 function Nav() {
   return (
-    <header className="border-b border-hairline">
+    <header className="border-b border-hairline bg-canvas">
       <nav
         aria-label="Main"
-        className={cn(container, "flex flex-wrap items-center justify-between gap-4 py-4.5")}
+        className={cn(container, "flex flex-wrap items-center justify-between gap-4 py-4")}
       >
-        <a href="#top" className="flex items-center gap-2.5 text-ink no-underline">
+        <a href="#top" className="flex min-h-11 items-center gap-2.5 text-ink no-underline">
           <Logo />
-          <span className="text-[20px] font-semibold tracking-[-0.02em]">Thema</span>
+          <span className="text-h3 font-h3">Thema</span>
         </a>
-        <div className="flex flex-wrap gap-7 text-[15px]">
+        <div className="flex flex-wrap gap-x-7 gap-y-1">
           {[
             ["#how", "How it works"],
             ["#exports", "Exports"],
@@ -63,13 +79,20 @@ function Nav() {
             ["#pricing", "Pricing"],
             ["#github", "GitHub"],
           ].map(([href, label]) => (
-            <a key={href} href={href} className="text-ink no-underline">
+            <a
+              key={href}
+              href={href}
+              className="flex min-h-11 items-center text-label-md font-label-md text-ink no-underline"
+            >
               {label}
             </a>
           ))}
         </div>
         <div className="flex items-center gap-3">
-          <a href="#signin" className="px-3.5 py-2.5 text-[15px] text-ink no-underline">
+          <a
+            href="#signin"
+            className="flex min-h-11 items-center px-3.5 text-label-md font-label-md text-ink no-underline"
+          >
             Sign in
           </a>
           <a href="#start" className={buttonVariants({ variant: "secondary" })}>
@@ -83,82 +106,88 @@ function Nav() {
 
 function Hero({ blend }: { blend: HeroBlend }) {
   return (
-    <section id="top" className={cn(container, "flex flex-wrap items-center gap-14 pt-22 pb-18")}>
-      <div className="flex min-w-0 flex-[1_1_480px] flex-col gap-7">
-        <Eyebrow>DESIGN.md · Tailwind v4 · shadcn · DTCG tokens</Eyebrow>
-        <h1 className="m-0 text-display font-display">
-          Taste,
-          <br />
-          <Accent underline>exported.</Accent>
-        </h1>
-        <p className="m-0 max-w-[520px] text-body-lg font-body-lg text-ink-soft">
-          Drop in the sites you love. Borrow the colors from one, the type from another. Get an
-          original, accessible design system your AI agent actually follows.
-        </p>
-        <UrlInput />
-        <p className="m-0 text-[14px] text-ink-muted">
-          No sign-up for your first blend. Works with Claude Code, Cursor and v0.
-        </p>
-      </div>
+    <section id="top" className="bg-canvas">
+      <div className={cn(container, "flex flex-wrap items-center gap-14 py-24")}>
+        <div className="flex min-w-0 flex-[1_1_480px] flex-col gap-7">
+          <Eyebrow>DESIGN.md · Tailwind v4 · shadcn · DTCG tokens</Eyebrow>
+          {/* DESIGN.md → Typography: the display style scales from 56px up to its 92px token. */}
+          <h1
+            className="m-0 text-display font-display"
+            style={{ fontSize: "clamp(56px, 9vw, var(--text-display))" }}
+          >
+            Taste,
+            <br />
+            <Accent underline>exported.</Accent>
+          </h1>
+          <p className="m-0 max-w-[520px] text-body-lg font-body-lg text-ink-soft">
+            Drop in the sites you love. Borrow the colors from one, the type from another. Get an
+            original, accessible design system your AI agent actually follows.
+          </p>
+          <UrlInput />
+          <p className="m-0 text-body-sm font-body-sm text-ink-subtle">
+            No sign-up for your first blend. Works with Claude Code, Cursor and v0.
+          </p>
+        </div>
 
-      <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-5 rounded-xl border border-hairline bg-surface p-6">
-        <div className="flex items-center justify-between">
-          <span className="text-[14px] font-semibold">
-            Blend · {blend.references.length} references
-          </span>
-          <span className="flex items-center gap-1.5 text-token font-token text-success">
-            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+        {/* The stage panel: the blend is user content, so it sits on stage (DESIGN.md). */}
+        <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-5 rounded-xl bg-stage p-6">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <span className="text-ui-sm font-ui-sm">
+              Blend · {blend.references.length} references
+            </span>
+            <span className="flex items-center gap-1.5 text-token font-token text-success">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+                <path
+                  d="M2.5 7.5l3 3 6-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              WCAG AA · {blend.passing.light}/{blend.passing.total} pairs
+            </span>
+          </div>
+          <ul className="m-0 flex list-none flex-col gap-2 p-0">
+            {blend.references.map((ref) => (
+              <li
+                key={ref.label}
+                className="flex flex-wrap items-center justify-between gap-2.5 rounded-md border border-hairline bg-surface px-3.5 py-3"
+              >
+                <span className="text-token font-token">{ref.label}</span>
+                <span className="flex gap-1.5">
+                  {ref.borrowed.map((tag) => (
+                    <TagLabel key={tag}>{TAG_LABEL[tag]}</TagLabel>
+                  ))}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="m-0 flex items-center gap-2.5 text-ui-sm font-ui-sm text-ink-muted">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
               <path
-                d="M2.5 7.5l3 3 6-7"
+                d="M8 2v11M3.5 8.5L8 13l4.5-4.5"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.6"
+                strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
-            WCAG AA · {blend.passing.light}/{blend.passing.total} pairs
-          </span>
-        </div>
-        <ul className="m-0 flex list-none flex-col gap-2 p-0">
-          {blend.references.map((ref) => (
-            <li
-              key={ref.label}
-              className="flex flex-wrap items-center justify-between gap-2.5 rounded-md border border-hairline bg-canvas px-3.5 py-3"
-            >
-              <span className="text-[13px] font-token">{ref.label}</span>
-              <span className="flex gap-1.5">
-                {ref.borrowed.map((tag) => (
-                  <TagLabel key={tag}>{TAG_LABEL[tag]}</TagLabel>
-                ))}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <p className="m-0 flex items-center gap-2.5 text-[13px] text-ink-muted">
-          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-            <path
-              d="M8 2v11M3.5 8.5L8 13l4.5-4.5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          Blended, contrast-fixed{blend.darkGenerated ? ", dark mode generated" : ""}
-        </p>
-        {/* User content sits on the stage, never on cream (DESIGN.md). */}
-        <div className="grid grid-cols-2 gap-2.5 rounded-[14px] bg-stage p-4 sm:grid-cols-5">
-          {blend.chips.map((chip) => (
-            <PaintChip
-              key={chip.name}
-              name={chip.name}
-              color={chip.color}
-              hex={chip.hex}
-              ink={blend.ink}
-            />
-          ))}
+            Blended, contrast-fixed{blend.darkGenerated ? ", dark mode generated" : ""}
+          </p>
+          <div className="grid grid-cols-2 gap-2.5 rounded-lg border border-hairline bg-surface p-4 sm:grid-cols-5">
+            {blend.chips.map((chip) => (
+              <PaintChip
+                key={chip.name}
+                name={chip.name}
+                color={chip.color}
+                hex={chip.hex}
+                ink={blend.ink}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -167,26 +196,8 @@ function Hero({ blend }: { blend: HeroBlend }) {
 
 function ReadsInto() {
   return (
-    <section aria-label="Works with" className="border-y border-hairline">
-      <div
-        className={cn(
-          container,
-          "flex flex-wrap items-center justify-between gap-x-10 gap-y-3 py-6 text-[15px] text-ink-muted",
-        )}
-      >
-        <span className="text-token font-token uppercase tracking-eyebrow">Reads into</span>
-        {[
-          "Claude Code",
-          "Cursor",
-          "v0",
-          "Lovable",
-          "Windsurf",
-          "GitHub Copilot",
-          "Google Stitch",
-        ].map((name) => (
-          <span key={name}>{name}</span>
-        ))}
-      </div>
+    <section aria-label="Reads into" className="border-y border-hairline bg-surface-subtle">
+      <AgentsStrip className={cn(container, "py-7")} />
     </section>
   );
 }
@@ -194,44 +205,107 @@ function ReadsInto() {
 const STEPS = [
   [
     "01",
-    "Paste up to five sites",
-    "Thema opens each one in a real browser and samples colors, type, spacing, radius and shadows from what's on screen.",
+    "Paste",
+    "Add up to five sites. Thema opens each one in a real browser and measures colors, type, spacing, radius and shadows.",
   ],
   [
     "02",
-    "Borrow what you like",
-    "Tag each site with what to take from it. Tune density, roundness, contrast and warmth. Lock any token you love.",
+    "Borrow",
+    "Take the colors from one site and the type from another. Tune density, roundness, contrast and warmth, and lock any token you love.",
   ],
   [
     "03",
-    "Export for your agent",
-    "Drop DESIGN.md in your repo root. Your agent reads it before it writes a single line of UI.",
+    "Fix",
+    "Every text and background pair is checked against WCAG 2.2 AA. Only what fails is nudged, and a dark mode is generated when your sources lack one.",
+  ],
+  [
+    "04",
+    "Export",
+    "Drop DESIGN.md in your repo root, with Tailwind, shadcn and DTCG tokens alongside. Your agent reads it before it writes a line of UI.",
   ],
 ] as const;
 
 function HowItWorks() {
   return (
-    <section id="how" className={cn(container, "flex flex-col gap-12 py-26")}>
-      <div className="flex flex-wrap items-end justify-between gap-6">
-        <h2 className="m-0 max-w-[640px] text-h2 font-h2">
-          Three steps from <Accent>inspiration</Accent> to instructions.
-        </h2>
-        <p className="m-0 max-w-[380px] text-[17px] leading-[1.55] text-ink-soft">
-          Thema reads real computed styles, not screenshots. Every hex is measured, never guessed.
-        </p>
+    <section id="how" className="bg-stage">
+      <div className={cn(container, "flex flex-col gap-12 py-26")}>
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <h2 className="m-0 max-w-[640px] text-h2 font-h2">
+            From inspiration to instructions, in four steps.
+          </h2>
+          <p className="m-0 max-w-[380px] text-body-md font-body-md text-ink-muted">
+            Thema reads real computed styles, not screenshots. Every hex is measured, never guessed.
+          </p>
+        </div>
+        <ol className="m-0 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-4">
+          {STEPS.map(([n, title, text]) => (
+            <li
+              key={n}
+              className="flex flex-col gap-4 rounded-lg border border-hairline bg-surface p-6"
+            >
+              <span className="flex items-center gap-3" aria-hidden="true">
+                {/* Step 04 is Kiln. White on Kiln is only 4.01:1, so its number is ink (4.94:1). */}
+                <span
+                  className={cn(
+                    "flex size-[26px] flex-none items-center justify-center rounded-full text-token font-token",
+                    n === "04" ? "bg-primary text-ink" : "bg-ink text-canvas",
+                  )}
+                >
+                  {n}
+                </span>
+                <span className="h-px flex-1 bg-hairline" />
+              </span>
+              <h3 className="m-0 text-h3 font-h3">
+                <span className="sr-only">Step {n}: </span>
+                {title}
+              </h3>
+              <p className="m-0 text-body-sm font-body-sm text-ink-muted">{text}</p>
+            </li>
+          ))}
+        </ol>
       </div>
-      <ol className="m-0 grid list-none grid-cols-1 gap-5 p-0 md:grid-cols-3">
-        {STEPS.map(([n, title, text]) => (
-          <li
-            key={n}
-            className="flex flex-col gap-3.5 rounded-lg border border-hairline bg-surface p-7"
-          >
-            <span className="text-[13px] font-token text-primary-strong">{n}</span>
-            <h3 className="m-0 text-h3 font-h3">{title}</h3>
-            <p className="m-0 text-body-md font-body-md text-ink-soft">{text}</p>
-          </li>
-        ))}
-      </ol>
+    </section>
+  );
+}
+
+function Extraction({ blend }: { blend: HeroBlend }) {
+  const rows = blend.measured.rows;
+  const last = rows.length - 1;
+  return (
+    <section id="exports" className="bg-canvas">
+      <div className={cn(container, "flex flex-wrap items-center gap-14 py-26")}>
+        <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-5">
+          <Eyebrow tone="kiln">01 · Extraction</Eyebrow>
+          <h2 className="m-0 text-h2 font-h2">
+            Measured, not guessed<Accent>.</Accent>
+          </h2>
+          <p className="m-0 max-w-[460px] text-body-md font-body-md text-ink-muted">
+            Thema opens each site in a real browser and reads the styles it actually renders:
+            colors, fonts, spacing, radius and shadows, weighted by what&apos;s on screen. Ads, demo
+            widgets and browser defaults don&apos;t get a vote.
+          </p>
+        </div>
+        <div className="min-w-0 flex-[1_1_460px] overflow-hidden rounded-lg border border-hairline bg-surface shadow-card">
+          <div className="flex items-center justify-between gap-3 border-b border-hairline px-5 py-3.5">
+            <span className="text-token font-token text-ink-subtle">reading styles…</span>
+            <span className="text-token font-token">{blend.measured.source}</span>
+          </div>
+          <dl className="m-0 font-token text-token">
+            {rows.map(([key, value], index) => (
+              <div
+                key={key}
+                className={cn(
+                  "flex justify-between gap-4 border-t border-divider px-5 py-3 first:border-t-0",
+                  index === last ? "bg-primary-tint text-primary-deep" : "bg-surface-subtle",
+                )}
+              >
+                <dt className={index === last ? "" : "text-ink-subtle"}>{key}</dt>
+                <dd className="m-0">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
     </section>
   );
 }
@@ -239,22 +313,10 @@ function HowItWorks() {
 function Fixed({ blend }: { blend: HeroBlend }) {
   const rows = blend.fixes.slice(0, 2);
   return (
-    <section className="bg-dark-canvas text-dark-ink">
+    <section id="fixed" className="bg-band text-band-ink">
       <div className={cn(container, "flex flex-wrap items-center gap-14 py-26")}>
-        <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-5">
-          <Eyebrow className="text-dark-ink-muted">Not just extracted. Fixed.</Eyebrow>
-          <h2 className="m-0 text-h2 font-h2">
-            Borrowed colors that{" "}
-            <span className="font-display-accent italic font-normal text-dark-primary">pass</span>,
-            every time.
-          </h2>
-          <p className="m-0 max-w-[460px] text-[17px] leading-[1.6] text-dark-ink-soft">
-            Thema checks every text and background pair against WCAG 2.2 AA, nudges only what fails,
-            and generates a matching dark mode when your sources don&apos;t have one.
-          </p>
-        </div>
-        <div className="flex min-w-0 flex-[1_1_460px] flex-col gap-3 rounded-lg border border-dark-hairline bg-dark-surface p-6 font-token text-[14px]">
-          <div className="flex justify-between border-b border-dark-hairline pb-2 text-[12px] text-dark-ink-muted">
+        <div className="flex min-w-0 flex-[1_1_460px] flex-col gap-3 rounded-lg border border-band-hairline bg-band-surface p-6 text-token font-token">
+          <div className="flex justify-between border-b border-band-hairline pb-2 text-band-ink-muted">
             <span>Pair</span>
             <span>Before → After</span>
           </div>
@@ -276,78 +338,72 @@ function Fixed({ blend }: { blend: HeroBlend }) {
               <span className="text-dark-success">{p.ratio.toFixed(1)} ✓</span>
             </div>
           ))}
-          <div className="flex justify-between border-t border-dark-hairline pt-2 text-dark-ink-muted">
+          <div className="flex justify-between border-t border-band-hairline pt-2 text-band-ink-muted">
             <span>Dark mode</span>
-            <span className="text-dark-ink">
+            <span className="text-band-ink">
               {blend.darkGenerated ? "generated" : "from the source"} · {blend.passing.dark}/
               {blend.passing.total} pass
             </span>
           </div>
+        </div>
+        <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-5">
+          <Eyebrow tone="band">02 · Not just extracted. Fixed.</Eyebrow>
+          <h2 className="m-0 text-h2 font-h2 text-band-ink">
+            Borrowed colors that <span className="text-band-accent">pass</span>, every time.
+          </h2>
+          <p className="m-0 max-w-[460px] text-body-md font-body-md text-band-ink-soft">
+            Thema checks every text and background pair against WCAG 2.2 AA, nudges only what fails,
+            and generates a matching dark mode when your sources don&apos;t have one.
+          </p>
         </div>
       </div>
     </section>
   );
 }
 
-const FORMATS = [
-  ["DESIGN.md", "Tokens plus plain-language rules for agents"],
-  ["theme.css", "Tailwind v4 @theme block"],
-  ["shadcn.css", "Light and dark variables, shadcn naming"],
-  ["tokens.json", "W3C DTCG for Style Dictionary and Figma"],
-  ["style-guide.html", "A page to share with your team"],
-] as const;
-
-function Exports() {
-  return (
-    <section id="exports" className={cn(container, "flex flex-col gap-10 py-26")}>
-      <h2 className="m-0 max-w-[720px] text-h2 font-h2">
-        One system. Every format your stack reads.
-      </h2>
-      <ul className="m-0 grid list-none grid-cols-1 gap-3.5 p-0 sm:grid-cols-2 lg:grid-cols-5">
-        {FORMATS.map(([file, text]) => (
-          <li
-            key={file}
-            className="flex min-h-[140px] flex-col gap-2 rounded-[14px] border border-hairline bg-surface p-5"
-          >
-            <span className="text-[14px] font-medium font-token">{file}</span>
-            <span className="text-[14px] leading-[1.5] text-ink-muted">{text}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
+const FILES = ["DESIGN.md", "theme.css", "shadcn.css", "tokens.json"] as const;
 
 function Agents() {
   return (
-    <section id="agents" className={cn(container, "pb-26")}>
-      <div className="flex flex-wrap items-center gap-10 rounded-xl border border-hairline bg-surface p-12">
-        <div className="flex min-w-0 flex-[1_1_380px] flex-col gap-4">
-          <h2 className="m-0 text-[40px] leading-[1.08] font-semibold tracking-[-0.03em]">
-            Or let your agent <Accent>ask</Accent> for it.
+    <section id="agents" className="bg-canvas">
+      <div className={cn(container, "flex flex-wrap items-center gap-14 py-26")}>
+        <div className="flex min-w-0 flex-[1_1_400px] flex-col gap-5">
+          <Eyebrow tone="kiln">03 · Agents</Eyebrow>
+          <h2 className="m-0 text-h2 font-h2">
+            Made for your agent<Accent>.</Accent>
           </h2>
-          <p className="m-0 text-[17px] leading-[1.55] text-ink-soft">
-            Thema runs as an MCP server. Your agent can extract, blend and fetch DESIGN.md without
-            leaving the task.
+          <p className="m-0 max-w-[460px] text-body-md font-body-md text-ink-muted">
+            Every export is a plain file your agent already knows how to read. Thema also runs as an
+            MCP server, so your agent can extract, blend and fetch DESIGN.md without leaving the
+            task.
           </p>
-          <a href="#mcp" className="text-body-md font-medium">
-            Set up the MCP server →
-          </a>
+          <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
+            {FILES.map((file) => (
+              <li
+                key={file}
+                className="rounded-full border border-pill-border bg-surface px-3 py-1.5 text-token font-token"
+              >
+                {file}
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="min-w-0 flex-[1_1_480px] rounded-[14px] bg-ink p-6 font-token text-[14px] leading-[1.8] text-canvas">
-          <div className="text-dark-ink-muted">› you</div>
-          <div>
-            Make the settings page match a blend of north.example colors and fieldnotes.example
-            type.
+        <div className="min-w-0 flex-[1_1_480px] rounded-xl bg-stage p-6">
+          <div className="rounded-lg bg-band p-6 font-token text-token leading-[1.8] text-band-ink">
+            <div className="text-band-ink-muted">› you</div>
+            <div>
+              Make the settings page match a blend of north.example colors and fieldnotes.example
+              type.
+            </div>
+            <div className="mt-3 text-band-ink-muted">› agent</div>
+            <div>
+              <span className="text-band-accent">thema.blend</span>(2 references) … done
+            </div>
+            <div>
+              <span className="text-band-accent">thema.get_design_md</span>() → DESIGN.md
+            </div>
+            <div>Updated 6 components to use role variables.</div>
           </div>
-          <div className="mt-3 text-dark-ink-muted">› agent</div>
-          <div>
-            <span className="text-dark-primary">thema.blend</span>(2 references) … done
-          </div>
-          <div>
-            <span className="text-dark-primary">thema.get_design_md</span>() → DESIGN.md
-          </div>
-          <div>Updated 6 components to use role variables.</div>
         </div>
       </div>
     </section>
@@ -356,12 +412,14 @@ function Agents() {
 
 function FinalCta() {
   return (
-    <section id="start" className="border-t border-hairline">
+    <section id="start" className="bg-canvas">
       <div className={cn(container, "flex flex-col items-center gap-6 py-26 text-center")}>
-        <h2 className="m-0 text-[64px] leading-none font-semibold tracking-[-0.035em]">
+        <h2 className="m-0 text-h2-lg font-h2-lg">
           Your agent has <Accent underline>taste</Accent> now.
         </h2>
-        <p className="m-0 text-[18px] text-ink-soft">First blend free. No sign-up.</p>
+        <p className="m-0 text-body-lg font-body-lg text-ink-muted">
+          First blend free. No sign-up.
+        </p>
         <a href="#top" className={buttonVariants({ variant: "primary" })}>
           Paste your first site
         </a>
@@ -372,17 +430,24 @@ function FinalCta() {
 
 function Footer() {
   return (
-    <footer className="border-t border-hairline">
+    <footer className="bg-band text-band-ink-muted">
       <div
         className={cn(
           container,
-          "flex flex-wrap justify-between gap-4 py-8 text-[14px] text-ink-muted",
+          "flex flex-wrap items-center justify-between gap-4 py-8 text-body-sm font-body-sm",
         )}
       >
-        <span>© 2026 Thema</span>
+        <span className="flex items-center gap-3">
+          <Logo size={24} inverted />
+          <span>© 2026 Thema · Inspired by, never cloned.</span>
+        </span>
         <span className="flex gap-6">
           {["Docs", "GitHub", "Privacy"].map((label) => (
-            <a key={label} href={`#${label.toLowerCase()}`} className="text-ink-muted">
+            <a
+              key={label}
+              href={`#${label.toLowerCase()}`}
+              className="flex min-h-11 items-center text-band-link"
+            >
               {label}
             </a>
           ))}
@@ -392,7 +457,10 @@ function Footer() {
   );
 }
 
-/** The Landing page, from the approved mockup (SPEC.md → Screens). */
+/**
+ * The Landing, "Premium White" (docs/landing-white.md). The interactive demo (#try) is left out
+ * until its section is specified.
+ */
 export function Landing({ blend }: { blend: HeroBlend }) {
   return (
     <>
@@ -401,9 +469,10 @@ export function Landing({ blend }: { blend: HeroBlend }) {
         <Hero blend={blend} />
         <ReadsInto />
         <HowItWorks />
+        <Extraction blend={blend} />
         <Fixed blend={blend} />
-        <Exports />
         <Agents />
+        <Faq />
         <FinalCta />
       </main>
       <Footer />
