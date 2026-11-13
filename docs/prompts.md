@@ -1,6 +1,6 @@
 # Claude Code session prompts
 
-Run these in order, one session each: Sessions 1–4 on branch `m1-extract`, Sessions 5–8 on `m2-blend`. Start every session in plan mode (Shift+Tab), approve the plan, then let it build. After each session: `pnpm test`, review the diff, commit.
+Run these in order, one session each: Sessions 1–4 on branch `m1-extract`, 5–8 on `m2-blend`, 9–12 on `m3-preview`, 13–15 on `m4-mcp`. Before each new branch, merge the previous one into `main` and branch from the updated `main`. Start every session in plan mode (Shift+Tab), approve the plan, then let it build. After each session: `pnpm test`, review the diff, commit.
 
 ---
 
@@ -147,4 +147,113 @@ Tests: one snapshot per format for a synthetic fixture, the DESIGN.md lint test,
 
 ---
 
-Weeks 5+ (preview, web app, MCP, CLI) get their prompts after Phase 2 lands.
+# Week 5 — Web app and preview (branch `m3-preview`)
+
+Phase 2 landed: `extractSystem → blend → fix → exporters` works end to end on 22 fixtures, and every DESIGN.md passes Google's linter. Nothing of `apps/web` exists yet, so week 5 builds the app before the preview. Thema's own UI follows the root `DESIGN.md`; user palettes and previews sit on the neutral Stage color, never on cream.
+
+---
+
+## Session 9 — Web app scaffold and Landing
+
+```
+Read CLAUDE.md, DESIGN.md (Thema's own design system), and SPEC.md → User flow and screens, Visual design of Thema, Architecture and stack. Open the approved Landing and Workspace mockups linked in SPEC.md.
+
+Create apps/web: Next.js App Router, TypeScript strict, Tailwind v4, shadcn/ui.
+- Implement DESIGN.md's tokens as Tailwind v4 theme variables and shadcn variables (Paper canvas, Ink text, Kiln/Kiln Deep, the Stage color for previews; Geist, Instrument Serif italic accent word, Geist Mono for hex and tokens). Don't hand-copy values DESIGN.md doesn't list; ask if something is missing.
+- Build the Landing page from the mockup: hero URL input, 3 example blends (built from our recorded fixtures through the engine and exporters, not screenshots of third-party sites), how-it-works strip. The URL input validates the URL client-side and routes to the Workspace; no backend yet.
+- Paint-chip motif and logo (three stacked chips) as components.
+- Tests: component tests for the URL input (valid, invalid, private/localhost rejected with the same rules as the worker's SSRF guard, imported, not duplicated), and an accessibility check (axe) on Landing.
+Say why for any new dependency. Plan first.
+```
+
+---
+
+## Session 10 — API and extraction jobs
+
+```
+Read CLAUDE.md and SPEC.md → Architecture and stack (API routes), Features in detail → 1. Reference intake, MVP scope (anonymous use, limits), Risks (rate limits, cache).
+
+Build the API as Next.js route handlers, running the engine and exporters in-process:
+- POST /api/projects, POST /api/projects/:id/references (URL + borrow tags; enqueues extraction), GET /api/references/:id (status + extracted system + warnings), PATCH /api/projects/:id/blend (borrow tags, sliders, locks → blend → fix → the new ThemaSystem, under 200 ms), GET /api/projects/:id/export?format= (design-md, tailwind, shadcn, dtcg, styleguide, zip).
+- Jobs behind an interface: a local runner for development (calls the worker's extract), and the BullMQ + Redis implementation (1 job per URL, 3 at a time, retries) behind the same interface. Hosting is decided later; propose the interface so either works.
+- 24 h cache by URL + day; anonymous users limited to 3 extractions/day; SSRF guard before enqueueing (reuse apps/worker's).
+- Anonymous projects live in the browser only (SPEC): the API is stateless for them. Say how the client sends the project.
+- Surface extractSystem's warnings (no-headings, few-samples, no-dark-theme, monochrome) and fix's unresolved pairs in the responses.
+Tests: route tests with the worker mocked (recorded fixtures as fake results), cache and rate-limit tests, the blend route's timing on a 5-reference project, and export formats matching packages/exporters byte for byte. Plan first.
+```
+
+---
+
+## Session 11 — Workspace
+
+```
+Read CLAUDE.md, DESIGN.md, SPEC.md → User flow (steps 2–4), Screens (Workspace), Features in detail → 3. Blend engine, and the Workspace mockup.
+
+Build the Workspace:
+- Reference cards: URL, status line (fetching, reading styles, naming roles), screenshot thumbnail, warnings from extraction, borrow chips (Colors, Type, Spacing, Shape, Layout); a chip belongs to one reference at a time; up to 5 references.
+- Token panel: palette (paint chips, hex in Geist Mono), type scale, spacing, radius, shadow; light/dark switch.
+- Sliders (density, roundness, contrast, warmth) and locks: lock or swap any single token ("swap" = take that token from another reference, then lock it). The system updates live via the blend route.
+- Accessibility report from a11y.fixes and the unresolved pairs, including "locked: can't fix".
+Tests: chip ownership rules, lock/swap behaviour, the report rendering fixes and unresolved pairs, keyboard access for chips and sliders, axe on the Workspace. Plan first.
+```
+
+---
+
+## Session 12 — Preview and Export
+
+```
+Read CLAUDE.md, DESIGN.md, SPEC.md → Features in detail → 5. Preview and 6. Exports, Screens (Preview, Export).
+
+- Preview: three templates (Landing, Dashboard, Settings form) built only from shadcn/ui components that read CSS variables, so applying a system means swapping variables (no rebuild). Template switcher, light/dark toggle, desktop/mobile viewport, and the compare view (source screenshot next to the template). Previews sit on the Stage color.
+- Export: format checklist, file preview with a copy button per file, zip download, and the MCP and CLI snippets (placeholders until week 6 names the commands).
+- Anonymous projects: saved in the browser only, one project (SPEC).
+Tests: every template renders with each of the 22 fixtures' exported shadcn.css without missing variables; the light/dark toggle swaps only variables; the zip contains the five files; axe on Preview and Export. Plan first.
+```
+
+---
+
+# Week 6 — Agents and launch (branch `m4-mcp`)
+
+Open questions in SPEC.md to answer before these sessions: worker hosting (Fly.io, Railway or a browser service), the LLM and its monthly budget, the CLI license, and the Pro price.
+
+---
+
+## Session 13 — Names and prose from the LLM
+
+```
+Read CLAUDE.md (deterministic code decides every value; the LLM only names roles and writes prose) and SPEC.md → Architecture and stack (LLM), Output formats (DESIGN.md prose).
+
+Add the LLM step behind an interface in a new package (not in packages/engine, which stays pure):
+- voice: mood words and a summary for ThemaSystem.voice, from the tokens and source URLs.
+- DESIGN.md prose: the Overview, Do's and Don'ts and Agent rules sections, written from the token object. The exporters keep the deterministic template as the fallback when the LLM is off or fails.
+- Use the Claude API (look up the current model IDs; a small model for naming, a larger one for prose). The model never sets token values: validate that every hex, size and name in its output exists in the system, and reject the output otherwise.
+- Cache by system hash; log cost per run.
+Tests: the validator rejects invented values; the fallback path; DESIGN.md with LLM prose still passes Google's linter (mocked LLM responses, no network in tests). Say why for any new dependency. Plan first.
+```
+
+---
+
+## Session 14 — MCP server and CLI
+
+```
+Read CLAUDE.md and SPEC.md → MVP scope (MCP tools, CLI), Architecture and stack (MCP).
+
+- packages/mcp: an MCP server (official TypeScript SDK) with 3 tools: extract (URL → system + warnings), blend (references, borrow tags, sliders, locks → system), get_design_md (system or project → DESIGN.md). Tools call the same engine, exporters and API as the web app.
+- packages/cli: an open-source CLI wrapping the engine and worker: thema extract <url>, thema blend <files…>, thema export --format …, reading and writing ThemaSystem JSON. Same SSRF guard; no web app needed.
+- Fill in the Export screen's MCP and CLI snippets.
+Tests: each MCP tool against recorded fixtures (worker mocked), CLI commands end to end on fixtures, and the CLI's DESIGN.md passing the linter. Plan first.
+```
+
+---
+
+## Session 15 — Accounts, saved projects and launch
+
+```
+Read CLAUDE.md and SPEC.md → MVP scope (anonymous vs signed-in), Screens (Projects), Architecture and stack (Supabase, queue, worker hosting), Risks.
+
+- Supabase: auth, Postgres (projects, references, cached extractions), Storage (screenshots). Signing in unlocks saved projects; the anonymous browser project can be claimed on sign-in.
+- Projects screen: grid of saved systems with their palette strips.
+- Deploy: the web app, the worker in a long-running container behind an egress firewall that blocks private ranges (the SSRF guard is defence in depth), Redis + BullMQ for jobs.
+- Launch checklist: rate limits, error messages for blocked sites, source attribution in every file, "inspired by" wording (no brand cloning), and a metrics plan for the 4-week check.
+Tests: auth-gated routes, claiming an anonymous project, the worker's firewall assumptions documented, and the SSRF tests still passing in the container. Plan first.
+```
