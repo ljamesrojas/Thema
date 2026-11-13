@@ -53,3 +53,15 @@ Route handlers in `src/app/api`, running the engine and exporters in-process (No
 - **Daily limit:** `THEMA_DAILY_EXTRACTIONS` overrides the anonymous limit, which is handy while developing.
 
 Playwright, BullMQ and ioredis are dependencies of this app too: Next.js only keeps a package out of the bundle (`serverExternalPackages`) when the app can resolve it itself.
+
+## Workspace
+
+`/workspace` (`src/workspace/`): reference cards, the system on the stage, sliders and the accessibility report. `?url=` (from the Landing) adds that site once and is then dropped from the address.
+
+- **The project lives in the browser** (`project.ts`, `localStorage` key `thema.project.v1`, read and written defensively). It holds each reference with its extracted system, the sliders, the locks and the last result, and is sent with every blend, since the API is stateless. When storage is blocked, the top bar says the project isn't saved.
+- **Borrow tags:** every tag has exactly one owner. The first reference starts with all five; pressing a chip on another card moves that tag there; removing a reference gives its tags to the first remaining one.
+- **Lock and swap:** a lock keeps a token's value from the last result through every blend and the fixer. Swap ("Use x's value") writes another reference's value into the last result and locks it, so it goes through the same blend route. Lockable: each color role (in the theme shown), font families, radius sm/md/lg, shadow sm/md/lg.
+- **Live updates:** references still extracting are polled every second (their card shows the real stage). A blend runs when an input changes, debounced 150ms; a newer blend cancels the one in flight. Only finished references are blended.
+- **Fonts** are shown by name with fallback stacks; web fonts aren't loaded (no runtime requests), so a sample renders exactly only where the font is installed.
+
+`/preview` and `/export` are placeholders until Session 12.
