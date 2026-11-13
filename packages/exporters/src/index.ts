@@ -7,7 +7,7 @@ import { toStyleGuide } from "./style-guide.js";
 export { SHADCN_VARIABLES, toShadcnCss, toTailwindCss } from "./css.js";
 export { toDesignMd } from "./design-md.js";
 export { cubicBezier, toDtcg } from "./dtcg.js";
-export { cssFontStack, fontStack, toHex } from "./shared.js";
+export { cssFontStack, familyForStep, fontStack, toHex } from "./shared.js";
 export { toStyleGuide } from "./style-guide.js";
 
 /** Every export format, by file name. Pure: the same system always gives the same files. */

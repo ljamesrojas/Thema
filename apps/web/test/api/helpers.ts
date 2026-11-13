@@ -1,6 +1,7 @@
 // Shared setup for the API route tests: the worker is mocked with recorded fixtures (a URL on
 // host "<fixture>.test" extracts as fixtures/<fixture>), DNS is fake, and the clock is fixed.
 import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { extractSystem, type StyleSample, type ThemaSystem } from "@thema/engine";
 import {
   createLocalQueue,
@@ -11,12 +12,13 @@ import {
 import type { Lookup } from "@thema/url-guard";
 import { setServices } from "@/server/services";
 
-const FIXTURES = new URL("../../../../fixtures/", import.meta.url);
+// A path string, not a URL: under jsdom, URL is jsdom's class, which node:fs doesn't accept.
+const FIXTURES = join(import.meta.dirname, "../../../../fixtures");
 
 export const PNG = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
 const readSamples = (name: string, file: string): StyleSample[] | undefined => {
-  const path = new URL(`${name}/${file}`, FIXTURES);
+  const path = join(FIXTURES, name, file);
   return existsSync(path) ? (JSON.parse(readFileSync(path, "utf8")) as StyleSample[]) : undefined;
 };
 
