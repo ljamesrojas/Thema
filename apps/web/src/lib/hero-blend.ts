@@ -3,6 +3,7 @@ import {
   CHECKED_PAIRS,
   extractSystem,
   fix,
+  parseFontFamily,
   type BorrowTag,
   type ColorRole,
   type ContrastFix,
@@ -46,8 +47,10 @@ export interface HeroBlend {
   /** A few pairs that already passed, with their ratio, for the before/after table. */
   passed: { pair: [ColorRole, ColorRole]; ratio: number }[];
   darkGenerated: boolean;
-  /** What was measured on the first reference: the rows of Feature 01's "reading styles" card. */
-  measured: { source: string; rows: [string, string][] };
+  /** Feature 01's "reading styles" card: what the browser read on the first reference. */
+  read: { source: string; rows: [string, string][]; result: string };
+  /** The interactive demo's sites: each reference's own extracted system, untouched. */
+  sites: { id: string; label: string; system: ThemaSystem }[];
 }
 
 const CHIPS: [string, ColorRole][] = [
@@ -104,28 +107,38 @@ export function heroBlend(): HeroBlend {
       ratio: Math.round(wcagContrast(light[pair[0]], light[pair[1]]) * 10) / 10,
     })),
     darkGenerated: fixed.generated === "dark",
-    measured: measuredRows(REFERENCES[0]?.label ?? "", extracted[0]?.system, system.a11y.fixes),
+    read: readRows(REFERENCES[0], extracted[0]?.system),
+    sites: REFERENCES.map(({ label }, i) => ({
+      id: label.split(".")[0] ?? label,
+      label,
+      system: extracted[i]?.system ?? system,
+    })),
   };
 }
 
-/** Feature 01's rows: real values from the first reference, then what the fixer did. */
-function measuredRows(
-  source: string,
+const isPainted = (css: string) => !/^(transparent|rgba\([^)]*,\s*0\))$/.test(css.trim());
+
+/**
+ * Feature 01's rows: samples the browser recorded on the first reference (its first painted
+ * button, its h1, its first padded section), then what the engine concluded.
+ */
+function readRows(
+  reference: (typeof REFERENCES)[number] | undefined,
   system: ThemaSystem | undefined,
-  fixes: readonly ContrastFix[],
-): HeroBlend["measured"] {
-  if (!system) return { source, rows: [] };
-  const { light } = system.color;
-  return {
-    source,
-    rows: [
-      ["color.canvas", toHex(light.canvas)],
-      ["color.ink", toHex(light.ink)],
-      ["color.primary", toHex(light.primary)],
-      ["font.sans", system.typography.families.sans],
-      ["spacing.base", `${system.spacing.base}px`],
-      ["radius.md", `${system.radius.md}px`],
-      ["contrast", `${fixes.length} pairs fixed → AA`],
-    ],
-  };
+): HeroBlend["read"] {
+  const samples = (reference?.samples ?? []) as StyleSample[];
+  const rows: [string, string][] = [];
+  const button = samples.find((s) => s.tag === "button" && isPainted(s.backgroundColor));
+  if (button) rows.push(["button", `background ${toHex(button.backgroundColor)}`]);
+  const h1 = samples.find((s) => s.tag === "h1");
+  if (h1) {
+    const family = parseFontFamily(h1.fontFamily)?.name ?? h1.fontFamily;
+    rows.push(["h1", `${family} · ${h1.fontSize}px · ${h1.fontWeight}`]);
+  }
+  const section = samples.find((s) => s.tag === "section" && s.padding[0] > 0);
+  if (section) rows.push(["section", `padding ${section.padding[0]}px ${section.padding[1]}px`]);
+  const result = system
+    ? `primary ${toHex(system.color.light.primary)} · base ${system.spacing.base}`
+    : "";
+  return { source: reference?.label ?? "", rows, result };
 }

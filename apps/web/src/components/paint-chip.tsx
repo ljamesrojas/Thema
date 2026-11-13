@@ -15,6 +15,7 @@ export function PaintChip({
   color,
   hex,
   ink,
+  compact = false,
 }: {
   name: string;
   /** The chip's color as CSS (the user's OKLCH value). */
@@ -23,10 +24,12 @@ export function PaintChip({
   hex: string;
   /** The system's ink, a candidate for the chip's text. */
   ink: string;
+  /** A short chip (96px) for tight spaces like the Landing demo. */
+  compact?: boolean;
 }) {
   return (
     <figure
-      className="m-0 flex h-[168px] flex-col justify-end gap-1.5 rounded-md border border-hairline p-3"
+      className={`m-0 flex flex-col justify-end gap-1.5 rounded-md border border-hairline p-3 ${compact ? "h-24" : "h-[168px]"}`}
       style={{ background: color, color: chipTextColor(color, ink) }}
     >
       <figcaption className="text-ui-sm font-ui-sm">{name}</figcaption>

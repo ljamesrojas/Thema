@@ -1,12 +1,11 @@
 /**
- * The logo: three stacked paint chips (paper, ink, kiln). `inverted` is for the black band and
- * footer: the paper chip becomes an outline in band ink and the ink chip turns light, so all
- * three stay visible on black.
+ * The logo: three stacked paint chips (paper, ink, kiln). `inverted` is for the black footer: the
+ * first chip turns black with a white outline and the middle one white, so all three stay visible.
  */
 export function Logo({ size = 28, inverted = false }: { size?: number; inverted?: boolean }) {
-  const paper = inverted ? "transparent" : "var(--color-surface)";
-  const outline = inverted ? "var(--color-band-ink)" : "var(--color-ink)";
-  const middle = inverted ? "var(--color-band-ink)" : "var(--color-ink)";
+  const paper = inverted ? "var(--color-band)" : "var(--color-surface)";
+  const outline = inverted ? "var(--color-canvas)" : "var(--color-ink)";
+  const middle = inverted ? "var(--color-canvas)" : "var(--color-ink)";
   return (
     <svg width={size} height={size} viewBox="0 0 28 28" aria-hidden="true">
       <rect

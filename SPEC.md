@@ -68,7 +68,7 @@ A new user goes from landing page to exported files in five steps, aiming for un
 
 | Screen | Purpose | Key elements |
 | --- | --- | --- |
-| Landing | Explain and capture the first URL | "Premium White", per docs/landing-white.md (approved 2026-11-13; replaces the cream Landing): hero URL input with a live blend panel on the stage, "reads into" agents strip, interactive demo (not built yet: its section is still to be specified), how it works (4 steps), extraction feature, the black accessibility band (before → after), agents/MCP, FAQ, final CTA |
+| Landing | Explain and capture the first URL | "Premium White", per docs/landing-white.md and the canvas's Landing-white board (approved 2026-11-13; replaces the cream Landing): hero URL input with a live blend panel on the stage, "reads into" agents strip, interactive demo (the real blend and fix in the browser on three sample sites), how it works (4 steps), extraction feature, the black accessibility band (before → after), agents/MCP, FAQ, final CTA |
 | Workspace | Build the system | Reference cards with borrow chips; token panel (palette, type scale, spacing, radius, shadow); sliders; accessibility report |
 | Preview | Show the result | Template switcher, light/dark toggle, viewport toggle (desktop/mobile), side-by-side with sources |
 | Export | Hand off | Format checklist, file preview with copy button, zip download, MCP and CLI snippet |

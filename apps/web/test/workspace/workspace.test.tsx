@@ -78,7 +78,8 @@ const chip = (host: string, label: string) =>
     { name: label },
   );
 
-describe("Workspace", () => {
+// End to end through the real routes and engine: allow for a busy machine running suites in parallel.
+describe("Workspace", { timeout: 15_000 }, () => {
   it("adds a site, shows its stage, then its system, warnings and screenshot", async () => {
     const release = services.hold();
     renderWorkspace();

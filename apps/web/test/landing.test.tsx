@@ -7,7 +7,9 @@ import { AGENTS } from "@/components/agents-strip";
 import { QUESTIONS } from "@/components/faq";
 import { Landing } from "@/components/landing";
 import { heroBlend } from "@/lib/hero-blend";
+import type { StyleSample } from "@thema/engine";
 import { toHex } from "@thema/exporters";
+import lightSaas from "../../../fixtures/light-saas/samples.json";
 
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn() }) }));
 afterEach(cleanup);
@@ -26,10 +28,10 @@ describe("Landing (docs/landing-white.md)", () => {
     const sections = [...container.querySelectorAll("main > section")].map(
       (section) => section.id || section.getAttribute("aria-label"),
     );
-    // #try (the interactive demo) is left out until its section is specified.
     expect(sections).toEqual([
       "top",
       "Reads into",
+      "try",
       "how",
       "exports",
       "fixed",
@@ -39,6 +41,7 @@ describe("Landing (docs/landing-white.md)", () => {
     ]);
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
     for (const name of [
+      "Borrow it. Blend it. Ship it.",
       "From inspiration to instructions, in four steps.",
       "Measured, not guessed.",
       "Borrowed colors that pass, every time.",
@@ -185,17 +188,23 @@ describe("heroBlend: computed by the real pipeline", () => {
     expect(heroBlend()).toEqual(blend);
   });
 
-  it("feeds Feature 01 with values measured on the first reference", () => {
-    expect(blend.measured.source).toBe("north.example");
-    expect(blend.measured.rows.map(([key]) => key)).toEqual([
-      "color.canvas",
-      "color.ink",
-      "color.primary",
-      "font.sans",
-      "spacing.base",
-      "radius.md",
-      "contrast",
+  it("feeds Feature 01 with what the browser recorded on the first sample site", () => {
+    const samples = lightSaas as StyleSample[];
+    const button = samples.find(
+      (s) => s.tag === "button" && s.backgroundColor !== "rgba(0, 0, 0, 0)",
+    );
+    const h1 = samples.find((s) => s.tag === "h1");
+    const section = samples.find((s) => s.tag === "section" && s.padding[0] > 0);
+    if (!button || !h1 || !section) throw new Error("fixture changed");
+    expect(blend.read.source).toBe("north.example");
+    expect(blend.read.rows).toEqual([
+      ["button", `background ${toHex(button.backgroundColor)}`],
+      ["h1", `Inter · ${h1.fontSize}px · ${h1.fontWeight}`],
+      ["section", `padding ${section.padding[0]}px ${section.padding[1]}px`],
     ]);
-    expect(blend.measured.rows.at(-1)?.[1]).toBe(`${blend.fixes.length} pairs fixed → AA`);
+    const north = blend.sites[0]?.system;
+    expect(blend.read.result).toBe(
+      `primary ${toHex(north?.color.light.primary ?? "")} · base ${north?.spacing.base}`,
+    );
   });
 });
