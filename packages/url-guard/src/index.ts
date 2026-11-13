@@ -1,5 +1,5 @@
-// Browser-safe URL rules for Thema's SSRF guard: no Node APIs, no network. The worker adds the
-// DNS check on top (apps/worker/src/ssrf.ts); the web app, API, CLI and MCP use these directly.
+// Browser-safe URL rules for Thema's SSRF guard: no Node APIs. assertPublicUrl adds a DNS check
+// with the lookup passed in (the worker and the API pass node:dns; tests pass a fake).
 
 /** Thrown when a URL may not be fetched: wrong scheme, credentials, or a non-public address. */
 export class BlockedUrlError extends Error {
