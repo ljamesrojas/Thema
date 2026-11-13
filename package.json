@@ -13,11 +13,13 @@
     "format": "prettier --write .",
     "extract": "pnpm --filter @thema/worker extract",
     "palette": "tsx scripts/palette.ts",
-    "accuracy": "tsx scripts/accuracy.ts"
+    "accuracy": "tsx scripts/accuracy.ts",
+    "export": "tsx scripts/export.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@thema/engine": "workspace:*",
+    "@thema/exporters": "workspace:*",
     "@types/node": "^22.20.5",
     "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",

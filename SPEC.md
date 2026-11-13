@@ -256,7 +256,9 @@ Each export is a pure function of `ThemaSystem`. DESIGN.md follows Google's open
 
 **DESIGN.md format (Google spec, alpha).** Front matter keys: `version`, `name`, `description`, `colors` (hex strings), `typography` (named styles with `fontFamily`, `fontSize`, `fontWeight`, `lineHeight`, `letterSpacing`), `rounded`, `spacing`, `components` (properties: `backgroundColor`, `textColor`, `typography`, `rounded`, `padding`, `size`, `height`, `width`; token references like `{colors.primary}`; variants are separate entries such as `button-primary-hover`). Body sections, in this order when present: Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts. Extra sections are allowed after these (Thema adds Motion and Agent rules).
 
-**Validation:** every generated DESIGN.md must pass `npx -y @google/design.md lint` with no errors. Add this as a test in `packages/exporters`.
+**Validation:** every generated DESIGN.md must pass `npx -y @google/design.md lint` with no errors. Add this as a test in `packages/exporters`. (Done with the pinned package's programmatic `lint()`, so it runs offline; every fixture passes with no warnings either.)
+
+**Dark mode and naming.** DESIGN.md has no dark-mode concept, so dark colors are `dark-<role>` tokens and every component has a `-dark` variant. Typography styles are the scale steps (`xs` … `4xl`) plus `code`; spacing tokens are keyed by their px value. In `shadcn.css`, shadcn's subtle `accent` maps to Thema's `surface` and Thema's accent to `chart-2`. Colors stay OKLCH in the CSS files; DESIGN.md uses sRGB hex, and tokens.json has both.
 
 The LLM writes the prose sections from the token object and never invents values.
 

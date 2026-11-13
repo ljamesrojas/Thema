@@ -1,0 +1,245 @@
+import type { ThemaSystem } from "@thema/engine";
+import {
+  COLOR_ROLES,
+  em,
+  familyForStep,
+  fontStack,
+  provenance,
+  px,
+  sourceUrls,
+  toHex,
+  type Theme,
+} from "./shared.js";
+
+/** YAML scalar: JSON strings are valid YAML double-quoted strings. */
+const q = (v: string): string => JSON.stringify(v);
+
+type Component = Record<string, string>;
+
+/** A color token reference in the given theme: dark tokens are `dark-<role>`. */
+const ref = (theme: Theme, role: string): string =>
+  `{colors.${theme === "dark" ? "dark-" : ""}${role}}`;
+
+/**
+ * Sample components, one per color role pairing the fixer checked, so every color token is used
+ * (the linter flags orphaned tokens) and every text/background pair is one that passes AA.
+ */
+function components(system: ThemaSystem): [string, Component][] {
+  const steps = new Set(system.typography.scale.map((s) => s.name));
+  const body = steps.has("base") ? "{typography.base}" : undefined;
+  const small = steps.has("sm") ? "{typography.sm}" : body;
+  const snap = (v: number) =>
+    Math.max(system.spacing.base, Math.round(v / system.spacing.base) * system.spacing.base);
+  const out: [string, Component][] = [];
+  for (const theme of ["light", "dark"] as const) {
+    const c = (role: string) => ref(theme, role);
+    const suffix = theme === "dark" ? "-dark" : "";
+    const withType = (component: Component, typography: string | undefined): Component =>
+      typography === undefined ? component : { ...component, typography };
+    out.push(
+      [`page${suffix}`, withType({ backgroundColor: c("canvas"), textColor: c("ink") }, body)],
+      [`section${suffix}`, { backgroundColor: c("surface"), textColor: c("ink") }],
+      [
+        `card${suffix}`,
+        { backgroundColor: c("surface-raised"), textColor: c("ink"), rounded: "{rounded.lg}" },
+      ],
+      [
+        `caption${suffix}`,
+        withType({ backgroundColor: c("canvas"), textColor: c("ink-muted") }, small),
+      ],
+      [
+        `button-primary${suffix}`,
+        withType(
+          {
+            backgroundColor: c("primary"),
+            textColor: c("primary-ink"),
+            rounded: "{rounded.md}",
+            padding: `${snap(8)}px ${snap(16)}px`,
+          },
+          body,
+        ),
+      ],
+      [
+        `input${suffix}`,
+        { backgroundColor: c("canvas"), textColor: c("ink"), rounded: "{rounded.sm}" },
+      ],
+      [`divider${suffix}`, { backgroundColor: c("hairline") }],
+      [`highlight${suffix}`, { backgroundColor: c("accent") }],
+      ...(["success", "warning", "danger", "info"] as const).map((role): [string, Component] => [
+        `alert-${role}${suffix}`,
+        { backgroundColor: c("canvas"), textColor: c(role) },
+      ]),
+    );
+  }
+  return out;
+}
+
+function frontMatter(system: ThemaSystem): string[] {
+  const { typography, spacing, radius } = system;
+  const lines = [
+    "---",
+    `# ${provenance(system)}`,
+    `# Edit tokens in Thema; this file is generated.`,
+  ];
+  lines.push(`version: alpha`, `name: ${q(system.meta.name)}`);
+  lines.push(`description: ${q(describe(system))}`);
+
+  lines.push("colors:");
+  for (const role of COLOR_ROLES) lines.push(`  ${role}: ${q(toHex(system.color.light[role]))}`);
+  for (const role of COLOR_ROLES)
+    lines.push(`  dark-${role}: ${q(toHex(system.color.dark[role]))}`);
+
+  lines.push("typography:");
+  for (const step of typography.scale) {
+    const { slot, name } = familyForStep(typography.families, step.name);
+    lines.push(
+      `  ${step.name}:`,
+      `    fontFamily: ${q(fontStack(slot, name)[0] ?? name)}`,
+      `    fontSize: ${q(px(step.size))}`,
+      `    fontWeight: ${step.weight}`,
+      `    lineHeight: ${step.lineHeight}`,
+      `    letterSpacing: ${q(em(step.tracking))}`,
+    );
+  }
+  if (typography.families.mono !== undefined) {
+    const base = typography.scale.find((s) => s.name === "base");
+    lines.push(
+      "  code:",
+      `    fontFamily: ${q(typography.families.mono)}`,
+      `    fontSize: ${q(px(base ? base.size * 0.9 : 14))}`,
+    );
+  }
+
+  lines.push(
+    "rounded:",
+    `  sm: ${q(px(radius.sm))}`,
+    `  md: ${q(px(radius.md))}`,
+    `  lg: ${q(px(radius.lg))}`,
+    `  full: ${q(px(radius.full))}`,
+  );
+
+  lines.push("spacing:", `  base: ${q(px(spacing.base))}`);
+  for (const v of spacing.scale) lines.push(`  ${q(String(v))}: ${q(px(v))}`);
+
+  lines.push("components:");
+  for (const [name, props] of components(system)) {
+    lines.push(`  ${name}:`);
+    for (const [key, value] of Object.entries(props)) lines.push(`    ${key}: ${q(value)}`);
+  }
+  lines.push("---");
+  return lines;
+}
+
+/** One sentence: where the system came from and what each source lent. */
+function describe(system: ThemaSystem): string {
+  const parts = system.meta.sources
+    .filter((s) => s.url !== "")
+    .map((s) => (s.borrowed.length ? `${s.borrowed.join(", ")} from ${s.url}` : s.url));
+  return parts.length
+    ? `A design system blended by Thema: ${parts.join("; ")}.`
+    : "A design system generated by Thema.";
+}
+
+/** Body prose. Restates token values only; avoids MDX-significant characters (braces, angle brackets). */
+function body(system: ThemaSystem): string[] {
+  const { color, typography, spacing, radius, shadow, layout, motion } = system;
+  const f = typography.families;
+  const hex = (theme: Theme, role: (typeof COLOR_ROLES)[number]) => toHex(color[theme][role]);
+  const out: string[] = [];
+
+  out.push("## Overview", "");
+  out.push(
+    system.voice.summary !== ""
+      ? system.voice.summary
+      : `${describe(system)} Every value below was measured or derived deterministically and checked against WCAG 2.2 AA in light and dark.`,
+    "",
+  );
+  const urls = sourceUrls(system);
+  if (urls.length) out.push(`Sources: ${urls.join(", ")}.`, "");
+
+  out.push("## Colors", "");
+  out.push("| Role | Light | Dark | Use |", "| --- | --- | --- | --- |");
+  const use: Record<(typeof COLOR_ROLES)[number], string> = {
+    canvas: "Page background",
+    surface: "Sections and muted panels",
+    "surface-raised": "Cards and popovers",
+    ink: "Main text",
+    "ink-muted": "Secondary text, captions",
+    hairline: "Borders and dividers",
+    primary: "Main call to action, links",
+    "primary-ink": "Text on primary",
+    accent: "Highlights, secondary emphasis",
+    success: "Success messages",
+    warning: "Warnings",
+    danger: "Errors and destructive actions",
+    info: "Informational messages",
+  };
+  for (const role of COLOR_ROLES) {
+    out.push(`| ${role} | ${hex("light", role)} | ${hex("dark", role)} | ${use[role]} |`);
+  }
+  out.push("");
+
+  out.push("## Typography", "");
+  const families = (Object.entries(f) as [string, string | undefined][])
+    .filter((e): e is [string, string] => e[1] !== undefined)
+    .map(([slot, name]) => `${slot}: ${name}`);
+  out.push(`Families: ${families.join("; ")}. Type scale ratio about ${typography.ratio}.`, "");
+  out.push("| Step | Size | Line height | Weight | Tracking |", "| --- | --- | --- | --- | --- |");
+  for (const s of typography.scale) {
+    out.push(`| ${s.name} | ${px(s.size)} | ${s.lineHeight} | ${s.weight} | ${em(s.tracking)} |`);
+  }
+  out.push("");
+
+  out.push("## Layout", "");
+  out.push(
+    `Content sits in a container up to ${px(layout.containerMax)} wide with ${px(layout.gutter)} side gutters. Sections are separated by ${px(layout.sectionY)} of vertical space.`,
+    `Spacing uses a ${px(spacing.base)} base unit: ${spacing.scale.map(px).join(", ")}.`,
+    "",
+  );
+
+  out.push("## Elevation & Depth", "");
+  out.push(`Shadows: sm ${shadow.sm}; md ${shadow.md}; lg ${shadow.lg}.`, "");
+
+  out.push("## Shapes", "");
+  out.push(
+    `Corner radius: sm ${px(radius.sm)}, md ${px(radius.md)}, lg ${px(radius.lg)}; full ${px(radius.full)} for pills.`,
+    "",
+  );
+
+  out.push("## Components", "");
+  out.push(
+    `Buttons use primary ${hex("light", "primary")} with primary-ink ${hex("light", "primary-ink")} text and the md radius. Cards use surface-raised with the lg radius. Inputs sit on canvas with the sm radius. Every component has a dark variant with the -dark suffix.`,
+    "",
+  );
+
+  out.push("## Do's and Don'ts", "");
+  out.push(
+    "- Do use primary for the main call to action on a screen, and accent sparingly.",
+    "- Do put text only on the backgrounds it is paired with here: those pairs pass WCAG AA.",
+    "- Do take every size and gap from the spacing scale.",
+    "- Don't invent colors, sizes or radii that aren't listed in this file.",
+    "- Don't use ink-muted for long body text or on the primary color.",
+    "",
+  );
+
+  out.push("## Motion", "");
+  out.push(
+    `Fast transitions take ${motion.durationFast}ms, standard ones ${motion.durationBase}ms, with easing ${motion.easing}.`,
+    "",
+  );
+
+  const base = typography.scale.find((s) => s.name === "base");
+  out.push("## Agent rules", "");
+  out.push(
+    "- Read the tokens in the front matter as the source of truth; the prose only explains them.",
+    `- Default text is ink on canvas; the base text style is ${base ? px(base.size) : "the base step"} in ${f.sans}.`,
+    "- Use the dark tokens and -dark components when the page is in dark mode.",
+    "",
+  );
+  return out;
+}
+
+/** DESIGN.md (Google spec, version alpha): token front matter plus prose sections. */
+export function toDesignMd(system: ThemaSystem): string {
+  return [...frontMatter(system), "", ...body(system)].join("\n");
+}
