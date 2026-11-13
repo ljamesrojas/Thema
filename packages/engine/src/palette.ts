@@ -1,8 +1,9 @@
-import { clampChroma, converter, displayable, wcagContrast, type Oklab } from "culori";
+import { converter, wcagContrast, type Oklab } from "culori";
 import { analyzeColors, firstScreenCtas, paintedBackground } from "./colors.js";
 import {
   compositeOver,
   deltaEOK,
+  formatInSrgb,
   formatOklch,
   parseCssColor,
   withOpacity,
@@ -132,20 +133,6 @@ function neutralCtaFill(samples: readonly StyleSample[], canvas: Oklch): string 
   return heaviest(weights);
 }
 
-/**
- * Format a color that's inside sRGB. clampChroma lands exactly on the gamut edge, and rounding
- * to 3 decimals can push it just outside, so chroma steps down until the rounded value fits.
- */
-function inSrgb(color: Oklch): string {
-  let c = color.c;
-  let css = formatOklch({ ...color, c });
-  for (let i = 0; i < 50 && !displayable(parseCssColor(css) ?? color); i++) {
-    c = Math.max(0, c - 0.001);
-    css = formatOklch({ ...color, c });
-  }
-  return css;
-}
-
 /** success / warning / danger / info: fixed hues at the primary's lightness and chroma. */
 function semantic(primary: Oklch): Pick<Record<ColorRole, string>, keyof typeof SEMANTIC_HUE> {
   const saturated = primary.c >= SATURATED_CHROMA;
@@ -155,7 +142,7 @@ function semantic(primary: Oklch): Pick<Record<ColorRole, string>, keyof typeof 
   const c = saturated
     ? clamp(primary.c, SEMANTIC_CHROMA.min, SEMANTIC_CHROMA.max)
     : SEMANTIC_CHROMA.neutral;
-  const make = (h: number): string => inSrgb(clampChroma({ mode: "oklch", l, c, h }, "oklch"));
+  const make = (h: number): string => formatInSrgb({ mode: "oklch", l, c, h });
   return {
     success: make(SEMANTIC_HUE.success),
     warning: make(SEMANTIC_HUE.warning),

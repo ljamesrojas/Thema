@@ -295,3 +295,32 @@ export const SECTION_MIN_WIDTH_SHARE = 0.6;
 
 /** Used when the samples give no evidence (synthetic fixtures, recordings without boxes). */
 export const LAYOUT_DEFAULTS = { containerMax: 1280, gutter: 24, sectionY: 64 } as const;
+
+// --- blend --------------------------------------------------------------------------------
+
+/** A project blends 1 to this many references (SPEC: up to 5 URLs). */
+export const MAX_REFERENCES = 5;
+
+/** density -1 … +1 scales the spacing scale by these factors (SPEC: 0.8–1.25×). */
+export const DENSITY_MIN_FACTOR = 0.8;
+export const DENSITY_MAX_FACTOR = 1.25;
+
+/** contrast ±1 moves ink and canvas this much OKLCH lightness apart or together, each. */
+export const CONTRAST_MAX_SHIFT = 0.1;
+
+/**
+ * warmth ±1 rotates tinted neutrals up to this many degrees toward the warm or cool hue, and tints
+ * pure grays (chroma < NEUTRAL_TINT_MIN_CHROMA) up to WARMTH_MAX_CHROMA at that hue.
+ */
+export const WARMTH_MAX_ROTATION = 10;
+export const WARMTH_MAX_CHROMA = 0.01;
+export const NEUTRAL_TINT_MIN_CHROMA = 0.005;
+export const WARM_HUE = 70;
+export const COOL_HUE = 250;
+
+/**
+ * Harmonize: a foreground color closer than this to the canvas (ΔE OK) clashes, the same bar as
+ * a call-to-action fill that stands out (CTA_MIN_DELTA_E). Lightness moves in this step.
+ */
+export const HARMONY_MIN_DELTA_E = 10;
+export const HARMONY_STEP = 0.005;

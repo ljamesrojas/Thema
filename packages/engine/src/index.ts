@@ -7,6 +7,13 @@ export {
   type FirstScreenCta,
 } from "./colors.js";
 export { completePalette, type Palette } from "./palette.js";
+export {
+  blend,
+  type BlendInput,
+  type BlendReference,
+  type BlendResult,
+  type ColorAdjustment,
+} from "./blend.js";
 export { analyzeLayout, type LayoutAnalysis } from "./layout.js";
 export {
   extractSystem,
@@ -34,6 +41,7 @@ export { clusterColors, type ClusterInput, type ColorCluster } from "./cluster.j
 export {
   compositeOver,
   deltaEOK,
+  formatInSrgb,
   formatOklch,
   hueDelta,
   parseCssColor,

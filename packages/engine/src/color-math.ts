@@ -1,4 +1,11 @@
-import { converter, differenceEuclidean, parse, type Oklch } from "culori";
+import {
+  clampChroma,
+  converter,
+  differenceEuclidean,
+  displayable,
+  parse,
+  type Oklch,
+} from "culori";
 
 export type { Oklch };
 
@@ -74,4 +81,19 @@ export function formatOklch(color: Oklch): string {
   const a = round(alphaOf(color), 2);
   const alpha = a < 1 ? ` / ${a}` : "";
   return `oklch(${l} ${c} ${h === 360 ? 0 : h}${alpha})`;
+}
+
+/**
+ * Format a color inside sRGB: chroma is clamped to the gamut edge, then stepped down until the
+ * rounded value (3 decimals) still fits, since rounding can push an edge color just outside.
+ */
+export function formatInSrgb(color: Oklch): string {
+  const clamped = clampChroma<Oklch>(color, "oklch");
+  let c = clamped.c;
+  let css = formatOklch({ ...clamped, c });
+  for (let i = 0; i < 50 && !displayable(parseCssColor(css) ?? clamped); i++) {
+    c = Math.max(0, c - 0.001);
+    css = formatOklch({ ...clamped, c });
+  }
+  return css;
 }

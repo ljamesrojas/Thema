@@ -103,8 +103,8 @@ Deterministic code decides every number. The LLM only names, describes and write
 ### 3. Blend engine
 
 - For each token group, take values from the reference that owns that tag.
-- Harmonize across groups: if borrowed colors clash with the borrowed canvas, adjust lightness and chroma in OKLCH while keeping hue.
-- Sliders map to transforms: density scales spacing (0.8–1.25×), roundness scales radius (0 to pill), contrast shifts ink/canvas lightness, warmth rotates neutral hue ±10°.
+- Harmonize across groups: if borrowed colors clash with the borrowed canvas, adjust lightness and chroma in OKLCH while keeping hue. A clash is a foreground color (ink, ink-muted, primary, accent, semantic) within ΔE 10 of its canvas, typically a locked color meeting a new palette; unlocked ones move in lightness until clear, locked ones are reported.
+- Sliders map to transforms: density scales spacing (0.8–1.25×, snapped to the base), roundness scales radius (0 to pill: linear down, a log curve up), contrast shifts ink/canvas lightness (up to 0.1 each), warmth rotates neutral hue ±10° toward warm (70°) or cool (250°) and tints pure grays up to chroma 0.01.
 - Locks: a locked token is never changed by blending, sliders or the fixer.
 
 ### 4. Accessibility fixer and dark mode

@@ -26,6 +26,27 @@ Builds one complete `ThemaSystem` for one reference from the analyzers below. `c
 - **`warnings`:** `no-headings` (no h1–h6 at all: possibly a page variant), `few-samples` (< 20: a blocked or empty page), `no-dark-theme`, `monochrome` (no saturated primary).
 - **`derived`:** every token path filled by a fallback or default instead of measured, e.g. `layout.gutter`, `color.light.accent`, `motion.easing`.
 
+## `blend(input)`
+
+```ts
+const { system, adjustments, lockedClashes, ignoredLocks } = blend({
+  references: [
+    { system: stripe, borrowed: ["colors"] },
+    { system: linear, borrowed: ["typography"] },
+  ],
+  settings: { density: 0, roundness: 0.2, contrast: 0, warmth: -0.3 },
+  locks: ["color.light.primary"],
+  previous, // the system the user locked tokens in
+  name: "my-blend",
+  createdAt: new Date().toISOString(),
+});
+```
+
+1. **Ownership:** each borrow tag (colors, typography, spacing, shape = radius + shadow, layout) comes from the reference that claims it; the earlier reference wins a double claim, and unclaimed tags go to the first reference. Motion and voice come from the first reference; `a11y` is reset for the fixer; `meta.sources` lists what each reference lent.
+2. **Sliders** (-1 … 1, 0 = unchanged): density × 0.8 … 1.25 on the spacing scale (snapped to the base); roundness linear to 0 at -1 and along a log curve to pill (9999) at +1 (md 8 → ~48 at +0.25); contrast moves ink and canvas up to 0.1 lightness apart or together; warmth turns neutrals toward hue 70 (warm) or 250 (cool): ≤ 10° rotation, and pure grays get up to chroma 0.01.
+3. **Locks:** locked token paths keep their value from `previous`; paths that don't name a value there are returned in `ignoredLocks`.
+4. **Harmonize:** a foreground color (ink, ink-muted, primary, accent, semantic) within ΔE 10 of its canvas moves in lightness, hue kept, until clear (`adjustments`); a locked one is left and reported (`lockedClashes`). WCAG contrast is the fixer's job.
+
 ## `completePalette(samples)`
 
 Every `ColorRole` for one theme. Roles that `analyzeColors` finds are kept unchanged. Two more are measured here, and the rest fall back to documented rules (listed in `derived`):
