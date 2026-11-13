@@ -11,6 +11,7 @@ colors:
   hairline: "#E4DDCF"
   stage: "#F4F4F2"
   ink: "#111111"
+  ink-soft: "#3A3631"
   ink-muted: "#6B655C"
   success: "#2F6B3F"
   warning: "#8A5A0B"
@@ -19,6 +20,7 @@ colors:
   dark-surface: "#1A1917"
   dark-hairline: "#2E2C28"
   dark-ink: "#F3EEE3"
+  dark-ink-soft: "#D8D1C4"
   dark-ink-muted: "#A39C90"
   dark-primary: "#E8673A"
   dark-primary-fill: "#D9541E"
@@ -179,12 +181,13 @@ All text pairs below pass WCAG 2.2 AA.
 - **Hairline / Seam (#E4DDCF):** every border and divider. 1px.
 - **Stage (#F4F4F2):** neutral area behind user palettes, token previews and template previews. Never used for Thema's own chrome.
 - **Ink (#111111):** all primary text, the secondary button, active tags. 16.3:1 on canvas.
+- **Ink soft / Graphite (#3A3631):** long-form body copy on marketing pages (hero subheads, section intros, step descriptions). 10.36:1 on canvas, 11.31:1 on surface.
 - **Ink muted / Ash (#6B655C):** secondary text, captions, hints. 4.98:1 on canvas.
 - **Primary / Kiln (#D9541E):** fills, underlines under the accent word, progress bars, focus rings, text 24px and up. 3.47:1 on canvas — **never** use it for body text, small labels or button labels.
 - **Primary strong / Kiln Deep (#B4431A):** the primary button background (white label 5.59:1) and links on canvas (4.83:1).
 - **Success / Moss (#2F6B3F), Warning / Ochre (#8A5A0B), Danger / Crimson (#A51D3C):** status only. Warnings always carry an icon, because orange is already the brand accent.
 
-**Dark mode:** canvas #111111, surface #1A1917, hairline #2E2C28, ink #F3EEE3, muted #A39C90, links #E8673A. The dark primary button is a #D9541E fill with an #111111 label (4.71:1). Status: #6FBF85, #E0A94A, #F2788F.
+**Dark mode:** canvas #111111, surface #1A1917, hairline #2E2C28, ink #F3EEE3, soft #D8D1C4 (12.44:1 on canvas), muted #A39C90, links #E8673A. The dark primary button is a #D9541E fill with an #111111 label (4.71:1). Status: #6FBF85, #E0A94A, #F2788F.
 
 ## Typography
 

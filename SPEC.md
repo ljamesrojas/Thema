@@ -68,7 +68,7 @@ A new user goes from landing page to exported files in five steps, aiming for un
 
 | Screen | Purpose | Key elements |
 | --- | --- | --- |
-| Landing | Explain and capture the first URL | Hero URL input, 3 example blends, how-it-works strip |
+| Landing | Explain and capture the first URL | Hero URL input with a live blend visual (paint chips on the stage), "reads into" strip, how it works (3 steps), the accessibility band (before → after), export formats, agents/MCP, final CTA (per the approved mockup) |
 | Workspace | Build the system | Reference cards with borrow chips; token panel (palette, type scale, spacing, radius, shadow); sliders; accessibility report |
 | Preview | Show the result | Template switcher, light/dark toggle, viewport toggle (desktop/mobile), side-by-side with sources |
 | Export | Hand off | Format checklist, file preview with copy button, zip download, MCP and CLI snippet |
