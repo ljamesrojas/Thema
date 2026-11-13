@@ -51,7 +51,7 @@ export function UrlInput({
 
   return (
     <form onSubmit={onSubmit} noValidate className="flex max-w-[540px] flex-col gap-2">
-      <div className="flex flex-wrap gap-2.5 rounded-full border border-hairline bg-surface p-1.5">
+      <div className="flex flex-wrap gap-2.5 rounded-full border border-input-border bg-surface p-1.5 shadow-pill">
         <label htmlFor={id} className="sr-only">
           Website URL to extract
         </label>

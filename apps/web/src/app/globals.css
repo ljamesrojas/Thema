@@ -16,16 +16,26 @@
   --duration-fast: 120ms;
   --duration-base: 200ms;
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  /* DESIGN.md → Motion: the agents-strip exception. */
+  --duration-agent: 240ms;
+  /* DESIGN.md → Elevation & Depth: the only shadows Thema's chrome may use (prose, not front matter). */
+  --shadow-pill: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.05);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 12px 32px rgb(0 0 0 / 0.05);
+  --shadow-accordion: 0 1px 2px rgb(0 0 0 / 0.04), 0 16px 40px rgb(0 0 0 / 0.06);
+  --shadow-demo: 0 24px 64px rgb(0 0 0 / 0.08);
 }
 
 /* Dark mode: DESIGN.md's dark-* tokens take over the role names. */
 .dark {
   --color-canvas: var(--color-dark-canvas);
   --color-surface: var(--color-dark-surface);
+  --color-surface-subtle: var(--color-dark-surface);
   --color-hairline: var(--color-dark-hairline);
+  --color-divider: var(--color-dark-hairline);
   --color-ink: var(--color-dark-ink);
   --color-ink-soft: var(--color-dark-ink-soft);
   --color-ink-muted: var(--color-dark-ink-muted);
+  --color-ink-subtle: var(--color-dark-ink-muted);
   --color-primary: var(--color-dark-primary-fill);
   --color-primary-strong: var(--color-dark-primary-fill);
   --color-on-primary: var(--color-dark-on-primary);
@@ -47,9 +57,9 @@
   --primary-foreground: var(--color-on-primary);
   --secondary: var(--color-ink);
   --secondary-foreground: var(--color-canvas);
-  --muted: var(--color-surface);
+  --muted: var(--color-surface-subtle);
   --muted-foreground: var(--color-ink-muted);
-  --accent: var(--color-surface);
+  --accent: var(--color-surface-subtle);
   --accent-foreground: var(--color-ink);
   --destructive: var(--color-danger);
   --border: var(--color-hairline);

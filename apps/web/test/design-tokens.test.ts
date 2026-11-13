@@ -18,7 +18,7 @@ describe("tokens from DESIGN.md", () => {
     expect(readFileSync(TOKENS_CSS, "utf8")).toBe(generateTokensCss());
   });
 
-  it("has every DESIGN.md color, including the ink-soft tokens, and per-style line heights", () => {
+  it("has DESIGN.md's colors (Premium White), new type styles and per-style line heights", () => {
     const css = readFileSync(TOKENS_CSS, "utf8");
     for (const name of [
       "canvas",
@@ -30,9 +30,27 @@ describe("tokens from DESIGN.md", () => {
       "ink-muted",
       "primary",
       "primary-strong",
+      "primary-deep",
+      "primary-tint",
+      "surface-subtle",
+      "divider",
+      "ink-subtle",
+      "ink-faint",
+      "dot-grid",
+      "band",
+      "band-surface",
+      "band-ink",
+      "band-accent",
+      "agent-claude",
+      "agent-stitch",
       "dark-ink-soft",
     ]) {
       expect(css, name).toMatch(new RegExp(`--color-${name}: #[0-9a-f]{6};`));
+    }
+    expect(css).toContain("--color-canvas: #ffffff;");
+    expect(css).toContain("--text-display: 92px;");
+    for (const style of ["h2-lg", "title-sm", "label-md", "body-sm"]) {
+      expect(css, style).toMatch(new RegExp(`--text-${style}: \\d+px;`));
     }
     expect(css).toContain("--text-display--line-height: 0.98;");
     expect(css).not.toMatch(/--font-weight-/);

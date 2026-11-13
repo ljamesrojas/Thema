@@ -56,9 +56,13 @@ export function generateTokensCss(): string {
   );
   // `--font-weight-<style>` would compete with `--font-<style>` (the family) for the same
   // `font-<style>` class; the weight is attached to `text-<style>` below instead.
+  // `@theme static`: emit every token as a CSS variable even when no utility class uses it, since
+  // components may read tokens directly (DESIGN.md → Agent rules), e.g. the agents strip's
+  // `var(--color-agent-cursor)`, whose name is built at runtime where Tailwind can't see it.
   const exported = css
     .split("\n")
     .filter((line) => !/^\s*--font-weight-/.test(line))
+    .map((line) => (line === "@theme {" ? "@theme static {" : line))
     .join("\n");
   const extra: string[] = [];
   for (const [name, style] of Object.entries(frontMatter().typography ?? {})) {

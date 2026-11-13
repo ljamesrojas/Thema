@@ -9,9 +9,9 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         /** The next step: at most one per view. */
-        primary: "bg-primary-strong px-6 text-on-primary",
+        primary: "bg-primary-strong px-6 text-on-primary hover:bg-primary-deep",
         secondary: "bg-ink px-5 text-canvas",
-        ghost: "border border-hairline bg-surface px-4 text-ink",
+        ghost: "border border-pill-border bg-surface px-4 text-ink",
       },
     },
     defaultVariants: { variant: "primary" },
