@@ -48,7 +48,8 @@ export interface SourceRef {
 }
 export type BorrowTag = "colors" | "typography" | "spacing" | "shape" | "layout";
 export interface ContrastFix {
-  pair: [ColorRole, ColorRole];
+  pair: [ColorRole, ColorRole]; // [foreground, background]
+  theme: "light" | "dark";
   before: number;
   after: number;
 }

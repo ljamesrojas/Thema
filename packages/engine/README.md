@@ -26,6 +26,16 @@ Builds one complete `ThemaSystem` for one reference from the analyzers below. `c
 - **`warnings`:** `no-headings` (no h1–h6 at all: possibly a page variant), `few-samples` (< 20: a blocked or empty page), `no-dark-theme`, `monochrome` (no saturated primary).
 - **`derived`:** every token path filled by a fallback or default instead of measured, e.g. `layout.gutter`, `color.light.accent`, `motion.easing`.
 
+## `fix(system)`
+
+```ts
+const { system: fixed, generated, unresolved } = fix(system); // after extractSystem or blend
+```
+
+1. **Missing theme:** when `color.dark` is a copy of `color.light` (no source had a dark theme), it's generated: neutral lightness mirrored within 0.14–0.98 (white → ~0.12, ink 0.2 → 0.92), including a neutral primary/accent, with chroma halved on canvas and surfaces; saturated roles keep their hue; primary-ink is re-chosen. A dark-only site (dark canvas) keeps its palette as `dark` and gets a generated `light` instead. `generated` says which.
+2. **Contrast:** every pair in `CHECKED_PAIRS` (text 4.5:1: ink on canvas/surfaces, ink-muted on canvas/surface, primary-ink on primary, semantic colors on canvas; UI 3:1: primary and accent on canvas) is checked in both themes. A failing pair moves the foreground's lightness by the smallest step that passes (0.001 steps, either direction, hue kept, clamped into sRGB) and is recorded in `a11y.fixes` with its theme and the ratios before and after.
+3. **Locks:** locked colors never change; pairs they block are listed in `unresolved` (`reason: "locked"`) and `a11y.passes` is false.
+
 ## `blend(input)`
 
 ```ts

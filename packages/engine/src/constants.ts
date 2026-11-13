@@ -324,3 +324,19 @@ export const COOL_HUE = 250;
  */
 export const HARMONY_MIN_DELTA_E = 10;
 export const HARMONY_STEP = 0.005;
+
+// --- fix (accessibility) ------------------------------------------------------------------
+
+/** WCAG 2.2 AA: body text 4.5:1; large text and UI components 3:1. */
+export const TEXT_CONTRAST = 4.5;
+export const UI_CONTRAST = 3;
+
+/** Nudges move OKLCH lightness in this step (the 3-decimal precision colors are stored at). */
+export const NUDGE_STEP = 0.001;
+
+/**
+ * A missing theme mirrors neutral lightness within this range (L' = lo + hi − L): white becomes
+ * ~0.12, ink 0.2 becomes 0.92, and back. Light → dark also scales chroma on canvas and surfaces.
+ */
+export const MIRROR_LIGHTNESS = { lo: 0.14, hi: 0.98 } as const;
+export const DARK_SURFACE_CHROMA_FACTOR = 0.5;

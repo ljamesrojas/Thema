@@ -8,6 +8,13 @@ export {
 } from "./colors.js";
 export { completePalette, type Palette } from "./palette.js";
 export {
+  CHECKED_PAIRS,
+  fix,
+  type CheckedPair,
+  type FixResult,
+  type UnresolvedPair,
+} from "./fix.js";
+export {
   blend,
   type BlendInput,
   type BlendReference,
