@@ -284,6 +284,9 @@ importers:
       '@thema/engine':
         specifier: workspace:*
         version: link:../../packages/engine
+      '@thema/jobs':
+        specifier: workspace:*
+        version: link:../../packages/jobs
       '@thema/url-guard':
         specifier: workspace:*
         version: link:../../packages/url-guard

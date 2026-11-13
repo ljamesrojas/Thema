@@ -26,6 +26,13 @@ A relative `--out` is resolved against the repo root. The CLI writes:
 | `samples.dark.json` | Only when `prefers-color-scheme: dark` flips the canvas (`canvasFlipsInDark`)       |
 | `screenshot.png`    | Full-page screenshot of the light pass. Gitignored: never commit third-party images |
 
+## As a job
+
+`@thema/worker/job` exports `runExtraction(url)`: `extract`, then the engine's `extractSystem`, returning the system, its warnings and the screenshot. The queues in `@thema/jobs` run it:
+
+- **Development:** the web app's local queue imports it and runs it in-process.
+- **Hosted:** `REDIS_URL=redis://… pnpm --filter @thema/worker queue` takes jobs from Redis (BullMQ), 3 at a time, and stops cleanly on Ctrl+C or SIGTERM.
+
 ## What a pass does
 
 1. Opens a fresh context at 1440×900 with the given color scheme and reduced motion.

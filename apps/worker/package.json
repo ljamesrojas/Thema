@@ -3,13 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "exports": {
+    "./job": "./src/job.ts"
+  },
   "scripts": {
     "extract": "tsx src/cli.ts extract",
+    "queue": "tsx src/queue.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@thema/engine": "workspace:*",
+    "@thema/jobs": "workspace:*",
     "@thema/url-guard": "workspace:*",
     "playwright": "^1.65.0"
   },
