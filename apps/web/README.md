@@ -28,3 +28,28 @@ The workspace packages (`@thema/engine`, `@thema/exporters`, `@thema/url-guard`)
 From the approved mockup (SPEC.md → Screens). The hero's blend is computed at build time by the real pipeline (`extractSystem → blend → fix`) from the three synthetic fixtures (`src/lib/hero-blend.ts`), so its chips, the "WCAG AA · 12/12 pairs" line and the before → after rows are real. Its references are labelled with reserved `.example` domains: no real site appears on the marketing page.
 
 The URL input validates with `@thema/url-guard` (the worker's network-free SSRF rules) and goes to `/workspace?url=…`, a placeholder until Session 11. Nav links to sections that don't exist yet (Pricing, GitHub, Docs, Privacy, Sign in, MCP setup) are in-page anchors for now.
+
+## API
+
+Route handlers in `src/app/api`, running the engine and exporters in-process (Node runtime). Errors are `{ error: { code, message } }`.
+
+| Route                                   | Body                         | Returns                                                                                                                                          |
+| --------------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `POST /api/projects`                    | none                         | 201 `{ project }`: a new id, no references, sliders at 0. Nothing is stored.                                                                     |
+| `POST /api/projects/:id/references`     | `{ url, borrowed }`          | 202 `{ reference, cached, limit }` while running, 200 when today's result is cached. 400 `blocked-url`, 429 `rate-limited` (with `Retry-After`). |
+| `GET /api/references/:id`               |                              | `{ reference: { id, url, status, system?, warnings, derived, screenshot, error? } }`, or 404 after 24 h                                          |
+| `GET /api/references/:id/screenshot`    |                              | The PNG                                                                                                                                          |
+| `PATCH /api/projects/:id/blend`         | `{ project, locks?, name? }` | `{ system, generated, unresolved, adjustments, lockedClashes, ignoredLocks }`                                                                    |
+| `POST /api/projects/:id/export?format=` | `{ system }`                 | One file (`design-md`, `tailwind`, `shadcn`, `dtcg`, `styleguide`) or `zip`, as a download                                                       |
+
+**How the client sends an anonymous project.** Anonymous projects live in the browser only (SPEC), so the API is stateless for them. The browser keeps the whole `Project` (types.ts) and sends it with each blend: every reference with its `extracted` system (from `GET /api/references/:id`) and borrow tags, the sliders as `blend`, and the last blend as `result`, which is where locked values come from. Export takes the system to export, which is why it's a POST, not SPEC's original GET. Every body is checked against `src/server/schemas.ts` before it reaches the engine, and a test fails if that schema and `ThemaSystem` drift apart.
+
+**Order in add-reference.** Validate the body, then run the SSRF guard with DNS (`@thema/url-guard`, the same rules as the worker), check today's cache for the URL (a hit is free), apply the anonymous daily limit (3 new extractions per client per UTC day, counted by a hash of the IP), and only then enqueue.
+
+**Jobs** (`src/server/services.ts`):
+
+- **Without `REDIS_URL`:** an in-memory queue runs the worker's extraction in this process. That's for development, and needs Chromium (`pnpm --filter @thema/worker exec playwright install chromium`).
+- **With `REDIS_URL`:** jobs go to BullMQ, and `pnpm --filter @thema/worker queue` runs them.
+- **Daily limit:** `THEMA_DAILY_EXTRACTIONS` overrides the anonymous limit, which is handy while developing.
+
+Playwright, BullMQ and ioredis are dependencies of this app too: Next.js only keeps a package out of the bundle (`serverExternalPackages`) when the app can resolve it itself.

@@ -6,6 +6,7 @@ import {
   checkUrl,
   isIP,
   isPrivateAddress,
+  normalizeUrl,
   type Lookup,
 } from "../src/index.js";
 
@@ -56,6 +57,16 @@ describe("isPrivateAddress", () => {
     expect(isPrivateAddress("93.184.216.34")).toBe(false);
     expect(isPrivateAddress("2606:4700::1111")).toBe(false);
     expect(isPrivateAddress("not an ip")).toBe(true);
+  });
+});
+
+describe("normalizeUrl", () => {
+  it("adds https:// to a bare domain and keeps scheme:// input as typed", () => {
+    expect(normalizeUrl("  stripe.com/pricing ")).toBe("https://stripe.com/pricing");
+    expect(normalizeUrl("http://example.com")).toBe("http://example.com");
+    expect(normalizeUrl("ftp://example.com")).toBe("ftp://example.com");
+    // A host and port, not a "localhost:" scheme, so checkUrl reports it as a local host.
+    expect(normalizeUrl("localhost:3000")).toBe("https://localhost:3000");
   });
 });
 

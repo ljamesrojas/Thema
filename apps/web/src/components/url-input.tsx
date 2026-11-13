@@ -1,19 +1,12 @@
 "use client";
 
-import { checkUrl } from "@thema/url-guard";
+import { checkUrl, normalizeUrl } from "@thema/url-guard";
 import { useRouter } from "next/navigation";
 import { useId, useState, type FormEvent } from "react";
 import { buttonVariants } from "@/components/button";
 import { cn } from "@/lib/cn";
 
-/**
- * A bare domain ("stripe.com") gets https://; input with "scheme://" is checked as typed.
- * "localhost:3000" has no "//", so it's a host and port, not a "localhost:" scheme.
- */
-export function normalizeUrl(input: string): string {
-  const trimmed = input.trim();
-  return /^[a-z][a-z\d+.-]*:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
-}
+export { normalizeUrl };
 
 /** The URL to extract, or the reason it can't be: the same network-free rules the worker applies. */
 export function validateUrl(

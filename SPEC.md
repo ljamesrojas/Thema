@@ -237,10 +237,13 @@ Extraction is asynchronous: the client polls (or listens over SSE) while the job
 | Route | Does |
 | --- | --- |
 | `POST /api/projects` | Create a project (anonymous or owned) |
-| `POST /api/projects/:id/references` | Add a URL with borrow tags; enqueues extraction |
-| `GET /api/references/:id` | Poll status and extracted tokens |
-| `PATCH /api/projects/:id/blend` | Update borrow tags, sliders, locks; returns the new `ThemaSystem` |
-| `GET /api/projects/:id/export?format=` | One file: `design-md`, `tailwind`, `shadcn`, `dtcg`, `styleguide`, or `zip` |
+| `POST /api/projects/:id/references` | Add a URL with borrow tags; SSRF check, 24 h cache by URL + day, anonymous limit (3 new extractions/day; cache hits are free), then enqueues extraction |
+| `GET /api/references/:id` | Poll status and extracted tokens, with extraction warnings (no-headings, few-samples, no-dark-theme, monochrome) |
+| `GET /api/references/:id/screenshot` | The reference's full-page screenshot (PNG) |
+| `PATCH /api/projects/:id/blend` | Update borrow tags, sliders, locks; returns the new `ThemaSystem` and the pairs the fixer couldn't resolve |
+| `POST /api/projects/:id/export?format=` | One file: `design-md`, `tailwind`, `shadcn`, `dtcg`, `styleguide`, or `zip`; the system is in the body |
+
+Anonymous projects live in the browser, so the API stores nothing for them: the client sends the project (references with their extracted systems, sliders, the last result) with each blend, and the system with each export. That's why export is a POST. A `GET` export for saved, signed-in projects comes with accounts.
 
 ## Output formats
 

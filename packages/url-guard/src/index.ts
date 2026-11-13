@@ -112,6 +112,16 @@ export function hostnameOf(url: URL): string {
     .toLowerCase();
 }
 
+/**
+ * What people type into a URL box, as a URL: a bare domain ("stripe.com") gets https://, input
+ * with "scheme://" is kept as typed. "localhost:3000" has no "//", so it's a host and port, not a
+ * "localhost:" scheme. Shared by the web form and the API, so both read input the same way.
+ */
+export function normalizeUrl(input: string): string {
+  const trimmed = input.trim();
+  return /^[a-z][a-z\d+.-]*:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+}
+
 export type UrlCheck =
   | {
       ok: true;
