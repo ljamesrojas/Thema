@@ -18,6 +18,7 @@ import {
   CTA_NEUTRAL_CHROMA,
   CTA_WEIGHT,
   FIRST_SCREEN_MAX_Y,
+  INK_MIN_ELEMENTS,
   INK_MIN_SHARE,
   OCCURRENCE_TARGET,
   ROLE_WEIGHT,
@@ -25,6 +26,8 @@ import {
   SURFACE_MAX_DELTA_E,
   SWATCH_MAX_SIZE,
   SWATCH_SQUARE_TOLERANCE,
+  TEXT_CARD_MIN_HEIGHT,
+  TEXT_CARD_MIN_WIDTH,
   UA_LINK_COLORS,
   UA_LINK_MAX_DELTA_E,
   type SampleRole,
@@ -61,6 +64,8 @@ interface ColorEntry {
   ownFont: boolean;
   /** A small near-square control (swatch, radio dot, icon button): doesn't count for primary. */
   smallSquare: boolean;
+  /** A card-sized interactive element: its text color is inherited, not shown. */
+  card: boolean;
   /** Top of the source sample's box, px (absent in older recordings). */
   y?: number;
 }
@@ -77,6 +82,19 @@ const UA_LINKS = UA_LINK_COLORS.map((css) => parseCssColor(css)).filter(
 /** Browser-default link colors (unstyled links) aren't design decisions. */
 const isUaLinkColor = (color: Oklch): boolean =>
   UA_LINKS.some((ua) => deltaEOK(color, ua) < UA_LINK_MAX_DELTA_E);
+
+/**
+ * Interactive and larger than a button (TEXT_CARD_MIN_WIDTH × TEXT_CARD_MIN_HEIGHT): a card whose
+ * own text color is inherited by its content. False without a recorded size.
+ */
+function isCard(sample: StyleSample): boolean {
+  const { width, height } = sample;
+  if (width === undefined || height === undefined) return false;
+  return (
+    sampleRole(sample) === "interactive" &&
+    (width > TEXT_CARD_MIN_WIDTH || height > TEXT_CARD_MIN_HEIGHT)
+  );
+}
 
 /**
  * Interactive, at most SWATCH_MAX_SIZE on both sides and near-square: a color swatch, radio dot
@@ -116,6 +134,7 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
     const family = parseFontFamily(sample.fontFamily);
     const ownFont = family === null || families.has(family.name.toLowerCase());
     const smallSquare = isSmallSquare(sample);
+    const card = isCard(sample);
     const push = (css: string | undefined, channel: Channel): void => {
       if (css === undefined) return;
       const parsed = parseCssColor(css);
@@ -134,6 +153,7 @@ function readEntries(samples: readonly StyleSample[]): ColorEntry[] {
           alpha: alphaOf(color),
           ownFont,
           smallSquare,
+          card,
           ...(sample.y !== undefined ? { y: sample.y } : {}),
         });
       }
@@ -208,7 +228,14 @@ interface Evidence {
 }
 
 const BACKGROUND: Evidence = { members: (c) => ofChannel(c, "background"), measure: (e) => e.area };
-const TEXT: Evidence = { members: (c) => ofChannel(c, "text"), measure: (e) => e.weight };
+/** Visible text: text colors, except on card-sized interactive elements (see isCard). */
+const TEXT: Evidence = {
+  members: (c) => ofChannel(c, "text").filter((e) => !e.card),
+  measure: (e) => e.weight,
+};
+
+/** Distinct text elements a cluster's text color appears on. */
+const textElements = (c: Cluster): number => new Set(TEXT.members(c).map((e) => e.sample)).size;
 const BORDER: Evidence = { members: (c) => ofChannel(c, "border"), measure: (e) => e.weight };
 const INTERACTIVE: Evidence = {
   members: (c) => c.members.filter((e) => e.role === "interactive"),
@@ -333,18 +360,24 @@ export function analyzeColors(samples: readonly StyleSample[]): ColorAnalysis {
 
   // Text the color of the canvas or surface would be invisible on it, so neither can be ink.
   const textCandidates = clusters.filter((c) => c !== canvas && c !== surface);
-  const neutralText = textCandidates.filter(isNeutral);
+  // Neutral by the text color itself: one cluster can hold #061b31 text and a slightly more
+  // saturated navy section (Stripe), and the cluster's color is the heavier background.
+  const textIsNeutral = (c: Cluster): boolean =>
+    (parseCssColor(representative(c, TEXT))?.c ?? c.color.c) < SATURATED_CHROMA;
+  const neutralText = textCandidates.filter(textIsNeutral);
 
   // Ink: among text colors used substantially (≥ INK_MIN_SHARE of the heaviest), the one with
   // the most contrast against the canvas. "Most used" alone fails when muted copy outweighs
-  // the main text (four faded paragraphs vs one black one): the gray would become ink.
+  // the main text (four faded paragraphs vs one black one): the gray would become ink. Colors on
+  // INK_MIN_ELEMENTS or more elements are preferred, so one hero heading can't decide it.
   const contrast = (c: Cluster): number => Math.abs(c.color.l - canvas.color.l);
   const pickInk = (candidates: readonly Cluster[]): Pick | null => {
     const heaviest = Math.max(0, ...candidates.map(total(TEXT)));
     const substantial = candidates.filter(
       (c) => heaviest > 0 && total(TEXT)(c) >= heaviest * INK_MIN_SHARE,
     );
-    return pickBest(substantial, contrast);
+    const widelyUsed = substantial.filter((c) => textElements(c) >= INK_MIN_ELEMENTS);
+    return pickBest(widelyUsed.length > 0 ? widelyUsed : substantial, contrast);
   };
   const ink = assign("ink", TEXT, pickInk(neutralText) ?? pickInk(textCandidates));
 

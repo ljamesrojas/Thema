@@ -93,19 +93,107 @@ describe("analyzeColors: ink and ink-muted", () => {
     expectRole(roles["ink-muted"], "#666666");
   });
 
-  it("ignores a darker text color used too little to count (< 15% of the top)", () => {
+  it("ignores a darker text color used too little to count (< 20% of the top)", () => {
     // A 5k black footnote vs 50k of #333 body text: 10%, so not an ink candidate.
     const { roles } = analyzeColors([page(), text("#333333", 50_000), text("#000000", 5_000)]);
     expectRole(roles.ink, "#333333");
   });
 
   it("counts headings extra when deciding what is substantial", () => {
-    // 4k heading × 2 = 8k is 16% of the 50k body text: substantial, and darker, so it's ink.
-    // Without the heading weight it would be 8%, below the cut.
-    const heading = analyzeColors([page(), text("#111111", 4_000, "h1"), text("#555555", 50_000)]);
+    // 6k heading × 2 = 12k is 24% of the 50k body text: substantial, and darker, so it's ink.
+    // Without the heading weight it would be 12%, below the 20% cut.
+    const heading = analyzeColors([page(), text("#111111", 6_000, "h1"), text("#555555", 50_000)]);
     expectRole(heading.roles.ink, "#111111");
-    const plain = analyzeColors([page(), text("#111111", 4_000), text("#555555", 50_000)]);
+    const plain = analyzeColors([page(), text("#111111", 6_000), text("#555555", 50_000)]);
     expectRole(plain.roles.ink, "#555555");
+  });
+
+  it("needs 20% of the top text weight: 17% black doesn't take ink (Notion), 21% does", () => {
+    const body = () => text("#0d0d0d", 50_000);
+    const notion = analyzeColors([
+      page(),
+      body(),
+      body(),
+      text("#000000", 8_500),
+      text("#000000", 8_500),
+    ]);
+    expectRole(notion.roles.ink, "#0d0d0d"); // 17k of 100k
+    const more = analyzeColors([
+      page(),
+      body(),
+      body(),
+      text("#000000", 10_500),
+      text("#000000", 10_500),
+    ]);
+    expectRole(more.roles.ink, "#000000"); // 21k of 100k
+  });
+
+  it("prefers a color used on 2+ elements over one giant heading (Medium's hero)", () => {
+    const { roles } = analyzeColors([
+      page(),
+      sample({ tag: "h2", fontSize: 120, area: 144_000, color: "#000000" }), // one hero heading
+      text("#242424", 30_000, "h3"),
+      text("#242424", 20_000, "a"),
+      text("#242424", 20_000, "a"),
+      text("#6b6b6b", 120_000),
+      text("#6b6b6b", 100_000),
+    ]);
+    expectRole(roles.ink, "#242424");
+    expectRole(roles["ink-muted"], "#6b6b6b");
+  });
+
+  it("falls back to single-element colors when no color is on 2+ elements", () => {
+    // A tiny page: one heading, one paragraph.
+    const { roles } = analyzeColors([
+      page(),
+      text("#000000", 20_000, "h1"),
+      text("#555555", 40_000),
+    ]);
+    expectRole(roles.ink, "#000000");
+  });
+
+  it("ignores the color of card-sized interactive elements: their text is in children (Stripe)", () => {
+    // Bento-card buttons keep the browser's default black but show none of it; the visible text
+    // is #061b31 headings and #50617a copy.
+    const card = (width: number, height: number) =>
+      sample({ tag: "button", color: "#000000", width, height, area: width * height });
+    const { roles } = analyzeColors([
+      page(),
+      card(816, 676),
+      card(400, 676),
+      card(1232, 450),
+      text("#061b31", 40_000, "h2"),
+      text("#061b31", 30_000),
+      text("#50617a", 120_000),
+      text("#50617a", 90_000),
+    ]);
+    expectRole(roles.ink, "#061b31");
+    expectRole(roles["ink-muted"], "#50617a");
+  });
+
+  it("still counts button-sized interactive text", () => {
+    const link = () => sample({ tag: "a", color: "#000000", width: 120, height: 24, area: 30_000 });
+    const { roles } = analyzeColors([page(), link(), link(), text("#444444", 50_000)]);
+    expectRole(roles.ink, "#000000");
+  });
+
+  it("judges ink by its text color, even when it shares a cluster with a more saturated background", () => {
+    // Stripe: #061b31 text (chroma 0.051) clusters with a navy section background (chroma
+    // 0.066, ΔE ≈ 2.3 away), which made the whole cluster "saturated" and dropped the real ink.
+    const { roles } = analyzeColors([
+      page(),
+      sample({
+        tag: "section",
+        role: "container",
+        area: 600_000,
+        backgroundColor: "oklch(0.217 0.066 267.9)",
+      }),
+      text("#061b31", 40_000, "h2"),
+      text("#061b31", 40_000),
+      text("#50617a", 120_000),
+      text("#50617a", 90_000),
+    ]);
+    expectRole(roles.ink, "#061b31");
   });
 
   it("ignores container text color, which is only inherited", () => {

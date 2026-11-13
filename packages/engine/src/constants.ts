@@ -34,9 +34,25 @@ export const SATURATED_CHROMA = 0.06;
 
 /**
  * Ink candidates must carry at least this share of the heaviest text color's weight; among
- * them, the one with the most contrast against the canvas is ink.
+ * them, the one with the most contrast against the canvas is ink. 20%: Notion's stray black text
+ * is 17% of its #0d0d0d ink, example.com's real black ink 21% of its faded gray (results are the
+ * same anywhere from 18% to 30% on our sites).
  */
-export const INK_MIN_SHARE = 0.15;
+export const INK_MIN_SHARE = 0.2;
+
+/**
+ * Ink candidates used on at least this many text elements are preferred, so one giant heading
+ * can't decide ink (Medium's 120px black hero). Falls back to all candidates when none qualifies.
+ */
+export const INK_MIN_ELEMENTS = 2;
+
+/**
+ * Interactive elements larger than a button (the recorder's fill limit) are cards: their own
+ * `color` is inherited by the content inside, not visible text, so it doesn't count for ink or
+ * ink-muted. Stripe's bento-card buttons keep the browser's default black.
+ */
+export const TEXT_CARD_MIN_WIDTH = 480;
+export const TEXT_CARD_MIN_HEIGHT = 80;
 
 /** A surface must sit within this ΔE OK of the canvas. */
 export const SURFACE_MAX_DELTA_E = 15;
