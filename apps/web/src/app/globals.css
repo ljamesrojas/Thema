@@ -1,0 +1,83 @@
+/* Thema's own UI theme. Every value comes from the root DESIGN.md through tokens.generated.css;
+   this file only maps names (dark mode, shadcn variables, base styles). Never add a hex here. */
+@import "tailwindcss";
+@import "./tokens.generated.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Font roles → the self-hosted next/font variables (set on <html> in layout.tsx). */
+@theme {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  /* Links: Kiln Deep on canvas (DESIGN.md link component); the dark value is remapped below. */
+  --color-link: var(--color-primary-strong);
+  /* DESIGN.md → Motion (prose, not front matter): fast 120ms, base 200ms. */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Dark mode: DESIGN.md's dark-* tokens take over the role names. */
+.dark {
+  --color-canvas: var(--color-dark-canvas);
+  --color-surface: var(--color-dark-surface);
+  --color-hairline: var(--color-dark-hairline);
+  --color-ink: var(--color-dark-ink);
+  --color-ink-soft: var(--color-dark-ink-soft);
+  --color-ink-muted: var(--color-dark-ink-muted);
+  --color-primary: var(--color-dark-primary-fill);
+  --color-primary-strong: var(--color-dark-primary-fill);
+  --color-on-primary: var(--color-dark-on-primary);
+  --color-link: var(--color-dark-primary);
+  --color-success: var(--color-dark-success);
+  --color-warning: var(--color-dark-warning);
+  --color-danger: var(--color-dark-danger);
+}
+
+/* shadcn/ui variables, mapped once (DESIGN.md: "Map shadcn/ui variables to these tokens once"). */
+:root {
+  --background: var(--color-canvas);
+  --foreground: var(--color-ink);
+  --card: var(--color-surface);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-surface);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-primary-strong);
+  --primary-foreground: var(--color-on-primary);
+  --secondary: var(--color-ink);
+  --secondary-foreground: var(--color-canvas);
+  --muted: var(--color-surface);
+  --muted-foreground: var(--color-ink-muted);
+  --accent: var(--color-surface);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-danger);
+  --border: var(--color-hairline);
+  --input: var(--color-hairline);
+  --ring: var(--color-primary);
+  --radius: var(--radius-md);
+}
+
+@layer base {
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  a {
+    color: var(--color-link);
+  }
+  /* DESIGN.md: a visible focus ring on everything interactive, 2px Kiln with a 2px offset. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}

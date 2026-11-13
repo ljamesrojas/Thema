@@ -12,3 +12,7 @@ dist
 fixtures/**/samples*.json
 test-results
 playwright-report
+# Next.js build output, and the token file generated from DESIGN.md (a test compares it byte for byte).
+.next
+apps/web/next-env.d.ts
+apps/web/src/app/tokens.generated.css
