@@ -24,7 +24,7 @@ export const QUESTIONS: [string, string][] = [
   ],
   [
     "Which agents can read it?",
-    "Any agent that reads files from your repo: Claude Code, Cursor, v0, Lovable, Windsurf, GitHub Copilot and Google Stitch. Thema also runs as an MCP server, so an agent can blend and fetch DESIGN.md mid-task.",
+    "Any agent that reads files from your repo: Claude Code, Cursor, v0, Lovable, Windsurf, GitHub Copilot, Google Stitch and Google Antigravity. Thema also runs as an MCP server, so an agent can blend and fetch DESIGN.md mid-task.",
   ],
 ];
 

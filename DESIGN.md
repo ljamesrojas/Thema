@@ -40,6 +40,7 @@ colors:
   agent-windsurf: "#0F766E"
   agent-copilot: "#5B39E8"
   agent-stitch: "#1F6F4A"
+  agent-antigravity: "#1967D2"
   dark-canvas: "#111111"
   dark-surface: "#1A1917"
   dark-hairline: "#2E2C28"
@@ -283,7 +284,7 @@ All text pairs below pass WCAG 2.2 AA (4.5:1 for text, 3:1 for large text and UI
 
 **Status:** Success / Moss (#2F6B3F, 6.37:1 on canvas, 5.84:1 on stage), Warning / Ochre (#8A5A0B, 5.92:1), Danger / Crimson (#A51D3C, 7.39:1). Status only; warnings always carry an icon, because orange is already the brand accent.
 
-**Agent accents** (the "Reads into" strip only, on hover or keyboard focus, on surface subtle): Claude Code #B4431A 5.35:1, Cursor #2546C8 7.21:1, v0 #0A0A0A 18.97:1, Lovable #B8235A 5.87:1, Windsurf #0F766E 5.24:1, GitHub Copilot #5B39E8 6.30:1, Google Stitch #1F6F4A 5.86:1. At rest the names are ink subtle and each agent shows its official logo mark in its own colors (decorative: the name beside it identifies the item); an agent without an official logo file yet shows a generic line icon in #A3A3A3 (2.42:1, also decorative). While one item is hovered or focused, the others fade to 0.35 opacity, which drops them below 4.5:1 for as long as the pointer or focus stays there.
+**Agent accents** (the "Reads into" strip only, on hover or keyboard focus, on surface subtle): Claude Code #B4431A 5.35:1, Cursor #2546C8 7.21:1, v0 #0A0A0A 18.97:1, Lovable #B8235A 5.87:1, Windsurf #0F766E 5.24:1, GitHub Copilot #5B39E8 6.30:1, Google Stitch #1F6F4A 5.86:1, Google Antigravity #1967D2 5.14:1. At rest the names are ink subtle and each agent shows its official logo mark in its own colors (decorative: the name beside it identifies the item); an agent without an official logo file yet shows a generic line icon in #A3A3A3 (2.42:1, also decorative). While one item is hovered or focused, the others fade to 0.35 opacity, which drops them below 4.5:1 for as long as the pointer or focus stays there.
 
 **Dark mode** (app screens; unchanged): canvas #111111, surface #1A1917, hairline #2E2C28, ink #F3EEE3, soft #D8D1C4 (12.44:1 on canvas), muted #A39C90, links #E8673A. The dark primary button is a #D9541E fill with an #111111 label (4.71:1). Status: #6FBF85, #E0A94A, #F2788F.
 

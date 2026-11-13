@@ -31,7 +31,7 @@
   flex: 1 1 640px;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 4px 8px;
+  gap: 4px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -43,7 +43,8 @@
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  padding: 10px 16px;
+  /* Eight agents fit one row at 1200px: the items have no fill, so side padding is just spacing. */
+  padding: 10px 8px;
   border: 1px solid transparent;
   border-radius: 9999px;
   background: transparent;

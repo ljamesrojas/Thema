@@ -85,6 +85,7 @@ describe("Agents strip", () => {
       "Windsurf",
       "GitHub Copilot",
       "Google Stitch",
+      "Google Antigravity",
     ]);
     links.forEach((link, index) => {
       expect(link.getAttribute("href")).toBe("#agents");
@@ -109,13 +110,16 @@ describe("Agents strip", () => {
       "Claude Code",
       "Cursor",
       "v0",
+      "Lovable",
       "Windsurf",
       "GitHub Copilot",
+      "Google Stitch",
     ]);
     for (const { logo } of withLogos) {
       const svg = readFileSync(join(import.meta.dirname, "../public", logo ?? ""), "utf8");
-      expect(svg).toMatch(/^<svg fill="#[0-9A-F]{6}" viewBox="0 0 24 24"/);
-      expect(svg).not.toMatch(/<script|href|on\w+=/i);
+      expect(svg).toMatch(/^<svg [^>]*viewBox="[\d. ]+"/);
+      // Safe as an <img>: no script, no event handlers, no links or external references.
+      expect(svg).not.toMatch(/<script|<foreignObject|href|\son\w+=|url\((?!#)/i);
     }
     const css = readFileSync(
       join(import.meta.dirname, "../src/components/agents-strip.module.css"),

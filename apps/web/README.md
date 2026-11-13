@@ -56,7 +56,7 @@ Playwright, BullMQ and ioredis are dependencies of this app too: Next.js only ke
 
 ## Agent logos
 
-The Landing's "Reads into" strip shows each agent's official logo mark from `public/agents/`, in its own colors (never grayed or recolored, per brand guidelines). Claude, Cursor, v0, Windsurf and GitHub Copilot are Simple Icons' CC0 SVGs, recolored only to each brand's own color; the trademarks belong to their owners. Lovable and Google Stitch show a generic icon until their official files arrive: put them in `public/agents/` (SVG preferred, or a PNG with a transparent background) and set `logo` for that agent in `src/components/agents-strip.tsx`.
+The Landing's "Reads into" strip shows each agent's official logo mark from `public/agents/`, in its own colors (never grayed or recolored, per brand guidelines). Claude, Cursor, v0, Windsurf and GitHub Copilot are Simple Icons' CC0 SVGs, filled with each brand's own color; Lovable and Google Stitch are the files the user supplied (Stitch's empty margin trimmed by its viewBox, nothing else changed). The trademarks belong to their owners. Google Antigravity shows a generic icon until its official file arrives: put it in `public/agents/` (SVG preferred, or a PNG with a transparent background) and set `logo` for it in `src/components/agents-strip.tsx`.
 
 ## Workspace
 

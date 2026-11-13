@@ -42,6 +42,7 @@ export const AGENTS: Agent[] = [
   },
   {
     name: "Lovable",
+    logo: "/agents/lovable.svg",
     color: "agent-lovable",
     icon: (
       <path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z" />
@@ -61,6 +62,7 @@ export const AGENTS: Agent[] = [
   },
   {
     name: "Google Stitch",
+    logo: "/agents/stitch.svg",
     color: "agent-stitch",
     icon: (
       <>
@@ -68,6 +70,12 @@ export const AGENTS: Agent[] = [
         <path d="M3 17.5h18" strokeDasharray="2 3" />
       </>
     ),
+  },
+  {
+    name: "Google Antigravity",
+    color: "agent-antigravity",
+    // Generic until the official file arrives: an upward chevron lifting off a dot.
+    icon: <path d="M6 14l6-6 6 6M6 19l6-6 6 6" />,
   },
 ];
 
