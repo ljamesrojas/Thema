@@ -6,6 +6,7 @@ import {
   MIRROR_LIGHTNESS,
   NUDGE_STEP,
   SATURATED_CHROMA,
+  CONTRAST_MARGIN,
   TEXT_CONTRAST,
   UI_CONTRAST,
 } from "./constants.js";
@@ -158,8 +159,10 @@ export function fix(input: ThemaSystem): FixResult {
     const colors = system.color[theme];
     for (const { fg, bg, min } of CHECKED_PAIRS) {
       const before = contrast(colors[fg], colors[bg]);
-      if (before >= min || isLocked(theme, fg)) continue;
-      const fixed = nudge(colors[fg], colors[bg], min);
+      // Aim a little above the minimum so the pair survives export to 8-bit hex.
+      const target = min + CONTRAST_MARGIN;
+      if (before >= target || isLocked(theme, fg)) continue;
+      const fixed = nudge(colors[fg], colors[bg], target);
       if (fixed === null) continue;
       colors[fg] = fixed;
       fixes.push({

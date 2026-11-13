@@ -3,7 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { formatInSrgb, parseCssColor } from "../src/color-math.js";
-import { TEXT_CONTRAST, UI_CONTRAST } from "../src/constants.js";
+import { CONTRAST_MARGIN, TEXT_CONTRAST, UI_CONTRAST } from "../src/constants.js";
 import { CHECKED_PAIRS, fix } from "../src/fix.js";
 import { extractSystem } from "../src/system.js";
 import type { ColorRole, StyleSample, ThemaSystem } from "../src/types.js";
@@ -120,7 +120,8 @@ describe("fix: minimal nudges", () => {
     const after = system.color.light["ink-muted"];
     expect(ratio(after, GOOD.canvas)).toBeGreaterThanOrEqual(4.5);
     expect(ratio(after, GOOD.surface)).toBeGreaterThanOrEqual(4.5);
-    expect(L(after)).toBeCloseTo(closestPassingL(before, GOOD.surface, 4.5), 3);
+    // Fixes aim CONTRAST_MARGIN above the minimum, so they survive export to hex.
+    expect(L(after)).toBeCloseTo(closestPassingL(before, GOOD.surface, 4.5 + CONTRAST_MARGIN), 3);
     expect(parseCssColor(after)?.h).toBeCloseTo(250, 0);
   });
 
@@ -131,7 +132,7 @@ describe("fix: minimal nudges", () => {
     );
     const after = system.color.light.primary;
     expect(ratio(after, GOOD.canvas)).toBeGreaterThanOrEqual(3);
-    expect(L(after)).toBeCloseTo(closestPassingL(yellow, GOOD.canvas, 3), 3);
+    expect(L(after)).toBeCloseTo(closestPassingL(yellow, GOOD.canvas, 3 + CONTRAST_MARGIN), 3);
   });
 
   it("changes the label, not the brand: white text on Duolingo's green turns dark", () => {

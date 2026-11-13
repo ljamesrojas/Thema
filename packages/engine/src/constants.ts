@@ -331,6 +331,13 @@ export const HARMONY_STEP = 0.005;
 export const TEXT_CONTRAST = 4.5;
 export const UI_CONTRAST = 3;
 
+/**
+ * Fixes aim this far above the minimum, so a fixed pair still passes after export converts
+ * OKLCH to 8-bit hex: the DESIGN.md linter measured fixed pairs at 4.48–4.50:1 without it
+ * (rounding costs up to ~0.03). "Passes" still means the plain WCAG minimum.
+ */
+export const CONTRAST_MARGIN = 0.05;
+
 /** Nudges move OKLCH lightness in this step (the 3-decimal precision colors are stored at). */
 export const NUDGE_STEP = 0.001;
 
