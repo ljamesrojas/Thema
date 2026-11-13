@@ -115,6 +115,18 @@ describe("GET /api/references/:id", () => {
     expect(data.reference.system?.color.light.canvas).toMatch(/^oklch\(/);
   });
 
+  it("reports the stage while the extraction runs", async () => {
+    const release = services.hold();
+    const { reference } = (await (await add("light-saas.test")).json()) as AddResponse;
+    const { data } = await poll(reference.id);
+    expect(data.reference).toMatchObject({ status: "running", stage: "reading", screenshot: null });
+    release();
+    await services.queue.settled(reference.id);
+    const after = await poll(reference.id);
+    expect(after.data.reference.status).toBe("done");
+    expect(after.data.reference).not.toHaveProperty("stage");
+  });
+
   it("reports a failed extraction with its error", async () => {
     const { reference } = (await (await add("unknown-site.test")).json()) as AddResponse;
     await services.queue.settled(reference.id);

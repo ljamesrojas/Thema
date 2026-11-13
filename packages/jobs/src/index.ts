@@ -20,8 +20,17 @@ export interface ExtractionOutput {
 /** The result as a job reports it; the screenshot is fetched separately (it's large). */
 export type ExtractionResult = Omit<ExtractionOutput, "screenshot">;
 
-/** Runs one extraction. Passed in, so this package never imports the browser. */
-export type RunExtraction = (url: string) => Promise<ExtractionOutput>;
+/** Where a running extraction is: loading the page, sampling styles, or the engine naming roles. */
+export type ExtractionStage = "fetching" | "reading" | "naming";
+
+/**
+ * Runs one extraction, reporting its stage as it goes. Passed in, so this package never imports
+ * the browser.
+ */
+export type RunExtraction = (
+  url: string,
+  onStage: (stage: ExtractionStage) => void,
+) => Promise<ExtractionOutput>;
 
 export type JobStatus = "queued" | "running" | "done" | "failed";
 
@@ -30,6 +39,8 @@ export interface JobSnapshot {
   id: string;
   url: string;
   status: JobStatus;
+  /** While running: the stage reported by the extraction. */
+  stage?: ExtractionStage;
   result?: ExtractionResult;
   error?: string;
 }
@@ -140,13 +151,17 @@ export function createLocalQueue(options: LocalQueueOptions): LocalQueue {
     try {
       for (let attempt = 1; attempt <= attempts; attempt += 1) {
         try {
-          const output = await run(entry.snapshot.url);
-          entry.snapshot = { ...entry.snapshot, status: "done", result: withoutScreenshot(output) };
+          const output = await run(entry.snapshot.url, (stage) => {
+            if (entry.snapshot.status === "running") entry.snapshot.stage = stage;
+          });
+          const { id, url } = entry.snapshot;
+          entry.snapshot = { id, url, status: "done", result: withoutScreenshot(output) };
           entry.screenshot = output.screenshot;
           return;
         } catch (error) {
           if (isUnrecoverable(error) || attempt === attempts) {
-            entry.snapshot = { ...entry.snapshot, status: "failed", error: errorMessage(error) };
+            const { id, url } = entry.snapshot;
+            entry.snapshot = { id, url, status: "failed", error: errorMessage(error) };
             return;
           }
         }

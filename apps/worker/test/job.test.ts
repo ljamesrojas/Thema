@@ -24,12 +24,15 @@ const upstream: Upstream = (hop: Hop) =>
   );
 
 describe("runExtraction (in-memory site, no network)", () => {
-  it("returns the engine's system, warnings and a PNG", async () => {
+  it("returns the engine's system, warnings and a PNG, reporting each stage in order", async () => {
+    const stages: string[] = [];
     const output = await runExtraction("https://studio.test/", {
       lookup,
       upstream,
       now: () => new Date("2026-11-13T10:00:00.000Z"),
+      onStage: (stage) => stages.push(stage),
     });
+    expect(stages).toEqual(["fetching", "reading", "naming"]);
     expect(output.url).toBe("https://studio.test/");
     expect(output.system.meta).toMatchObject({
       name: "studio.test",

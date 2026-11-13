@@ -1,8 +1,10 @@
 import { extractSystem } from "@thema/engine";
-import type { ExtractionOutput } from "@thema/jobs";
+import type { ExtractionOutput, ExtractionStage } from "@thema/jobs";
 import { extract, type ExtractOptions } from "./extract.js";
 
-export interface RunOptions extends ExtractOptions {
+export interface RunOptions extends Omit<ExtractOptions, "onStage"> {
+  /** Progress: "fetching", "reading" (from extract), then "naming" while the engine runs. */
+  onStage?: (stage: ExtractionStage) => void;
   /** The extraction's timestamp (the engine has no clock). */
   now?: () => Date;
 }
@@ -18,6 +20,7 @@ export async function runExtraction(
 ): Promise<ExtractionOutput> {
   const { now = () => new Date(), ...extractOptions } = options;
   const extraction = await extract(url, extractOptions);
+  extractOptions.onStage?.("naming");
   const { system, warnings, derived } = extractSystem({
     samples: extraction.light,
     ...(extraction.dark ? { darkSamples: extraction.dark } : {}),

@@ -49,7 +49,8 @@ async function fromEnvironment(): Promise<Services> {
   return {
     queue: createLocalQueue({
       // Imported on first use, so Playwright only loads when an extraction actually runs.
-      run: async (url) => (await import("@thema/worker/job")).runExtraction(url, { now }),
+      run: async (url, onStage) =>
+        (await import("@thema/worker/job")).runExtraction(url, { now, onStage }),
       now,
     }),
     limiter: createMemoryRateLimiter({ limit: dailyLimit, now }),

@@ -1,5 +1,5 @@
 import type { ExtractWarning, ThemaSystem } from "@thema/engine";
-import type { JobSnapshot, JobStatus } from "@thema/jobs";
+import type { ExtractionStage, JobSnapshot, JobStatus } from "@thema/jobs";
 
 /** A reference as the API reports it (GET /api/references/:id). */
 export interface ReferenceView {
@@ -7,6 +7,8 @@ export interface ReferenceView {
   /** The URL as submitted (normalized). */
   url: string;
   status: JobStatus;
+  /** While running: "fetching" (loading the page), "reading" (sampling styles), "naming" (the engine). */
+  stage?: ExtractionStage;
   /** The extracted system; its source's `screenshot` is this reference's screenshot route. */
   system?: ThemaSystem;
   /** extractSystem's warnings: no-headings, few-samples, no-dark-theme, monochrome. */
@@ -43,6 +45,7 @@ export function referenceView(job: JobSnapshot): ReferenceView {
       },
     };
   }
+  if (job.stage !== undefined) view.stage = job.stage;
   if (job.error !== undefined) view.error = job.error;
   return view;
 }

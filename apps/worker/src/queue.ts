@@ -11,7 +11,7 @@ if (!redisUrl) {
 } else {
   const worker = startBullWorker({
     connection: redisConnection(redisUrl),
-    run: (url) => runExtraction(url),
+    run: (url, onStage) => runExtraction(url, { onStage }),
   });
   worker.on("active", (job) => console.log(`running ${job.data.url}`));
   worker.on("completed", (job) => console.log(`done    ${job.data.url}`));

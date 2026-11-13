@@ -48,6 +48,11 @@ const STATUS: Record<string, JobStatus> = {
 async function snapshotOf(job: Job<JobData, StoredOutput>): Promise<JobSnapshot> {
   const status = STATUS[await job.getState()] ?? "queued";
   const snapshot: JobSnapshot = { id: job.id ?? "", url: job.data.url, status };
+  const progress: unknown = job.progress;
+  if (status === "running" && typeof progress === "object" && progress !== null) {
+    const stage = (progress as { stage?: unknown }).stage;
+    if (stage === "fetching" || stage === "reading" || stage === "naming") snapshot.stage = stage;
+  }
   if (status === "done") {
     const { url, system, warnings, derived } = job.returnvalue;
     snapshot.result = { url, system, warnings, derived };
@@ -124,7 +129,9 @@ export function startBullWorker(options: {
     QUEUE_NAME,
     async (job) => {
       try {
-        const output = await run(job.data.url);
+        const output = await run(job.data.url, (stage) => {
+          void job.updateProgress({ stage });
+        });
         return {
           ...withoutScreenshot(output),
           screenshot: Buffer.from(output.screenshot).toString("base64"),

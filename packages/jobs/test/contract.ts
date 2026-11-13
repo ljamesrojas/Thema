@@ -31,6 +31,8 @@ export class FakeRun {
   maxActive = 0;
   /** Errors to throw, in order, before succeeding. */
   failures: Error[] = [];
+  /** Stages to report before finishing (each after the gate, if held). */
+  stages: ("fetching" | "reading" | "naming")[] = [];
   private gate: Promise<void> | null = null;
   private openGate: () => void = () => {};
 
@@ -45,11 +47,12 @@ export class FakeRun {
     this.openGate();
   }
 
-  run: RunExtraction = async (url) => {
+  run: RunExtraction = async (url, onStage) => {
     this.calls.push(url);
     this.active += 1;
     this.maxActive = Math.max(this.maxActive, this.active);
     try {
+      for (const stage of this.stages) onStage(stage);
       if (this.gate) await this.gate;
       const failure = this.failures.shift();
       if (failure) throw failure;
@@ -176,6 +179,18 @@ export function queueContract(name: string, makeHarness: () => Promise<Harness>)
       for (const job of jobs) expect((await finished(h.queue, job.id)).status).toBe("done");
       expect(h.fake.maxActive).toBe(3);
       expect(h.fake.calls).toHaveLength(5);
+    });
+
+    it("reports the running job's stage, and drops it when done", async () => {
+      h.fake.stages = ["fetching", "reading"];
+      h.fake.hold();
+      const job = await h.queue.submit("https://north.example/");
+      await until(async () => (await h.queue.get(job.id))?.stage === "reading", "stage reading");
+      expect((await h.queue.get(job.id))?.status).toBe("running");
+      h.fake.release();
+      const done = await finished(h.queue, job.id);
+      expect(done.status).toBe("done");
+      expect(done).not.toHaveProperty("stage");
     });
 
     it("returns null for unknown jobs", async () => {

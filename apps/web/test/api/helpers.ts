@@ -48,6 +48,8 @@ export interface TestServices {
   queue: LocalQueue;
   runs: string[];
   clock: { now: Date };
+  /** Hold every extraction at the "reading" stage until released. */
+  hold: () => () => void;
 }
 
 /** Install fake services for the routes; returns the queue and a log of extractions run. */
@@ -55,13 +57,27 @@ export function useFakeServices(): TestServices {
   const clock = { now: new Date("2026-11-13T10:00:00.000Z") };
   const now = () => clock.now;
   const runs: string[] = [];
+  let gate: Promise<void> | null = null;
   const queue = createLocalQueue({
-    run: (url) => {
+    run: async (url, onStage) => {
       runs.push(url);
-      return Promise.resolve().then(() => fixtureOutput(url));
+      onStage("fetching");
+      onStage("reading");
+      if (gate) await gate;
+      return fixtureOutput(url);
     },
     now,
   });
+  const hold = () => {
+    let release = () => {};
+    gate = new Promise((resolve) => {
+      release = resolve;
+    });
+    return () => {
+      gate = null;
+      release();
+    };
+  };
   setServices({
     queue,
     limiter: createMemoryRateLimiter({ limit: 3, now }),
@@ -69,7 +85,7 @@ export function useFakeServices(): TestServices {
     lookup: fakeDns,
     now,
   });
-  return { queue, runs, clock };
+  return { queue, runs, clock, hold };
 }
 
 export const PROJECT_ID = "6f1c1b2e-3d4a-4b5c-8d6e-7f8091a2b3c4";

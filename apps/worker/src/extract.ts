@@ -46,6 +46,11 @@ export interface ExtractOptions {
   upstream?: Upstream;
   /** Per-request and navigation timeout. */
   timeoutMs?: number;
+  /**
+   * Called as the extraction moves on: "fetching" when the page starts loading, "reading" when
+   * styles are sampled. (The job adds "naming" when the engine runs.)
+   */
+  onStage?: (stage: "fetching" | "reading") => void;
 }
 
 export interface Extraction {
@@ -145,7 +150,13 @@ async function capture(
   browser: Browser,
   url: string,
   colorScheme: "light" | "dark",
-  deps: { guard: Guard; blocked: string[]; timeoutMs: number; upstream: Upstream | undefined },
+  deps: {
+    guard: Guard;
+    blocked: string[];
+    timeoutMs: number;
+    upstream: Upstream | undefined;
+    onStage: ExtractOptions["onStage"];
+  },
   withScreenshot: boolean,
 ): Promise<Pass> {
   const context = await browser.newContext({
@@ -182,6 +193,7 @@ async function capture(
     await page.waitForTimeout(SCROLL_PAUSE_MS);
     await settle(page, 10_000);
 
+    if (withScreenshot) deps.onStage?.("reading");
     const samples = await inFrame(page, collectSamples, {
       maxSamples: MAX_SAMPLES,
       maxWrappers: MAX_WRAPPERS,
@@ -245,8 +257,10 @@ export async function extract(rawUrl: string, options: ExtractOptions = {}): Pro
     blocked: [] as string[],
     timeoutMs: options.timeoutMs ?? 30_000,
     upstream: options.upstream,
+    onStage: options.onStage,
   };
 
+  options.onStage?.("fetching");
   const browser = await chromium.launch();
   try {
     const light = await capture(browser, url.href, "light", deps, true);
