@@ -49,7 +49,7 @@ describe("tokens from DESIGN.md", () => {
     }
     expect(css).toContain("--color-canvas: #ffffff;");
     expect(css).toContain("--text-display: 92px;");
-    for (const style of ["h2-lg", "title-sm", "label-md", "body-sm"]) {
+    for (const style of ["h2-lg", "h4", "lead", "title-sm", "label-md", "body-sm", "caption"]) {
       expect(css, style).toMatch(new RegExp(`--text-${style}: \\d+px;`));
     }
     expect(css).toContain("--text-display--line-height: 0.98;");

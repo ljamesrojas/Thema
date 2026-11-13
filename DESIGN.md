@@ -73,7 +73,7 @@ typography:
     letterSpacing: -0.035em
   h2:
     fontFamily: Geist
-    fontSize: 48px
+    fontSize: 44px
     fontWeight: 600
     lineHeight: 1.05
     letterSpacing: -0.03em
@@ -83,11 +83,22 @@ typography:
     fontWeight: 600
     lineHeight: 1.25
     letterSpacing: -0.01em
+  h4:
+    fontFamily: Geist
+    fontSize: 19px
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: -0.01em
   body-lg:
     fontFamily: Geist
     fontSize: 19px
     fontWeight: 400
     lineHeight: 1.55
+  lead:
+    fontFamily: Geist
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.6
   title-sm:
     fontFamily: Geist
     fontSize: 17px
@@ -108,6 +119,11 @@ typography:
     fontSize: 15px
     fontWeight: 400
     lineHeight: 1.6
+  caption:
+    fontFamily: Geist
+    fontSize: 14px
+    fontWeight: 400
+    lineHeight: 1.55
   ui-sm:
     fontFamily: Geist
     fontSize: 13px
@@ -277,7 +293,7 @@ All text pairs below pass WCAG 2.2 AA (4.5:1 for text, 3:1 for large text and UI
 - **Instrument Serif italic** for exactly one accent word per headline ("Taste, *exported.*"). Never for whole sentences, body text or UI.
 - **Geist Mono** for every hex value, token name, file name, code, eyebrow labels and step numbers.
 - Body copy is 15–19px with a 1.55–1.6 line height. Nothing readable goes below 12px.
-- The display style (92px) scales down to 56px on narrow screens: `clamp(56px, 9vw, 92px)`. `h2-lg` (60px) is for the closing call to action; `title-sm` (17px / 500) for accordion questions; `label-md` (15px / 500) for nav links and pill items; `body-sm` (15px) for answers and captions.
+- The display style (92px) scales down to 56px on narrow screens: `clamp(56px, 9vw, 92px)`. `h2` (44px) is every section heading, the black band's included; `h2-lg` (60px) is for the closing call to action; `h4` (19px / 600) for step titles; `lead` (17px) for feature body copy; `caption` (14px) for step text and captions; `title-sm` (17px / 500) for accordion questions; `label-md` (15px / 500) for nav links and pill items; `body-sm` (15px) for answers and captions.
 
 ## Layout
 
