@@ -111,7 +111,7 @@ Deterministic code decides every number. The LLM only names, describes and write
 
 - Check every text/background role pair against WCAG 2.2 AA (4.5:1 body text, 3:1 large text and UI components). Text pairs: ink on canvas/surface/surface-raised, ink-muted on canvas/surface, primary-ink on primary, semantic colors on canvas. UI pairs (3:1): primary and accent on canvas. Hairlines aren't checked (decorative).
 - When a pair fails, nudge the foreground's lightness the minimum amount needed (hue kept; canvas and surfaces stay put; primary-ink may flip from light to dark), and record the change in the report ("primary-on-canvas 3.1 → 4.6", per theme). A lock that blocks a fix is reported, not overridden.
-- Generate a dark theme when no source provides one: invert the lightness ramp (mirrored within 0.14–0.98, including a neutral primary), lower chroma on large surfaces, re-run the contrast check. A dark-only site's palette becomes the dark theme and a light theme is generated the same way.
+- Generate a dark theme when no source provides one: invert the lightness ramp (mirrored within 0.14–0.98, including a neutral primary), lower chroma on large surfaces, re-run the contrast check. A dark-only site's palette becomes the dark theme and a light theme is generated the same way. A theme counts as missing when the dark colors copy the light ones apart from locked colors: a lock alone doesn't make a theme measured.
 - Fill missing semantic colors (success, warning, danger, info) with hues tuned to the palette's lightness and chroma.
 
 ### 5. Preview

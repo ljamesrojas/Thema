@@ -82,8 +82,9 @@ const parse = (css: string): Oklch => {
 };
 const contrast = (a: string, b: string): number => wcagContrast(a, b);
 const round2 = (v: number): number => Math.round(v * 100) / 100;
-const sameColors = (a: Colors, b: Colors): boolean =>
-  (Object.keys(a) as ColorRole[]).every((role) => a[role] === b[role]);
+/** Same colors in both themes, ignoring roles `skip` says to (a locked dark color isn't a source). */
+const sameColors = (a: Colors, b: Colors, skip: (role: ColorRole) => boolean = () => false) =>
+  (Object.keys(a) as ColorRole[]).every((role) => skip(role) || a[role] === b[role]);
 
 /**
  * The missing theme from the measured one: every neutral color's lightness is mirrored within
@@ -138,7 +139,10 @@ export function fix(input: ThemaSystem): FixResult {
 
   // 1. The missing theme. Locked colors keep their value.
   let generated: Theme | null = null;
-  if (sameColors(system.color.light, system.color.dark)) {
+  // A theme is missing when no source provided it: dark is a copy of light, apart from colors the
+  // user locked in either theme (a lock alone doesn't make a theme measured).
+  const lockedAnywhere = (role: ColorRole) => isLocked("light", role) || isLocked("dark", role);
+  if (sameColors(system.color.light, system.color.dark, lockedAnywhere)) {
     const measured = system.color.light;
     const darkOnly = parse(measured.canvas).l < DARK_CANVAS_LIGHTNESS;
     generated = darkOnly ? "light" : "dark";

@@ -214,6 +214,18 @@ describe("fix: missing theme", () => {
     );
   });
 
+  it("still generates the missing theme when the user locked a color in it", () => {
+    // The Workspace locks color.dark.primary in a system whose dark theme was generated: the
+    // next blend has dark = light except that locked role. It must still count as missing.
+    const lockedPrimary = "oklch(0.7 0.15 250)";
+    const input = systemWith({}, undefined, ["color.dark.primary"]);
+    input.color.dark.primary = lockedPrimary;
+    const { system, generated } = fix(input);
+    expect(generated).toBe("dark");
+    expect(system.color.dark.primary).toBe(lockedPrimary);
+    expect(L(system.color.dark.canvas)).toBeLessThan(0.2);
+  });
+
   it("keeps a measured dark theme", () => {
     const { generated, system } = fix(systemWith({}, GOOD_DARK));
     expect(generated).toBeNull();
