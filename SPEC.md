@@ -228,7 +228,7 @@ Extraction is asynchronous: the client polls (or listens over SSE) while the job
 | Browser | Playwright (Chromium) on Fly.io or Railway | Needs a long-running container, not serverless |
 | Queue | Redis (Upstash) + BullMQ | Retries, concurrency limits |
 | Database + auth | Supabase (Postgres, Auth, Storage) | Projects, users, cache and screenshots in one service |
-| LLM | Claude API (Haiku-class for naming, Sonnet-class for DESIGN.md prose) | Low cost per run; output is prose only |
+| LLM | Deferred (decided 2026-11-14): none for now. Later, Claude API (Haiku-class for naming, Sonnet-class for DESIGN.md prose) | Low cost per run; output is prose only. Until then names and prose are written by deterministic code |
 | MCP | Official TypeScript MCP SDK | Standard server for Claude Code and Cursor |
 | Tests | Vitest + fixture snapshots | Fast engine tests; accuracy tracked over time |
 
@@ -327,7 +327,7 @@ The biggest risk is extraction accuracy. If the first paste looks wrong, users l
 **Open questions**
 
 - [ ] Hosting for the Playwright worker: Fly.io, Railway, or a serverless browser service (Browserless)?
-- [ ] Which LLM and what monthly budget for the prose and naming steps?
+- [x] Which LLM and what monthly budget for the prose and naming steps? Decided 2026-11-14: no LLM and no budget for now; DESIGN.md prose stays deterministic. Revisit after launch (estimate then: about $0.03 per DESIGN.md with Sonnet-class, $0.002 with Haiku-class).
 - [ ] Pro price: test $8 vs $12/month
 - [ ] License for the CLI: MIT or AGPL?
 

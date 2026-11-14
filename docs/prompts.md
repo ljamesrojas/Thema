@@ -218,7 +218,10 @@ Open questions in SPEC.md to answer before these sessions: worker hosting (Fly.i
 
 ---
 
-## Session 13 — Names and prose from the LLM
+## Session 13 — Names and prose from the LLM (deferred)
+
+Deferred on 2026-11-14: no LLM and no budget for now (see SPEC → Open questions). DESIGN.md prose stays deterministic; pick this session up after launch if the writing needs it. Week 6 continues with Session 14.
+
 
 ```
 Read CLAUDE.md (deterministic code decides every value; the LLM only names roles and writes prose) and SPEC.md → Architecture and stack (LLM), Output formats (DESIGN.md prose).
