@@ -68,4 +68,14 @@ The Landing's "Reads into" strip shows each agent's official logo mark from `pub
 - **Live updates:** references still extracting are polled every second (their card shows the real stage). A blend runs when an input changes, debounced 150ms; a newer blend cancels the one in flight. Only finished references are blended.
 - **Fonts** are shown by name with fallback stacks; web fonts aren't loaded (no runtime requests), so a sample renders exactly only where the font is installed.
 
-`/preview` and `/export` are placeholders until Session 12.
+## Preview
+
+`/preview` (`src/preview/`) shows the saved project's system on three templates: Landing, Dashboard and Settings form. Template switcher, Light/Dark, Desktop/Mobile (a 390px frame), and Compare with source (a reference's screenshot next to the template).
+
+- **Variables, not a rebuild:** `variables.ts` parses the user's real exports (`toShadcnCss` and `toTailwindCss`) and the frame (`frame.tsx`) sets them on itself only: every shadcn.css variable (light or dark block) plus theme.css's fonts, type scale, radii, shadows and layout widths. Not theme.css's colors (shadcn.css has them) or its base `--spacing` (it would rescale every Tailwind utility inside the frame). Switching theme swaps variables and nothing else.
+- **Components** (`ui.tsx`): shadcn/ui's dependency-free ones (Button, Card, Input, Label, Badge, Table, Separator) adapted to read only the frame's variables, e.g. `bg-(--primary)`, since Thema's own `bg-primary` is Kiln. Switch, Checkbox and Select are native elements (shadcn's need Radix). Every text color sits on a background the fixer checks it against; primary is never small text.
+- **Mobile** is real: templates use container queries, so they lay out by the frame's width.
+
+## Export
+
+`/export` (`src/export/`): a checklist of the five files, a preview of each with Copy and Download, Download zip (only the checked files) and the MCP/CLI note (their commands arrive in week 6). Files come from `exportAll` in the browser, byte for byte; the zip is built by `src/lib/zip.ts`, which the API's `?format=zip` uses too, so both give the same archive.

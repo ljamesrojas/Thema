@@ -116,7 +116,7 @@ Deterministic code decides every number. The LLM only names, describes and write
 
 ### 5. Preview
 
-- Three built-in templates (Landing, Dashboard, Settings form) built with shadcn/ui components that read only CSS variables.
+- Three built-in templates (Landing, Dashboard, Settings form) built with shadcn/ui components that read only CSS variables. The preview frame sets the variables of the user's own exports: every variable in shadcn.css (light or dark block) plus theme.css's fonts, type scale, radii, shadows and layout widths, so a preview shows exactly what ships.
 - Swapping tokens updates CSS variables live, so there's no rebuild.
 - Compare view: the source screenshot next to the template with the blend applied.
 
