@@ -6,6 +6,7 @@ const config: NextConfig = {
     "@thema/engine",
     "@thema/exporters",
     "@thema/jobs",
+    "@thema/schema",
     "@thema/url-guard",
     "@thema/worker",
   ],

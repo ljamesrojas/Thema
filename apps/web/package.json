@@ -15,6 +15,7 @@
     "@thema/engine": "workspace:*",
     "@thema/exporters": "workspace:*",
     "@thema/jobs": "workspace:*",
+    "@thema/schema": "workspace:*",
     "@thema/url-guard": "workspace:*",
     "@thema/worker": "workspace:*",
     "bullmq": "6.3.18",
