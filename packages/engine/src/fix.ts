@@ -37,6 +37,8 @@ export const CHECKED_PAIRS: readonly CheckedPair[] = [
   { fg: "ink", bg: "surface-raised", min: TEXT_CONTRAST },
   { fg: "ink-muted", bg: "canvas", min: TEXT_CONTRAST },
   { fg: "ink-muted", bg: "surface", min: TEXT_CONTRAST },
+  // Muted text on raised cards: shadcn's CardDescription (muted-foreground on card).
+  { fg: "ink-muted", bg: "surface-raised", min: TEXT_CONTRAST },
   // Semantic colors are used as message text ("Payment failed").
   { fg: "success", bg: "canvas", min: TEXT_CONTRAST },
   { fg: "warning", bg: "canvas", min: TEXT_CONTRAST },

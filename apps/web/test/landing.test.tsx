@@ -213,7 +213,7 @@ describe("heroBlend: computed by the real pipeline", () => {
   it("backs the 'WCAG AA · N/N pairs' claim: every checked pair passes in both themes", () => {
     expect(blend.passing.light).toBe(blend.passing.total);
     expect(blend.passing.dark).toBe(blend.passing.total);
-    expect(blend.passing.total).toBe(12);
+    expect(blend.passing.total).toBe(13);
   });
 
   it("shows chips with the hex the exporters produce, and is the same on every call", () => {

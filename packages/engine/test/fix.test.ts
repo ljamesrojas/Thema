@@ -125,6 +125,22 @@ describe("fix: minimal nudges", () => {
     expect(parseCssColor(after)?.h).toBeCloseTo(250, 0);
   });
 
+  it("checks muted text on raised cards too (shadcn's CardDescription: muted-foreground on card)", () => {
+    // A tinted raised card that's darker than the surface: muted ink passes on canvas and
+    // surface but not on the card, as Glossier/Supabase did before this pair was checked.
+    const raised = "oklch(0.86 0 0)";
+    const muted = "oklch(0.47 0 0)";
+    expect(ratio(muted, GOOD.surface)).toBeGreaterThanOrEqual(4.5);
+    expect(ratio(muted, raised)).toBeLessThan(4.5);
+    const { system } = fix(systemWith({ "surface-raised": raised, "ink-muted": muted }, GOOD_DARK));
+    const after = system.color.light["ink-muted"];
+    expect(ratio(after, raised)).toBeGreaterThanOrEqual(4.5);
+    expect(system.color.light["surface-raised"]).toBe(raised); // backgrounds never move
+    expect(system.a11y.fixes).toContainEqual(
+      expect.objectContaining({ pair: ["ink-muted", "surface-raised"], theme: "light" }),
+    );
+  });
+
   it("darkens Mailchimp's yellow primary to 3:1 on white, no further", () => {
     const yellow = "oklch(0.905 0.184 98.8)";
     const { system } = fix(
