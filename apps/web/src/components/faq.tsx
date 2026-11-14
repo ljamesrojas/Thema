@@ -40,21 +40,28 @@ export function Faq() {
 
   return (
     <section id="faq" className={cn(styles.band, "border-y border-hairline")}>
-      {/* The two columns are one centered group with fixed widths, vertically centered on each
-          other: closed, the questions box lines up with the intro. Below xl they stack. */}
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-12 px-8 py-26 xl:flex-row xl:items-center xl:justify-center xl:gap-16">
-        <div className="flex min-w-0 flex-col gap-5 xl:w-[360px] xl:flex-none">
-          <p className="m-0 text-eyebrow font-eyebrow uppercase text-primary-strong">FAQ</p>
-          <h2 className="m-0 text-h2 font-h2">
-            Questions, answered
-            <Period />
-          </h2>
-          <p className="m-0 text-body-md font-body-md text-ink-muted">
-            The short version of how Thema reads sites, what it exports, and what it never copies.
-          </p>
-          <div className="flex max-w-[380px] flex-col gap-3 rounded-lg border border-hairline bg-surface p-5">
-            <p className="m-0 text-title-sm font-title-sm">Still curious?</p>
-            <p className="m-0 text-body-sm font-body-sm text-ink-muted">
+      {/* docs/landing-white.md → FAQ: a 5/7 grid whose columns stretch to equal height, so both
+          start and end on the same line; one column below ~900px. */}
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-8 py-26 min-[900px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] min-[900px]:gap-16">
+        <div className="flex min-w-0 flex-col justify-between gap-10">
+          <div className="flex flex-col gap-5">
+            <p className="m-0 text-eyebrow font-eyebrow uppercase text-primary-strong">FAQ</p>
+            <h2 className="m-0 text-h2 font-h2">
+              Questions, answered
+              <Period />
+            </h2>
+            <p className="m-0 text-body-md font-body-md text-ink-muted">
+              The short version of how Thema reads sites, what it exports, and what it never copies.
+            </p>
+          </div>
+          {/* No card: the accordion is the section's only card. Pushed to the bottom, it lines up
+              with the bottom of the accordion. */}
+          <div
+            data-testid="faq-still-curious"
+            className="flex flex-col gap-3 border-t border-pill-border pt-6"
+          >
+            <p className="m-0 text-label-md font-label-md font-semibold">Still curious?</p>
+            <p className="m-0 text-caption font-caption text-ink-muted">
               Read the docs or ask us on GitHub.
             </p>
             <div className="flex flex-wrap gap-2.5">
@@ -68,7 +75,7 @@ export function Faq() {
           </div>
         </div>
 
-        <div className="min-w-0 rounded-lg border border-hairline bg-surface px-6 py-1 shadow-accordion xl:w-[600px] xl:flex-none">
+        <div className="min-w-0 rounded-lg border border-hairline bg-surface px-6 py-1 shadow-accordion">
           {QUESTIONS.map(([question, answer], index) => {
             const isOpen = open === index;
             const buttonId = `${id}-q${index}`;

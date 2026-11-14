@@ -185,6 +185,23 @@ describe("FAQ", () => {
     expect(panelOf(first).hidden).toBe(false);
   });
 
+  it("lays out as docs/landing-white.md says: 5/7 grid, 'Still curious?' with no card", () => {
+    renderLanding();
+    const grid = document.querySelector("#faq > div");
+    expect(grid?.className).toContain("min-[900px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]");
+    expect(grid?.className).toContain("min-[900px]:gap-16");
+    const curious = screen.getByTestId("faq-still-curious");
+    expect(curious.textContent).toContain("Still curious?");
+    expect(curious.className).toContain("border-t");
+    // Not inside a card: the accordion is the section's only card.
+    expect(curious.closest(".rounded-lg")).toBeNull();
+    expect(
+      within(curious)
+        .getAllByRole("link")
+        .map((a) => a.textContent),
+    ).toEqual(["Read the docs", "Ask on GitHub"]);
+  });
+
   it("keeps one item open at a time, and the open number turns Kiln Deep", () => {
     renderLanding();
     const third = faqButtons()[2];

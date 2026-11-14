@@ -332,7 +332,7 @@ Shadows inside the stage that belong to the user's system (a radius or shadow sa
 - **Accessibility report rows:** mono text, "before → after" ratios, Moss for passes, Crimson for failures.
 - **band / band-card:** the full-width black band; its card uses band surface with a band hairline border.
 - **row-highlight:** the one emphasised mono row in a card: primary tint background, primary deep text.
-- **Accordion (FAQ):** a white card with dividers between items; each question is a button with `aria-expanded`, all closed at first, one open at a time; on wide screens it is vertically centered on the intro beside it.
+- **Accordion (FAQ):** a white card with dividers between items; each question is a button with `aria-expanded`, all closed at first, one open at a time. It sits in a 5/7 grid beside the intro; the columns stretch to equal height, so "Still curious?" (no card, a hairline above) lines up with the accordion's bottom.
 - **Agent item:** a pill link with the agent's official 18px logo mark, at least 44px tall. Logos keep their own colors, never recolored or grayed (brand guidelines); they name compatible tools and are their owners' trademarks. A generic line icon stands in only until an official file is added.
 
 ## Do's and Don'ts
