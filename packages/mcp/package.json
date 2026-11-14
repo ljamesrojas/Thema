@@ -1,0 +1,35 @@
+{
+  "name": "@thema/mcp",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Thema's MCP server: extract, blend and get_design_md for AI coding agents.",
+  "bin": {
+    "thema-mcp": "./src/bin.ts"
+  },
+  "exports": {
+    ".": "./src/server.ts"
+  },
+  "scripts": {
+    "mcp": "tsx src/bin.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@thema/cli": "workspace:*",
+    "@thema/engine": "workspace:*",
+    "@thema/exporters": "workspace:*",
+    "@thema/schema": "workspace:*",
+    "@thema/url-guard": "workspace:*",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@google/design.md": "0.4.0",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  }
+}
