@@ -14,7 +14,9 @@
     "extract": "pnpm --filter @thema/worker extract",
     "palette": "tsx scripts/palette.ts",
     "accuracy": "tsx scripts/accuracy.ts",
-    "export": "tsx scripts/export.ts"
+    "export": "tsx scripts/export.ts",
+    "thema": "pnpm --filter @thema/cli --silent thema",
+    "mcp": "pnpm --filter @thema/mcp --silent mcp"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

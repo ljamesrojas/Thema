@@ -1,0 +1,37 @@
+{
+  "name": "@thema/cli",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Blend reference sites into one accessible design system: extract, blend, export.",
+  "bin": {
+    "thema": "./src/bin.ts"
+  },
+  "exports": {
+    ".": "./src/cli.ts",
+    "./core": "./src/core.ts"
+  },
+  "scripts": {
+    "thema": "tsx src/bin.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@thema/engine": "workspace:*",
+    "@thema/exporters": "workspace:*",
+    "@thema/jobs": "workspace:*",
+    "@thema/schema": "workspace:*",
+    "@thema/url-guard": "workspace:*",
+    "@thema/worker": "workspace:*",
+    "culori": "^4.0.2"
+  },
+  "devDependencies": {
+    "@google/design.md": "0.4.0",
+    "@types/culori": "^4.0.1",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  }
+}
