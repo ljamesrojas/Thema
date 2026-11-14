@@ -1,6 +1,6 @@
 import { exportAll } from "@thema/exporters";
-import { strToU8, zipSync } from "fflate";
-import { DOWNLOAD_HEADERS, FORMATS, isFormat, ZIP_MTIME } from "@/server/export-formats";
+import { buildZip } from "@/lib/zip";
+import { DOWNLOAD_HEADERS, FORMATS, isFormat } from "@/server/export-formats";
 import { ApiError, handler, readJson, type IdParams } from "@/server/http";
 import { exportBody, projectId } from "@/server/schemas";
 
@@ -26,15 +26,7 @@ export const POST = handler(async (request: Request, { params }: IdParams) => {
   const files = exportAll(system);
 
   if (format === "zip") {
-    const archive = zipSync(
-      Object.fromEntries(
-        Object.entries(files).map(([name, content]) => [
-          name,
-          [strToU8(content), { mtime: ZIP_MTIME }],
-        ]),
-      ),
-    );
-    return new Response(new Uint8Array(archive), {
+    return new Response(new Uint8Array(buildZip(files)), {
       headers: {
         ...DOWNLOAD_HEADERS,
         "content-type": "application/zip",

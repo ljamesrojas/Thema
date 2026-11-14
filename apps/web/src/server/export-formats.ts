@@ -11,12 +11,6 @@ export const FORMATS = {
 
 export type Format = keyof typeof FORMATS | "zip";
 
-/**
- * Fixed modification time for files in the zip, so the same system gives the same archive.
- * (Zip stores local time, so the bytes match across runs on one machine, not across time zones.)
- */
-export const ZIP_MTIME = new Date(2026, 0, 1);
-
 export const isFormat = (value: string | null): value is Format =>
   value === "zip" || (value !== null && Object.hasOwn(FORMATS, value));
 

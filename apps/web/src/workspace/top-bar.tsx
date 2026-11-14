@@ -52,9 +52,14 @@ export function TopBar({
             </a>
           ))}
         </nav>
-        <a href="/export" className={buttonVariants({ variant: "primary" })}>
-          Export system
-        </a>
+        {/* One primary per view: the Export screen has its own (Download zip). */}
+        {current !== "/export" ? (
+          <a href="/export" className={buttonVariants({ variant: "primary" })}>
+            Export system
+          </a>
+        ) : (
+          <span aria-hidden="true" />
+        )}
       </div>
     </header>
   );
