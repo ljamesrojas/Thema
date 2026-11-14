@@ -1,5 +1,6 @@
 "use client";
 
+import type { ThemaSystem } from "@thema/engine";
 import { exportAll } from "@thema/exporters";
 import { useId, useMemo, useState, type ReactNode } from "react";
 import { buttonVariants } from "@/components/button";
@@ -18,6 +19,88 @@ export const EXPORT_FILES = [
   ["style-guide.html", "A page to share with your team", "text/html"],
 ] as const;
 export type ExportFile = (typeof EXPORT_FILES)[number][0];
+
+/**
+ * Setup for agents and the terminal. The packages aren't published until launch, so these run
+ * from a clone of the Thema repo; `npx` commands replace them then.
+ */
+export const SNIPPETS = [
+  ["Claude Code", "claude mcp add thema -- pnpm -s --dir /path/to/thema mcp"],
+  [
+    "Cursor and other MCP clients",
+    '{ "mcpServers": { "thema": { "command": "pnpm", "args": ["-s", "--dir", "/path/to/thema", "mcp"] } } }',
+  ],
+  ["CLI", "pnpm -s thema export --in thema.json --format all --out design"],
+] as const;
+
+/** The system as JSON: what the CLI and the MCP server read (`--in`, `system_path`). */
+export const systemJson = (system: ThemaSystem) => `${JSON.stringify(system, null, 2)}\n`;
+
+function AgentSetup({ system }: { system: ThemaSystem }) {
+  const id = useId();
+  const [copied, setCopied] = useState<string | null>(null);
+  async function copy(label: string, text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(label);
+      setTimeout(() => setCopied((c) => (c === label ? null : c)), 2_000);
+    } catch {
+      setCopied(null);
+    }
+  }
+  return (
+    <section
+      aria-labelledby={`${id}-agents`}
+      className="flex flex-col gap-4 rounded-lg border border-hairline bg-surface p-5"
+    >
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="flex max-w-[640px] flex-col gap-1">
+          <h3 id={`${id}-agents`} className="m-0 text-label-md font-label-md font-semibold">
+            MCP server and CLI
+          </h3>
+          <p className="m-0 text-body-sm font-body-sm text-ink-muted">
+            Let your agent extract, blend and fetch DESIGN.md mid-task, or script it from the
+            terminal. Until Thema&apos;s packages are published at launch, these run from a clone of
+            the Thema repo: replace /path/to/thema with where you cloned it. Download thema.json to
+            use this blend there (the CLI&apos;s --in, the MCP tools&apos; system_path).
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => saveFile("thema.json", systemJson(system), "application/json")}
+          className={buttonVariants({ variant: "secondary" })}
+        >
+          Download thema.json
+        </button>
+      </div>
+      <ul className="m-0 flex list-none flex-col gap-3 p-0">
+        {SNIPPETS.map(([label, text]) => (
+          <li key={label} className="flex flex-col gap-1.5">
+            <span className="flex items-center justify-between gap-2">
+              <span className="text-ui-sm font-ui-sm text-ink-muted">{label}</span>
+              <span className="flex items-center gap-2">
+                <span role="status" className="text-ui-sm font-ui-sm text-success">
+                  {copied === label ? "Copied" : ""}
+                </span>
+                <button
+                  type="button"
+                  aria-label={`Copy the ${label} setup`}
+                  onClick={() => void copy(label, text)}
+                  className={buttonVariants({ variant: "ghost" })}
+                >
+                  Copy
+                </button>
+              </span>
+            </span>
+            <code className="block rounded-md bg-band px-4 py-3 text-token font-token break-all whitespace-pre-wrap text-band-ink">
+              {text}
+            </code>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 
 /** The zip's contents: the checked files, byte for byte as exportAll writes them. */
 export function zipFiles(files: Record<string, string>, checked: ReadonlySet<string>) {
@@ -56,7 +139,7 @@ export function ExportScreen() {
       </Shell>
     );
   }
-  if (!project || !files) {
+  if (!project || !files || !system) {
     return (
       <Shell name={project?.name ?? "Untitled system"}>
         <div className="mx-auto flex max-w-[560px] flex-1 flex-col items-start justify-center gap-5">
@@ -195,18 +278,7 @@ export function ExportScreen() {
         </section>
       </div>
 
-      <section
-        aria-labelledby={`${id}-agents`}
-        className="flex flex-col gap-2 rounded-lg border border-dashed border-input-border bg-surface-subtle p-5"
-      >
-        <h3 id={`${id}-agents`} className="m-0 text-label-md font-label-md font-semibold">
-          MCP server and CLI
-        </h3>
-        <p className="m-0 text-body-sm font-body-sm text-ink-muted">
-          The MCP server and the CLI arrive in week 6; their setup commands will appear here. Until
-          then, drop DESIGN.md in your repo root: agents that read it follow your system.
-        </p>
-      </section>
+      <AgentSetup system={system} />
     </Shell>
   );
 }

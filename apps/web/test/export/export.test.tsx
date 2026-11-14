@@ -5,7 +5,8 @@ import { exportAll } from "@thema/exporters";
 import { strFromU8, unzipSync } from "fflate";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { POST as exportRoute } from "@/app/api/projects/[id]/export/route";
-import { EXPORT_FILES, ExportScreen, zipFiles } from "@/export/export-screen";
+import { themaSystemSchema } from "@thema/schema";
+import { EXPORT_FILES, ExportScreen, SNIPPETS, systemJson, zipFiles } from "@/export/export-screen";
 import * as download from "@/lib/download";
 import { buildZip } from "@/lib/zip";
 import { newProject, saveProject } from "@/workspace/project";
@@ -86,6 +87,28 @@ describe("the Export screen", () => {
     expect(Object.keys(unzipSync(data as Uint8Array)).sort()).toEqual(
       ["DESIGN.md", "shadcn.css", "tokens.json"].sort(),
     );
+  });
+
+  it("shows the MCP and CLI setup with copy buttons, and downloads thema.json", async () => {
+    seed();
+    const writeText = vi.fn(() => Promise.resolve());
+    Object.defineProperty(navigator, "clipboard", { value: { writeText }, configurable: true });
+    render(<ExportScreen />);
+    await screen.findByTestId("file-preview");
+    for (const [label, text] of SNIPPETS) {
+      expect(screen.getByText(text)).toBeTruthy();
+      fireEvent.click(screen.getByRole("button", { name: `Copy the ${label} setup` }));
+      await waitFor(() => expect(writeText).toHaveBeenCalledWith(text));
+    }
+    expect(screen.queryByText(/arrive in week 6/)).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "Download thema.json" }));
+    const [name, data, type] = saved.mock.calls.at(-1) ?? [];
+    expect(name).toBe("thema.json");
+    expect(type).toBe("application/json");
+    expect(data).toBe(systemJson(system));
+    // What the CLI (--in) and the MCP server (system_path) read: the same system, valid.
+    expect(themaSystemSchema.parse(JSON.parse(String(data)))).toEqual(system);
   });
 
   it("has no axe violations and one primary button", async () => {
