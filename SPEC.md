@@ -34,8 +34,8 @@ The MVP covers URL input, blending, accessibility fixes, preview and five export
 - Preview on 3 template pages: landing, dashboard, settings form
 - Exports: DESIGN.md, Tailwind v4 theme, shadcn theme, DTCG tokens.json, a style-guide HTML page
 - Anonymous use: 1 project, saved only in the browser. Signing in unlocks saved projects
-- MCP server with 3 tools: `extract`, `blend`, `get_design_md`
-- Open-source CLI that wraps the same engine
+- MCP server with 3 tools: `extract` (URL → a system id, summary and warnings), `blend` (systems by id or JSON file, borrow tags, sliders, locks → a new fixed system), `get_design_md` (system → DESIGN.md, optionally written to a path); stdio, systems kept by id for the session
+- Open-source CLI (MIT) that wraps the same engine: `thema extract`, `thema blend`, `thema export`, reading and writing ThemaSystem JSON (`thema.json`, also downloadable from the Export screen)
 
 **Out of scope (v2+)**
 
@@ -329,7 +329,7 @@ The biggest risk is extraction accuracy. If the first paste looks wrong, users l
 - [ ] Hosting for the Playwright worker: Fly.io, Railway, or a serverless browser service (Browserless)?
 - [x] Which LLM and what monthly budget for the prose and naming steps? Decided 2026-11-14: no LLM and no budget for now; DESIGN.md prose stays deterministic. Revisit after launch (estimate then: about $0.03 per DESIGN.md with Sonnet-class, $0.002 with Haiku-class).
 - [ ] Pro price: test $8 vs $12/month
-- [ ] License for the CLI: MIT or AGPL?
+- [x] License for the CLI: MIT or AGPL? Decided 2026-11-14: MIT, for the CLI, the MCP server and every package they run on (engine, exporters, url-guard, jobs, schema, worker). The hosted web app (apps/web) stays unlicensed.
 
 **Roadmap after MVP**
 

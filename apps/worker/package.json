@@ -2,6 +2,7 @@
   "name": "@thema/worker",
   "version": "0.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "exports": {
     "./job": "./src/job.ts"

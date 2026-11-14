@@ -236,7 +236,7 @@ Tests: the validator rejects invented values; the fallback path; DESIGN.md with 
 
 ---
 
-## Session 14 — MCP server and CLI
+## Session 14 — MCP server and CLI (done 2026-11-14)
 
 ```
 Read CLAUDE.md and SPEC.md → MVP scope (MCP tools, CLI), Architecture and stack (MCP).
