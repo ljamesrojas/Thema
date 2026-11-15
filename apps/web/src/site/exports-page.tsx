@@ -70,6 +70,12 @@ const BUILT_IN: [ReactNode, string, string][] = [
 const KEY = "text-band-accent";
 const COMMENT = "text-band-ink-muted";
 
+/**
+ * Lines in the tallest snippet below (the folder tree). Every snippet is at least this tall, so
+ * the three black blocks start on the same line.
+ */
+const PLACE_CODE_LINES = 4;
+
 /** Where each file goes: the line that matters is in the band accent. */
 const PLACES: [string, string, string, ReactNode][] = [
   [
@@ -168,7 +174,10 @@ export function ExportsPage() {
                   <h3 className="m-0 text-h4 font-h4">{title}</h3>
                   <p className="m-0 text-body-sm font-body-sm text-ink-muted">{text}</p>
                 </div>
-                <pre className="m-0 bg-band px-6 py-5 text-token font-token leading-[1.75] whitespace-pre-wrap text-band-ink">
+                <pre
+                  className="m-0 bg-band px-6 py-5 text-token font-token leading-[1.75] whitespace-pre-wrap text-band-ink"
+                  style={{ minHeight: `calc(${PLACE_CODE_LINES}lh + 2.5rem)` }}
+                >
                   {code}
                 </pre>
               </li>
