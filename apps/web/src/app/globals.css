@@ -69,6 +69,18 @@
 }
 
 @layer base {
+  /* In-page links (Set up the MCP server → Setup, How it works' steps) glide to their section.
+     Page changes stay instant: layout.tsx sets data-scroll-behavior="smooth", Next.js 16's cue
+     to switch it off while navigating. Reduced motion: an instant jump, as before. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  /* A little room above a section a link lands on. */
+  [id] {
+    scroll-margin-top: 24px;
+  }
   body {
     background: var(--color-canvas);
     color: var(--color-ink);

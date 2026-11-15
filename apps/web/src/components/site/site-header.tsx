@@ -91,7 +91,7 @@ export function SiteHeader({ current }: { current?: SitePage }) {
           >
             Sign in
           </a>
-          <a href="/" className={buttonVariants({ variant: "secondary" })}>
+          <a href="/workspace" className={buttonVariants({ variant: "secondary" })}>
             Start blending
           </a>
         </div>

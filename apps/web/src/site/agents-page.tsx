@@ -115,7 +115,7 @@ export function AgentsPage() {
         </section>
 
         <section aria-label="Reads into" className="border-t border-hairline bg-surface-subtle">
-          <AgentsStrip href="#setup" className={cn(container, "py-7")} />
+          <AgentsStrip className={cn(container, "py-7")} />
         </section>
 
         <Band label="Two ways in" className="flex flex-col gap-10">

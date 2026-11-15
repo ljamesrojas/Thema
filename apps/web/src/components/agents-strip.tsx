@@ -80,16 +80,10 @@ export const AGENTS: Agent[] = [
 ];
 
 /**
- * "Reads into": every item links to the page's agents section (`#agents` on the Landing,
- * `#setup` on /agents); hover and focus are CSS only.
+ * "Reads into": the agents Thema's files work with. Names, not links (user's call): each item
+ * reacts to the pointer (CSS only) but there's nothing to click or tab to.
  */
-export function AgentsStrip({
-  className,
-  href = "#agents",
-}: {
-  className?: string;
-  href?: string;
-}) {
+export function AgentsStrip({ className }: { className?: string }) {
   return (
     <div className={cn("flex flex-wrap items-center gap-x-8 gap-y-3", className)}>
       <span
@@ -104,13 +98,12 @@ export function AgentsStrip({
       <ul className={styles.items}>
         {AGENTS.map(({ name, color, logo, icon }) => (
           <li key={name}>
-            <a
-              href={href}
+            <span
               className={cn(styles.item, "text-label-md font-label-md")}
               style={{ "--agent-color": `var(--color-${color})` } as CSSProperties}
             >
               {logo ? (
-                // A logo in its own colors; the name next to it is the accessible label.
+                // A logo in its own colors; the name next to it says what it is.
                 <img src={logo} alt="" width={18} height={18} className={styles.logo} />
               ) : (
                 <svg viewBox="0 0 24 24" className={styles.icon} aria-hidden="true">
@@ -118,7 +111,7 @@ export function AgentsStrip({
                 </svg>
               )}
               {name}
-            </a>
+            </span>
           </li>
         ))}
       </ul>

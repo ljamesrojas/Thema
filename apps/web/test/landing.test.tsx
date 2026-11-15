@@ -73,10 +73,12 @@ describe("Landing (docs/landing-white.md)", () => {
 });
 
 describe("Agents strip", () => {
-  it("is 7 real links to #agents with accessible names, an accent each, and hidden icons", () => {
+  it("names the agents with an accent each and decorative logos, as hover-only items, not links", () => {
     renderLanding();
     const strip = screen.getByRole("region", { name: "Reads into" });
-    const links = within(strip).getAllByRole("link");
+    // Hoverable, not clickable (user's call): no links, nothing to tab to.
+    expect(within(strip).queryAllByRole("link")).toEqual([]);
+    const links = [...strip.querySelectorAll("li > span")] as HTMLElement[];
     expect(links.map((link) => link.textContent)).toEqual([
       "Claude Code",
       "Cursor",
@@ -88,8 +90,8 @@ describe("Agents strip", () => {
       "Google Antigravity",
     ]);
     links.forEach((link, index) => {
-      expect(link.getAttribute("href")).toBe("#agents");
-      expect(link.tagName).toBe("A");
+      expect(link.hasAttribute("href")).toBe(false);
+      expect(link.hasAttribute("tabindex")).toBe(false);
       expect(link.style.getPropertyValue("--agent-color")).toBe(
         `var(--color-${AGENTS[index]?.color ?? ""})`,
       );
@@ -134,15 +136,14 @@ describe("Agents strip", () => {
     for (const { color } of AGENTS) expect(design).toMatch(new RegExp(`\\n  ${color}: "#`));
   });
 
-  it("does it in CSS only: hover behind (hover: hover), reduced motion, 44px targets, no hex", () => {
+  it("does it in CSS only: hover behind (hover: hover), reduced motion, no focus state, no hex", () => {
     const css = readFileSync(
       join(import.meta.dirname, "../src/components/agents-strip.module.css"),
       "utf8",
     );
     expect(css).toMatch(/@media \(hover: hover\)\s*\{[^@]*\.item:hover[^@]*:has\(\.item:hover\)/);
-    expect(css).toMatch(
-      /:has\(\.item:focus-visible\) \.item:not\(:focus-visible\)\s*\{\s*opacity: 0\.35/,
-    );
+    expect(css).toMatch(/:has\(\.item:hover\) \.item:not\(:hover\)\s*\{\s*opacity: 0\.35/);
+    expect(css).not.toMatch(/focus-visible/);
     expect(css).toMatch(/transform: scale\(1\.14\)/);
     expect(css).toMatch(
       /@media \(prefers-reduced-motion: reduce\)[\s\S]*transform: none[\s\S]*animation: none/,

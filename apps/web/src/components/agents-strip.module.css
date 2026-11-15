@@ -1,6 +1,7 @@
 /* The "Reads into" strip (docs/landing-white.md → Agents strip; DESIGN.md → Motion exception).
-   CSS only: :hover, :focus-visible and :has() do the work, with each item's accent passed in as
-   --agent-color. No hex here: every color is a DESIGN.md token. */
+   CSS only: :hover and :has() do the work, with each item's accent passed in as --agent-color.
+   The items are names, not links (user's call), so there's no focus state. No hex here: every
+   color is a DESIGN.md token. */
 
 .label {
   display: inline-flex;
@@ -75,18 +76,6 @@
   transition: stroke var(--duration-agent);
 }
 
-/* Keyboard focus works on every device. */
-.item:focus-visible {
-  color: var(--agent-color);
-  transform: scale(1.14);
-}
-.item:focus-visible .icon {
-  stroke: var(--agent-color);
-}
-.items:has(.item:focus-visible) .item:not(:focus-visible) {
-  opacity: 0.35;
-}
-
 /* Hover only where there is a real pointer: touch devices keep every item at rest. */
 @media (hover: hover) {
   .item:hover {
@@ -107,8 +96,7 @@
   .icon {
     transition: none;
   }
-  .item:hover,
-  .item:focus-visible {
+  .item:hover {
     transform: none;
   }
   .dot {

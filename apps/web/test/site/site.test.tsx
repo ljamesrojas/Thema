@@ -78,7 +78,9 @@ describe("SiteHeader and SiteFooter", () => {
     expect(github.getAttribute("rel")).toBe("noopener");
     expect(github.textContent).toContain("(opens in a new tab)");
     expect(nav.getByRole("link", { name: "Sign in" }).getAttribute("href")).toBe("/sign-in");
-    expect(nav.getByRole("link", { name: "Start blending" }).getAttribute("href")).toBe("/");
+    expect(nav.getByRole("link", { name: "Start blending" }).getAttribute("href")).toBe(
+      "/workspace",
+    );
 
     const footer = within(screen.getByRole("navigation", { name: "Footer" }));
     expect(footer.getAllByRole("link").map((a) => a.getAttribute("href"))).toEqual([
@@ -201,13 +203,25 @@ describe("For agents: setup tabs", () => {
     ).toBeTruthy();
   });
 
-  it("reuses the Landing's agents strip, pointing at the setup", () => {
+  it("reuses the Landing's agents strip: hover-only names, no links", () => {
     render(<AgentsPage />);
     const strip = screen.getByRole("region", { name: "Reads into" });
-    const links = within(strip).getAllByRole("link");
-    expect(links.length).toBeGreaterThanOrEqual(7);
-    for (const link of links) expect(link.getAttribute("href")).toBe("#setup");
+    expect(strip.querySelectorAll("li > span").length).toBeGreaterThanOrEqual(7);
+    expect(within(strip).queryAllByRole("link")).toEqual([]);
+  });
+
+  it("'Set up the MCP server' glides to the setup section", () => {
+    render(<AgentsPage />);
+    const link = screen.getByRole("link", { name: "Set up the MCP server" });
+    expect(link.getAttribute("href")).toBe("#setup");
     expect(document.getElementById("setup")).not.toBeNull();
+    // Smooth for in-page jumps unless the reader asks for less motion; instant page changes.
+    const css = readFileSync(join(import.meta.dirname, "../../src/app/globals.css"), "utf8");
+    expect(css).toMatch(
+      /@media \(prefers-reduced-motion: no-preference\)\s*\{\s*html\s*\{\s*scroll-behavior: smooth;/,
+    );
+    const layout = readFileSync(join(import.meta.dirname, "../../src/app/layout.tsx"), "utf8");
+    expect(layout).toContain('data-scroll-behavior="smooth"');
   });
 
   it("badges the two ways in, numbers them and links each one on", () => {
