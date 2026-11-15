@@ -1,3 +1,6 @@
+import { AccountControls } from "@/account/account-controls";
+import type { AccountState } from "@/account/use-account";
+import type { SyncStatus } from "@/account/use-project-sync";
 import { buttonVariants } from "@/components/button";
 import { Logo } from "@/components/logo";
 import { cn } from "@/lib/cn";
@@ -8,16 +11,31 @@ const TABS = [
   ["/export", "Export"],
 ] as const;
 
+const SYNC_LABEL: Record<SyncStatus, string> = {
+  local: "Saved locally",
+  pending: "Saved locally",
+  saving: "Saving…",
+  saved: "Saved to your account",
+  conflict: "Not saved: newer version elsewhere",
+  limit: "Saved locally: project limit reached",
+  error: "Saved locally: couldn't reach your account",
+};
+
 /** The app's top bar: project, the Workspace / Preview / Export switch, and the next step. */
 export function TopBar({
   name,
   current,
   saved,
+  sync,
+  account,
 }: {
   name: string;
   current: (typeof TABS)[number][0];
   /** False when the browser blocks storage: the project then lasts only this visit. */
   saved: boolean;
+  /** Where the project is kept (see useProjectSync). */
+  sync: SyncStatus;
+  account: AccountState;
 }) {
   return (
     <header className="border-b border-hairline bg-canvas">
@@ -31,7 +49,9 @@ export function TopBar({
           </span>
           <h1 className="m-0 truncate text-label-md font-label-md font-semibold">{name}</h1>
           <span className="rounded-full border border-pill-border px-2 py-0.5 text-token font-token text-ink-subtle">
-            {saved ? "Saved locally" : "Not saved: storage is blocked"}
+            {saved || sync === "saved" || sync === "saving"
+              ? SYNC_LABEL[sync]
+              : "Not saved: storage is blocked"}
           </span>
         </div>
         <nav
@@ -52,14 +72,15 @@ export function TopBar({
             </a>
           ))}
         </nav>
-        {/* One primary per view: the Export screen has its own (Download zip). */}
-        {current !== "/export" ? (
-          <a href="/export" className={buttonVariants({ variant: "primary" })}>
-            Export system
-          </a>
-        ) : (
-          <span aria-hidden="true" />
-        )}
+        <span className="flex items-center gap-2">
+          <AccountControls account={account} next={current} />
+          {/* One primary per view: the Export screen has its own (Download zip). */}
+          {current !== "/export" && (
+            <a href="/export" className={buttonVariants({ variant: "primary" })}>
+              Export system
+            </a>
+          )}
+        </span>
       </div>
     </header>
   );

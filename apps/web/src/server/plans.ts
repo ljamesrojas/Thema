@@ -1,6 +1,6 @@
 // What each kind of user gets (user-approved 2026-11-15). Signing in unlocks saved projects
-// (SPEC); Pro is a flag on the user until billing is connected.
-import { ANONYMOUS_DAILY_EXTRACTIONS } from "@thema/jobs";
+// (SPEC); Pro is a flag on the user until billing is connected. No imports: the sign-in and
+// Projects screens show these numbers too. Signed-out limits live with the queue (@thema/jobs).
 
 export type Plan = "free" | "pro";
 
@@ -11,7 +11,5 @@ export const PLANS = {
   Plan,
   { label: string; dailyExtractions: number; savedProjects: number }
 >;
-
-export const ANONYMOUS = { dailyExtractions: ANONYMOUS_DAILY_EXTRACTIONS } as const;
 
 export const planOf = (value: unknown): Plan => (value === "pro" ? "pro" : "free");

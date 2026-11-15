@@ -1,6 +1,6 @@
 import { optionalAccount } from "@/server/accounts";
 import { handler, json } from "@/server/http";
-import { ANONYMOUS, PLANS } from "@/server/plans";
+import { PLANS } from "@/server/plans";
 import { getServices } from "@/server/services";
 
 export const runtime = "nodejs";
@@ -17,7 +17,7 @@ export const GET = handler(async (request: Request) => {
       enabled: services.accounts !== null,
       providers: services.accounts?.providers ?? [],
       account: null,
-      limits: { dailyExtractions: services.dailyLimit ?? ANONYMOUS.dailyExtractions },
+      limits: { dailyExtractions: services.dailyLimit },
     });
   }
   const plan = PLANS[account.plan];

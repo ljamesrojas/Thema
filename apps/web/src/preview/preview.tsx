@@ -5,6 +5,7 @@ import { buttonVariants } from "@/components/button";
 import { cn } from "@/lib/cn";
 import { hostOf, readyReferences } from "@/workspace/project";
 import { TopBar } from "@/workspace/top-bar";
+import { useAccount } from "@/account/use-account";
 import { useStoredProject } from "@/workspace/use-stored-project";
 import { PreviewFrame, type Viewport } from "./frame";
 import { TEMPLATES, type TemplateId } from "./templates";
@@ -48,10 +49,21 @@ function Choice<T extends string>({
   );
 }
 
-function Shell({ name, children }: { name: string; children: ReactNode }) {
+/** `synced`: the project is saved to the signed-in account (it carries its sync info). */
+function Shell({
+  name,
+  synced = false,
+  children,
+}: {
+  name: string;
+  synced?: boolean;
+  children: ReactNode;
+}) {
+  const account = useAccount();
+  const sync = synced ? "saved" : "local";
   return (
     <div className="flex min-h-screen flex-col bg-canvas">
-      <TopBar name={name} current="/preview" saved />
+      <TopBar name={name} current="/preview" saved sync={sync} account={account} />
       <main className="flex flex-1 flex-col gap-5 px-6 pt-5 pb-8">{children}</main>
     </div>
   );
@@ -111,7 +123,7 @@ export function Preview() {
   );
 
   return (
-    <Shell name={project.name}>
+    <Shell name={project.name} synced={project.account !== undefined}>
       <h2 className="sr-only">Preview</h2>
       <div className="flex flex-wrap items-center gap-3">
         <Choice

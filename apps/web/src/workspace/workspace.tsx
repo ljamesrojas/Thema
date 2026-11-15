@@ -2,6 +2,9 @@
 
 import type { BlendSettings, BorrowTag } from "@thema/engine";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useAccount } from "@/account/use-account";
+import { useProjectSync } from "@/account/use-project-sync";
+import { buttonVariants } from "@/components/button";
 import { A11yReport } from "./a11y-report";
 import { AddReference } from "./add-reference";
 import { api, ApiFailure } from "./api";
@@ -34,12 +37,15 @@ export function Workspace({
   initialUrl,
   pollMs = 1000,
   blendDelayMs = 150,
+  saveDelayMs = 1000,
   onInitialUrlUsed,
 }: {
   /** A site to add on arrival (the Landing's hero input sends /workspace?url=…). */
   initialUrl?: string;
   pollMs?: number;
   blendDelayMs?: number;
+  /** How long after a change the project is saved to the signed-in account. */
+  saveDelayMs?: number;
   /** Called once the initial URL has been handled, so the page can drop it from the address. */
   onInitialUrlUsed?: () => void;
 }) {
@@ -76,10 +82,19 @@ export function Workspace({
     };
   }, []);
 
-  // Save on every change.
+  // Save on every change: in this browser always, and to the account when signed in.
   useEffect(() => {
     if (project) setSaved(saveProject(browserStorage(), project));
   }, [project]);
+  const account = useAccount();
+  const userId =
+    account.status === "loading"
+      ? undefined
+      : account.status === "ready"
+        ? (account.info.account?.userId ?? null)
+        : null;
+  const sync = useProjectSync({ project, setProject, userId, delayMs: saveDelayMs });
+  const [reloading, setReloading] = useState(false);
 
   const add = useCallback(async (url: string) => {
     const current = latest.current;
@@ -218,7 +233,42 @@ export function Workspace({
 
   return (
     <div className="flex min-h-screen flex-col bg-canvas">
-      <TopBar name={project.name} current="/workspace" saved={saved} />
+      <TopBar
+        name={project.name}
+        current="/workspace"
+        saved={saved}
+        sync={sync.status}
+        account={account}
+      />
+      {sync.message && (
+        <div
+          role="alert"
+          className="flex flex-wrap items-center gap-3 border-b border-hairline bg-surface-subtle px-6 py-3 text-ui-sm font-ui-sm text-ink"
+        >
+          <span>{sync.message}</span>
+          {sync.status === "conflict" && (
+            <button
+              type="button"
+              disabled={reloading}
+              onClick={() => {
+                setReloading(true);
+                sync
+                  .reload()
+                  .catch(() => undefined)
+                  .finally(() => setReloading(false));
+              }}
+              className={buttonVariants({ variant: "secondary" })}
+            >
+              Load the latest version
+            </button>
+          )}
+          {sync.status === "limit" && (
+            <a href="/projects" className={buttonVariants({ variant: "secondary" })}>
+              Go to Projects
+            </a>
+          )}
+        </div>
+      )}
       <main className="flex flex-1 flex-wrap items-start gap-5 px-6 pt-5 pb-8">
         <section
           aria-labelledby="refs-heading"

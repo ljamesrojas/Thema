@@ -8,6 +8,7 @@ import { saveFile } from "@/lib/download";
 import { cn } from "@/lib/cn";
 import { buildZip } from "@/lib/zip";
 import { TopBar } from "@/workspace/top-bar";
+import { useAccount } from "@/account/use-account";
 import { useStoredProject } from "@/workspace/use-stored-project";
 
 /** The five files, in exportAll's order, with what each is for (SPEC → Output formats). */
@@ -107,10 +108,21 @@ export function zipFiles(files: Record<string, string>, checked: ReadonlySet<str
   return Object.fromEntries(Object.entries(files).filter(([name]) => checked.has(name)));
 }
 
-function Shell({ name, children }: { name: string; children: ReactNode }) {
+/** `synced`: the project is saved to the signed-in account (it carries its sync info). */
+function Shell({
+  name,
+  synced = false,
+  children,
+}: {
+  name: string;
+  synced?: boolean;
+  children: ReactNode;
+}) {
+  const account = useAccount();
+  const sync = synced ? "saved" : "local";
   return (
     <div className="flex min-h-screen flex-col bg-canvas">
-      <TopBar name={name} current="/export" saved />
+      <TopBar name={name} current="/export" saved sync={sync} account={account} />
       <main className="mx-auto flex w-full max-w-[1200px] flex-1 flex-col gap-6 px-6 pt-6 pb-10">
         {children}
       </main>
@@ -177,7 +189,7 @@ export function ExportScreen() {
   }
 
   return (
-    <Shell name={project.name}>
+    <Shell name={project.name} synced={project.account !== undefined}>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="flex flex-col gap-1">
           <h2 className="m-0 text-h2 font-h2">Export</h2>
