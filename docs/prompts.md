@@ -251,6 +251,8 @@ Tests: each MCP tool against recorded fixtures (worker mocked), CLI commands end
 
 ## Session 15 — Accounts, saved projects and launch
 
+Split in two (2026-11-15). **15a, accounts and saved projects: done 2026-11-15** (Neon Postgres + Better Auth with GitHub and Google + Cloudflare R2 instead of Supabase, whose free projects pause; Projects screen; claiming the browser project; autosave with stale-save protection; Free/Pro limits). **15b, launch, is next:** deploy the web app (Vercel), the worker and Redis on an Oracle Cloud Always Free VM behind a firewall that blocks private ranges, publish `@thema/cli` and `@thema/mcp` to npm (Export screen snippets switch to `npx`), Terms, Privacy and Refund pages (Paddle needs them), and the launch checklist below. Paddle billing follows once Paddle approves the account. The original prompt:
+
 ```
 Read CLAUDE.md and SPEC.md → MVP scope (anonymous vs signed-in), Screens (Projects), Architecture and stack (Supabase, queue, worker hosting), Risks.
 

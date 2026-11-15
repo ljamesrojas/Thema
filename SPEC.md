@@ -33,7 +33,7 @@ The MVP covers URL input, blending, accessibility fixes, preview and five export
 - Accessibility fixer: WCAG AA contrast on all text/background pairs, generated dark mode, semantic colors
 - Preview on 3 template pages: landing, dashboard, settings form
 - Exports: DESIGN.md, Tailwind v4 theme, shadcn theme, DTCG tokens.json, a style-guide HTML page
-- Anonymous use: 1 project, saved only in the browser. Signing in unlocks saved projects
+- Anonymous use: 1 project, saved only in the browser, 3 new extractions a day. Signing in (GitHub or Google) unlocks saved projects: Free keeps 3 projects with 10 new extractions a day, Pro keeps unlimited projects with 50 a day (Pro is a flag on the account until billing is connected)
 - MCP server with 3 tools: `extract` (URL → a system id, summary and warnings), `blend` (systems by id or JSON file, borrow tags, sliders, locks → a new fixed system), `get_design_md` (system → DESIGN.md, optionally written to a path); stdio, systems kept by id for the session
 - Open-source CLI (MIT) that wraps the same engine: `thema extract`, `thema blend`, `thema export`, reading and writing ThemaSystem JSON (`thema.json`, also downloadable from the Export screen)
 
@@ -227,7 +227,7 @@ Extraction is asynchronous: the client polls (or listens over SSE) while the job
 | Color math | culori | OKLCH conversion, ΔE, contrast |
 | Browser | Playwright (Chromium) on Fly.io or Railway | Needs a long-running container, not serverless |
 | Queue | Redis (Upstash) + BullMQ | Retries, concurrency limits |
-| Database + auth | Supabase (Postgres, Auth, Storage) | Projects, users, cache and screenshots in one service |
+| Database + auth | Neon (Postgres) + Better Auth (GitHub, Google) + Cloudflare R2 (screenshots) | Plain Postgres through the standard `pg` driver, so any Postgres works; Neon's free tier wakes itself after idling (Supabase's free projects pause until resumed by hand, decided 2026-11-15). Sign-in runs inside the app, with users and sessions in the same database; no passwords stored. R2 has no download fees |
 | LLM | Deferred (decided 2026-11-14): none for now. Later, Claude API (Haiku-class for naming, Sonnet-class for DESIGN.md prose) | Low cost per run; output is prose only. Until then names and prose are written by deterministic code |
 | MCP | Official TypeScript MCP SDK | Standard server for Claude Code and Cursor |
 | Tests | Vitest + fixture snapshots | Fast engine tests; accuracy tracked over time |
@@ -236,14 +236,19 @@ Extraction is asynchronous: the client polls (or listens over SSE) while the job
 
 | Route | Does |
 | --- | --- |
-| `POST /api/projects` | Create a project (anonymous or owned) |
-| `POST /api/projects/:id/references` | Add a URL with borrow tags; SSRF check, 24 h cache by URL + day, anonymous limit (3 new extractions/day; cache hits are free), then enqueues extraction |
+| `POST /api/projects` | No body: a new, empty browser project (nothing stored). Signed in with `{ project }`: save it to the account (claiming the browser's project; claiming twice saves once; refused past the plan's project limit) |
+| `GET /api/projects` | The signed-in account's saved projects (name, sites, palette, last edit) |
+| `GET` / `PUT` / `DELETE /api/projects/:id` | Open, save (`{ project, baseVersion }`; 409 with the current version if it changed elsewhere) or delete a saved project. Someone else's project answers 404 |
+| `GET /api/account` | Whether accounts are on, the sign-in providers, and the signed-in account with its plan's limits |
+| `/api/auth/*` | Better Auth: sign-in with GitHub or Google, callbacks, session, sign-out |
+| `POST /api/projects/:id/references` | Add a URL with borrow tags; SSRF check, 24 h cache by URL + day, daily limit (signed out: 3 per IP; signed in: by plan, per account; cache hits are free), then enqueues extraction |
 | `GET /api/references/:id` | Poll status (while running, the stage: fetching, reading styles, naming roles) and extracted tokens, with extraction warnings (no-headings, few-samples, no-dark-theme, monochrome) |
-| `GET /api/references/:id/screenshot` | The reference's full-page screenshot (PNG) |
+| `GET /api/references/:id/screenshot` | The reference's full-page screenshot (PNG): from the queue for 24 h, then from storage for the account whose saved project has it |
 | `PATCH /api/projects/:id/blend` | Update borrow tags, sliders, locks; returns the new `ThemaSystem` and the pairs the fixer couldn't resolve |
 | `POST /api/projects/:id/export?format=` | One file: `design-md`, `tailwind`, `shadcn`, `dtcg`, `styleguide`, or `zip`; the system is in the body |
+| `GET /api/projects/:id/export?format=` | The same files for a saved project, from its last blend |
 
-Anonymous projects live in the browser, so the API stores nothing for them: the client sends the project (references with their extracted systems, sliders, the last result) with each blend, and the system with each export. That's why export is a POST. A `GET` export for saved, signed-in projects comes with accounts.
+Anonymous projects live in the browser, so the API stores nothing for them: the client sends the project (references with their extracted systems, sliders, the last result) with each blend, and the system with each export. That's why export is a POST. Saved projects (signed in) are stored as that same project JSON, validated on every save, with a version that rises on each save so a stale tab can't overwrite a newer one; the Workspace saves about a second after each change.
 
 ## Output formats
 
@@ -326,9 +331,9 @@ The biggest risk is extraction accuracy. If the first paste looks wrong, users l
 
 **Open questions**
 
-- [ ] Hosting for the Playwright worker: Fly.io, Railway, or a serverless browser service (Browserless)?
+- [x] Hosting for the Playwright worker: decided 2026-11-15: an Oracle Cloud Always Free VM runs the worker and Redis (no command limits), with a firewall blocking private ranges; move to Fly.io once paying users cover it. Set up in Session 15b
 - [x] Which LLM and what monthly budget for the prose and naming steps? Decided 2026-11-14: no LLM and no budget for now; DESIGN.md prose stays deterministic. Revisit after launch (estimate then: about $0.03 per DESIGN.md with Sonnet-class, $0.002 with Haiku-class).
-- [ ] Pro price: test $8 vs $12/month
+- [x] Pro price: decided 2026-11-15: $12/month or $96/year, in USD everywhere, sold through Paddle (merchant of record: it handles sales tax and VAT abroad; Stripe may not accept Philippine sellers). Billing is connected after Paddle approves the account; until then Pro is a flag on the account. Plan limits: Free 3 saved projects and 10 extractions a day, Pro unlimited projects and 50 a day
 - [x] License for the CLI: MIT or AGPL? Decided 2026-11-14: MIT, for the CLI, the MCP server and every package they run on (engine, exporters, url-guard, jobs, schema, worker). The hosted web app (apps/web) stays unlicensed.
 
 **Roadmap after MVP**
