@@ -20,7 +20,7 @@ export const QUESTIONS: [string, string][] = [
   ],
   [
     "Do I need an account?",
-    "No. Your first blend is free and saved in your browser. Signing in keeps your projects.",
+    "Your first blend works without sign-up. Sign in with GitHub or Google to keep saved projects. The CLI and MCP server run on your own machine and need no account.",
   ],
   [
     "Which agents can read it?",

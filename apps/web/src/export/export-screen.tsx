@@ -6,33 +6,13 @@ import { useId, useMemo, useState, type ReactNode } from "react";
 import { buttonVariants } from "@/components/button";
 import { saveFile } from "@/lib/download";
 import { cn } from "@/lib/cn";
+import { EXPORT_FILES, SNIPPETS, type ExportFile } from "@/lib/exports-meta";
 import { buildZip } from "@/lib/zip";
 import { TopBar } from "@/workspace/top-bar";
 import { useAccount } from "@/account/use-account";
 import { useStoredProject } from "@/workspace/use-stored-project";
 
-/** The five files, in exportAll's order, with what each is for (SPEC → Output formats). */
-export const EXPORT_FILES = [
-  ["DESIGN.md", "Tokens plus plain-language rules your agent reads", "text/markdown"],
-  ["theme.css", "Tailwind v4 @theme block", "text/css"],
-  ["shadcn.css", "shadcn/ui variables, light and dark", "text/css"],
-  ["tokens.json", "W3C DTCG tokens for Style Dictionary and Figma", "application/json"],
-  ["style-guide.html", "A page to share with your team", "text/html"],
-] as const;
-export type ExportFile = (typeof EXPORT_FILES)[number][0];
-
-/**
- * Setup for agents and the terminal. The packages aren't published until launch, so these run
- * from a clone of the Thema repo; `npx` commands replace them then.
- */
-export const SNIPPETS = [
-  ["Claude Code", "claude mcp add thema -- pnpm -s --dir /path/to/thema mcp"],
-  [
-    "Cursor and other MCP clients",
-    '{ "mcpServers": { "thema": { "command": "pnpm", "args": ["-s", "--dir", "/path/to/thema", "mcp"] } } }',
-  ],
-  ["CLI", "pnpm -s thema export --in thema.json --format all --out design"],
-] as const;
+export { EXPORT_FILES, SNIPPETS, type ExportFile };
 
 /** The system as JSON: what the CLI and the MCP server read (`--in`, `system_path`). */
 export const systemJson = (system: ThemaSystem) => `${JSON.stringify(system, null, 2)}\n`;

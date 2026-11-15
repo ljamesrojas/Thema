@@ -3,8 +3,10 @@ import { AgentsStrip } from "@/components/agents-strip";
 import { BlendDemo } from "@/components/blend-demo";
 import { buttonVariants } from "@/components/button";
 import { Faq } from "@/components/faq";
-import { Logo } from "@/components/logo";
 import { PaintChip } from "@/components/paint-chip";
+import { Accent, container, Eyebrow } from "@/components/site/parts";
+import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader } from "@/components/site/site-header";
 import { TagLabel } from "@/components/tag";
 import { UrlInput } from "@/components/url-input";
 import { cn } from "@/lib/cn";
@@ -22,88 +24,6 @@ const PAIR_LABEL: Partial<Record<ColorRole, string>> = {
   "primary-ink": "label",
 };
 const pairName = ([fg, bg]: [ColorRole, ColorRole]) => `${PAIR_LABEL[fg] ?? fg} on ${bg}`;
-
-/** The serif italic accent: one per headline (DESIGN.md → Typography). */
-function Accent({ children, underline = false }: { children: string; underline?: boolean }) {
-  return (
-    <span
-      className={cn(
-        "font-display-accent italic font-normal tracking-[-0.01em]",
-        underline && "border-b-4 border-primary",
-      )}
-    >
-      {children}
-    </span>
-  );
-}
-
-const EYEBROW_TONE = {
-  subtle: "text-ink-subtle",
-  kiln: "text-primary-strong",
-  band: "text-band-accent",
-} as const;
-
-/**
- * Mono eyebrow: Kiln Deep for numbered section labels, band accent on the black band, ink subtle
- * otherwise. One color class only (no tailwind-merge, so two would fight over CSS order).
- */
-function Eyebrow({
-  children,
-  tone = "subtle",
-}: {
-  children: string;
-  tone?: keyof typeof EYEBROW_TONE;
-}) {
-  return (
-    <p className={cn("m-0 text-eyebrow font-eyebrow uppercase", EYEBROW_TONE[tone])}>{children}</p>
-  );
-}
-
-const container = "mx-auto max-w-[1200px] px-8";
-
-function Nav() {
-  return (
-    <header className="border-b border-hairline bg-canvas">
-      <nav
-        aria-label="Main"
-        className={cn(container, "flex flex-wrap items-center justify-between gap-4 py-4")}
-      >
-        <a href="#top" className="flex min-h-11 items-center gap-2.5 text-ink no-underline">
-          <Logo />
-          <span className="text-h3 font-h3">Thema</span>
-        </a>
-        <div className="flex flex-wrap gap-x-7 gap-y-1">
-          {[
-            ["#how", "How it works"],
-            ["#exports", "Exports"],
-            ["#agents", "For agents"],
-            ["#pricing", "Pricing"],
-            ["#github", "GitHub"],
-          ].map(([href, label]) => (
-            <a
-              key={href}
-              href={href}
-              className="flex min-h-11 items-center text-label-md font-label-md text-ink no-underline"
-            >
-              {label}
-            </a>
-          ))}
-        </div>
-        <div className="flex items-center gap-3">
-          <a
-            href="#signin"
-            className="flex min-h-11 items-center px-3.5 text-label-md font-label-md text-ink no-underline"
-          >
-            Sign in
-          </a>
-          <a href="#start" className={buttonVariants({ variant: "secondary" })}>
-            Start blending
-          </a>
-        </div>
-      </nav>
-    </header>
-  );
-}
 
 function Hero({ blend }: { blend: HeroBlend }) {
   return (
@@ -460,40 +380,11 @@ function FinalCta() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="bg-band text-band-ink-muted">
-      <div
-        className={cn(
-          container,
-          "flex flex-wrap items-center justify-between gap-4 py-8 text-caption font-caption",
-        )}
-      >
-        <span className="flex items-center gap-3">
-          <Logo size={24} inverted />
-          <span>© 2026 Thema · Inspired by, never cloned.</span>
-        </span>
-        <span className="flex gap-6">
-          {["Docs", "GitHub", "Privacy"].map((label) => (
-            <a
-              key={label}
-              href={`#${label.toLowerCase()}`}
-              className="flex min-h-11 items-center text-band-link"
-            >
-              {label}
-            </a>
-          ))}
-        </span>
-      </div>
-    </footer>
-  );
-}
-
 /** The Landing, "Premium White" (docs/landing-white.md and the canvas's Landing-white board). */
 export function Landing({ blend }: { blend: HeroBlend }) {
   return (
     <>
-      <Nav />
+      <SiteHeader />
       <main>
         <Hero blend={blend} />
         <ReadsInto />
@@ -505,7 +396,7 @@ export function Landing({ blend }: { blend: HeroBlend }) {
         <Faq />
         <FinalCta />
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

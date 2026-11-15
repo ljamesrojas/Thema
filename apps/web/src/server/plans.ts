@@ -13,3 +13,10 @@ export const PLANS = {
 >;
 
 export const planOf = (value: unknown): Plan => (value === "pro" ? "pro" : "free");
+
+/** Pro's price in USD, the same everywhere (decided 2026-11-15); sold through Paddle. */
+export const PRICES = { monthly: 12, yearly: 96, currency: "USD" } as const;
+
+/** What paying yearly saves, against twelve months: 33 for $96 vs $144. */
+export const yearlySaving = (): number =>
+  Math.round((1 - PRICES.yearly / (PRICES.monthly * 12)) * 100);

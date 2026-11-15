@@ -52,6 +52,7 @@
   --color-dark-danger: #f2788f;
   --font-display: "Geist";
   --font-display-accent: "Instrument Serif";
+  --font-h1: "Geist";
   --font-h2-lg: "Geist";
   --font-h2: "Geist";
   --font-h3: "Geist";
@@ -68,6 +69,7 @@
   --font-eyebrow: "Geist Mono";
   --text-display: 92px;
   --text-display-accent: 92px;
+  --text-h1: 72px;
   --text-h2-lg: 60px;
   --text-h2: 44px;
   --text-h3: 22px;
@@ -84,6 +86,7 @@
   --text-eyebrow: 13px;
   --tracking-display: -0.035em;
   --tracking-display-accent: -0.01em;
+  --tracking-h1: -0.035em;
   --tracking-h2-lg: -0.035em;
   --tracking-h2: -0.03em;
   --tracking-h3: -0.01em;
@@ -124,6 +127,10 @@
   --text-display-accent--font-weight: 400;
   --text-display-accent--letter-spacing: -0.01em;
   --font-display-accent: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --text-h1--line-height: 1;
+  --text-h1--font-weight: 600;
+  --text-h1--letter-spacing: -0.035em;
+  --font-h1: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --text-h2-lg--line-height: 1;
   --text-h2-lg--font-weight: 600;
   --text-h2-lg--letter-spacing: -0.035em;

@@ -66,7 +66,8 @@ function passingPairs(colors: Record<ColorRole, string>): number {
     .length;
 }
 
-export function heroBlend(): HeroBlend {
+/** The three references, extracted, and their blend after the fixer. */
+function compute() {
   const extracted = REFERENCES.map(({ label, borrowed, samples }) => ({
     system: extractSystem({
       samples: samples as StyleSample[],
@@ -82,7 +83,17 @@ export function heroBlend(): HeroBlend {
     name: "Hero blend",
     createdAt: CREATED_AT,
   }).system;
-  const fixed = fix(blended);
+  return { extracted, fixed: fix(blended) };
+}
+
+/**
+ * The sample system the site pages show (Exports' files, How it works' values): the hero's
+ * blend of the three .example fixtures, through the real pipeline.
+ */
+export const sampleSystem = (): ThemaSystem => compute().fixed.system;
+
+export function heroBlend(): HeroBlend {
+  const { extracted, fixed } = compute();
   const system: ThemaSystem = fixed.system;
   const light = system.color.light;
   return {

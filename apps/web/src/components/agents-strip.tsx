@@ -79,8 +79,17 @@ export const AGENTS: Agent[] = [
   },
 ];
 
-/** "Reads into": every item links to the agents section; hover and focus are CSS only. */
-export function AgentsStrip({ className }: { className?: string }) {
+/**
+ * "Reads into": every item links to the page's agents section (`#agents` on the Landing,
+ * `#setup` on /agents); hover and focus are CSS only.
+ */
+export function AgentsStrip({
+  className,
+  href = "#agents",
+}: {
+  className?: string;
+  href?: string;
+}) {
   return (
     <div className={cn("flex flex-wrap items-center gap-x-8 gap-y-3", className)}>
       <span
@@ -96,7 +105,7 @@ export function AgentsStrip({ className }: { className?: string }) {
         {AGENTS.map(({ name, color, logo, icon }) => (
           <li key={name}>
             <a
-              href="#agents"
+              href={href}
               className={cn(styles.item, "text-label-md font-label-md")}
               style={{ "--agent-color": `var(--color-${color})` } as CSSProperties}
             >

@@ -66,6 +66,12 @@ typography:
     fontWeight: 400
     lineHeight: 0.98
     letterSpacing: -0.01em
+  h1:
+    fontFamily: Geist
+    fontSize: 72px
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: -0.035em
   h2-lg:
     fontFamily: Geist
     fontSize: 60px
@@ -294,7 +300,7 @@ All text pairs below pass WCAG 2.2 AA (4.5:1 for text, 3:1 for large text and UI
 - **Instrument Serif italic** for exactly one accent word per headline ("Taste, *exported.*"). Never for whole sentences, body text or UI.
 - **Geist Mono** for every hex value, token name, file name, code, eyebrow labels and step numbers.
 - Body copy is 15–19px with a 1.55–1.6 line height. Nothing readable goes below 12px.
-- The display style (92px) scales down to 56px on narrow screens: `clamp(56px, 9vw, 92px)`. `h2` (44px) is every section heading, the black band's included; `h2-lg` (60px) is for the closing call to action; `h4` (19px / 600) for step titles; `lead` (17px) for feature body copy; `caption` (14px) for step text and captions; `title-sm` (17px / 500) for accordion questions; `label-md` (15px / 500) for nav links and pill items; `body-sm` (15px) for answers and captions.
+- The display style (92px) scales down to 56px on narrow screens: `clamp(56px, 9vw, 92px)`. `h1` (72px) is the hero heading of the site's other pages (How it works, Exports, For agents, Pricing) and scales down the same way, `clamp(44px, 7vw, 72px)`. `h2` (44px) is every section heading, the black band's included; `h2-lg` (60px) is for the closing call to action; `h4` (19px / 600) for step titles; `lead` (17px) for feature body copy; `caption` (14px) for step text and captions; `title-sm` (17px / 500) for accordion questions; `label-md` (15px / 500) for nav links and pill items; `body-sm` (15px) for answers and captions.
 
 ## Layout
 
