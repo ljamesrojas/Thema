@@ -162,9 +162,10 @@ export function Separator() {
   return <hr className="m-0 h-px border-0 bg-(--border)" />;
 }
 
-export function Table({ children }: { children: ReactNode }) {
+/** A table that scrolls sideways on narrow frames; the scroll area is keyboard-reachable. */
+export function Table({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <div className="w-full overflow-x-auto">
+    <div role="region" aria-label={label} tabIndex={0} className="w-full overflow-x-auto">
       <table className="w-full border-collapse text-left" style={type("sm")}>
         {children}
       </table>

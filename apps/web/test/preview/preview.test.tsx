@@ -7,7 +7,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { PreviewFrame } from "@/preview/frame";
 import { Preview } from "@/preview/preview";
-import { TEMPLATES } from "@/preview/templates";
+import { CHANNELS, TEMPLATES, WEEKLY_BARS } from "@/preview/templates";
 import { declarationsIn, previewVariables } from "@/preview/variables";
 import { addReference, newProject, saveProject, STORAGE_KEY } from "@/workspace/project";
 import { toShadcnCss } from "@thema/exporters";
@@ -120,6 +120,27 @@ describe("the Preview screen", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Mobile" }));
     expect(frame().className).toContain("max-w-[390px]");
+  });
+
+  it("draws one series in one chart color and five series with a legend", () => {
+    const { Template } = TEMPLATES.dashboard;
+    render(<Template />);
+    const bars = screen.getAllByTestId("weekly-bar");
+    expect(bars).toHaveLength(WEEKLY_BARS.length);
+    for (const bar of bars) expect(bar.className).toContain("bg-(--chart-1)");
+
+    const segments = screen.getAllByTestId("channel-segment");
+    expect(segments.map((s) => s.style.background)).toEqual([
+      "var(--chart-1)",
+      "var(--chart-2)",
+      "var(--chart-3)",
+      "var(--chart-4)",
+      "var(--chart-5)",
+    ]);
+    const legend = screen.getByRole("heading", { name: "Traffic by channel" }).parentElement;
+    for (const [channel, share] of CHANNELS) {
+      expect(legend?.textContent).toContain(`${channel}${share}%`);
+    }
   });
 
   it("compares with the source screenshot when there is one", async () => {

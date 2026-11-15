@@ -151,14 +151,16 @@ export function LandingTemplate() {
   );
 }
 
-const BARS = [
-  [62, 1],
-  [80, 2],
-  [45, 3],
-  [90, 1],
-  [70, 4],
-  [55, 5],
-  [84, 2],
+/** One series (deploys per day), so one color: chart-1. */
+export const WEEKLY_BARS = [62, 80, 45, 90, 70, 55, 84] as const;
+
+/** Five series, one per chart color, as a single stacked bar with a legend. */
+export const CHANNELS = [
+  ["Search", 38],
+  ["Direct", 24],
+  ["Social", 17],
+  ["Email", 13],
+  ["Referral", 8],
 ] as const;
 
 export function DashboardTemplate() {
@@ -210,23 +212,55 @@ export function DashboardTemplate() {
           ))}
         </div>
 
-        <Card>
-          <CardTitle as="h2">Weekly activity</CardTitle>
-          <div aria-hidden="true" className="flex h-32 items-end gap-2">
-            {BARS.map(([height, chart], i) => (
-              <span
-                key={i}
-                className="flex-1 rounded-t-(--radius-sm)"
-                style={{ height: `${height}%`, background: `var(--chart-${chart})` }}
-              />
-            ))}
-          </div>
-          <Muted>Deploys per day, last seven days.</Muted>
-        </Card>
+        <div className="grid gap-4 @3xl:grid-cols-[3fr_2fr]">
+          <Card>
+            <CardTitle as="h2">Weekly activity</CardTitle>
+            <div aria-hidden="true" className="flex h-32 items-end gap-2">
+              {WEEKLY_BARS.map((height, i) => (
+                <span
+                  key={i}
+                  data-testid="weekly-bar"
+                  className="flex-1 rounded-t-(--radius-sm) bg-(--chart-1)"
+                  style={{ height: `${height}%` }}
+                />
+              ))}
+            </div>
+            <Muted>Deploys per day, last seven days.</Muted>
+          </Card>
+
+          <Card>
+            <CardTitle as="h2">Traffic by channel</CardTitle>
+            <div
+              aria-hidden="true"
+              className="flex h-3 gap-0.5 overflow-hidden rounded-(--radius-sm)"
+            >
+              {CHANNELS.map(([channel, share], i) => (
+                <span
+                  key={channel}
+                  data-testid="channel-segment"
+                  style={{ width: `${share}%`, background: `var(--chart-${i + 1})` }}
+                />
+              ))}
+            </div>
+            <ul className="m-0 flex list-none flex-col gap-2 p-0" style={type("sm")}>
+              {CHANNELS.map(([channel, share], i) => (
+                <li key={channel} className="flex items-center gap-2">
+                  <span
+                    aria-hidden="true"
+                    className="size-2.5 flex-none rounded-full"
+                    style={{ background: `var(--chart-${i + 1})` }}
+                  />
+                  <span className="flex-1">{channel}</span>
+                  <span className="text-(--muted-foreground)">{share}%</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </div>
 
         <Card className="gap-2">
           <CardTitle as="h2">Recent orders</CardTitle>
-          <Table>
+          <Table label="Recent orders">
             <thead>
               <tr>
                 <Th>Customer</Th>
