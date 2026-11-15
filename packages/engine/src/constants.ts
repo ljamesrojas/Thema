@@ -341,6 +341,19 @@ export const CONTRAST_MARGIN = 0.05;
 /** Nudges move OKLCH lightness in this step (the 3-decimal precision colors are stored at). */
 export const NUDGE_STEP = 0.001;
 
+// --- chart colors (shadcn's --chart-1..5) ----------------------------------------------
+
+/** How many chart colors shadcn defines. */
+export const CHART_COUNT = 5;
+/** Derived chart hues are spaced this far apart around the wheel, starting at primary. */
+export const CHART_HUE_STEP = 72;
+/** Derived chart colors are at least this saturated, so neighbors on the wheel stay apart. */
+export const CHART_MIN_CHROMA = 0.1;
+/** Chart colors this close (ΔE OK) read as one series; the accent must be this far from primary. */
+export const CHART_MIN_DELTA_E = 10;
+/** Lightness step when looking for a lightness where a derived hue can keep its chroma. */
+export const CHART_LIGHTNESS_STEP = 0.01;
+
 /**
  * A missing theme mirrors neutral lightness within this range (L' = lo + hi − L): white becomes
  * ~0.12, ink 0.2 becomes 0.92, and back. Light → dark also scales chroma on canvas and surfaces.

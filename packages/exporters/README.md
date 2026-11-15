@@ -25,7 +25,7 @@ From the command line, on a recorded fixture: `pnpm export stripe --out <dir>` (
 - **Provenance:** every file names the Thema version and the source URLs: a YAML comment in DESIGN.md (its linter parses MDX, which rejects HTML comments), a CSS comment, `$extensions["dev.thema"]` in tokens.json, an HTML comment in the style guide.
 - **Dark mode in DESIGN.md** (the format has none): `dark-<role>` color tokens and a `-dark` variant of every component, so no token is orphaned.
 - **Components in DESIGN.md** pair each text color only with backgrounds the fixer checked (page, section, card, caption, button-primary, input, alerts), so the linter's contrast rule passes; divider and highlight use hairline and accent without text.
-- **shadcn mapping:** shadcn's `accent` is a subtle hover background, so it maps to Thema's `surface`; Thema's saturated accent goes to `chart-2`. Every foreground/background pair is one the fixer checked.
+- **shadcn mapping:** shadcn's `accent` is a subtle hover background, so it maps to Thema's `surface`. `--chart-1..5` come from the engine's `chartColors`: primary, the accent when it's a real second color, then colors derived from primary (or its grays on a black-and-white site), each at 3:1 on the canvas and cards. Status colors never feed charts. Every foreground/background pair is one the fixer checked.
 - **Fonts:** family names get fallback stacks here (sans, serif or mono; display and heading faces by name). Generic keywords such as `system-ui` stay unquoted.
 - **Hex:** 8 bits per channel, the nearest value to the OKLCH color (translucent colors get `#rrggbbaa`). Near black one hex step is a large OKLCH lightness jump, so `oklch(0.05 0 0)` exports as `#000000`.
 

@@ -1,4 +1,4 @@
-import { parseCssColor } from "@thema/engine";
+import { chartColors, parseCssColor } from "@thema/engine";
 import { describe, expect, it } from "vitest";
 import { SHADCN_VARIABLES, toShadcnCss, toTailwindCss } from "../src/css.js";
 import { COLOR_ROLES, cssFontStack, fontStack } from "../src/shared.js";
@@ -84,12 +84,32 @@ describe("shadcn.css", () => {
     }
   });
 
-  it("maps shadcn's subtle accent to surface and Thema's accent to chart-2", () => {
+  it("maps shadcn's subtle accent to surface", () => {
     const system = fixedSystem("light-saas");
     const root = declarations(toShadcnCss(system), ":root");
     expect(root.get("accent")).toBe(system.color.light.surface);
-    expect(root.get("chart-2")).toBe(system.color.light.accent);
     expect(root.get("primary-foreground")).toBe(system.color.light["primary-ink"]);
+  });
+
+  it("fills --chart-1..5 from the engine's chart colors, never the status colors", () => {
+    for (const name of fixtureNames) {
+      const system = fixedSystem(name);
+      const css = toShadcnCss(system);
+      for (const [selector, theme] of [
+        [":root", "light"],
+        [".dark", "dark"],
+      ] as const) {
+        const vars = declarations(css, selector);
+        const chart = [1, 2, 3, 4, 5].map((n) => vars.get(`chart-${n}`));
+        expect(chart, `${name} ${theme}`).toEqual(chartColors(system.color[theme]));
+        for (const role of ["success", "warning", "danger", "info"] as const) {
+          expect(chart, `${name} ${theme} ${role}`).not.toContain(system.color[theme][role]);
+        }
+      }
+    }
+    const system = fixedSystem("light-saas");
+    const root = declarations(toShadcnCss(system), ":root");
+    expect(root.get("chart-1")).toBe(system.color.light.primary);
   });
 
   it("matches the snapshot", () => {

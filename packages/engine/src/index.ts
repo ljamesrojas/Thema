@@ -7,6 +7,7 @@ export {
   type FirstScreenCta,
 } from "./colors.js";
 export { completePalette, type Palette } from "./palette.js";
+export { chartColors } from "./chart.js";
 export {
   CHECKED_PAIRS,
   fix,

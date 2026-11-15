@@ -25,9 +25,9 @@ exports[`shadcn.css > matches the snapshot 1`] = `
   --ring: oklch(0.546 0.215 262.9);
   --chart-1: oklch(0.546 0.215 262.9);
   --chart-2: oklch(0.541 0.247 293);
-  --chart-3: oklch(0.546 0.154 250);
-  --chart-4: oklch(0.546 0.171 145);
-  --chart-5: oklch(0.546 0.115 75);
+  --chart-3: oklch(0.546 0.151 46.9);
+  --chart-4: oklch(0.546 0.128 118.9);
+  --chart-5: oklch(0.586 0.1 190.9);
   --sidebar: oklch(0.96 0.008 253.9);
   --sidebar-foreground: oklch(0.208 0.04 265.8);
   --sidebar-primary: oklch(0.546 0.215 262.9);
@@ -59,9 +59,9 @@ exports[`shadcn.css > matches the snapshot 1`] = `
   --ring: oklch(0.546 0.215 262.9);
   --chart-1: oklch(0.546 0.215 262.9);
   --chart-2: oklch(0.541 0.247 293);
-  --chart-3: oklch(0.571 0.154 250);
-  --chart-4: oklch(0.554 0.171 145);
-  --chart-5: oklch(0.575 0.115 75);
+  --chart-3: oklch(0.546 0.151 46.9);
+  --chart-4: oklch(0.546 0.128 118.9);
+  --chart-5: oklch(0.586 0.1 190.9);
   --sidebar: oklch(0.16 0.004 253.9);
   --sidebar-foreground: oklch(0.912 0.04 265.8);
   --sidebar-primary: oklch(0.546 0.215 262.9);

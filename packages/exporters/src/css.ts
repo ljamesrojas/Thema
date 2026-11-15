@@ -1,4 +1,4 @@
-import type { ColorRole, ThemaSystem } from "@thema/engine";
+import { chartColors, type ColorRole, type ThemaSystem } from "@thema/engine";
 import { COLOR_ROLES, cssFontStack, em, fontStack, provenance, px, type Theme } from "./shared.js";
 
 const header = (system: ThemaSystem, what: string): string =>
@@ -65,10 +65,12 @@ export function toTailwindCss(system: ThemaSystem): string {
 
 /**
  * shadcn/ui variable names → Thema roles. shadcn's `accent` is a subtle hover background, so it
- * maps to `surface`; Thema's saturated accent goes to chart-2. Every foreground/background pair
- * here is one the fixer checked (text on accent isn't, so the sidebar's primary is primary).
+ * maps to `surface`. Every foreground/background pair here is one the fixer checked (text on
+ * accent isn't, so the sidebar's primary is primary). `chart-N` is the engine's chartColors[N-1]:
+ * primary, then the accent when it's a real second color, then colors derived from primary (or
+ * its grays), each at 3:1 on the canvas and cards; never the status colors.
  */
-const SHADCN: readonly [string, ColorRole][] = [
+const SHADCN: readonly [string, ColorRole | number][] = [
   ["background", "canvas"],
   ["foreground", "ink"],
   ["card", "surface-raised"],
@@ -87,11 +89,11 @@ const SHADCN: readonly [string, ColorRole][] = [
   ["border", "hairline"],
   ["input", "hairline"],
   ["ring", "primary"],
-  ["chart-1", "primary"],
-  ["chart-2", "accent"],
-  ["chart-3", "info"],
-  ["chart-4", "success"],
-  ["chart-5", "warning"],
+  ["chart-1", 0],
+  ["chart-2", 1],
+  ["chart-3", 2],
+  ["chart-4", 3],
+  ["chart-5", 4],
   ["sidebar", "surface"],
   ["sidebar-foreground", "ink"],
   ["sidebar-primary", "primary"],
@@ -107,8 +109,14 @@ export const SHADCN_VARIABLES: readonly string[] = ["radius", ...SHADCN.map(([na
 
 /** shadcn.css: `:root` and `.dark` variables in shadcn/ui's naming (OKLCH, as shadcn v4 uses). */
 export function toShadcnCss(system: ThemaSystem): string {
-  const vars = (theme: Theme): [string, string][] =>
-    SHADCN.map(([name, role]) => [name, system.color[theme][role]]);
+  const vars = (theme: Theme): [string, string][] => {
+    const colors = system.color[theme];
+    const chart = chartColors(colors);
+    return SHADCN.map(([name, source]) => [
+      name,
+      typeof source === "number" ? (chart[source] ?? colors.primary) : colors[source],
+    ]);
+  };
   return [
     header(system, "shadcn/ui theme"),
     "",
