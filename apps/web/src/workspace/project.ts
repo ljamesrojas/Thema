@@ -12,7 +12,8 @@ import {
 } from "@thema/engine";
 import type { ExtractionStage, JobStatus } from "@thema/jobs";
 import { z } from "zod";
-import { BORROW_TAGS, themaSystemSchema } from "@/server/schemas";
+import { projectDataSchema } from "@/server/project-schema";
+import { BORROW_TAGS } from "@/server/schemas";
 
 export { BORROW_TAGS, MAX_REFERENCES };
 
@@ -48,6 +49,8 @@ export interface WorkspaceProject {
   /** Bumped by edits a blend must pick up that don't show in the other fields (a swap). */
   revision: number;
   updatedAt: string;
+  /** Set once the project is saved to an account: whose, and the version last synced. */
+  account?: { userId: string; version: number };
 }
 
 export const DEFAULT_SETTINGS: BlendSettings = { density: 0, roundness: 0, contrast: 0, warmth: 0 };
@@ -297,34 +300,9 @@ export function blendKey(project: WorkspaceProject): string {
 
 export const STORAGE_KEY = "thema.project.v1";
 
-const storedSchema = z.object({
-  id: z.uuid(),
-  name: z.string().max(120),
-  references: z
-    .array(
-      z.object({
-        id: z.string().regex(/^[0-9a-f]{24}$/),
-        url: z.string().max(2048),
-        status: z.enum(["queued", "running", "done", "failed"]),
-        stage: z.enum(["fetching", "reading", "naming"]).optional(),
-        borrowed: z.array(z.enum(BORROW_TAGS)),
-        extracted: themaSystemSchema.optional(),
-        warnings: z.array(z.enum(["no-headings", "few-samples", "no-dark-theme", "monochrome"])),
-        screenshot: z.string().max(2048).nullable(),
-        error: z.string().max(500).optional(),
-      }),
-    )
-    .max(MAX_REFERENCES),
-  blend: z.object({
-    density: z.number().min(-1).max(1),
-    roundness: z.number().min(-1).max(1),
-    contrast: z.number().min(-1).max(1),
-    warmth: z.number().min(-1).max(1),
-  }),
-  locks: z.array(z.string().max(80)).max(200),
-  result: themaSystemSchema.optional(),
-  revision: z.number().int().min(0),
-  updatedAt: z.string().max(40),
+/** What the browser keeps: the project, plus which account version it was last synced to. */
+const storedSchema = projectDataSchema.extend({
+  account: z.object({ userId: z.string().min(1).max(100), version: z.int().min(1) }).optional(),
 });
 
 /** The saved project, or null when there is none, it's unreadable, or storage is blocked. */
