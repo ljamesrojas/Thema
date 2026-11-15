@@ -239,17 +239,20 @@ export interface RateDecision {
 }
 
 export interface RateLimiter {
-  /** Count one extraction for this client, unless they're already at the limit. */
-  consume(clientId: string): Promise<RateDecision>;
+  /**
+   * Count one extraction for this client, unless they're already at the limit. `limit`
+   * overrides the limiter's own for this client (signed-in plans get more).
+   */
+  consume(clientId: string, limit?: number): Promise<RateDecision>;
 }
 
 export function createMemoryRateLimiter(
   options: { limit?: number; now?: () => Date } = {},
 ): RateLimiter {
-  const { limit = ANONYMOUS_DAILY_EXTRACTIONS, now = () => new Date() } = options;
+  const { limit: defaultLimit = ANONYMOUS_DAILY_EXTRACTIONS, now = () => new Date() } = options;
   const counts = new Map<string, number>();
   return {
-    consume(clientId) {
+    consume(clientId, limit = defaultLimit) {
       const date = now();
       const day = utcDay(date);
       for (const key of counts.keys()) if (!key.endsWith(`|${day}`)) counts.delete(key);

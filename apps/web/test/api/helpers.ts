@@ -1,5 +1,7 @@
 // Shared setup for the API route tests: the worker is mocked with recorded fixtures (a URL on
 // host "<fixture>.test" extracts as fixtures/<fixture>), DNS is fake, and the clock is fixed.
+import { createMemoryProjectStore, type ProjectStore } from "@/server/project-store";
+import { createMemoryScreenshotStore, type ScreenshotStore } from "@/server/screenshot-store";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { extractSystem, type StyleSample, type ThemaSystem } from "@thema/engine";
@@ -52,10 +54,20 @@ export interface TestServices {
   clock: { now: Date };
   /** Hold every extraction at the "reading" stage until released. */
   hold: () => () => void;
+  projects: ProjectStore;
+  screenshots: ScreenshotStore;
 }
 
+/**
+ * Header a test sets to be signed in: `x-test-account: <userId>` or `<userId>:pro`. The fake
+ * session reads it; the real one reads Better Auth's cookie.
+ */
+export const signedIn = (userId: string, plan: "free" | "pro" = "free") => ({
+  "x-test-account": plan === "pro" ? `${userId}:pro` : userId,
+});
+
 /** Install fake services for the routes; returns the queue and a log of extractions run. */
-export function useFakeServices(): TestServices {
+export function useFakeServices(options: { accounts?: boolean } = {}): TestServices {
   const clock = { now: new Date("2026-11-13T10:00:00.000Z") };
   const now = () => clock.now;
   const runs: string[] = [];
@@ -80,14 +92,37 @@ export function useFakeServices(): TestServices {
       release();
     };
   };
+  const projects = createMemoryProjectStore(now);
+  const screenshots = createMemoryScreenshotStore();
   setServices({
     queue,
     limiter: createMemoryRateLimiter({ limit: 3, now }),
     dailyLimit: 3,
     lookup: fakeDns,
     now,
+    accounts:
+      options.accounts === false
+        ? null
+        : {
+            projects,
+            providers: ["github", "google"],
+            handler: () => Promise.resolve(new Response("auth", { status: 200 })),
+            session: (request) => {
+              const value = request.headers.get("x-test-account");
+              if (!value) return Promise.resolve(null);
+              const [userId = "", plan] = value.split(":");
+              return Promise.resolve({
+                userId,
+                name: `User ${userId}`,
+                email: `${userId}@example.com`,
+                image: null,
+                plan: plan === "pro" ? "pro" : "free",
+              });
+            },
+          },
+    screenshots,
   });
-  return { queue, runs, clock, hold };
+  return { queue, runs, clock, hold, projects, screenshots };
 }
 
 export const PROJECT_ID = "6f1c1b2e-3d4a-4b5c-8d6e-7f8091a2b3c4";

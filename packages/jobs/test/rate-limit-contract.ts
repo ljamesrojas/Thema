@@ -25,5 +25,20 @@ export function rateLimitContract(
         await close();
       }
     });
+
+    it("takes a per-client limit (signed-in plans)", async () => {
+      const clock = { now: new Date("2026-11-13T10:00:00.000Z") };
+      const { limiter, close } = await make(clock);
+      try {
+        const results = [];
+        for (let i = 0; i < 11; i += 1) results.push(await limiter.consume("user:ana", 10));
+        expect(results.filter((r) => r.allowed)).toHaveLength(10);
+        expect(results[9]?.remaining).toBe(0);
+        expect(results[10]?.allowed).toBe(false);
+        expect((await limiter.consume("client-c")).remaining).toBe(2);
+      } finally {
+        await close();
+      }
+    });
   });
 }

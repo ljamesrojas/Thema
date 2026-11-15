@@ -151,9 +151,13 @@ export function createRedisRateLimiter(options: {
   limit?: number;
   now?: () => Date;
 }): RateLimiter {
-  const { connection, limit = ANONYMOUS_DAILY_EXTRACTIONS, now = () => new Date() } = options;
+  const {
+    connection,
+    limit: defaultLimit = ANONYMOUS_DAILY_EXTRACTIONS,
+    now = () => new Date(),
+  } = options;
   return {
-    async consume(clientId) {
+    async consume(clientId, limit = defaultLimit) {
       const date = now();
       const resetAt = nextUtcMidnight(date);
       const key = `thema:rate:${clientId}:${utcDay(date)}`;

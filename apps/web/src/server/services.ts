@@ -9,6 +9,23 @@ import {
   type RateLimiter,
 } from "@thema/jobs";
 import type { Lookup } from "@thema/url-guard";
+import type { Account, Provider } from "./auth";
+import type { ProjectStore } from "./project-store";
+import {
+  createMemoryScreenshotStore,
+  createR2ScreenshotStore,
+  type ScreenshotStore,
+} from "./screenshot-store";
+
+/** Sign-in and saved projects; null when the server has no database or sign-in configured. */
+export interface Accounts {
+  projects: ProjectStore;
+  /** The signed-in account for a request, or null. */
+  session(request: Request): Promise<Account | null>;
+  /** Better Auth's routes (/api/auth/*). */
+  handler(request: Request): Promise<Response>;
+  providers: Provider[];
+}
 
 export interface Services {
   queue: ExtractionQueue;
@@ -18,6 +35,9 @@ export interface Services {
   /** DNS for the SSRF guard. */
   lookup: Lookup;
   now: () => Date;
+  accounts: Accounts | null;
+  /** Saved projects' screenshots, kept after the queue's 24 hours. */
+  screenshots: ScreenshotStore;
 }
 
 const systemLookup: Lookup = async (hostname) =>
@@ -28,9 +48,13 @@ const systemLookup: Lookup = async (hostname) =>
  * - REDIS_URL set: BullMQ + Redis (jobs run in `pnpm --filter @thema/worker queue`), Redis limiter.
  * - Otherwise: the in-memory queue, running the worker's extraction in this process (development).
  * - THEMA_DAILY_EXTRACTIONS overrides the anonymous daily limit (default 3, SPEC).
+ * - DATABASE_URL + BETTER_AUTH_SECRET + a GitHub or Google client: accounts and saved projects.
+ * - R2_ACCOUNT_ID, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY: screenshots in R2
+ *   (otherwise in memory, so they last until the server restarts).
  */
 async function fromEnvironment(): Promise<Services> {
   const now = () => new Date();
+  const shared = { accounts: await accountsFromEnv(), screenshots: screenshotsFromEnv() };
   const configured = Number(process.env.THEMA_DAILY_EXTRACTIONS);
   const dailyLimit =
     Number.isInteger(configured) && configured > 0 ? configured : ANONYMOUS_DAILY_EXTRACTIONS;
@@ -44,6 +68,7 @@ async function fromEnvironment(): Promise<Services> {
       dailyLimit,
       lookup: systemLookup,
       now,
+      ...shared,
     };
   }
   return {
@@ -57,7 +82,40 @@ async function fromEnvironment(): Promise<Services> {
     dailyLimit,
     lookup: systemLookup,
     now,
+    ...shared,
   };
+}
+
+async function accountsFromEnv(): Promise<Accounts | null> {
+  const { authConfigFromEnv, createAuth, providersOf, sessionReader } = await import("./auth");
+  const config = authConfigFromEnv(process.env);
+  if (!config || !process.env.DATABASE_URL) return null;
+  const [{ default: pg }, { poolDb }, { createPostgresProjectStore }] = await Promise.all([
+    import("pg"),
+    import("./db"),
+    import("./project-store"),
+  ]);
+  const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 5 });
+  const auth = createAuth(pool, config);
+  return {
+    projects: createPostgresProjectStore(poolDb(pool)),
+    session: sessionReader(auth),
+    handler: (request) => auth.handler(request),
+    providers: providersOf(config),
+  };
+}
+
+function screenshotsFromEnv(): ScreenshotStore {
+  const { R2_ACCOUNT_ID, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY } = process.env;
+  if (R2_ACCOUNT_ID && R2_BUCKET && R2_ACCESS_KEY_ID && R2_SECRET_ACCESS_KEY) {
+    return createR2ScreenshotStore({
+      accountId: R2_ACCOUNT_ID,
+      bucket: R2_BUCKET,
+      accessKeyId: R2_ACCESS_KEY_ID,
+      secretAccessKey: R2_SECRET_ACCESS_KEY,
+    });
+  }
+  return createMemoryScreenshotStore();
 }
 
 // On globalThis, so the dev server's module reloads keep the same queue (and its jobs).

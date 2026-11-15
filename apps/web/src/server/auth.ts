@@ -72,7 +72,7 @@ export function sessionReader(auth: ThemaAuth) {
 }
 
 /** Sign-in settings from the environment, or null when accounts aren't configured. */
-export function authConfigFromEnv(env: NodeJS.ProcessEnv): AuthConfig | null {
+export function authConfigFromEnv(env: Record<string, string | undefined>): AuthConfig | null {
   const secret = env.BETTER_AUTH_SECRET;
   if (!env.DATABASE_URL || !secret || secret.length < 32) return null;
   const pair = (id?: string, key?: string) =>

@@ -1,8 +1,11 @@
+import type { ThemaSystem } from "@thema/engine";
 import { exportAll } from "@thema/exporters";
 import { buildZip } from "@/lib/zip";
-import { DOWNLOAD_HEADERS, FORMATS, isFormat } from "@/server/export-formats";
+import { requireAccount } from "@/server/accounts";
+import { DOWNLOAD_HEADERS, FORMATS, isFormat, type Format } from "@/server/export-formats";
 import { ApiError, handler, readJson, type IdParams } from "@/server/http";
 import { exportBody, projectId } from "@/server/schemas";
+import { getServices } from "@/server/services";
 
 export const runtime = "nodejs";
 
@@ -14,6 +17,29 @@ export const runtime = "nodejs";
 export const POST = handler(async (request: Request, { params }: IdParams) => {
   const { id } = await params;
   if (!projectId.safeParse(id).success) throw new ApiError(404, "not-found", "No such project.");
+  const format = formatOf(request);
+  const { system } = await readJson(request, exportBody);
+  return download(system, format);
+});
+
+/**
+ * GET /api/projects/:id/export?format=…: a saved project's files (SPEC: comes with accounts),
+ * from its last blend.
+ */
+export const GET = handler(async (request: Request, { params }: IdParams) => {
+  const { id } = await params;
+  if (!projectId.safeParse(id).success) throw new ApiError(404, "not-found", "No such project.");
+  const format = formatOf(request);
+  const { accounts, account } = await requireAccount(await getServices(), request);
+  const stored = await accounts.projects.get(account.userId, id);
+  if (!stored) throw new ApiError(404, "not-found", "No such project.");
+  if (!stored.data.result) {
+    throw new ApiError(409, "not-blended", "Add a site to this project before exporting it.");
+  }
+  return download(stored.data.result, format);
+});
+
+function formatOf(request: Request): Format {
   const format = new URL(request.url).searchParams.get("format");
   if (!isFormat(format)) {
     throw new ApiError(
@@ -22,7 +48,10 @@ export const POST = handler(async (request: Request, { params }: IdParams) => {
       `format must be one of: ${[...Object.keys(FORMATS), "zip"].join(", ")}.`,
     );
   }
-  const { system } = await readJson(request, exportBody);
+  return format;
+}
+
+function download(system: ThemaSystem, format: Format): Response {
   const files = exportAll(system);
 
   if (format === "zip") {
@@ -43,4 +72,4 @@ export const POST = handler(async (request: Request, { params }: IdParams) => {
       "content-disposition": `attachment; filename="${file}"`,
     },
   });
-});
+}
