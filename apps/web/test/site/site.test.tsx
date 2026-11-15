@@ -5,6 +5,8 @@ import axe from "axe-core";
 import { exportAll } from "@thema/exporters";
 import { MAX_REFERENCES } from "@thema/engine";
 import { ANONYMOUS_DAILY_EXTRACTIONS } from "@thema/jobs";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import type { ReactElement } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { QUESTIONS } from "@/components/faq";
@@ -14,7 +16,8 @@ import { EXPORT_FILES, SNIPPETS } from "@/lib/exports-meta";
 import { heroBlend, sampleSystem } from "@/lib/hero-blend";
 import { PLANS, PRICES } from "@/server/plans";
 import { AgentsPage } from "@/site/agents-page";
-import { ExportsPage } from "@/site/exports-page";
+import { CLI_COMMANDS, ExportsPage } from "@/site/exports-page";
+import { EXCERPT_LINES } from "@/site/file-explorer";
 import { HowItWorksPage } from "@/site/how-it-works";
 import { PricingPage } from "@/site/pricing-page";
 
@@ -81,6 +84,7 @@ describe("SiteHeader and SiteFooter", () => {
     expect(footer.getAllByRole("link").map((a) => a.getAttribute("href"))).toEqual([
       ...SITE_PAGES.map(([href]) => href),
       GITHUB_URL,
+      "/privacy",
     ]);
     expect(screen.getByRole("contentinfo").textContent).toContain(
       "© 2026 Thema · Inspired by, never cloned.",
@@ -108,16 +112,23 @@ describe("SiteHeader and SiteFooter", () => {
 
 describe("Exports: the file explorer", () => {
   const files = exportAll(sampleSystem());
+  /** Each shown line's raw text, as the exporters wrote it (the colors are only spans). */
   const lines = () =>
-    [...screen.getByTestId("code").querySelectorAll("[data-line]")].map((l) => l.textContent);
+    [...screen.getByTestId("code").querySelectorAll("[data-line]")].map((l) => {
+      expect(l.textContent).toBe(l.getAttribute("data-line"));
+      return l.getAttribute("data-line");
+    });
+  /** The excerpt: the top of the real file. */
+  const top = (name: string) => (files[name] ?? "").split("\n").slice(0, EXCERPT_LINES).join("\n");
 
-  it("shows each file as the exporters write it for the sample system", () => {
+  it("shows the top of each file as the exporters write it for the sample system", () => {
     render(<ExportsPage />);
     const list = within(screen.getByRole("list", { name: "Files" }));
     expect(list.getByRole("button", { name: /^DESIGN\.md/ }).getAttribute("aria-pressed")).toBe(
       "true",
     );
-    expect(lines().join("\n")).toBe(files["DESIGN.md"]);
+    expect(lines()).toHaveLength(EXCERPT_LINES);
+    expect(lines().join("\n")).toBe(top("DESIGN.md"));
     for (const [name] of EXPORT_FILES.filter(([n]) => n !== "style-guide.html")) {
       const button = list.getByRole("button", { name: new RegExp(`^${name.replace(".", "\\.")}`) });
       fireEvent.click(button);
@@ -125,10 +136,30 @@ describe("Exports: the file explorer", () => {
       expect(
         list.getAllByRole("button").filter((b) => b.getAttribute("aria-pressed") === "true"),
       ).toHaveLength(1);
-      expect(lines().join("\n")).toBe(files[name]);
+      expect(lines().join("\n")).toBe(top(name));
     }
     // Only the .example sample sites, no real brand.
     expect(files["DESIGN.md"]).toMatch(/north\.example/);
+  });
+
+  it("lists the CLI README's three commands, word for word", () => {
+    const readme = readFileSync(
+      join(import.meta.dirname, "../../../../packages/cli/README.md"),
+      "utf8",
+    );
+    const block = /```sh\n([\s\S]*?)```/.exec(readme)?.[1] ?? "";
+    const commands = block
+      .replace(/\\\n/g, " ")
+      .split("\n")
+      .map((line) => line.replace(/#.*$/, "").replace(/\s+/g, " ").trim())
+      .filter(Boolean);
+    expect(CLI_COMMANDS.map(([, command]) => command)).toEqual(commands);
+    render(<ExportsPage />);
+    const shown = screen.getByRole("region", { name: "The CLI's three commands" }).textContent;
+    for (const [comment, command] of CLI_COMMANDS) {
+      expect(shown).toContain(`# ${comment}`);
+      expect(shown).toContain(command);
+    }
   });
 
   it("renders style-guide.html in a sandboxed frame instead of code", () => {
@@ -179,8 +210,31 @@ describe("For agents: setup tabs", () => {
     expect(document.getElementById("setup")).not.toBeNull();
   });
 
+  it("badges the two ways in, numbers them and links each one on", () => {
+    render(<AgentsPage />);
+    const ways = within(screen.getByRole("region", { name: "Two ways in" }));
+    expect(ways.getByText("No setup").className).toContain("bg-ink");
+    expect(ways.getByText("MCP").className).toContain("bg-primary-strong");
+    expect(ways.getByText("01")).toBeTruthy();
+    expect(ways.getByText("02")).toBeTruthy();
+    expect(ways.getByRole("link", { name: "See the file format →" }).getAttribute("href")).toBe(
+      "/exports",
+    );
+    expect(ways.getByRole("link", { name: "Set it up →" }).getAttribute("href")).toBe("#setup");
+  });
+
   it("lists the three MCP tools", () => {
     render(<AgentsPage />);
+    const tools = within(screen.getByRole("region", { name: "The tools" }));
+    expect(tools.getByText("MCP tools")).toBeTruthy();
+    expect(tools.getAllByRole("term").map((t) => t.textContent)).toEqual([
+      "takes",
+      "returns",
+      "takes",
+      "returns",
+      "takes",
+      "returns",
+    ]);
     expect(
       screen
         .getAllByRole("heading", { level: 3 })
@@ -199,8 +253,8 @@ describe("Pricing", () => {
       "true",
     );
     expect(price()).toBe(`$${PRICES.monthly}`);
-    fireEvent.click(toggle.getByRole("button", { name: "Yearly" }));
-    expect(toggle.getByRole("button", { name: "Yearly" }).getAttribute("aria-pressed")).toBe(
+    fireEvent.click(toggle.getByRole("button", { name: /^Yearly/ }));
+    expect(toggle.getByRole("button", { name: /^Yearly/ }).getAttribute("aria-pressed")).toBe(
       "true",
     );
     expect(toggle.getByRole("button", { name: "Monthly" }).getAttribute("aria-pressed")).toBe(
@@ -208,7 +262,11 @@ describe("Pricing", () => {
     );
     expect(price()).toBe(`$${PRICES.yearly}`);
     expect(screen.getByText("That's $8 a month, billed once a year.")).toBeTruthy();
-    expect(screen.getByText("save 33%")).toBeTruthy();
+    // "save 33%" sits inside the Yearly button; there's no "Cancel anytime" promise.
+    expect(toggle.getByRole("button", { name: /^Yearly/ }).textContent).toBe("Yearly save 33%");
+    expect(screen.queryByText(/Cancel anytime/)).toBeNull();
+    fireEvent.click(toggle.getByRole("button", { name: "Monthly" }));
+    expect(screen.getByText("Or $96 a year, and save 33%.")).toBeTruthy();
   });
 
   it("states each plan's limits from the code, and Pro is 'Coming soon', focusable but not a link", () => {
@@ -217,7 +275,9 @@ describe("Pricing", () => {
     expect(
       plan("No account").getByText(`${ANONYMOUS_DAILY_EXTRACTIONS} new extractions a day`),
     ).toBeTruthy();
-    expect(plan("Free").getByText(`${PLANS.free.savedProjects} saved projects`)).toBeTruthy();
+    expect(
+      plan("Free").getByText(`${PLANS.free.savedProjects} saved projects in your account`),
+    ).toBeTruthy();
     expect(plan("Free").getByRole("link", { name: "Sign in free" }).getAttribute("href")).toBe(
       "/sign-in",
     );
@@ -229,6 +289,9 @@ describe("Pricing", () => {
     expect(soon.getAttribute("tabindex")).toBe("0");
     expect(soon.closest("a")).toBeNull();
     expect(plan("Pro").queryByRole("button")).toBeNull();
+    // A muted outlined label, not a filled primary button.
+    expect(soon.className).toContain("border");
+    expect(soon.className).not.toMatch(/bg-primary/);
   });
 
   it("compares plans in a real table", () => {
@@ -238,6 +301,11 @@ describe("Pricing", () => {
     expect(cols.map((c) => c.getAttribute("scope"))).toEqual(["col", "col", "col", "col"]);
     const rows = within(table).getAllByRole("rowheader");
     expect(rows.every((r) => r.getAttribute("scope") === "row")).toBe(true);
+    const included = within(table)
+      .getAllByRole("cell")
+      .filter((c) => c.textContent === "Included");
+    expect(included).toHaveLength(12);
+    expect(included.every((c) => c.className.includes("text-success"))).toBe(true);
     const sites = within(table).getByRole("rowheader", { name: "Sites per blend" }).parentElement;
     expect(sites?.textContent).toBe(`Sites per blend${String(MAX_REFERENCES).repeat(3)}`);
   });
@@ -263,10 +331,13 @@ describe("How it works", () => {
     render(<HowItWorksPage />);
     const guard = within(screen.getByRole("list", { name: "What the guard says" }));
     expect(guard.getAllByRole("listitem").map((li) => li.textContent)).toEqual([
-      "public address ✓",
+      "public address",
       "localhost:3000 · refused",
       "192.168.1.10 · refused",
     ]);
+    expect(
+      guard.getAllByRole("listitem").map((li) => li.className.includes("text-success")),
+    ).toEqual([true, false, false]);
   });
 
   it("Roundness and Density move the card; the lock toggles", () => {
@@ -274,11 +345,15 @@ describe("How it works", () => {
     const card = screen.getByTestId("tune-card");
     fireEvent.change(screen.getByLabelText("Roundness"), { target: { value: "100" } });
     expect(card.style.borderRadius).toBe("24px");
+    // Density as the engine applies it: -1 is 0.8x the spacing.
     fireEvent.change(screen.getByLabelText("Density"), { target: { value: "0" } });
-    expect(card.style.padding).toBe("12px");
+    expect(card.style.padding).toBe("16px");
+    expect(screen.getByText("0.80×")).toBeTruthy();
     const lock = screen.getByRole("button", { name: /^primary #/ });
     expect(lock.getAttribute("aria-pressed")).toBe("true");
+    expect(lock.textContent).toContain("Locked");
     fireEvent.click(lock);
     expect(lock.getAttribute("aria-pressed")).toBe("false");
+    expect(lock.textContent).toContain("Unlocked");
   });
 });

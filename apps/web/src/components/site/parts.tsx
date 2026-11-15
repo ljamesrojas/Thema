@@ -49,14 +49,34 @@ export function PageHero({
   title,
   subhead,
   centered = false,
+  split = false,
   children,
 }: {
   eyebrow: string;
   title: ReactNode;
   subhead: ReactNode;
   centered?: boolean;
+  /** Subhead in a right-hand column, level with the heading's last line (How it works). */
+  split?: boolean;
   children?: ReactNode;
 }) {
+  if (split) {
+    return (
+      <div className="grid items-end gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
+        <div className="flex flex-col gap-6">
+          <Eyebrow tone="kiln">{eyebrow}</Eyebrow>
+          <h1
+            className="m-0 max-w-[16ch] text-h1 font-h1"
+            style={{ fontSize: "clamp(44px, 7vw, var(--text-h1))" }}
+          >
+            {title}
+          </h1>
+        </div>
+        <p className="m-0 text-body-lg font-body-lg text-ink-soft lg:pb-2">{subhead}</p>
+        {children}
+      </div>
+    );
+  }
   return (
     <div className={cn("flex flex-col gap-6", centered && "items-center text-center")}>
       <Eyebrow tone="kiln">{eyebrow}</Eyebrow>

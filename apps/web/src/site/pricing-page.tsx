@@ -99,7 +99,13 @@ export function PricingPage() {
                       {feature}
                     </th>
                     {values.map((value, i) => (
-                      <td key={i} className="px-5 py-3 text-ink-muted">
+                      <td
+                        key={i}
+                        className={cn(
+                          "px-5 py-3",
+                          value === "Included" ? "text-success" : "text-ink-muted",
+                        )}
+                      >
                         {value}
                       </td>
                     ))}

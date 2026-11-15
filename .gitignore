@@ -16,3 +16,6 @@ next-env.d.ts
 
 # Written by next dev (Next.js agent notes)
 apps/web/AGENTS.md
+
+# The approved page mockups (docs/pages.md) are ours and versioned with the pages.
+!docs/mockups/*.png

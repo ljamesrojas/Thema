@@ -31,15 +31,17 @@ export function SetupTabs() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Choice
-        label="Set up for"
-        value={tab}
-        options={TABS.map((t) => [t, t] as const)}
-        onChange={(t) => {
-          setTab(t);
-          setCopied(false);
-        }}
-      />
+      <div className="w-fit">
+        <Choice
+          label="Set up for"
+          value={tab}
+          options={TABS.map((t) => [t, t] as const)}
+          onChange={(t) => {
+            setTab(t);
+            setCopied(false);
+          }}
+        />
+      </div>
       <section
         aria-labelledby={`${id}-label`}
         className="flex flex-col overflow-hidden rounded-lg bg-band text-band-ink"

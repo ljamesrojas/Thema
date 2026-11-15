@@ -9,22 +9,45 @@ import { GITHUB_URL, GitHubLink, SiteHeader } from "@/components/site/site-heade
 import { cn } from "@/lib/cn";
 import { SetupTabs } from "./setup-tabs";
 
-/** The MCP server's tools, as packages/mcp/README.md describes them. */
+/** The MCP server's tools, as packages/mcp/README.md describes them: summary, takes, returns. */
 export const TOOLS = [
   [
     "extract",
-    "A url, and optionally an out_path.",
-    "A system_id, a short summary (palette hex, fonts, spacing base, radius, WCAG AA pass counts) and warnings in words. Local and private addresses are refused.",
+    "A URL in, a system out.",
+    "url, optional out_path",
+    "a system id, a summary (palette, fonts, spacing, radius, AA passes) and warnings",
   ],
   [
     "blend",
-    "1–5 references (a system_id or system_path, plus the parts each lends), the sliders density, roundness, contrast and warmth (−1 to 1), and locks.",
-    "A new system_id and summary, the number of contrast fixes, the generated theme, and any pairs that couldn't be fixed, with why.",
+    "Up to five systems in, one fixed system out.",
+    "references with what each lends, sliders, locks",
+    "a new system id, contrast fixes made, and any pair that couldn't be fixed",
   ],
   [
     "get_design_md",
-    "A system_id or system_path, and optionally an out_path.",
-    "The DESIGN.md text; with out_path, also written there.",
+    "A system in, DESIGN.md out.",
+    "a system id or path, optional out_path",
+    "the DESIGN.md text, also written to out_path when given",
+  ],
+] as const;
+
+/** The two ways in: badge, its fill, number, title, text and where the link goes. */
+const WAYS = [
+  [
+    "No setup",
+    "bg-ink text-canvas",
+    "01",
+    "Drop DESIGN.md in your repo",
+    "Any agent that reads AGENTS.md or CLAUDE.md picks it up. The tokens sit at the top; plain-language rules (do's, don'ts, agent rules) sit below, so the agent knows how to use them.",
+    ["/exports", "See the file format"],
+  ],
+  [
+    "MCP",
+    "bg-primary-strong text-on-primary",
+    "02",
+    "Let your agent call Thema",
+    "Connect the MCP server and your agent can extract a site, blend systems and write DESIGN.md without leaving the task. Systems are kept by a short id for the session.",
+    ["#setup", "Set it up"],
   ],
 ] as const;
 
@@ -96,49 +119,55 @@ export function AgentsPage() {
         </section>
 
         <Band label="Two ways in" className="flex flex-col gap-10">
-          <h2 className="m-0 text-h2 font-h2">Two ways in.</h2>
+          <div className="grid items-end gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
+            <h2 className="m-0 text-h2 font-h2">Two ways in.</h2>
+            <p className="m-0 text-body-md font-body-md text-ink-muted">
+              Start with a file. Add the MCP server when you want your agent to build or update the
+              system itself.
+            </p>
+          </div>
           <ul className="m-0 grid list-none gap-4 p-0 md:grid-cols-2">
-            {[
-              [
-                "No setup",
-                "Drop DESIGN.md in your repo",
-                "Export from Thema and commit the file. Every agent that reads your repo follows its tokens and rules, with nothing to install.",
-              ],
-              [
-                "MCP",
-                "Let your agent call Thema",
-                "Add the MCP server and your agent can extract sites, blend them and fetch DESIGN.md itself, mid-task.",
-              ],
-            ].map(([tag, title, text]) => (
+            {WAYS.map(([tag, fill, n, title, text, [href, link]]) => (
               <li
                 key={title}
-                className="flex flex-col gap-3 rounded-lg border border-hairline bg-surface p-6"
+                className="flex flex-col gap-3 rounded-lg border border-hairline bg-surface p-7"
               >
-                <span className="w-fit rounded-full border border-pill-border px-2.5 py-1 text-token font-token text-ink-subtle">
-                  {tag}
+                <span className="flex items-center justify-between">
+                  <span className={cn("rounded-full px-2.5 py-1 text-token font-token", fill)}>
+                    {tag}
+                  </span>
+                  <span className="text-token font-token text-ink-subtle">{n}</span>
                 </span>
                 <h3 className="m-0 text-h4 font-h4">{title}</h3>
                 <p className="m-0 text-body-sm font-body-sm text-ink-muted">{text}</p>
+                <a
+                  href={href}
+                  className="flex min-h-11 w-fit items-center text-label-md font-label-md text-primary-strong"
+                >
+                  {link} →
+                </a>
               </li>
             ))}
           </ul>
         </Band>
 
         <Band tone="subtle" label="The tools" className="flex flex-col gap-10">
-          <h2 className="m-0 text-h2 font-h2">
-            Three tools. That&apos;s the whole <Accent>API</Accent>.
-          </h2>
+          <div className="flex flex-col gap-4">
+            <Eyebrow tone="kiln">MCP tools</Eyebrow>
+            <h2 className="m-0 text-h2 font-h2">Three tools. That&apos;s the whole API.</h2>
+          </div>
           <ul className="m-0 grid list-none gap-4 p-0 lg:grid-cols-3">
-            {TOOLS.map(([name, takes, returns]) => (
+            {TOOLS.map(([name, summary, takes, returns]) => (
               <li
                 key={name}
-                className="flex flex-col gap-3 rounded-lg border border-hairline bg-surface p-6"
+                className="flex flex-col gap-2 rounded-lg border border-hairline bg-surface p-6"
               >
-                <h3 className="m-0 text-token font-token text-primary-strong">{name}</h3>
-                <dl className="m-0 flex flex-col gap-2 text-body-sm font-body-sm">
-                  <dt className="text-ink-subtle">Takes</dt>
+                <h3 className="m-0 text-title-sm font-token text-primary-strong">{name}</h3>
+                <p className="m-0 text-body-sm font-body-sm text-ink">{summary}</p>
+                <dl className="m-0 mt-3 grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 border-t border-hairline pt-4 text-ui-sm font-ui-sm">
+                  <dt className="text-token font-token text-ink-subtle">takes</dt>
                   <dd className="m-0 text-ink-muted">{takes}</dd>
-                  <dt className="text-ink-subtle">Returns</dt>
+                  <dt className="text-token font-token text-ink-subtle">returns</dt>
                   <dd className="m-0 text-ink-muted">{returns}</dd>
                 </dl>
               </li>

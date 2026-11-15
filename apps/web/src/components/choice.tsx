@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 /** A row of pressed/unpressed buttons (one choice of several). */
@@ -9,7 +10,8 @@ export function Choice<T extends string>({
 }: {
   label: string;
   value: T;
-  options: readonly (readonly [T, string])[];
+  /** Each option's value and its label (text, or text with a small tag such as "save 33%"). */
+  options: readonly (readonly [T, ReactNode])[];
   onChange: (value: T) => void;
 }) {
   return (
