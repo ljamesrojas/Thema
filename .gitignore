@@ -9,3 +9,10 @@ playwright-report/
 .next/
 next-env.d.ts
 *.tsbuildinfo
+
+# Local settings and secrets
+.env*.local
+.env
+
+# Written by next dev (Next.js agent notes)
+apps/web/AGENTS.md
