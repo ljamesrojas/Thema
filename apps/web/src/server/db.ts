@@ -30,10 +30,15 @@ export interface Migration {
   sql: string;
 }
 
-/** apps/web/db/migrations/*.sql, in name order. */
-export const MIGRATIONS_DIR = join(import.meta.dirname, "../../db/migrations");
+/**
+ * apps/web/db/migrations. Worked out only when asked (the migrate command, tests): inside the
+ * Next.js server bundle `import.meta.dirname` is undefined, and computing it when this module
+ * loaded crashed every route that touches accounts.
+ */
+export const migrationsDir = (): string => join(import.meta.dirname, "../../db/migrations");
 
-export function readMigrations(dir: string = MIGRATIONS_DIR): Migration[] {
+/** apps/web/db/migrations/*.sql, in name order. */
+export function readMigrations(dir: string = migrationsDir()): Migration[] {
   return readdirSync(dir)
     .filter((file) => file.endsWith(".sql"))
     .sort()

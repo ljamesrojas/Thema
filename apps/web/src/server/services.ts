@@ -124,7 +124,14 @@ type Holder = { [KEY]?: Promise<Services> };
 
 export function getServices(): Promise<Services> {
   const holder = globalThis as Holder;
-  holder[KEY] ??= fromEnvironment();
+  if (!holder[KEY]) {
+    const pending = fromEnvironment();
+    holder[KEY] = pending;
+    // A failed start isn't kept: the next request tries again instead of repeating the error.
+    pending.catch(() => {
+      if (holder[KEY] === pending) delete holder[KEY];
+    });
+  }
   return holder[KEY];
 }
 
