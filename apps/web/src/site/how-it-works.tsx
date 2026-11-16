@@ -127,11 +127,7 @@ export function HowItWorksPage() {
             <PageHero
               split
               eyebrow="How it works"
-              title={
-                <>
-                  From five links to one <Accent underline>system.</Accent>
-                </>
-              }
+              title={<>From five links to one system.</>}
               subhead="Paste the sites you love, choose what to borrow from each, and get an accessible design system your agent follows. The whole flow is built to take under two minutes."
             />
             <nav aria-label="Steps" className="border-t border-hairline pt-6">

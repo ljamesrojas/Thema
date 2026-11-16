@@ -37,11 +37,12 @@ const PAGES: [string, string, () => ReactElement, RegExp][] = [
 const mainNav = () => screen.getByRole("navigation", { name: "Main" });
 
 describe.each(PAGES)("%s", (path, label, page, title) => {
-  it("renders its h1 with one serif accent word, and a closing call to action", () => {
+  it("renders its h1 in plain Geist (no accent word, no underline), and a closing call to action", () => {
     render(page());
     const h1 = screen.getByRole("heading", { level: 1 });
     expect(h1.textContent).toMatch(title);
-    expect(h1.querySelectorAll(".font-display-accent")).toHaveLength(1);
+    // The page heroes' headings are one font throughout (user's call): no serif word, no underline.
+    expect(h1.querySelectorAll("span")).toHaveLength(0);
     const cta = screen.getByRole("region", { name: "Get started" });
     expect(
       within(cta).getByRole("link", { name: "Paste your first site" }).getAttribute("href"),

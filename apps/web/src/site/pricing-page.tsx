@@ -60,11 +60,7 @@ export function PricingPage() {
             <PageHero
               centered
               eyebrow="Pricing"
-              title={
-                <>
-                  Every feature, <Accent underline>free</Accent> to start.
-                </>
-              }
+              title={<>Every feature, free to start.</>}
               subhead="Plans only differ in how many projects you keep and how many new sites Thema reads for you a day."
             />
             <PricingPlans anonymousDaily={ANONYMOUS_DAILY_EXTRACTIONS} />

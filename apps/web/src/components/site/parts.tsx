@@ -7,7 +7,10 @@ import { cn } from "@/lib/cn";
 /** The 1200px container with 32px side padding. */
 export const container = "mx-auto w-full max-w-[1200px] px-8";
 
-/** The serif italic accent: one per headline (DESIGN.md → Typography). */
+/**
+ * The serif italic accent: one per headline (DESIGN.md → Typography). The site pages' hero
+ * headings don't use it: they're plain Geist throughout (user's call).
+ */
 export function Accent({ children, underline = false }: { children: string; underline?: boolean }) {
   return (
     <span

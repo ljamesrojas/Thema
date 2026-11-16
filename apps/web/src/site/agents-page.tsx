@@ -71,11 +71,7 @@ export function AgentsPage() {
           <div className={cn(container, "grid items-center gap-14 py-24 lg:grid-cols-2")}>
             <PageHero
               eyebrow="For agents"
-              title={
-                <>
-                  Your agent, now with <Accent underline>taste.</Accent>
-                </>
-              }
+              title={<>Your agent, now with taste.</>}
               subhead="Give Claude Code, Cursor and the rest a design system to follow: a DESIGN.md in your repo, or Thema itself as an MCP server they can call mid-task."
             >
               <div className="flex flex-wrap gap-3">

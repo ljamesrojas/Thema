@@ -128,7 +128,7 @@ export function ExportsPage() {
               title={
                 <>
                   Five files. <br />
-                  <Accent underline>One</Accent> system.
+                  One system.
                 </>
               }
               subhead="Every file is generated from the same tokens, so they never disagree. Download them all as a zip, or copy the one you need."
