@@ -62,3 +62,18 @@ Source: the canvas boards How-it-works, Exports, Agents and Pricing (mockup link
 - Nav links go to the four routes; GitHub is the external link above.
 - FAQ "Do I need an account?": "Your first blend works without sign-up. Sign in with GitHub or Google to keep saved projects. The CLI and MCP server run on your own machine and need no account." (the old answer wrongly said the MCP server needs sign-in).
 - Footer GitHub link → the repo.
+
+## Sign in / Create account (`/sign-in`, approved 2026-11-17)
+
+Reference: docs/mockups/sign-in.png and the canvas board "Sign in / Create account".
+
+- Split screen, full viewport height, stacks on narrow screens (brand panel on top, shorter).
+- **Left, brand panel (#0A0A0A), kept simple:** inverted logo → `/` at the top; vertically centered: "Taste, *exported.*" (64px, #F3EEE3, serif italic word with a 3px Kiln underline), one line "Your blends, saved to your account and ready on any device." (17px, #BDBDBD), and three slim 40×6px bars in #F3EEE3, #D9541E and #3A3A3A (the logo's three chips, `aria-hidden`); footer line at the bottom. Faint dot grid (#2A2A2A, 22px). No blend card.
+- **Right (white):** "← Home" link top left; a centered 400px column:
+  - Eyebrow (Kiln Deep mono) + h1 with a serif italic period + lead. Sign in: "Welcome back" / "Sign in to Thema" / "Pick up your saved blends where you left them." Create account (`?mode=signup`): "Free account" / "Create your account" / "One click with GitHub or Google. Keep your blends and open them anywhere."
+  - Two full-width 52px pill buttons: "Continue with GitHub" (ink fill), "Continue with Google" (white, hairline). While redirecting: "Opening GitHub…". Errors as today (`role="alert"`). If you add the providers' marks, use the official assets and follow GitHub's and Google's sign-in branding rules.
+  - #FAFAFA card "Free account" with three green-check lines built from PLANS: saved projects, extractions a day, "The project in this browser comes with you".
+  - Note: "Thema only gets your name and email from GitHub or Google. No password is stored. See our Privacy notice."
+  - Under a hairline: "New to Thema? **Create an account**" ↔ "Already have an account? **Sign in**" (switches the copy only; it's the same OAuth flow), and "Or keep blending without an account →" to the Workspace.
+- Only GitHub and Google (SPEC). No email/password, no Microsoft.
+- Keep the existing states (loading, accounts not set up, already signed in) inside the right column.

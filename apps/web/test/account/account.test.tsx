@@ -17,6 +17,7 @@ import {
 import { PATCH as blendRoute } from "@/app/api/projects/[id]/blend/route";
 import { POST as addReference } from "@/app/api/projects/[id]/references/route";
 import { GET as getReference } from "@/app/api/references/[id]/route";
+import { PLANS } from "@/server/plans";
 import { setServices } from "@/server/services";
 import { loadProject, STORAGE_KEY } from "@/workspace/project";
 import { Workspace } from "@/workspace/workspace";
@@ -245,21 +246,97 @@ describe("the Projects screen", () => {
 });
 
 describe("signing in and out", () => {
-  it("shows the configured providers", async () => {
-    render(<SignInScreen next="/projects" />);
+  const noAxeViolations = async (container: HTMLElement) => {
+    const results = await axe.run(container, { rules: { "color-contrast": { enabled: false } } });
+    expect(results.violations.map((v) => `${v.id}: ${v.help}`)).toEqual([]);
+  };
+
+  it("shows the configured providers as full-width pills, GitHub first", async () => {
+    const { container } = render(<SignInScreen next="/projects" />);
+    const github = await screen.findByRole("button", { name: "Continue with GitHub" });
+    const google = screen.getByRole("button", { name: "Continue with Google" });
+    expect(github.className).toContain("bg-ink");
+    expect(google.className).toContain("border-pill-border");
+    expect(github.compareDocumentPosition(google) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    await noAxeViolations(container);
+  });
+
+  it("says 'Sign in to Thema' by default and 'Create your account' with mode=signup", async () => {
+    const { unmount } = render(<SignInScreen next="/projects" />);
+    expect((await screen.findByRole("heading", { level: 1 })).textContent).toBe(
+      "Sign in to Thema.",
+    );
+    expect(screen.getByText("Welcome back")).toBeTruthy();
+    const toSignup = screen.getByRole("link", { name: "Create an account" });
+    expect(toSignup.getAttribute("href")).toBe("/sign-in?mode=signup&next=%2Fprojects");
+    unmount();
+
+    const { container } = render(<SignInScreen next="/projects" mode="signup" />);
+    expect((await screen.findByRole("heading", { level: 1 })).textContent).toBe(
+      "Create your account.",
+    );
+    expect(screen.getByText("Free account", { selector: "p" })).toBeTruthy();
+    expect(screen.getByText(/One click with GitHub or Google/)).toBeTruthy();
+    // Same OAuth buttons either way; the link back drops the mode.
     expect(await screen.findByRole("button", { name: "Continue with GitHub" })).toBeTruthy();
-    expect(screen.getByRole("button", { name: "Continue with Google" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Sign in" }).getAttribute("href")).toBe(
+      "/sign-in?next=%2Fprojects",
+    );
+    await noAxeViolations(container);
+  });
+
+  it("lists what a free account gets from PLANS, with the privacy note and a way out", async () => {
+    render(<SignInScreen next={null} />);
+    const card = within(await screen.findByRole("region", { name: "Free account" }));
+    expect(card.getAllByRole("listitem").map((li) => li.textContent)).toEqual([
+      `${PLANS.free.savedProjects} saved projects, on any device`,
+      `${PLANS.free.dailyExtractions} new extractions a day`,
+      "The project in this browser comes with you",
+    ]);
+    expect(screen.getByRole("link", { name: "Privacy notice" }).getAttribute("href")).toBe(
+      "/privacy",
+    );
+    expect(
+      screen
+        .getByRole("link", { name: "Or keep blending without an account →" })
+        .getAttribute("href"),
+    ).toBe("/workspace");
+    expect(screen.getByRole("link", { name: "Home" }).getAttribute("href")).toBe("/");
+  });
+
+  it("keeps the brand panel simple: logo, the line, three decorative chip bars, no blend card", () => {
+    render(<SignInScreen next={null} />);
+    const panel = screen.getByRole("region", { name: "Thema" });
+    expect(within(panel).getByRole("link", { name: "Thema" }).getAttribute("href")).toBe("/");
+    expect(panel.textContent).toContain("Taste,exported.");
+    expect(panel.textContent).toContain(
+      "Your blends, saved to your account and ready on any device.",
+    );
+    const bars = within(panel).getByTestId("chip-bars");
+    expect(bars.getAttribute("aria-hidden")).toBe("true");
+    expect([...bars.children].map((bar) => bar.className.match(/bg-[\w-]+/)?.[0])).toEqual([
+      "bg-band-ink",
+      "bg-primary",
+      "bg-band-chip",
+    ]);
+    for (const bar of bars.children) expect(bar.className).toContain("h-1.5 w-10");
+    // No blend card any more.
+    expect(panel.textContent).not.toMatch(/\.example|AA ·/);
   });
 
   it("says when accounts are off, and when someone is already signed in", async () => {
     route(false);
-    const { unmount } = render(<SignInScreen next={null} />);
+    const off = render(<SignInScreen next={null} />);
     expect(await screen.findByText(/Accounts aren't set up on this server/)).toBeTruthy();
-    unmount();
+    expect(screen.queryByRole("button", { name: /Continue with/ })).toBeNull();
+    await noAxeViolations(off.container);
+    off.unmount();
     route(true);
     user = "ana";
-    render(<SignInScreen next={null} />);
+    const { container } = render(<SignInScreen next={null} />);
     expect(await screen.findByText("You're signed in as User ana.")).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Go to your projects" })).toBeTruthy();
+    await noAxeViolations(container);
   });
 
   it("only returns to same-site paths", () => {

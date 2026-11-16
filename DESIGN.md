@@ -33,6 +33,7 @@ colors:
   band-ink-muted: "#A3A3A3"
   band-link: "#D4D4D4"
   band-accent: "#F08A5D"
+  band-chip: "#3A3A3A"
   agent-claude: "#B4431A"
   agent-cursor: "#2546C8"
   agent-v0: "#0A0A0A"
@@ -284,7 +285,7 @@ All text pairs below pass WCAG 2.2 AA (4.5:1 for text, 3:1 for large text and UI
 **Black band and footer**
 
 - **Band (#0A0A0A):** the full-width black band and the footer. **Band surface (#161616)** for the card inside it, **band hairline (#2A2A2A)** for its borders.
-- **Band ink (#F3EEE3):** band headings, 17.11:1 on band, 15.64:1 on band surface. **Band ink soft (#BDBDBD):** band body copy, 10.54:1 on band, 9.63:1 on band surface. **Band ink muted (#A3A3A3):** table labels and footer text, 7.17:1 on band surface, 7.85:1 on band. **Band link (#D4D4D4):** footer links, 13.36:1.
+- **Band ink (#F3EEE3):** band headings, 17.11:1 on band, 15.64:1 on band surface. **Band ink soft (#BDBDBD):** band body copy, 10.54:1 on band, 9.63:1 on band surface. **Band ink muted (#A3A3A3):** table labels and footer text, 7.17:1 on band surface, 7.85:1 on band. **Band link (#D4D4D4):** footer links, 13.36:1. **Band chip (#3A3A3A):** decoration only, the dark one of the sign-in panel's three chip bars (paper, kiln, this); never text.
 - **Band accent (#F08A5D):** the band eyebrow and the word "pass", 8.01:1 on band, 7.32:1 on band surface.
 - Before and after ratios on the band use the dark status colors: success #6FBF85 (8.16:1 on band surface) and danger #F2788F (6.77:1).
 
