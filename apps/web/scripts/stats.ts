@@ -1,7 +1,7 @@
 // pnpm --filter @thema/web stats [days]: the anonymous daily totals (server/stats.ts) for the last
 // `days` days (default 28), and SPEC's "projects that reach an export" over that window. Reads
 // REDIS_URL from apps/web/.env.local or the environment: totals only persist in Redis.
-import { Redis } from "ioredis";
+import { redisConnection, redisTlsCa } from "@thema/jobs/bull";
 import { createRedisStats, EVENTS } from "../src/server/stats";
 
 const days = Number(process.argv[2] ?? 28);
@@ -15,7 +15,7 @@ if (!url || !Number.isInteger(days) || days < 1 || days > 400) {
   process.exit(1);
 }
 
-const connection = new Redis(url, { maxRetriesPerRequest: 2 });
+const connection = redisConnection(url, { ca: redisTlsCa(process.env) });
 try {
   const { days: rows, window } = await createRedisStats(connection).report(days);
   const header = ["day", ...EVENTS, "projects blended", "projects exported"];

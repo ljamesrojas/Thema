@@ -1,0 +1,33 @@
+[Unit]
+Description=Thema extraction worker (BullMQ on Redis, headless Chromium)
+Documentation=file:///opt/thema/app/deploy/README.md
+After=network-online.target redis-server.service thema-firewall.service
+Wants=network-online.target
+# No firewall, no worker: the browser must never run unfenced.
+Requires=thema-firewall.service redis-server.service
+
+[Service]
+User=thema-worker
+Group=thema-worker
+WorkingDirectory=/opt/thema/app/apps/worker
+EnvironmentFile=/etc/thema/worker.env
+ExecStart=/opt/thema/app/apps/worker/node_modules/.bin/tsx src/queue.ts
+Restart=always
+RestartSec=5
+# Hardening: the code and the browser are read-only; the worker writes only to its home and a
+# private /tmp (Chromium's profiles live there and vanish on restart).
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/opt/thema/home
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+# Leave room for Redis and the OS whatever the VM's size.
+MemoryMax=70%
+
+[Install]
+WantedBy=multi-user.target

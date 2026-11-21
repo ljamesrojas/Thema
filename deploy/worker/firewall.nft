@@ -1,0 +1,56 @@
+# Thema worker egress firewall (nftables). The worker opens any URL a stranger pastes in a real
+# browser, so the browser's user may reach the public internet and nothing else: not the cloud's
+# metadata service (169.254.169.254 hands out credentials), not the VM's private network, not
+# localhost services (SSH, Redis without its password…), not link-local or multicast. This is the
+# real SSRF boundary; the URL guard in code is a second layer (CLAUDE.md, 2026-11-08).
+#
+# Only connections made by the `thema-worker` user are filtered; everything else on the VM (the
+# OS, cloud agents, Redis serving Vercel) is untouched. Loaded by thema-firewall.service; safe to
+# reload (the table is replaced, nothing else is flushed).
+
+add table inet thema
+delete table inet thema
+
+table inet thema {
+  chain output {
+    type filter hook output priority 0; policy accept;
+
+    # @WORKER_UID@ is replaced with the thema-worker uid by setup.sh.
+    meta skuid != @WORKER_UID@ accept
+
+    # The two local things the worker needs: its Redis (TLS, password) and the DNS resolver.
+    ip daddr 127.0.0.1 tcp dport 6380 accept
+    ip daddr 127.0.0.53 udp dport 53 accept
+    ip daddr 127.0.0.53 tcp dport 53 accept
+
+    # Everything that isn't the public internet.
+    ip daddr {
+      0.0.0.0/8,
+      10.0.0.0/8,
+      100.64.0.0/10,
+      127.0.0.0/8,
+      169.254.0.0/16,
+      172.16.0.0/12,
+      192.0.0.0/24,
+      192.0.2.0/24,
+      192.168.0.0/16,
+      198.18.0.0/15,
+      198.51.100.0/24,
+      203.0.113.0/24,
+      224.0.0.0/4,
+      240.0.0.0/4
+    } counter reject
+
+    ip6 daddr {
+      ::/128,
+      ::1/128,
+      ::ffff:0:0/96,
+      64:ff9b::/96,
+      100::/64,
+      2001:db8::/32,
+      fc00::/7,
+      fe80::/10,
+      ff00::/8
+    } counter reject
+  }
+}

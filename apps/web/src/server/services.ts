@@ -62,7 +62,8 @@ async function fromEnvironment(): Promise<Services> {
   const now = () => new Date();
   const redisUrl = process.env.REDIS_URL;
   const bull = redisUrl ? await import("@thema/jobs/bull") : null;
-  const connection = bull && redisUrl ? bull.redisConnection(redisUrl) : null;
+  const connection =
+    bull && redisUrl ? bull.redisConnection(redisUrl, { ca: bull.redisTlsCa(process.env) }) : null;
   const stats = connection ? createRedisStats(connection, now) : createMemoryStats(now);
   const shared = {
     accounts: await accountsFromEnv(stats),

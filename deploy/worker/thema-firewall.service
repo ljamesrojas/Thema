@@ -1,0 +1,15 @@
+[Unit]
+Description=Thema worker egress firewall (the browser's user reaches only the public internet)
+Documentation=file:///opt/thema/app/deploy/README.md
+After=network-pre.target
+Before=network.target thema-worker.service
+Wants=network-pre.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/nft -f /etc/thema/firewall.nft
+ExecStop=/usr/sbin/nft delete table inet thema
+
+[Install]
+WantedBy=multi-user.target

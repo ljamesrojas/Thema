@@ -1,6 +1,7 @@
 // The hosted queue: BullMQ on Redis. The API side (createBullQueue) enqueues and reads jobs; a
 // long-running worker process (startBullWorker, `pnpm --filter @thema/worker queue`) runs them.
 // Same contract as the local queue: one job per URL + UTC day, 3 at a time, one retry.
+import { readFileSync } from "node:fs";
 import { Queue, UnrecoverableError, Worker, type Job } from "bullmq";
 import { Redis } from "ioredis";
 import {
@@ -34,9 +35,32 @@ interface StoredOutput extends ExtractionResult {
   screenshot: string;
 }
 
-/** A Redis connection BullMQ can use (it needs `maxRetriesPerRequest: null` for workers). */
-export function redisConnection(url: string): Redis {
-  return new Redis(url, { maxRetriesPerRequest: null });
+/**
+ * The certificate authority that signed Thema's Redis TLS certificate (deploy/worker sets Redis
+ * up with its own CA): REDIS_TLS_CA holds the PEM text (Vercel; literal "\n" escapes are
+ * accepted, since some dashboards store one line), REDIS_TLS_CA_FILE a path to it (the worker
+ * VM). Undefined when neither is set: then a `rediss://` URL trusts the usual public CAs.
+ */
+export function redisTlsCa(env: Record<string, string | undefined>): string | undefined {
+  if (env.REDIS_TLS_CA) return env.REDIS_TLS_CA.replace(/\\n/g, "\n");
+  if (env.REDIS_TLS_CA_FILE) return readFileSync(env.REDIS_TLS_CA_FILE, "utf8");
+  return undefined;
+}
+
+/**
+ * A Redis connection BullMQ can use (it needs `maxRetriesPerRequest: null` for workers). For a
+ * `rediss://` URL, `ca` is the authority its certificate must chain to (see redisTlsCa).
+ */
+export function redisConnection(
+  url: string,
+  options: { ca?: string | undefined; lazyConnect?: boolean } = {},
+): Redis {
+  const tls = url.startsWith("rediss://") && options.ca ? { tls: { ca: options.ca } } : {};
+  return new Redis(url, {
+    maxRetriesPerRequest: null,
+    ...tls,
+    ...(options.lazyConnect ? { lazyConnect: true } : {}),
+  });
 }
 
 const STATUS: Record<string, JobStatus> = {
