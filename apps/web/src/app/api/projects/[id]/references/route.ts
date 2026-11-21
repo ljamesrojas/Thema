@@ -6,6 +6,7 @@ import { referenceView } from "@/server/references";
 import { PLANS } from "@/server/plans";
 import { addReferenceBody, projectId } from "@/server/schemas";
 import { getServices } from "@/server/services";
+import { recordSafely } from "@/server/stats";
 
 export const runtime = "nodejs";
 
@@ -63,6 +64,8 @@ export const POST = handler(async (request: Request, { params }: IdParams) => {
   }
 
   const job = await queue.submit(url);
+  // A new extraction (cache hits returned above aren't counted).
+  await recordSafely(services.stats, "extraction");
   return json(
     {
       reference: { ...referenceView(job), borrowed: body.borrowed },

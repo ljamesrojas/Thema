@@ -103,6 +103,16 @@ export const api = {
       body: JSON.stringify({ project, baseVersion }),
     }),
 
+  /**
+   * Count an export made in the browser (anonymous daily totals). Fire and forget: `keepalive`
+   * lets it finish if the page is closing, and a failure never bothers the person exporting.
+   */
+  exported: (projectId: string) => {
+    void fetch(`/api/projects/${projectId}/exported`, { method: "POST", keepalive: true }).catch(
+      () => undefined,
+    );
+  },
+
   /** Delete the signed-in account and everything saved in it. */
   deleteAccount: () => call<{ deleted: true }>("/api/account", { method: "DELETE" }),
 

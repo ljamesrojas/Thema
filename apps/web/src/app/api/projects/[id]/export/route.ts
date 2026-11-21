@@ -6,6 +6,7 @@ import { DOWNLOAD_HEADERS, FORMATS, isFormat, type Format } from "@/server/expor
 import { ApiError, handler, readJson, type IdParams } from "@/server/http";
 import { exportBody, projectId } from "@/server/schemas";
 import { getServices } from "@/server/services";
+import { recordSafely } from "@/server/stats";
 
 export const runtime = "nodejs";
 
@@ -19,6 +20,7 @@ export const POST = handler(async (request: Request, { params }: IdParams) => {
   if (!projectId.safeParse(id).success) throw new ApiError(404, "not-found", "No such project.");
   const format = formatOf(request);
   const { system } = await readJson(request, exportBody);
+  await recordSafely((await getServices()).stats, "export", id);
   return download(system, format);
 });
 
@@ -30,12 +32,14 @@ export const GET = handler(async (request: Request, { params }: IdParams) => {
   const { id } = await params;
   if (!projectId.safeParse(id).success) throw new ApiError(404, "not-found", "No such project.");
   const format = formatOf(request);
-  const { accounts, account } = await requireAccount(await getServices(), request);
+  const services = await getServices();
+  const { accounts, account } = await requireAccount(services, request);
   const stored = await accounts.projects.get(account.userId, id);
   if (!stored) throw new ApiError(404, "not-found", "No such project.");
   if (!stored.data.result) {
     throw new ApiError(409, "not-blended", "Add a site to this project before exporting it.");
   }
+  await recordSafely(services.stats, "export", id);
   return download(stored.data.result, format);
 });
 

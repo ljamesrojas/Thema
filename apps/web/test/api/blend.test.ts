@@ -27,8 +27,9 @@ const reference = (name: string, id: string, borrowed: string[]) => ({
 const patch = (body: unknown, id = PROJECT_ID) =>
   call(blendRoute, { method: "PATCH", path: `/api/projects/${id}/blend`, id, body });
 
+let services: ReturnType<typeof useFakeServices>;
 beforeEach(() => {
-  useFakeServices();
+  services = useFakeServices();
 });
 afterEach(() => setServices(undefined));
 
@@ -56,6 +57,15 @@ describe("PATCH /api/projects/:id/blend", () => {
     expect(data.system.a11y.passes).toBe(true);
     expect(data.unresolved).toEqual([]);
     expect(data.generated).toBe("dark"); // no reference had a dark recording
+  });
+
+  it("counts each blend in the anonymous totals, by project", async () => {
+    const body = { project: { id: PROJECT_ID, references, blend: SETTINGS } };
+    await patch(body);
+    await patch(body);
+    const { days } = await services.stats.report(1);
+    expect(days[0]?.counts.blend).toBe(2);
+    expect(days[0]?.projects.blend).toBe(1);
   });
 
   it("keeps a locked token from the previous result and reports the pair it blocks", async () => {

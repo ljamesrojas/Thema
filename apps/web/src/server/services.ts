@@ -11,6 +11,7 @@ import {
 import type { Lookup } from "@thema/url-guard";
 import type { Account, Provider } from "./auth";
 import type { ProjectStore } from "./project-store";
+import { createMemoryStats, createRedisStats, recordSafely, type Stats } from "./stats";
 import {
   createMemoryScreenshotStore,
   createR2ScreenshotStore,
@@ -40,6 +41,8 @@ export interface Services {
   accounts: Accounts | null;
   /** Saved projects' screenshots, kept after the queue's 24 hours. */
   screenshots: ScreenshotStore;
+  /** Anonymous daily totals (server/stats.ts). */
+  stats: Stats;
 }
 
 const systemLookup: Lookup = async (hostname) =>
@@ -53,17 +56,23 @@ const systemLookup: Lookup = async (hostname) =>
  * - DATABASE_URL + BETTER_AUTH_SECRET + a GitHub or Google client: accounts and saved projects.
  * - R2_ACCOUNT_ID, R2_BUCKET, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY: screenshots in R2
  *   (otherwise in memory, so they last until the server restarts).
+ * - Anonymous daily totals go to Redis with REDIS_URL, else to memory.
  */
 async function fromEnvironment(): Promise<Services> {
   const now = () => new Date();
-  const shared = { accounts: await accountsFromEnv(), screenshots: screenshotsFromEnv() };
+  const redisUrl = process.env.REDIS_URL;
+  const bull = redisUrl ? await import("@thema/jobs/bull") : null;
+  const connection = bull && redisUrl ? bull.redisConnection(redisUrl) : null;
+  const stats = connection ? createRedisStats(connection, now) : createMemoryStats(now);
+  const shared = {
+    accounts: await accountsFromEnv(stats),
+    screenshots: screenshotsFromEnv(),
+    stats,
+  };
   const configured = Number(process.env.THEMA_DAILY_EXTRACTIONS);
   const dailyLimit =
     Number.isInteger(configured) && configured > 0 ? configured : ANONYMOUS_DAILY_EXTRACTIONS;
-  const redisUrl = process.env.REDIS_URL;
-  if (redisUrl) {
-    const bull = await import("@thema/jobs/bull");
-    const connection = bull.redisConnection(redisUrl);
+  if (bull && connection) {
     return {
       queue: bull.createBullQueue({ connection, now }),
       limiter: bull.createRedisRateLimiter({ connection, limit: dailyLimit, now }),
@@ -88,7 +97,7 @@ async function fromEnvironment(): Promise<Services> {
   };
 }
 
-async function accountsFromEnv(): Promise<Accounts | null> {
+async function accountsFromEnv(stats: Stats): Promise<Accounts | null> {
   const { authConfigFromEnv, createAuth, providersOf, sessionReader } = await import("./auth");
   const config = authConfigFromEnv(process.env);
   if (!config || !process.env.DATABASE_URL) return null;
@@ -98,7 +107,7 @@ async function accountsFromEnv(): Promise<Accounts | null> {
     import("./project-store"),
   ]);
   const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 5 });
-  const auth = createAuth(pool, config);
+  const auth = createAuth(pool, config, {}, () => recordSafely(stats, "signup"));
   const db = poolDb(pool);
   return {
     projects: createPostgresProjectStore(db),

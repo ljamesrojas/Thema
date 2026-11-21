@@ -2,6 +2,7 @@ import { blend, fix } from "@thema/engine";
 import { ApiError, handler, json, readJson, type IdParams } from "@/server/http";
 import { blendBody } from "@/server/schemas";
 import { getServices } from "@/server/services";
+import { recordSafely } from "@/server/stats";
 
 export const runtime = "nodejs";
 
@@ -28,7 +29,7 @@ export const PATCH = handler(async (request: Request, { params }: IdParams) => {
       `Not extracted yet: ${notReady.map((reference) => reference.url).join(", ")}. Blend the finished references, or wait for these.`,
     );
   }
-  const { now } = await getServices();
+  const { now, stats } = await getServices();
 
   const blended = blend({
     references: project.references.flatMap(({ extracted, borrowed }) =>
@@ -41,6 +42,7 @@ export const PATCH = handler(async (request: Request, { params }: IdParams) => {
     createdAt: now().toISOString(),
   });
   const fixed = fix(blended.system);
+  await recordSafely(stats, "blend", id);
 
   return json({
     system: fixed.system,

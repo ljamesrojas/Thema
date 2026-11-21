@@ -32,6 +32,9 @@ const client = {
 };
 const pool = { connect: () => Promise.resolve(client), end: () => Promise.resolve() };
 
+/** Sign-ups the hook reported (the anonymous sign-up total). */
+let signups = 0;
+
 const auth = createAuth(
   pool as unknown as Pool,
   {
@@ -40,6 +43,10 @@ const auth = createAuth(
     github: { clientId: "id", clientSecret: "secret" },
   },
   { emailAndPassword: { enabled: true } },
+  () => {
+    signups += 1;
+    return Promise.resolve();
+  },
 );
 
 describe("Better Auth on Thema's tables", () => {
@@ -55,6 +62,7 @@ describe("Better Auth on Thema's tables", () => {
 
     const account = await read(request);
     expect(account).toMatchObject({ name: "Ana", email: "ana@example.com", plan: "free" });
+    expect(signups).toBe(1);
 
     await db.query(`UPDATE "user" SET "plan" = 'pro' WHERE "email" = $1`, ["ana@example.com"]);
     expect((await read(request))?.plan).toBe("pro");

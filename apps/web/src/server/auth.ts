@@ -49,8 +49,27 @@ export const providersOf = (config: AuthConfig): Provider[] =>
  * Better Auth on this database. `extra` is for tests (e.g. email sign-up, to get a real session
  * without an OAuth round trip); production passes nothing.
  */
-export function createAuth(pool: Pool, config: AuthConfig, extra: Partial<BetterAuthOptions> = {}) {
-  return betterAuth({ ...authOptions(config), database: pool, ...extra });
+export function createAuth(
+  pool: Pool,
+  config: AuthConfig,
+  extra: Partial<BetterAuthOptions> = {},
+  /** Called once per new account (the anonymous sign-up total). */
+  onSignup?: () => Promise<void>,
+) {
+  return betterAuth({
+    ...authOptions(config),
+    database: pool,
+    databaseHooks: {
+      user: {
+        create: {
+          after: async () => {
+            await onSignup?.();
+          },
+        },
+      },
+    },
+    ...extra,
+  });
 }
 
 export type ThemaAuth = ReturnType<typeof createAuth>;

@@ -10,6 +10,7 @@
     "tokens": "tsx scripts/tokens.ts",
     "db:migrate": "tsx --env-file-if-exists=.env.local scripts/migrate.ts",
     "launch-check": "tsx scripts/launch-check.ts",
+    "stats": "tsx --env-file-if-exists=.env.local scripts/stats.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },

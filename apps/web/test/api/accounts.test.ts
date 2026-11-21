@@ -11,6 +11,7 @@ import {
   PUT as saveProject,
 } from "@/app/api/projects/[id]/route";
 import { GET as exportSaved } from "@/app/api/projects/[id]/export/route";
+import { POST as exportedRoute } from "@/app/api/projects/[id]/exported/route";
 import { POST as addReference } from "@/app/api/projects/[id]/references/route";
 import { GET as getReference } from "@/app/api/references/[id]/route";
 import { GET as getScreenshot } from "@/app/api/references/[id]/screenshot/route";
@@ -322,5 +323,33 @@ describe("DELETE /api/account", () => {
 
     await call(deleteAccount, { method: "DELETE", path: "/api/account", headers: ben });
     expect(await services.screenshots.has(ref)).toBe(false);
+  });
+});
+
+describe("the anonymous daily totals the routes record", () => {
+  it("counts new extractions only (not today's cache hits), blends and exports by project", async () => {
+    const add = () =>
+      call(addReference, {
+        method: "POST",
+        path: `/api/projects/${ID}/references`,
+        id: ID,
+        body: { url: "light-saas.test", borrowed: [] },
+      });
+    await add();
+    await add();
+    const exported = await call(exportedRoute, {
+      method: "POST",
+      path: `/api/projects/${ID}/exported`,
+      id: ID,
+    });
+    expect(exported.status).toBe(204);
+    expect(
+      (await call(exportedRoute, { method: "POST", path: "/api/projects/x/exported", id: "x" }))
+        .status,
+    ).toBe(404);
+    const { days } = await services.stats.report(1);
+    expect(days[0]?.counts.extraction).toBe(1);
+    expect(days[0]?.counts.export).toBe(1);
+    expect(days[0]?.projects.export).toBe(1);
   });
 });

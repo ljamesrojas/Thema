@@ -19,6 +19,7 @@ Thema is run by [OPERATOR NAME], [CITY], Philippines ("we"). This notice explain
 - **Your project, in your browser.** The sites you add, your settings and your blended system are saved in your browser's local storage. They stay on your device until you clear them.
 - **The website addresses you paste.** To read a site's design, our server opens it in a browser and records its visible styles (colors, fonts, spacing) and a screenshot of the page. We keep the result for 24 hours so the same site loads instantly again that day.
 - **A scrambled form of your IP address,** to apply the daily limit on new extractions. We keep it only for the current day. Your IP address itself isn't stored.
+- **Anonymous daily totals:** how many extractions, blends, exports and sign-ups happen each day, and how many different projects blend and export (counted by the project's random id, which says nothing about you). They contain no IP address, name, email, cookie or website address. We keep them for about a year to see how Thema is used.
 
 **With an account** (also everything above)
 - **From GitHub or Google:** your name, email address and the link to your profile picture. Thema shows your initials, not the picture.
@@ -54,6 +55,7 @@ Your data may therefore be stored or processed outside the Philippines. We choos
 
 - Extraction results and screenshots that aren't in a saved project: 24 hours.
 - The scrambled IP address for daily limits: until the end of the day (UTC).
+- Anonymous daily totals: about 400 days.
 - Sessions: until you sign out or the session expires.
 - Saved projects: until you delete them. A saved project's screenshots are deleted with the last project that uses them.
 - Your account: until you delete it (account menu → Delete account), which removes it right away, with your sessions, saved projects and their screenshots.

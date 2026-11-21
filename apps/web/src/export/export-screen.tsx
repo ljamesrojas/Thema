@@ -5,6 +5,7 @@ import { exportAll } from "@thema/exporters";
 import { useId, useMemo, useState, type ReactNode } from "react";
 import { buttonVariants } from "@/components/button";
 import { saveFile } from "@/lib/download";
+import { api } from "@/workspace/api";
 import { cn } from "@/lib/cn";
 import { EXPORT_FILES, SNIPPETS, type ExportFile } from "@/lib/exports-meta";
 import { buildZip } from "@/lib/zip";
@@ -17,7 +18,7 @@ export { EXPORT_FILES, SNIPPETS, type ExportFile };
 /** The system as JSON: what the CLI and the MCP server read (`--in`, `system_path`). */
 export const systemJson = (system: ThemaSystem) => `${JSON.stringify(system, null, 2)}\n`;
 
-function AgentSetup({ system }: { system: ThemaSystem }) {
+function AgentSetup({ system, onExport }: { system: ThemaSystem; onExport: () => void }) {
   const id = useId();
   const [copied, setCopied] = useState<string | null>(null);
   async function copy(label: string, text: string) {
@@ -48,7 +49,10 @@ function AgentSetup({ system }: { system: ThemaSystem }) {
         </div>
         <button
           type="button"
-          onClick={() => saveFile("thema.json", systemJson(system), "application/json")}
+          onClick={() => {
+            saveFile("thema.json", systemJson(system), "application/json");
+            onExport();
+          }}
           className={buttonVariants({ variant: "secondary" })}
         >
           Download thema.json
@@ -148,6 +152,8 @@ export function ExportScreen() {
     );
   }
 
+  /** Count this project's export in the anonymous daily totals (by its random id only). */
+  const exported = () => api.exported(project.id);
   const content = files[selected] ?? "";
   const meta = EXPORT_FILES.find(([name]) => name === selected);
   const toggle = (name: string) =>
@@ -161,6 +167,7 @@ export function ExportScreen() {
   async function copy() {
     try {
       await navigator.clipboard.writeText(content);
+      exported();
       setCopied(selected);
       setTimeout(() => setCopied((c) => (c === selected ? null : c)), 2_000);
     } catch {
@@ -180,9 +187,10 @@ export function ExportScreen() {
         <button
           type="button"
           disabled={checked.size === 0}
-          onClick={() =>
-            saveFile("thema.zip", buildZip(zipFiles(files, checked)), "application/zip")
-          }
+          onClick={() => {
+            saveFile("thema.zip", buildZip(zipFiles(files, checked)), "application/zip");
+            exported();
+          }}
           className={cn(
             buttonVariants({ variant: "primary" }),
             "disabled:cursor-not-allowed disabled:opacity-60",
@@ -252,7 +260,10 @@ export function ExportScreen() {
               </button>
               <button
                 type="button"
-                onClick={() => saveFile(selected, content, meta?.[2] ?? "text/plain")}
+                onClick={() => {
+                  saveFile(selected, content, meta?.[2] ?? "text/plain");
+                  exported();
+                }}
                 className={buttonVariants({ variant: "ghost" })}
               >
                 Download
@@ -270,7 +281,7 @@ export function ExportScreen() {
         </section>
       </div>
 
-      <AgentSetup system={system} />
+      <AgentSetup system={system} onExport={exported} />
     </Shell>
   );
 }

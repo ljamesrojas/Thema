@@ -13,6 +13,7 @@ import {
 } from "@thema/jobs";
 import type { Lookup } from "@thema/url-guard";
 import { setServices } from "@/server/services";
+import { createMemoryStats, type Stats } from "@/server/stats";
 
 // A path string, not a URL: under jsdom, URL is jsdom's class, which node:fs doesn't accept.
 const FIXTURES = join(import.meta.dirname, "../../../../fixtures");
@@ -58,6 +59,7 @@ export interface TestServices {
   screenshots: ScreenshotStore;
   /** Users the account route deleted. */
   deletedUsers: string[];
+  stats: Stats;
 }
 
 /**
@@ -96,6 +98,7 @@ export function useFakeServices(options: { accounts?: boolean } = {}): TestServi
   };
   const projects = createMemoryProjectStore(now);
   const deletedUsers: string[] = [];
+  const stats = createMemoryStats(now);
   const screenshots = createMemoryScreenshotStore();
   setServices({
     queue,
@@ -128,8 +131,9 @@ export function useFakeServices(options: { accounts?: boolean } = {}): TestServi
             },
           },
     screenshots,
+    stats,
   });
-  return { queue, runs, clock, hold, projects, screenshots, deletedUsers };
+  return { queue, runs, clock, hold, projects, screenshots, deletedUsers, stats };
 }
 
 export const PROJECT_ID = "6f1c1b2e-3d4a-4b5c-8d6e-7f8091a2b3c4";
