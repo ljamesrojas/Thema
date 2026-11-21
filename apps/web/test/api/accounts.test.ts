@@ -2,7 +2,7 @@
 // Routes behind sign-in: the account, saved projects (claim, open, save, delete, export),
 // per-plan limits and screenshots that outlive the queue. Sessions are faked by a header.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { GET as getAccount } from "@/app/api/account/route";
+import { DELETE as deleteAccount, GET as getAccount } from "@/app/api/account/route";
 import { GET as authRoute } from "@/app/api/auth/[...all]/route";
 import { GET as listProjects, POST as createProject } from "@/app/api/projects/route";
 import {
@@ -290,5 +290,37 @@ describe("screenshots of saved projects", () => {
       headers: ana,
     });
     expect(await services.screenshots.has(reference.id)).toBe(false);
+  });
+});
+
+describe("DELETE /api/account", () => {
+  const del = (headers: Record<string, string>) =>
+    call(deleteAccount, { method: "DELETE", path: "/api/account", headers });
+
+  it("needs a session (401), and is off without accounts (404)", async () => {
+    expect((await del({})).status).toBe(401);
+    services = useFakeServices({ accounts: false });
+    expect((await del(ana)).status).toBe(404);
+  });
+
+  it("deletes the account's projects, their unused screenshots, then the user", async () => {
+    await claim({ project: projectData() });
+    await claim({ project: projectData({ id: OTHER_ID }) });
+    const shared = projectData({ id: "33333333-2222-4333-8444-555555555555" });
+    await claim({ project: shared }, ben);
+    const ref = projectData().references[0]?.id ?? "";
+    await services.screenshots.put(ref, PNG);
+
+    const response = await del(ana);
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ deleted: true });
+    expect(await services.projects.count("ana")).toBe(0);
+    expect(services.deletedUsers).toEqual(["ana"]);
+    // Ben's project uses the same site, so its screenshot stays.
+    expect(await services.screenshots.has(ref)).toBe(true);
+    expect(await services.projects.count("ben")).toBe(1);
+
+    await call(deleteAccount, { method: "DELETE", path: "/api/account", headers: ben });
+    expect(await services.screenshots.has(ref)).toBe(false);
   });
 });

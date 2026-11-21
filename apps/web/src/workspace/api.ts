@@ -103,6 +103,9 @@ export const api = {
       body: JSON.stringify({ project, baseVersion }),
     }),
 
+  /** Delete the signed-in account and everything saved in it. */
+  deleteAccount: () => call<{ deleted: true }>("/api/account", { method: "DELETE" }),
+
   deleteProject: (id: string) =>
     call<{ deleted: string }>(`/api/projects/${id}`, { method: "DELETE" }),
 };

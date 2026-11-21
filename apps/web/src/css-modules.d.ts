@@ -4,3 +4,10 @@ declare module "*.module.css" {
   const classes: Readonly<Record<string, string>>;
   export default classes;
 }
+
+// `import text from "./file.md?raw"`: a file's text, bundled at build time (next.config.ts adds the
+// webpack rule; Vitest supports `?raw` itself).
+declare module "*?raw" {
+  const text: string;
+  export default text;
+}

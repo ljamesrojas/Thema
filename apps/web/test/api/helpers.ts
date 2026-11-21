@@ -56,6 +56,8 @@ export interface TestServices {
   hold: () => () => void;
   projects: ProjectStore;
   screenshots: ScreenshotStore;
+  /** Users the account route deleted. */
+  deletedUsers: string[];
 }
 
 /**
@@ -93,6 +95,7 @@ export function useFakeServices(options: { accounts?: boolean } = {}): TestServi
     };
   };
   const projects = createMemoryProjectStore(now);
+  const deletedUsers: string[] = [];
   const screenshots = createMemoryScreenshotStore();
   setServices({
     queue,
@@ -107,6 +110,10 @@ export function useFakeServices(options: { accounts?: boolean } = {}): TestServi
             projects,
             providers: ["github", "google"],
             handler: () => Promise.resolve(new Response("auth", { status: 200 })),
+            deleteUser: (userId) => {
+              deletedUsers.push(userId);
+              return Promise.resolve();
+            },
             session: (request) => {
               const value = request.headers.get("x-test-account");
               if (!value) return Promise.resolve(null);
@@ -122,7 +129,7 @@ export function useFakeServices(options: { accounts?: boolean } = {}): TestServi
           },
     screenshots,
   });
-  return { queue, runs, clock, hold, projects, screenshots };
+  return { queue, runs, clock, hold, projects, screenshots, deletedUsers };
 }
 
 export const PROJECT_ID = "6f1c1b2e-3d4a-4b5c-8d6e-7f8091a2b3c4";

@@ -33,7 +33,7 @@ Thema is run by [OPERATOR NAME], [CITY], Philippines ("we"). This notice explain
 
 - **One sign-in cookie,** only if you sign in. It keeps you signed in and is removed when you sign out.
 - **Local storage** for your project (described above).
-- **No advertising or tracking cookies.** [If analytics are added at launch, describe them here.]
+- **No advertising cookies, tracking or analytics.**
 
 ## Who handles data for us
 
@@ -56,11 +56,11 @@ Your data may therefore be stored or processed outside the Philippines. We choos
 - The scrambled IP address for daily limits: until the end of the day (UTC).
 - Sessions: until you sign out or the session expires.
 - Saved projects: until you delete them. A saved project's screenshots are deleted with the last project that uses them.
-- Your account: until you ask us to delete it.
+- Your account: until you delete it (account menu → Delete account), which removes it right away, with your sessions, saved projects and their screenshots.
 
 ## Your rights
 
-Under the Philippine Data Privacy Act of 2012 (and, if you're in the EU or UK, the GDPR), you can ask to see the personal data we hold about you, correct it, get a copy, object to how we use it, or have it deleted. You can delete saved projects yourself on the Projects screen. To delete your whole account, email [CONTACT EMAIL] from the address on your account and we'll do it within [30] days. You can also complain to the National Privacy Commission (privacy.gov.ph) or your local data protection authority.
+Under the Philippine Data Privacy Act of 2012 (and, if you're in the EU or UK, the GDPR), you can ask to see the personal data we hold about you, correct it, get a copy, object to how we use it, or have it deleted. You can delete saved projects yourself on the Projects screen, and your whole account from the account menu (top right) → Delete account: it's removed right away, with everything saved in it. For anything else, email [CONTACT EMAIL] from the address on your account and we'll answer within [30] days. You can also complain to the National Privacy Commission (privacy.gov.ph) or your local data protection authority.
 
 ## Children
 

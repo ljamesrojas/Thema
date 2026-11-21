@@ -9,7 +9,7 @@ import { initials } from "@/account/account-menu";
 import { ProjectsScreen } from "@/account/projects-screen";
 import { SiteHeader } from "@/components/site/site-header";
 import { SignInScreen } from "@/account/sign-in";
-import { GET as getAccount } from "@/app/api/account/route";
+import { DELETE as deleteAccount, GET as getAccount } from "@/app/api/account/route";
 import { GET as listProjects, POST as createProject } from "@/app/api/projects/route";
 import {
   DELETE as deleteProject,
@@ -33,6 +33,7 @@ type Handler = (
 
 const ROUTES: [string, RegExp, Handler][] = [
   ["GET", /^\/api\/account$/, getAccount],
+  ["DELETE", /^\/api\/account$/, deleteAccount],
   ["GET", /^\/api\/projects$/, listProjects],
   ["POST", /^\/api\/projects$/, createProject],
   ["GET", /^\/api\/projects\/([^/]+)$/, getProject],
@@ -251,6 +252,33 @@ describe("the account menu", () => {
     fireEvent.click(screen.getByRole("button", { name: "Sign out" }));
     await waitFor(() => expect(auth).toContain("POST /api/auth/sign-out"));
     // The account's project leaves this browser (then the page goes home).
+    await waitFor(() => expect(stored()).toBeNull());
+  });
+
+  it("deletes the account after a confirm step, and clears its project from this browser", async () => {
+    user = "ana";
+    await services.projects.create("ana", projectData(), newId);
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ ...projectData(), account: { userId: "ana", version: 1 } }),
+    );
+    const { container } = render(<ProjectsScreen />);
+    fireEvent.click(await screen.findByRole("button", { name: "Account: User ana" }));
+    fireEvent.click(screen.getByRole("button", { name: "Delete account" }));
+    const confirm = within(screen.getByRole("group", { name: "Delete your account?" }));
+    expect(confirm.getByText(/can't be undone/)).toBeTruthy();
+    const results = await axe.run(container, { rules: { "color-contrast": { enabled: false } } });
+    expect(results.violations.map((v) => v.id)).toEqual([]);
+
+    // Keep it: back to the links, nothing deleted.
+    fireEvent.click(confirm.getByRole("button", { name: "Keep my account" }));
+    expect(screen.getByRole("button", { name: "Delete account" })).toBeTruthy();
+    expect(services.deletedUsers).toEqual([]);
+
+    fireEvent.click(screen.getByRole("button", { name: "Delete account" }));
+    fireEvent.click(screen.getByRole("button", { name: "Delete my account" }));
+    await waitFor(() => expect(services.deletedUsers).toEqual(["ana"]));
+    expect(await services.projects.count("ana")).toBe(0);
     await waitFor(() => expect(stored()).toBeNull());
   });
 

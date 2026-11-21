@@ -88,6 +88,8 @@ describe("SiteHeader and SiteFooter", () => {
       ...SITE_PAGES.map(([href]) => href),
       GITHUB_URL,
       "/privacy",
+      "/terms",
+      "/refunds",
     ]);
     expect(screen.getByRole("contentinfo").textContent).toContain(
       "© 2026 Thema · Inspired by, never cloned.",

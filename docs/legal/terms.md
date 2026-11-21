@@ -52,7 +52,7 @@ Thema is provided "as is". To the fullest extent the law allows, we aren't liabl
 
 ## Ending
 
-You can stop using Thema and delete your saved projects at any time, and ask us to delete your account (see the Privacy notice). We may end your access if you break these terms; for a paid plan, we'll refund the unused part unless the reason was abuse.
+You can stop using Thema at any time, and delete your saved projects or your whole account yourself (account menu → Delete account). We may end your access if you break these terms; for a paid plan, we'll refund the unused part unless the reason was abuse.
 
 ## Changes to these terms
 

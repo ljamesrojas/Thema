@@ -25,6 +25,8 @@ export interface Accounts {
   /** Better Auth's routes (/api/auth/*). */
   handler(request: Request): Promise<Response>;
   providers: Provider[];
+  /** Delete the user, with their sessions and sign-in links (the database cascades). */
+  deleteUser(userId: string): Promise<void>;
 }
 
 export interface Services {
@@ -97,11 +99,15 @@ async function accountsFromEnv(): Promise<Accounts | null> {
   ]);
   const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 5 });
   const auth = createAuth(pool, config);
+  const db = poolDb(pool);
   return {
-    projects: createPostgresProjectStore(poolDb(pool)),
+    projects: createPostgresProjectStore(db),
     session: sessionReader(auth),
     handler: (request) => auth.handler(request),
     providers: providersOf(config),
+    deleteUser: async (userId) => {
+      await db.query(`DELETE FROM "user" WHERE "id" = $1`, [userId]);
+    },
   };
 }
 

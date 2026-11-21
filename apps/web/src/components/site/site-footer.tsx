@@ -6,8 +6,8 @@ import { GitHubLink, SITE_PAGES } from "./site-header";
 const link = "flex min-h-11 items-center gap-1 text-band-link";
 
 /**
- * The black footer (docs/pages.md → Shared). /privacy is written in Session 15b (with Terms and
- * Refunds, which Paddle needs); until then the link leads to the 404 page.
+ * The black footer (docs/pages.md → Shared), with the legal pages (docs/legal/*.md, which Paddle
+ * needs to see before it approves selling Pro).
  */
 export function SiteFooter() {
   return (
@@ -29,9 +29,15 @@ export function SiteFooter() {
             </a>
           ))}
           <GitHubLink className={link} />
-          <a href="/privacy" className={link}>
-            Privacy
-          </a>
+          {[
+            ["/privacy", "Privacy"],
+            ["/terms", "Terms"],
+            ["/refunds", "Refunds"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className={link}>
+              {label}
+            </a>
+          ))}
         </nav>
       </div>
     </footer>

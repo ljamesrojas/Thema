@@ -105,3 +105,29 @@ describe.each(stores)("project store (%s)", (_name, make) => {
     expect((await store.list("ana"))[0]?.colors).toBeNull();
   });
 });
+
+describe("deleting a user (Postgres)", () => {
+  it("takes their sessions, sign-in links and projects with it", async () => {
+    await pg.exec(`DELETE FROM "projects"; DELETE FROM "user";`);
+    await insertUser(pg, "gone");
+    await insertUser(pg, "stays");
+    await pg.query(
+      `INSERT INTO "session" ("id", "expiresAt", "token", "updatedAt", "userId") VALUES ('s1', now() + interval '1 day', 't1', now(), 'gone')`,
+    );
+    await pg.query(
+      `INSERT INTO "account" ("id", "accountId", "providerId", "userId", "updatedAt") VALUES ('a1', '123', 'github', 'gone', now())`,
+    );
+    const store = createPostgresProjectStore(pg);
+    await store.create("gone", projectData(), newId);
+    await store.create("stays", projectData({ id: OTHER_ID }), newId);
+
+    await pg.query(`DELETE FROM "user" WHERE "id" = $1`, ["gone"]);
+
+    const count = async (table: string) =>
+      (await pg.query<{ n: number }>(`SELECT count(*)::int AS "n" FROM "${table}"`)).rows[0]?.n;
+    expect(await count("session")).toBe(0);
+    expect(await count("account")).toBe(0);
+    expect(await store.count("gone")).toBe(0);
+    expect(await store.count("stays")).toBe(1);
+  });
+});
