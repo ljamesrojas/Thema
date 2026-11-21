@@ -78,7 +78,6 @@ export function TopBar({
           </nav>
         </div>
         <span className="flex items-center gap-2 lg:justify-self-end">
-          <AccountControls account={account} next={current} />
           {/* One primary per view: the Export screen has its own (Download zip). On phones the
               Export tab does the same job, and the button would wrap onto a row of its own,
               moving the tabs down on two screens out of three. */}
@@ -89,6 +88,8 @@ export function TopBar({
               </a>
             </span>
           )}
+          {/* Sign in, or the account menu: always the far right corner. */}
+          <AccountControls account={account} next={current} />
         </span>
       </div>
     </header>

@@ -1,5 +1,6 @@
 // The marketing pages' header (docs/pages.md → Shared): logo, the four pages, GitHub, Sign in and
 // Start blending. The current page's link carries aria-current="page" and a Kiln underline.
+import { SiteAccount } from "@/account/account-controls";
 import { buttonVariants } from "@/components/button";
 import { Logo } from "@/components/logo";
 import { cn } from "@/lib/cn";
@@ -85,15 +86,11 @@ export function SiteHeader({ current }: { current?: SitePage }) {
           <GitHubLink className={cn(navLink, "border-transparent text-ink-soft hover:text-ink")} />
         </div>
         <div className="flex items-center gap-3">
-          <a
-            href="/sign-in"
-            className="flex min-h-11 items-center px-3.5 text-label-md font-label-md text-ink no-underline"
-          >
-            Sign in
-          </a>
+          <SiteAccount slot="before" {...(current ? { current } : {})} />
           <a href="/workspace" className={buttonVariants({ variant: "secondary" })}>
             Start blending
           </a>
+          <SiteAccount slot="after" {...(current ? { current } : {})} />
         </div>
       </nav>
     </header>

@@ -5,7 +5,9 @@ import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-li
 import axe from "axe-core";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { safeNext, signOut } from "@/account/auth-client";
+import { initials } from "@/account/account-menu";
 import { ProjectsScreen } from "@/account/projects-screen";
+import { SiteHeader } from "@/components/site/site-header";
 import { SignInScreen } from "@/account/sign-in";
 import { GET as getAccount } from "@/app/api/account/route";
 import { GET as listProjects, POST as createProject } from "@/app/api/projects/route";
@@ -113,13 +115,13 @@ describe("the Workspace and accounts", { timeout: 15_000 }, () => {
     renderWorkspace();
     await screen.findByLabelText("Add a reference URL");
     await waitFor(() => expect(screen.queryByRole("link", { name: "Sign in" })).toBeNull());
-    expect(screen.queryByRole("link", { name: "Projects" })).toBeNull();
+    expect(screen.queryByRole("button", { name: /^Account:/ })).toBeNull();
   });
 
   it("signed in: claims the project with its first site, then saves changes to it", async () => {
     user = "ana";
     renderWorkspace();
-    expect(await screen.findByRole("link", { name: "Projects" })).toBeTruthy();
+    expect(await screen.findByRole("button", { name: "Account: User ana" })).toBeTruthy();
     await addSite("light-saas.test");
     await screen.findByText("Saved to your account");
     const id = stored()?.id ?? "";
@@ -185,6 +187,88 @@ describe("the Workspace and accounts", { timeout: 15_000 }, () => {
     await waitFor(() => expect(stored()?.name).toBe("Untitled system"));
     expect(stored()?.references).toEqual([]);
     expect(stored()?.id).not.toBe(ID);
+  });
+});
+
+describe("the account menu", () => {
+  it("opens from the initials button with who's signed in, their plan and what they need", async () => {
+    user = "ana";
+    const { container } = render(<Workspace pollMs={20} blendDelayMs={10} saveDelayMs={10} />);
+    const button = await screen.findByRole("button", { name: "Account: User ana" });
+    expect(button.textContent).toBe("UA");
+    expect(button.getAttribute("aria-expanded")).toBe("false");
+    const panel = document.getElementById(button.getAttribute("aria-controls") ?? "");
+    expect(panel?.hidden).toBe(true);
+
+    fireEvent.click(button);
+    expect(button.getAttribute("aria-expanded")).toBe("true");
+    expect(panel?.hidden).toBe(false);
+    const menu = within(panel as HTMLElement);
+    expect(menu.getByText("User ana")).toBeTruthy();
+    expect(menu.getByText("ana@example.com")).toBeTruthy();
+    expect(menu.getByText("Free")).toBeTruthy();
+    expect(menu.getByRole("link", { name: "Your projects" }).getAttribute("href")).toBe(
+      "/projects",
+    );
+    expect(menu.getByRole("link", { name: "Plans and pricing" }).getAttribute("href")).toBe(
+      "/pricing",
+    );
+    expect(menu.getByRole("button", { name: "Sign out" })).toBeTruthy();
+    const results = await axe.run(container, { rules: { "color-contrast": { enabled: false } } });
+    expect(results.violations.map((v) => v.id)).toEqual([]);
+  });
+
+  it("closes on Escape (focus back on the button) and on a click outside", async () => {
+    user = "ana";
+    render(<ProjectsScreen />);
+    const button = await screen.findByRole("button", { name: "Account: User ana" });
+    fireEvent.click(button);
+    fireEvent.keyDown(document, { key: "Escape" });
+    expect(button.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(button);
+    fireEvent.click(button);
+    fireEvent.pointerDown(document.body);
+    expect(button.getAttribute("aria-expanded")).toBe("false");
+  });
+
+  it("marks Your projects as the current page on the Projects screen", async () => {
+    user = "ana";
+    render(<ProjectsScreen />);
+    fireEvent.click(await screen.findByRole("button", { name: "Account: User ana" }));
+    expect(screen.getByRole("link", { name: "Your projects" }).getAttribute("aria-current")).toBe(
+      "page",
+    );
+  });
+
+  it("signs out from the menu", async () => {
+    user = "ana";
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ ...projectData(), account: { userId: "ana", version: 1 } }),
+    );
+    render(<ProjectsScreen />);
+    fireEvent.click(await screen.findByRole("button", { name: "Account: User ana" }));
+    fireEvent.click(screen.getByRole("button", { name: "Sign out" }));
+    await waitFor(() => expect(auth).toContain("POST /api/auth/sign-out"));
+    // The account's project leaves this browser (then the page goes home).
+    await waitFor(() => expect(stored()).toBeNull());
+  });
+
+  it("puts the initials menu in the site header once someone is signed in", async () => {
+    user = "ana";
+    render(<SiteHeader current="/pricing" />);
+    const button = await screen.findByRole("button", { name: "Account: User ana" });
+    expect(screen.queryByRole("link", { name: "Sign in" })).toBeNull();
+    fireEvent.click(button);
+    expect(
+      screen.getByRole("link", { name: "Plans and pricing" }).getAttribute("aria-current"),
+    ).toBe("page");
+  });
+
+  it("makes initials from the name, else the email", () => {
+    expect(initials({ name: "Ana Reyes", email: "a@x.io" })).toBe("AR");
+    expect(initials({ name: "ana", email: "a@x.io" })).toBe("A");
+    expect(initials({ name: "  ", email: "zed@x.io" })).toBe("Z");
   });
 });
 
