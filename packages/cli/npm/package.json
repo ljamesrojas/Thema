@@ -1,0 +1,38 @@
+{
+  "name": "thema-cli",
+  "version": "0.1.0",
+  "description": "Blend reference sites into one original, accessible design system: DESIGN.md, Tailwind v4, shadcn/ui and DTCG tokens.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "thema": "dist/thema.mjs"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "playwright": "1.65.0"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "design.md",
+    "tailwind",
+    "shadcn",
+    "dtcg",
+    "accessibility",
+    "wcag"
+  ],
+  "homepage": "https://github.com/ljamesrojas/Thema",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljamesrojas/Thema.git",
+    "directory": "packages/cli"
+  },
+  "bugs": "https://github.com/ljamesrojas/Thema/issues"
+}

@@ -1,6 +1,8 @@
 // thema: extract a site, blend systems, export files. Reads and writes ThemaSystem JSON.
+import { spawn } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
-import { join, resolve } from "node:path";
+import { createRequire } from "node:module";
+import { dirname, join, resolve } from "node:path";
 import { parseArgs } from "node:util";
 import type { BorrowTag, ThemaSystem } from "@thema/engine";
 import {
@@ -27,6 +29,7 @@ Usage:
   thema blend <file[=tags]>... --out blended.json [--density n] [--roundness n]
               [--contrast n] [--warmth n] [--lock <path>]... [--previous system.json] [--name <name>]
   thema export --in system.json --format <format> [--out <dir>]
+  thema setup
 
 extract   Load a site in a local browser (or a Thema API with --api / THEMA_API_URL) and write
           its system as JSON (stdout without --out).
@@ -34,6 +37,7 @@ blend     Blend up to 5 systems, then fix contrast to WCAG AA. Tags say what eac
           ${BORROW_TAGS.join(", ")} (comma-separated); tags nobody claims come from the first.
           Sliders go from -1 to 1. --lock keeps a token (e.g. color.light.primary) from --previous.
 export    Write ${Object.keys(FORMATS).join(", ")}, or all.
+setup     Install the Chromium that extract uses (once; matches Thema's Playwright version).
 
 Exit codes: 0 done, 1 failed, 2 bad usage or a blocked URL.`;
 
@@ -48,6 +52,34 @@ export interface Io {
 export interface Deps {
   /** Replaces the extractor (tests). */
   extractor?: Extractor;
+  /** Replaces the browser installer (tests). Returns its exit code. */
+  installBrowser?: (io: Io) => Promise<number>;
+}
+
+/**
+ * `thema setup`: run the installer of the Playwright that came with Thema, so the browser matches
+ * the version extract uses (a bare `npx playwright install` could fetch another one). Playwright
+ * doesn't export its CLI, but its package.json is exported and names it.
+ */
+async function installBrowser(io: Io): Promise<number> {
+  const require = createRequire(import.meta.url);
+  let cli: string;
+  try {
+    const manifest = require.resolve("playwright/package.json");
+    const { bin } = require(manifest) as { bin: Record<string, string> };
+    cli = join(dirname(manifest), bin.playwright ?? "cli.js");
+  } catch {
+    io.stderr(
+      "Playwright isn't installed next to Thema. From a clone of the repo, run: pnpm --filter @thema/worker exec playwright install chromium\n",
+    );
+    return 1;
+  }
+  io.stdout("Installing Chromium for Thema (about 150 MB, once)…\n");
+  return new Promise((resolveExit) => {
+    const child = spawn(process.execPath, [cli, "install", "chromium"], { stdio: "inherit" });
+    child.on("close", (code) => resolveExit(code ?? 1));
+    child.on("error", () => resolveExit(1));
+  });
 }
 
 class UsageError extends Error {}
@@ -217,6 +249,8 @@ export async function main(argv: string[], io: Io, deps: Deps = {}): Promise<num
         return await blendCommand(args, io);
       case "export":
         return await exportCommand(args, io);
+      case "setup":
+        return await (deps.installBrowser ?? installBrowser)(io);
       case undefined:
       case "help":
       case "--help":

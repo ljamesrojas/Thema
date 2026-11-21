@@ -293,6 +293,21 @@ describe("thema export", () => {
   });
 });
 
+describe("thema setup", () => {
+  it("runs the browser installer and returns its exit code; help lists it", async () => {
+    let calls = 0;
+    const installBrowser = () => {
+      calls += 1;
+      return Promise.resolve(0);
+    };
+    expect(await main(["setup"], io, { installBrowser })).toBe(0);
+    expect(calls).toBe(1);
+    expect(await main(["setup"], io, { installBrowser: () => Promise.resolve(1) })).toBe(1);
+    await main(["--help"], io);
+    expect(out.join("")).toContain("thema setup");
+  });
+});
+
 describe("the real binary", () => {
   it("runs `thema export` in a subprocess", () => {
     const system = fix(fixtureOutput("https://light-saas.test/").system).system;

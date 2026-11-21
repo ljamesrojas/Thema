@@ -1,0 +1,37 @@
+{
+  "name": "thema-mcp",
+  "version": "0.1.0",
+  "description": "Thema as an MCP server: AI coding agents extract sites, blend them and get DESIGN.md mid-task.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "thema-mcp": "dist/thema-mcp.mjs"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "playwright": "1.65.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "design-system",
+    "design.md",
+    "claude-code",
+    "cursor",
+    "design-tokens"
+  ],
+  "homepage": "https://github.com/ljamesrojas/Thema",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljamesrojas/Thema.git",
+    "directory": "packages/mcp"
+  },
+  "bugs": "https://github.com/ljamesrojas/Thema/issues"
+}

@@ -19,3 +19,7 @@ apps/web/AGENTS.md
 
 # The approved page mockups (docs/pages.md) are ours and versioned with the pages.
 !docs/mockups/*.png
+
+# npm builds of the CLI and MCP server (pnpm build:npm); LICENSE is copied in by the build.
+packages/*/npm/dist/
+packages/*/npm/LICENSE
