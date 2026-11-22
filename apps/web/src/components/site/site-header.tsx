@@ -11,7 +11,7 @@ export const GITHUB_URL = "https://github.com/ljamesrojas/Thema";
 /** Who makes Thema: it's a personal project, credited in the footer. */
 export const OWNER = {
   name: "Lawrenze James Rojas",
-  url: "https://github.com/ljamesrojas",
+  url: "https://ljrojas.vercel.app",
 } as const;
 
 export const SITE_PAGES = [
