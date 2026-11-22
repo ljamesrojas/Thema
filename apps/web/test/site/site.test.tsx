@@ -1,4 +1,4 @@
-// The site pages (docs/pages.md): How it works, Exports, For agents and Pricing, with the shared
+// The site pages (docs/pages.md): How it works, Exports, For agents and Plans, with the shared
 // header and footer the Landing uses too.
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import axe from "axe-core";
@@ -11,15 +11,15 @@ import type { ReactElement } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { QUESTIONS } from "@/components/faq";
 import { Landing } from "@/components/landing";
-import { GITHUB_URL, SITE_PAGES } from "@/components/site/site-header";
+import { GITHUB_URL, OWNER, SITE_PAGES } from "@/components/site/site-header";
 import { EXPORT_FILES, SNIPPETS } from "@/lib/exports-meta";
 import { heroBlend, sampleSystem } from "@/lib/hero-blend";
-import { PLANS, PRICES } from "@/server/plans";
+import { PLANS } from "@/server/plans";
 import { AgentsPage } from "@/site/agents-page";
 import { CLI_COMMANDS, ExportsPage } from "@/site/exports-page";
 import { EXCERPT_LINES } from "@/site/file-explorer";
 import { HowItWorksPage } from "@/site/how-it-works";
-import { PricingPage } from "@/site/pricing-page";
+import { PlansPage } from "@/site/plans-page";
 
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn() }) }));
 afterEach(() => {
@@ -31,7 +31,7 @@ const PAGES: [string, string, () => ReactElement, RegExp][] = [
   ["/how-it-works", "How it works", () => <HowItWorksPage />, /From five links to one system/],
   ["/exports", "Exports", () => <ExportsPage />, /Five files\. One system\./],
   ["/agents", "For agents", () => <AgentsPage />, /Your agent, now with taste/],
-  ["/pricing", "Pricing", () => <PricingPage />, /Every feature, free to start/],
+  ["/plans", "Plans", () => <PlansPage />, /Every feature, free for everyone/],
 ];
 
 const mainNav = () => screen.getByRole("navigation", { name: "Main" });
@@ -89,11 +89,17 @@ describe("SiteHeader and SiteFooter", () => {
       GITHUB_URL,
       "/privacy",
       "/terms",
-      "/refunds",
     ]);
-    expect(screen.getByRole("contentinfo").textContent).toContain(
-      "© 2026 Thema · Inspired by, never cloned.",
-    );
+    // A personal project: the footer credits its maker, in a new tab.
+    const footerText = screen.getByRole("contentinfo").textContent;
+    expect(footerText).toContain("© 2026 Thema · A personal project by");
+    expect(footerText).toContain("· Inspired by, never cloned.");
+    const maker = within(screen.getByRole("contentinfo")).getByRole("link", {
+      name: new RegExp(OWNER.name),
+    });
+    expect(maker.getAttribute("href")).toBe(OWNER.url);
+    expect(maker.getAttribute("target")).toBe("_blank");
+    expect(maker.textContent).toContain("(opens in a new tab)");
   });
 
   it("are the Landing's too: its nav goes to the pages and marks none as current", () => {
@@ -261,33 +267,18 @@ describe("For agents: setup tabs", () => {
   });
 });
 
-describe("Pricing", () => {
-  it("toggles monthly and yearly billing", () => {
-    render(<PricingPage />);
-    const toggle = within(screen.getByRole("group", { name: "Billing" }));
-    const price = () => screen.getByTestId("pro-price").textContent;
-    expect(toggle.getByRole("button", { name: "Monthly" }).getAttribute("aria-pressed")).toBe(
-      "true",
+describe("Plans", () => {
+  it("shows no prices, no billing toggle and nothing to buy: Thema is a free personal project", () => {
+    render(<PlansPage />);
+    expect(screen.queryByRole("group", { name: "Billing" })).toBeNull();
+    expect(screen.getAllByTestId("plan-price").map((p) => p.textContent)).toEqual(["$0", "$0"]);
+    expect(document.body.textContent).not.toMatch(
+      /\$[1-9]|Paddle|a month|a year|Upgrade|Coming soon|refund/i,
     );
-    expect(price()).toBe(`$${PRICES.monthly}`);
-    fireEvent.click(toggle.getByRole("button", { name: /^Yearly/ }));
-    expect(toggle.getByRole("button", { name: /^Yearly/ }).getAttribute("aria-pressed")).toBe(
-      "true",
-    );
-    expect(toggle.getByRole("button", { name: "Monthly" }).getAttribute("aria-pressed")).toBe(
-      "false",
-    );
-    expect(price()).toBe(`$${PRICES.yearly}`);
-    expect(screen.getByText("That's $8 a month, billed once a year.")).toBeTruthy();
-    // "save 33%" sits inside the Yearly button; there's no "Cancel anytime" promise.
-    expect(toggle.getByRole("button", { name: /^Yearly/ }).textContent).toBe("Yearly save 33%");
-    expect(screen.queryByText(/Cancel anytime/)).toBeNull();
-    fireEvent.click(toggle.getByRole("button", { name: "Monthly" }));
-    expect(screen.getByText("Or $96 a year, and save 33%.")).toBeTruthy();
   });
 
-  it("states each plan's limits from the code, and Pro is 'Coming soon', focusable but not a link", () => {
-    render(<PricingPage />);
+  it("states each plan's limits from the code, and Pro is planned, with nothing to click", () => {
+    render(<PlansPage />);
     const plan = (name: string) => within(screen.getByRole("listitem", { name: `${name} plan` }));
     expect(
       plan("No account").getByText(`${ANONYMOUS_DAILY_EXTRACTIONS} new extractions a day`),
@@ -298,26 +289,28 @@ describe("Pricing", () => {
     expect(plan("Free").getByRole("link", { name: "Sign in free" }).getAttribute("href")).toBe(
       "/sign-in",
     );
+    expect(plan("Pro").getByText("planned")).toBeTruthy();
     expect(
       plan("Pro").getByText(`${PLANS.pro.dailyExtractions} new extractions a day`),
     ).toBeTruthy();
-    const soon = plan("Pro").getByText("Coming soon");
-    expect(soon.tagName).toBe("SPAN");
-    expect(soon.getAttribute("tabindex")).toBe("0");
-    expect(soon.closest("a")).toBeNull();
+    expect(plan("Pro").queryByRole("link")).toBeNull();
     expect(plan("Pro").queryByRole("button")).toBeNull();
-    // A muted outlined label, not a filled primary button.
-    expect(soon.className).toContain("border");
-    expect(soon.className).not.toMatch(/bg-primary/);
   });
 
-  it("compares plans in a real table", () => {
-    render(<PricingPage />);
+  it("compares plans in a real table, with Pro marked planned and no price row", () => {
+    render(<PlansPage />);
     const table = screen.getByRole("table");
     const cols = within(table).getAllByRole("columnheader");
     expect(cols.map((c) => c.getAttribute("scope"))).toEqual(["col", "col", "col", "col"]);
+    expect(cols.map((c) => c.textContent)).toEqual([
+      "Feature",
+      "No account",
+      "Free",
+      "Pro (planned)",
+    ]);
     const rows = within(table).getAllByRole("rowheader");
     expect(rows.every((r) => r.getAttribute("scope") === "row")).toBe(true);
+    expect(rows.map((r) => r.textContent)).not.toContain("Price");
     const included = within(table)
       .getAllByRole("cell")
       .filter((c) => c.textContent === "Included");

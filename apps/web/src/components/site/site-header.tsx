@@ -8,11 +8,17 @@ import { container } from "./parts";
 
 export const GITHUB_URL = "https://github.com/ljamesrojas/Thema";
 
+/** Who makes Thema: it's a personal project, credited in the footer. */
+export const OWNER = {
+  name: "Lawrenze James Rojas",
+  url: "https://github.com/ljamesrojas",
+} as const;
+
 export const SITE_PAGES = [
   ["/how-it-works", "How it works"],
   ["/exports", "Exports"],
   ["/agents", "For agents"],
-  ["/pricing", "Pricing"],
+  ["/plans", "Plans"],
 ] as const;
 
 export type SitePage = (typeof SITE_PAGES)[number][0];

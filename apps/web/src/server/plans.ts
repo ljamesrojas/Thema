@@ -1,5 +1,6 @@
 // What each kind of user gets (user-approved 2026-11-15). Signing in unlocks saved projects
-// (SPEC); Pro is a flag on the user until billing is connected. No imports: the sign-in and
+// (SPEC); Pro is a flag on the user, set by hand. Thema is a free personal project: nothing is
+// sold, and the payments plan for Pro waits in docs/plans/payments.md. No imports: the sign-in and
 // Projects screens show these numbers too. Signed-out limits live with the queue (@thema/jobs).
 
 export type Plan = "free" | "pro";
@@ -13,10 +14,3 @@ export const PLANS = {
 >;
 
 export const planOf = (value: unknown): Plan => (value === "pro" ? "pro" : "free");
-
-/** Pro's price in USD, the same everywhere (decided 2026-11-15); sold through Paddle. */
-export const PRICES = { monthly: 12, yearly: 96, currency: "USD" } as const;
-
-/** What paying yearly saves, against twelve months: 33 for $96 vs $144. */
-export const yearlySaving = (): number =>
-  Math.round((1 - PRICES.yearly / (PRICES.monthly * 12)) * 100);

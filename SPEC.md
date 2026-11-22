@@ -33,7 +33,7 @@ The MVP covers URL input, blending, accessibility fixes, preview and five export
 - Accessibility fixer: WCAG AA contrast on all text/background pairs, generated dark mode, semantic colors
 - Preview on 3 template pages: landing, dashboard, settings form
 - Exports: DESIGN.md, Tailwind v4 theme, shadcn theme, DTCG tokens.json, a style-guide HTML page
-- Anonymous use: 1 project, saved only in the browser, 3 new extractions a day. Signing in (GitHub or Google) unlocks saved projects: Free keeps 3 projects with 10 new extractions a day, Pro keeps unlimited projects with 50 a day (Pro is a flag on the account until billing is connected)
+- Anonymous use: 1 project, saved only in the browser, 3 new extractions a day. Signing in (GitHub or Google) unlocks saved projects: Free keeps 3 projects with 10 new extractions a day, Pro keeps unlimited projects with 50 a day (Pro is a flag on the account, set by hand: Thema is a free personal project and sells nothing; selling Pro is planned in docs/plans/payments.md)
 - MCP server with 3 tools: `extract` (URL → a system id, summary and warnings), `blend` (systems by id or JSON file, borrow tags, sliders, locks → a new fixed system), `get_design_md` (system → DESIGN.md, optionally written to a path); stdio, systems kept by id for the session
 - Open-source CLI (MIT) that wraps the same engine: `thema extract`, `thema blend`, `thema export`, reading and writing ThemaSystem JSON (`thema.json`, also downloadable from the Export screen)
 
@@ -42,7 +42,7 @@ The MVP covers URL input, blending, accessibility fixes, preview and five export
 - Image or screenshot input
 - UX pattern extraction (nav model, page templates, component states)
 - Drift-check CLI and GitHub Action
-- Figma variables export, teams, billing beyond a simple Pro flag
+- Figma variables export, teams, payments (selling Pro is on hold: docs/plans/payments.md)
 
 **Success criteria at launch + 4 weeks**
 
@@ -331,9 +331,9 @@ The biggest risk is extraction accuracy. If the first paste looks wrong, users l
 
 **Open questions**
 
-- [x] Hosting for the Playwright worker: decided 2026-11-15: an Oracle Cloud Always Free VM runs the worker and Redis (no command limits), with a firewall blocking private ranges; move to Fly.io once paying users cover it. Set up in Session 15b
+- [x] Hosting for the Playwright worker: decided 2026-11-15: an Oracle Cloud Always Free VM runs the worker and Redis (no command limits), with a firewall blocking private ranges; move to Fly.io if usage outgrows it. Set up in Session 15b
 - [x] Which LLM and what monthly budget for the prose and naming steps? Decided 2026-11-14: no LLM and no budget for now; DESIGN.md prose stays deterministic. Revisit after launch (estimate then: about $0.03 per DESIGN.md with Sonnet-class, $0.002 with Haiku-class).
-- [x] Pro price: decided 2026-11-15: $12/month or $96/year, in USD everywhere, sold through Paddle (merchant of record: it handles sales tax and VAT abroad; Stripe may not accept Philippine sellers). Billing is connected after Paddle approves the account; until then Pro is a flag on the account. Plan limits: Free 3 saved projects and 10 extractions a day, Pro unlimited projects and 50 a day
+- [x] Pro price: decided 2026-11-15: $12/month or $96/year, in USD everywhere, sold through Paddle (merchant of record: it handles sales tax and VAT abroad; Stripe may not accept Philippine sellers). Billing is connected after Paddle approves the account; until then Pro is a flag on the account. On hold since 2026-11-22: Thema is a free personal project (portfolio), nothing is for sale, and the plan to sell Pro is in docs/plans/payments.md. Plan limits: Free 3 saved projects and 10 extractions a day, Pro unlimited projects and 50 a day
 - [x] License for the CLI: MIT or AGPL? Decided 2026-11-14: MIT, for the CLI, the MCP server and every package they run on (engine, exporters, url-guard, jobs, schema, worker). The hosted web app (apps/web) stays unlicensed.
 
 **Roadmap after MVP**

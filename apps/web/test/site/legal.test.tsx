@@ -4,7 +4,6 @@ import axe from "axe-core";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import PrivacyPage from "@/app/privacy/page";
-import RefundsPage from "@/app/refunds/page";
 import TermsPage from "@/app/terms/page";
 import { parseMarkdown, renderMarkdown } from "@/lib/markdown";
 import privacy from "../../../../docs/legal/privacy.md?raw";
@@ -76,7 +75,6 @@ describe("the Markdown renderer", () => {
 describe.each([
   ["Privacy notice", PrivacyPage, "Your rights"],
   ["Terms of service", TermsPage, "Fair use"],
-  ["Refund policy", RefundsPage, "Our promise"],
 ])("%s", (title, Page, section) => {
   it("renders the Markdown with the site's header and footer, and passes axe", async () => {
     const { container } = render(<Page />);
@@ -88,7 +86,6 @@ describe.each([
     for (const [href, label] of [
       ["/privacy", "Privacy"],
       ["/terms", "Terms"],
-      ["/refunds", "Refunds"],
     ]) {
       expect(footer.getByRole("link", { name: label }).getAttribute("href")).toBe(href);
     }

@@ -1,10 +1,10 @@
 # Terms of service (DRAFT, for review)
 
-> Draft written for Thema as it works today (2026-11-21). Not legal advice: have it checked before launch, especially the liability and governing-law parts. Fill in every `[BRACKETED]` item.
+> Draft written for Thema as it works today (2026-11-22: a free personal project, nothing for sale). Not legal advice: have it checked before launch, especially the liability and governing-law parts. Fill in every `[BRACKETED]` item.
 
-**Last updated:** [DATE]
+**Last updated:** November 22, 2026
 
-These terms are an agreement between you and [OPERATOR NAME], [CITY], Philippines ("we"), for using Thema at [THEMA ADDRESS, e.g. thema.vercel.app]. By using Thema you agree to them. Questions: [CONTACT EMAIL].
+Thema is a free personal project made by Lawrenze James Rojas, Subic, Zambales, Philippines ("we"). These terms are an agreement between you and us for using Thema at thema-ten.vercel.app. By using Thema you agree to them. Questions: lawrenzejamesrojas@gmail.com.
 
 ## What Thema does
 
@@ -14,7 +14,7 @@ Thema reads the visible styles of public websites you choose and blends them int
 
 - You can use Thema without an account. An account (through GitHub or Google) lets you save projects.
 - Keep your GitHub or Google account secure: whoever can sign in to it can sign in to your Thema account.
-- You must be at least [16] to use Thema.
+- You must be at least 16 to use Thema.
 
 ## Fair use
 
@@ -34,25 +34,21 @@ We may suspend or close accounts that break these rules.
   - Don't present a blend as another company's brand, and check that what you ship doesn't infringe anyone's trademarks.
 - **Thema itself** (the website, its design and its hosted service) belongs to us. The Thema CLI, MCP server and the packages they use are open source under the MIT license; their own license applies to them.
 
-## Plans and payments
+## It's free
 
-- No account and Free are free. Pro costs [$12 a month or $96 a year], in US dollars.
-- Pro is sold through Paddle, which acts as the seller of record: you buy from Paddle, Paddle's own buyer terms apply to the purchase, and Paddle handles tax, receipts and billing questions.
-- Subscriptions renew automatically until you cancel. You can cancel at any time; Pro then lasts until the end of the period you paid for.
-- Refunds: see the Refund policy.
-- If we change prices, the change applies from your next renewal after we tell you.
+Thema is free to use, with daily limits that keep it running for everyone. Nothing is for sale, and we never ask for a card. If a paid plan ever comes, these terms will change first, and signed-in users will hear about it in the app before anything costs money.
 
 ## Availability and changes
 
-We work to keep Thema running and accurate, but we can't promise it will always be available, error-free, or that every extraction will be correct: websites change, block automated browsers or render differently. We may change, add or remove features. For a paid feature we remove, we'll refund the unused part of your subscription.
+We work to keep Thema running and accurate, but we can't promise it will always be available, error-free, or that every extraction will be correct: websites change, block automated browsers or render differently. We may change, add or remove features, or stop running Thema; if we do, we'll tell signed-in users in the app first, so you can export your projects.
 
 ## Liability
 
-Thema is provided "as is". To the fullest extent the law allows, we aren't liable for indirect or consequential losses, lost profits or lost data, and our total liability for any claim is limited to the amount you paid us in the 12 months before it (or [$50] if you paid nothing). Nothing in these terms limits liability that the law doesn't allow us to limit, or your rights as a consumer where you live.
+Thema is provided "as is". To the fullest extent the law allows, we aren't liable for indirect or consequential losses, lost profits or lost data, and since Thema is free, our total liability for any claim is limited to $50. Nothing in these terms limits liability that the law doesn't allow us to limit, or your rights as a consumer where you live.
 
 ## Ending
 
-You can stop using Thema at any time, and delete your saved projects or your whole account yourself (account menu → Delete account). We may end your access if you break these terms; for a paid plan, we'll refund the unused part unless the reason was abuse.
+You can stop using Thema at any time, and delete your saved projects or your whole account yourself (account menu → Delete account). We may end your access if you break these terms.
 
 ## Changes to these terms
 
@@ -60,4 +56,4 @@ We may update these terms. If a change matters, we'll update the date above and 
 
 ## Law
 
-These terms are governed by the laws of the Republic of the Philippines. Disputes go to the courts of [CITY], Philippines, unless the law where you live gives you the right to bring them there.
+These terms are governed by the laws of the Republic of the Philippines. Disputes go to the courts of Subic, Zambales, Philippines, unless the law where you live gives you the right to bring them there.

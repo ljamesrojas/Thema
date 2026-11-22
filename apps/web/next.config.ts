@@ -13,6 +13,13 @@ const config: NextConfig = {
   // Loaded by the API at runtime from node_modules, never bundled: Playwright (the local queue runs
   // the worker's extraction in-process during development) and the Redis queue.
   serverExternalPackages: ["playwright", "playwright-core", "bullmq", "ioredis"],
+  // Pricing became Plans when Thema turned into a free personal project (2026-11-22); old links
+  // and search results keep working. Refunds left with the payments plan (docs/plans/).
+  redirects: () =>
+    Promise.resolve([
+      { source: "/pricing", destination: "/plans", permanent: true },
+      { source: "/refunds", destination: "/terms", permanent: true },
+    ]),
   // They import each other's files as `./x.js` (the TypeScript/Node convention). Turbopack can't map
   // that to `x.ts`, so the app builds with webpack (`--webpack`), which can.
   webpack(webpackConfig: {

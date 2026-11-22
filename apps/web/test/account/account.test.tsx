@@ -211,9 +211,7 @@ describe("the account menu", () => {
     expect(menu.getByRole("link", { name: "Your projects" }).getAttribute("href")).toBe(
       "/projects",
     );
-    expect(menu.getByRole("link", { name: "Plans and pricing" }).getAttribute("href")).toBe(
-      "/pricing",
-    );
+    expect(menu.getByRole("link", { name: "Plans" }).getAttribute("href")).toBe("/plans");
     expect(menu.getByRole("button", { name: "Sign out" })).toBeTruthy();
     const results = await axe.run(container, { rules: { "color-contrast": { enabled: false } } });
     expect(results.violations.map((v) => v.id)).toEqual([]);
@@ -284,13 +282,16 @@ describe("the account menu", () => {
 
   it("puts the initials menu in the site header once someone is signed in", async () => {
     user = "ana";
-    render(<SiteHeader current="/pricing" />);
+    render(<SiteHeader current="/plans" />);
     const button = await screen.findByRole("button", { name: "Account: User ana" });
     expect(screen.queryByRole("link", { name: "Sign in" })).toBeNull();
     fireEvent.click(button);
-    expect(
-      screen.getByRole("link", { name: "Plans and pricing" }).getAttribute("aria-current"),
-    ).toBe("page");
+    // The header's Plans link and the menu's both say this is the current page.
+    const plans = screen.getAllByRole("link", { name: "Plans" });
+    expect(plans.map((a) => [a.getAttribute("href"), a.getAttribute("aria-current")])).toEqual([
+      ["/plans", "page"],
+      ["/plans", "page"],
+    ]);
   });
 
   it("makes initials from the name, else the email", () => {

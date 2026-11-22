@@ -165,7 +165,7 @@ The web app trusts `x-forwarded-for` for the signed-out daily limit, and Vercel 
 
 On `<site>`, in a private window:
 
-1. The Landing, `/how-it-works`, `/exports`, `/agents`, `/pricing`, `/privacy`, `/terms` and `/refunds` load; `/nope` shows the 404 page.
+1. The Landing, `/how-it-works`, `/exports`, `/agents`, `/plans`, `/privacy` and `/terms` load; `/pricing` goes to `/plans`, `/refunds` to `/terms`; `/nope` shows the 404 page.
 2. **Workspace:** paste `https://example.com`. The card goes through fetching, then reading, then done, and the VM's log shows `running` and then `done`. A second paste of the same URL is instant: it's served from the cache and doesn't count toward the limit.
 3. Paste `http://localhost:3000`. It's refused before anything is queued.
 4. Blend, open **Preview**, then **Export**: the zip downloads, and its `DESIGN.md` opens.

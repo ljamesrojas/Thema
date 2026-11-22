@@ -45,6 +45,8 @@ Source: the canvas boards How-it-works, Exports, Agents and Pricing (mockup link
 
 ## Pricing (`/pricing`)
 
+> **Changed 2026-11-22:** Thema is a free personal project, so this page is now **Plans** (`/plans`; `/pricing` redirects there) with no prices, no billing toggle and Pro shown as "planned". The spec below is kept for when Pro goes on sale: see docs/plans/payments.md.
+
 1. Centered hero: "Every feature, *free* to start." Subhead: plans only differ in projects kept and sites read a day.
 2. **Billing toggle (interactive):** Monthly / Yearly ("save 33%" chip), `aria-pressed`.
 3. Three plan cards (equal height):

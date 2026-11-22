@@ -100,20 +100,17 @@ export function ClosingCta({
   title,
   line,
   action,
-  primary = true,
 }: {
   title: ReactNode;
   line: string;
   action: string;
-  /** False on a page whose one primary button is elsewhere (Pricing): a black pill instead. */
-  primary?: boolean;
 }) {
   return (
     <section aria-label="Get started" className="border-t border-hairline bg-canvas">
       <div className={cn(container, "flex flex-col items-center gap-6 py-26 text-center")}>
         <h2 className="m-0 text-h2-lg font-h2-lg">{title}</h2>
         <p className="m-0 text-lead font-lead text-ink-muted">{line}</p>
-        <a href="/" className={buttonVariants({ variant: primary ? "primary" : "secondary" })}>
+        <a href="/" className={buttonVariants({ variant: "primary" })}>
           {action}
         </a>
       </div>

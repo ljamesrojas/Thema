@@ -1,6 +1,6 @@
 # Refund policy (DRAFT, for review)
 
-> Draft for Pro once it's on sale through Paddle. Not legal advice: check it against Paddle's requirements and buyer terms when you apply. Fill in every `[BRACKETED]` item.
+> Parked with the payments plan (docs/plans/payments.md) on 2026-11-22: Thema sells nothing for now. Draft for Pro once it's on sale through Paddle. Not legal advice: check it against Paddle's requirements and buyer terms when you apply. Fill in every `[BRACKETED]` item.
 
 **Last updated:** [DATE]
 

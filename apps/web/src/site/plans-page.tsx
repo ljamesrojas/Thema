@@ -1,19 +1,19 @@
-// Pricing (docs/pages.md): plans differ only in projects kept and sites read a day. Every number
-// comes from server/plans.ts, the queue's signed-out limit and the engine's reference limit.
+// Plans (docs/pages.md → Pricing, reworked 2026-11-22): Thema is a free personal project, so the
+// page shows what each kind of user gets, with no prices; Pro is planned (docs/plans/payments.md).
+// Every number comes from server/plans.ts, the queue's signed-out limit and the engine's limit.
 import { MAX_REFERENCES } from "@thema/engine";
 import { ANONYMOUS_DAILY_EXTRACTIONS } from "@thema/jobs";
 import { Accent, Band, ClosingCta, container, PageHero } from "@/components/site/parts";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { cn } from "@/lib/cn";
-import { PLANS, PRICES } from "@/server/plans";
-import { PricingPlans } from "./pricing-plans";
+import { PLANS } from "@/server/plans";
+import { PlanCards } from "./plan-cards";
 
-const PLAN_NAMES = ["No account", PLANS.free.label, PLANS.pro.label] as const;
+const PLAN_NAMES = ["No account", PLANS.free.label, `${PLANS.pro.label} (planned)`] as const;
 const included = ["Included", "Included", "Included"] as const;
 
 export const COMPARE: [string, readonly [string, string, string]][] = [
-  ["Price", ["$0", "$0", `$${PRICES.monthly} a month or $${PRICES.yearly} a year`]],
   ["Saved projects", ["1, in this browser", String(PLANS.free.savedProjects), "Unlimited"]],
   [
     "New extractions a day",
@@ -31,39 +31,39 @@ export const COMPARE: [string, readonly [string, string, string]][] = [
   ["Sign-in", ["Not needed", "GitHub or Google", "GitHub or Google"]],
 ];
 
-const QUESTIONS = [
+export const QUESTIONS = [
   [
-    "Do I need a card to start?",
-    "No. Without an account you get every feature, and signing in with GitHub or Google is free. A card only comes in when you choose Pro.",
+    "Does Thema cost anything?",
+    "No. Thema is a personal project: every feature is free, there's nothing to buy, and you never need a card.",
   ],
   [
-    "Does Pro make better exports?",
-    "No. Every plan runs the same engine and fixer and gets the same five files. Pro keeps more projects and reads more sites a day.",
+    "Why are there daily limits?",
+    "Every new site runs a real browser on a small server. The limits keep it quick, and free, for everyone who tries it.",
   ],
   [
     "What counts as an extraction?",
     "Reading a site Thema hasn't read today. Adding one that was already read today is free and instant, and blending, tuning and exporting never count.",
   ],
   [
-    "How am I billed?",
-    `Through Paddle, monthly or yearly, in ${PRICES.currency}. Paddle adds sales tax or VAT where your country requires it and sends the receipt.`,
+    "Will there be a Pro plan?",
+    `Maybe, later. It would keep unlimited projects and read ${PLANS.pro.dailyExtractions} new sites a day, with the same engine and exports as everyone else. Nothing is for sale today.`,
   ],
 ] as const;
 
-export function PricingPage() {
+export function PlansPage() {
   return (
     <>
-      <SiteHeader current="/pricing" />
+      <SiteHeader current="/plans" />
       <main>
         <section className="bg-canvas">
           <div className={cn(container, "flex flex-col items-center gap-12 py-24")}>
             <PageHero
               centered
-              eyebrow="Pricing"
-              title={<>Every feature, free to start.</>}
-              subhead="Plans only differ in how many projects you keep and how many new sites Thema reads for you a day."
+              eyebrow="Plans"
+              title={<>Every feature, free for everyone.</>}
+              subhead="Signing in only changes how many projects you keep and how many new sites Thema reads for you a day."
             />
-            <PricingPlans anonymousDaily={ANONYMOUS_DAILY_EXTRACTIONS} />
+            <PlanCards anonymousDaily={ANONYMOUS_DAILY_EXTRACTIONS} />
           </div>
         </section>
 
@@ -113,7 +113,7 @@ export function PricingPage() {
         </Band>
 
         <Band
-          label="More about pricing"
+          label="More about plans"
           className="grid gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]"
         >
           <div className="flex flex-col gap-4 rounded-xl bg-band p-8 text-band-ink">
@@ -130,7 +130,7 @@ export function PricingPage() {
             </a>
           </div>
           <div className="flex flex-col gap-6">
-            <h2 className="m-0 text-h2 font-h2">Pricing questions.</h2>
+            <h2 className="m-0 text-h2 font-h2">Questions.</h2>
             <dl className="m-0 grid gap-6 md:grid-cols-2">
               {QUESTIONS.map(([question, answer]) => (
                 <div key={question} className="flex flex-col gap-2">
@@ -143,7 +143,6 @@ export function PricingPage() {
         </Band>
 
         <ClosingCta
-          primary={false}
           title={
             <>
               Your first blend is <Accent underline>free</Accent>.

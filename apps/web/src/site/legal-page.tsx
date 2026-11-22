@@ -1,4 +1,4 @@
-// The legal pages (Privacy, Terms, Refunds): the text is docs/legal/*.md, bundled at build time
+// The legal pages (Privacy, Terms): the text is docs/legal/*.md, bundled at build time
 // and rendered by lib/markdown, so editing the Markdown is all it takes to change a page.
 import { container } from "@/components/site/parts";
 import { SiteFooter } from "@/components/site/site-footer";

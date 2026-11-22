@@ -28,7 +28,7 @@ const item =
 /**
  * The signed-in person's menu, top right: a round button with their initials (no photo, so
  * Thema makes no requests to GitHub or Google) that opens a small panel: who's signed in and
- * their plan, Your projects, Plans and pricing, Sign out, Delete account (with a confirm step;
+ * their plan, Your projects, Plans, Sign out, Delete account (with a confirm step;
  * deleted right away, user's call). A disclosure (button + panel of links), not an ARIA menu:
  * Tab moves through it, Escape or a click outside closes it.
  */
@@ -186,11 +186,11 @@ export function AccountMenu({ me, current }: { me: Me; current?: string }) {
             </li>
             <li>
               <a
-                href="/pricing"
-                aria-current={current === "/pricing" ? "page" : undefined}
+                href="/plans"
+                aria-current={current === "/plans" ? "page" : undefined}
                 className={item}
               >
-                Plans and pricing
+                Plans
               </a>
             </li>
             <li className="mt-1 border-t border-divider pt-1">
