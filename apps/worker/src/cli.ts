@@ -62,7 +62,7 @@ async function main(argv: string[]): Promise<number> {
   console.log(`  final URL     ${result.url}`);
   console.log(`  light         ${result.light.length} samples`);
   console.log(
-    `  dark          ${result.dark ? `${result.dark.length} samples (canvas flips)` : "none (no dark theme)"}`,
+    `  dark          ${result.dark ? `${result.dark.length} samples (canvas flips)` : result.darkPass ? "none (no dark theme)" : "skipped (nothing on the page mentions a color scheme)"}`,
   );
   console.log(`  cookie banner ${result.consent.light ?? "none found"}`);
   console.log(`  locale modal  ${result.localeModal.light ?? "none found"}`);

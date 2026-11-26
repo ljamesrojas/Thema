@@ -98,6 +98,28 @@ export interface Extraction {
   localeModal: { light: string | null; dark: string | null };
   /** Request URLs (including redirect hops) that the SSRF guard blocked. */
   blocked: string[];
+  /**
+   * Whether the dark pass ran. It's skipped when nothing the page loaded mentions a color scheme
+   * (see mentionsDarkTheme): such a page can't change in dark mode, so a second load would only
+   * cost time (and, on a serverless host, its free CPU).
+   */
+  darkPass: boolean;
+}
+
+/**
+ * What any dark theme needs somewhere in a page's HTML, CSS or JavaScript: a
+ * `prefers-color-scheme` media query (in CSS, a `<link media>`, or JavaScript's matchMedia), the
+ * `color-scheme` property or meta tag, or CSS's `light-dark()`.
+ */
+export const DARK_HINT = /color-scheme|light-dark\(/i;
+const TEXT_TYPES = /(?:text\/(?:html|css|javascript)|application\/(?:x-)?(?:java|ecma)script)/i;
+
+/** Whether a response could give the page a dark theme (only HTML, CSS and scripts are read). */
+export function mentionsDarkTheme(response: UpstreamResponse): boolean {
+  const type = headerValue(response.headers, "content-type") ?? "";
+  if (!TEXT_TYPES.test(type)) return false;
+  const text = typeof response.body === "string" ? response.body : response.body.toString("latin1");
+  return DARK_HINT.test(text);
 }
 
 type Guard = (url: string) => Promise<boolean>;
@@ -170,6 +192,8 @@ async function capture(
   deps: {
     guard: Guard;
     blocked: string[];
+    /** Set once anything loaded mentions a color scheme (the dark pass is needed). */
+    darkHint: { seen: boolean };
     timeoutMs: number;
     lookup: Lookup;
     upstream: Upstream | undefined;
@@ -234,7 +258,7 @@ async function capture(
 async function handle(
   route: Route,
   upstream: Upstream,
-  deps: { guard: Guard; blocked: string[] },
+  deps: { guard: Guard; blocked: string[]; darkHint: { seen: boolean } },
 ): Promise<void> {
   const request = route.request();
   if (request.resourceType() === "media") {
@@ -257,6 +281,7 @@ async function handle(
       await route.abort("blockedbyclient");
       return;
     }
+    if (!deps.darkHint.seen && mentionsDarkTheme(result.response)) deps.darkHint.seen = true;
     const { status, headers, body } = result.response;
     await route.fulfill({ status, headers: filterHeaders(headers, DROP_RESPONSE_HEADERS), body });
   } catch {
@@ -275,6 +300,7 @@ export async function extract(rawUrl: string, options: ExtractOptions = {}): Pro
   const deps = {
     guard: createRequestGuard(lookup),
     blocked: [] as string[],
+    darkHint: { seen: false },
     timeoutMs: options.timeoutMs ?? 30_000,
     lookup,
     upstream: options.upstream,
@@ -286,16 +312,17 @@ export async function extract(rawUrl: string, options: ExtractOptions = {}): Pro
   const browser = await launch(FENCE_ARGS);
   try {
     const light = await capture(browser, url.href, "light", deps, true);
-    const dark = await capture(browser, url.href, "dark", deps, false);
+    const dark = deps.darkHint.seen ? await capture(browser, url.href, "dark", deps, false) : null;
     if (!light.screenshot) throw new Error("light pass produced no screenshot"); // unreachable
     return {
       url: light.url,
       light: light.samples,
-      ...(canvasFlipsInDark(light.samples, dark.samples) ? { dark: dark.samples } : {}),
+      ...(dark && canvasFlipsInDark(light.samples, dark.samples) ? { dark: dark.samples } : {}),
       screenshot: light.screenshot,
-      consent: { light: light.consent, dark: dark.consent },
-      localeModal: { light: light.localeModal, dark: dark.localeModal },
+      consent: { light: light.consent, dark: dark?.consent ?? null },
+      localeModal: { light: light.localeModal, dark: dark?.localeModal ?? null },
       blocked: deps.blocked,
+      darkPass: dark !== null,
     };
   } finally {
     await browser.close();

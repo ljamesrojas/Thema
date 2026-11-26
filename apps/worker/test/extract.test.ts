@@ -3,6 +3,7 @@ import { analyzeColors, deltaEOK, parseCssColor } from "@thema/engine";
 import {
   extract,
   fetchGuarded,
+  mentionsDarkTheme,
   type Hop,
   type Upstream,
   type UpstreamResponse,
@@ -59,11 +60,50 @@ describe("extract (in-memory site, no network)", () => {
     expect(result.blocked).toEqual([]);
   });
 
-  it("drops the dark pass when the site ignores the preference", async () => {
+  it("skips the dark pass when nothing on the page mentions a color scheme", async () => {
     const site = website({ "https://plain.test/": html(PLAIN) });
     const result = await extract("https://plain.test/", { lookup, upstream: site.upstream });
     expect(result.light.length).toBeGreaterThan(0);
     expect(result.dark).toBeUndefined();
+    expect(result.darkPass).toBe(false);
+    expect(result.consent.dark).toBeNull();
+    // One pass: its redirect check and its page load (a dark pass would make it four).
+    expect(site.requested.filter((u) => u === "https://plain.test/")).toHaveLength(2);
+  });
+
+  it("runs the dark pass when the page mentions one, and drops it when the canvas doesn't flip", async () => {
+    const page = `<!doctype html><html><head><style>
+      body { margin: 0; background: #fff } @media (prefers-color-scheme: dark) { p { color: #333 } }
+    </style></head><body><p>Same canvas</p></body></html>`;
+    const site = website({ "https://hint.test/": html(page) });
+    const result = await extract("https://hint.test/", { lookup, upstream: site.upstream });
+    expect(result.darkPass).toBe(true);
+    expect(result.dark).toBeUndefined();
+  });
+
+  it("notices a dark theme in a linked stylesheet or a script", async () => {
+    const css: UpstreamResponse = {
+      status: 200,
+      headers: { "content-type": "text/css" },
+      body: "@media (prefers-color-scheme: dark) { body { background: #000; color: #eee } }",
+    };
+    const linked = website({
+      "https://linked.test/": html(
+        `<!doctype html><html><head><link rel="stylesheet" href="/site.css"></head><body style="margin:0"><p>x</p></body></html>`,
+      ),
+      "https://linked.test/site.css": css,
+    });
+    const viaCss = await extract("https://linked.test/", { lookup, upstream: linked.upstream });
+    expect(viaCss.darkPass).toBe(true);
+    expect(viaCss.dark).toBeDefined();
+
+    const script = `<!doctype html><html><body style="margin:0;background:#fff"><p>x</p><script>
+      if (matchMedia("(prefers-color-scheme: dark)").matches) document.body.style.background = "#000";
+    </script></body></html>`;
+    const scripted = website({ "https://script.test/": html(script) });
+    const viaJs = await extract("https://script.test/", { lookup, upstream: scripted.upstream });
+    expect(viaJs.darkPass).toBe(true);
+    expect(viaJs.dark).toBeDefined();
   });
 
   it("follows a public redirect and loads the page at its final URL", async () => {
@@ -110,6 +150,36 @@ describe("extract (in-memory site, no network)", () => {
   it("rejects a non-public URL before launching a browser", async () => {
     await expect(extract("http://localhost:3000", { lookup })).rejects.toThrow(/Local host/);
     await expect(extract("http://10.1.2.3/")).rejects.toThrow(/non-public/);
+  });
+});
+
+describe("mentionsDarkTheme", () => {
+  const response = (type: string, body: string | Buffer): UpstreamResponse => ({
+    status: 200,
+    headers: { "Content-Type": type },
+    body,
+  });
+
+  it("reads HTML, CSS and scripts for any sign of a color scheme", () => {
+    expect(mentionsDarkTheme(response("text/css", "a{color:light-dark(#000,#fff)}"))).toBe(true);
+    expect(
+      mentionsDarkTheme(response("text/html", '<meta name="color-scheme" content="light dark">')),
+    ).toBe(true);
+    expect(
+      mentionsDarkTheme(
+        response(
+          "application/javascript",
+          Buffer.from("matchMedia('(prefers-color-scheme: dark)')"),
+        ),
+      ),
+    ).toBe(true);
+    expect(mentionsDarkTheme(response("text/css", "body{color:#111}"))).toBe(false);
+  });
+
+  it("ignores images, JSON and anything else", () => {
+    expect(mentionsDarkTheme(response("image/svg+xml", "color-scheme"))).toBe(false);
+    expect(mentionsDarkTheme(response("application/json", '{"x":"color-scheme"}'))).toBe(false);
+    expect(mentionsDarkTheme({ status: 200, headers: {}, body: "color-scheme" })).toBe(false);
   });
 });
 
