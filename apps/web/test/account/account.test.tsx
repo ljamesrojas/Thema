@@ -157,8 +157,11 @@ describe("the Workspace and accounts", { timeout: 15_000 }, () => {
 
     fireEvent.click(within(alert).getByRole("button", { name: "Load the latest version" }));
     await waitFor(() => expect(screen.queryByRole("alert")).toBeNull());
-    expect(stored()?.name).toBe("Other device");
-    expect(stored()?.account?.version).toBe(2);
+    // The browser copy is written just after the alert goes (seen under a busy run): wait for it.
+    await waitFor(() => {
+      expect(stored()?.name).toBe("Other device");
+      expect(stored()?.account?.version).toBe(2);
+    });
   });
 
   it("at the Free limit, keeps the project in the browser and says why", async () => {
@@ -340,7 +343,7 @@ describe("the Projects screen", () => {
     await waitFor(() => expect(screen.queryByRole("heading", { name: "Kiln" })).toBeNull());
     expect(await services.projects.count("ana")).toBe(1);
     // It was also the copy open in this browser.
-    expect(stored()).toBeNull();
+    await waitFor(() => expect(stored()).toBeNull());
   });
 
   it("shows the empty state, and New project is off at the limit", async () => {
@@ -475,7 +478,7 @@ describe("signing in and out", () => {
     );
     await signOut();
     expect(auth).toContain("POST /api/auth/sign-out");
-    expect(stored()).toBeNull();
+    await waitFor(() => expect(stored()).toBeNull());
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(projectData()));
     await signOut();
