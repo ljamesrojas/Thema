@@ -1,6 +1,8 @@
 // pnpm --filter @thema/worker queue
 // The hosted worker process: takes extraction jobs from Redis (BullMQ, REDIS_URL) and runs them,
-// 3 at a time. The API enqueues them (@thema/jobs/bull). Stops cleanly on Ctrl+C / SIGTERM.
+// 3 at a time (THEMA_CONCURRENCY changes that on a small server). The API enqueues them
+// (@thema/jobs/bull). Stops cleanly on Ctrl+C / SIGTERM.
+import { concurrencyFrom } from "@thema/jobs";
 import { redisConnection, redisTlsCa, startBullWorker } from "@thema/jobs/bull";
 import { runExtraction } from "./job.js";
 
@@ -12,13 +14,16 @@ if (!redisUrl) {
   const worker = startBullWorker({
     connection: redisConnection(redisUrl, { ca: redisTlsCa(process.env) }),
     run: (url, onStage) => runExtraction(url, { onStage }),
+    concurrency: concurrencyFrom(process.env),
   });
   worker.on("active", (job) => console.log(`running ${job.data.url}`));
   worker.on("completed", (job) => console.log(`done    ${job.data.url}`));
   worker.on("failed", (job, error) =>
     console.log(`failed  ${job?.data.url ?? "?"}: ${error.message}`),
   );
-  console.log("Waiting for extraction jobs (Ctrl+C to stop) …");
+  console.log(
+    `Waiting for extraction jobs, ${concurrencyFrom(process.env)} at a time (Ctrl+C to stop) …`,
+  );
 
   const stop = () => {
     void worker.close().then(() => process.exit(0));

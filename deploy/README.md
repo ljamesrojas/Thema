@@ -51,6 +51,17 @@ Follow the steps in order. Secrets go straight from the provider's page into Ver
 3. **Reserve the public IP** (Networking → IP Management → Reserved Public IPs), or note it again if the instance is ever recreated. The Redis certificate names this IP; if it changes, re-run setup.
 4. **Optional: upgrade the tenancy to Pay As You Go.** It's still free within the Always Free limits. Oracle may reclaim Always Free instances that sit mostly idle, and a Pay As You Go account isn't subject to that.
 
+### Other hosts (Azure, Google Cloud, any VPS)
+
+`setup.sh` works on any Ubuntu 24.04 server, Arm or x86. Two things differ from Oracle:
+
+- **The cloud firewall.** Open TCP `6380` from any source there instead of Oracle's security list.
+  - **Azure:** VM → **Networking** → **Add inbound port rule** (destination port 6380, TCP, Allow).
+  - **Google Cloud:** VPC network → **Firewall** → a rule for the VM allowing TCP 6380.
+- **Memory.** On servers under 3.5 GB, setup adds a 2 GB swap file and runs fewer extractions at once: 1 under 1.5 GB, 2 under 3.5 GB, otherwise 3. To override it, run `sudo THEMA_CONCURRENCY=1 bash setup.sh <public-ip>`; it's saved in `/etc/thema/worker.env`.
+
+For Azure for Students, a **B1ms** (1 vCPU, 2 GB) in **Southeast Asia** (Singapore) is a good fit. Pick **Standard SSD** for the disk, turn **Auto-shutdown off**, and keep an eye on the remaining credit.
+
 ## 4. The worker: deploy key and setup
 
 The repository is private, so the VM clones it with a **read-only deploy key** that it creates itself.

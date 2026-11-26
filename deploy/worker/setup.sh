@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Set up (or update) Thema's extraction worker and its Redis on a fresh Ubuntu 24.04 VM.
+# Set up (or update) Thema's extraction worker and its Redis on a fresh Ubuntu 24.04 VM (Arm or
+# x86: Oracle, Azure, Google Cloud, any VPS).
 #
 #   sudo bash setup.sh <public-ip>
 #
@@ -16,7 +17,8 @@
 #   - the `thema-worker` user, its egress firewall and its systemd service
 #   - an iptables rule opening 6380 (the cloud's security list must open it too)
 #
-# Settings (environment): THEMA_REPO (default the GitHub repo over SSH), THEMA_BRANCH (main).
+# Settings (environment): THEMA_REPO (default the GitHub repo over SSH), THEMA_BRANCH (main),
+# THEMA_CONCURRENCY (extractions at once; default by memory: 1 under 1.5 GB, 2 under 3.5 GB, else 3).
 set -euo pipefail
 
 PUBLIC_IP="${1:-}"
@@ -52,6 +54,28 @@ if ! command -v node >/dev/null || [[ $(node -p 'process.versions.node.split("."
   apt-get install -y -q nodejs
 fi
 corepack enable
+
+say "Memory"
+# Chromium needs about 500 MB per extraction. Small servers (Azure B1ms, Google e2-micro) get a
+# 2 GB swap file and run fewer extractions at once; THEMA_CONCURRENCY overrides the choice.
+MEM_MB=$(awk '/MemTotal/ { print int($2 / 1024) }' /proc/meminfo)
+if [[ $MEM_MB -lt 3500 && ! -f /swapfile ]]; then
+  fallocate -l 2G /swapfile
+  chmod 0600 /swapfile
+  mkswap /swapfile >/dev/null
+  swapon /swapfile
+  grep -q '^/swapfile ' /etc/fstab || echo '/swapfile none swap sw 0 0' >>/etc/fstab
+fi
+if [[ -n ${THEMA_CONCURRENCY:-} ]]; then
+  CONCURRENCY=$THEMA_CONCURRENCY
+elif [[ $MEM_MB -lt 1500 ]]; then
+  CONCURRENCY=1
+elif [[ $MEM_MB -lt 3500 ]]; then
+  CONCURRENCY=2
+else
+  CONCURRENCY=3
+fi
+echo "${MEM_MB} MB of memory: ${CONCURRENCY} extraction(s) at a time"
 
 say "Worker user"
 id thema-worker >/dev/null 2>&1 ||
@@ -158,6 +182,7 @@ say "Worker settings"
 REDIS_URL=rediss://default:$PASSWORD@127.0.0.1:$REDIS_PORT
 REDIS_TLS_CA_FILE=$TLS/ca.crt
 PLAYWRIGHT_BROWSERS_PATH=$BROWSERS
+THEMA_CONCURRENCY=$CONCURRENCY
 HOME=$HOME_DIR
 NODE_ENV=production
 EOF
@@ -167,7 +192,8 @@ chown root:thema-worker "$ETC/worker.env"
 say "Firewall"
 sed "s/@WORKER_UID@/$(id -u thema-worker)/" "$KIT/firewall.nft" >"$ETC/firewall.nft"
 install -m 0644 "$KIT/thema-firewall.service" "$KIT/thema-worker.service" /etc/systemd/system/
-# Inbound: Oracle's Ubuntu images reject everything but SSH in iptables; open the Redis port.
+# Inbound: Oracle's Ubuntu images reject everything but SSH in iptables; open the Redis port
+# (harmless elsewhere; Azure and Google filter in their own cloud firewall instead).
 iptables -C INPUT -p tcp --dport "$REDIS_PORT" -j ACCEPT 2>/dev/null ||
   iptables -I INPUT -p tcp --dport "$REDIS_PORT" -j ACCEPT
 netfilter-persistent save >/dev/null

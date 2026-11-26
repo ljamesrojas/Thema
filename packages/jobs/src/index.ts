@@ -60,6 +60,18 @@ export const DAY_MS = 24 * 60 * 60 * 1000;
 export const CACHE_TTL_MS = DAY_MS;
 /** Extractions running at once (SPEC: 3 at a time). */
 export const CONCURRENCY = 3;
+/** The most a worker may run at once, whatever THEMA_CONCURRENCY says. */
+export const MAX_CONCURRENCY = 8;
+
+/**
+ * Extractions at once for this worker: THEMA_CONCURRENCY when it's a whole number from 1 to
+ * MAX_CONCURRENCY, else CONCURRENCY. A small server (deploy/worker/setup.sh sets 1 for 1 GB of
+ * memory, 2 for 2 GB) runs fewer Chromiums so they don't run out of memory.
+ */
+export function concurrencyFrom(env: Record<string, string | undefined>): number {
+  const value = Number(env.THEMA_CONCURRENCY);
+  return Number.isInteger(value) && value >= 1 && value <= MAX_CONCURRENCY ? value : CONCURRENCY;
+}
 /** Tries per job: one retry for flaky pages. Blocked URLs are never retried. */
 export const ATTEMPTS = 2;
 /** Longest error message a job reports (browser errors can carry whole call logs). */
