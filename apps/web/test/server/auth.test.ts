@@ -6,15 +6,11 @@ import { PGlite } from "@electric-sql/pglite";
 import type { Pool } from "pg";
 import { afterAll, describe, expect, it } from "vitest";
 import { authConfigFromEnv, createAuth, providersOf, sessionReader } from "@/server/auth";
-import { migrate, type Db } from "@/server/db";
+import { migrate } from "@/server/db";
+import { pgliteDb } from "./pglite";
 
 const pg = new PGlite();
-const db: Db = {
-  query: async <R extends object>(text: string, params: unknown[] = []) => ({
-    rows: (await pg.query<R>(text, params)).rows,
-  }),
-  exec: (sql) => pg.exec(sql),
-};
+const db = pgliteDb(pg);
 await migrate(db);
 afterAll(() => pg.close());
 

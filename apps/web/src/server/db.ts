@@ -2,7 +2,7 @@
 // to the small `Db` interface, which a `pg` pool and, in tests, PGlite both satisfy.
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import type { Pool } from "pg";
+import type { Pool, PoolClient } from "pg";
 
 export interface Db {
   /** One statement with $1… parameters. */
@@ -12,6 +12,24 @@ export interface Db {
   ): Promise<{ rows: R[] }>;
   /** Several statements, no parameters (migrations). */
   exec(sql: string): Promise<unknown>;
+  /**
+   * Run `fn` in one transaction on one connection: committed when it resolves, rolled back when
+   * it throws. Inside, `db` is that connection (a nested call just runs on it).
+   */
+  transaction<T>(fn: (db: Db) => Promise<T>): Promise<T>;
+}
+
+/** One checked-out connection as a Db (inside a transaction). */
+function clientDb(client: PoolClient): Db {
+  const db: Db = {
+    query: async <R extends object>(text: string, params: unknown[] = []) => {
+      const result = await client.query(text, params);
+      return { rows: result.rows as R[] };
+    },
+    exec: (sql) => client.query(sql),
+    transaction: (fn) => fn(db),
+  };
+  return db;
 }
 
 /** A `pg` pool as a Db. Statements without parameters run as one simple query. */
@@ -22,6 +40,20 @@ export function poolDb(pool: Pool): Db {
       return { rows: result.rows as R[] };
     },
     exec: (sql) => pool.query(sql),
+    async transaction(fn) {
+      const client = await pool.connect();
+      try {
+        await client.query("BEGIN");
+        const result = await fn(clientDb(client));
+        await client.query("COMMIT");
+        return result;
+      } catch (error) {
+        await client.query("ROLLBACK").catch(() => undefined);
+        throw error;
+      } finally {
+        client.release();
+      }
+    },
   };
 }
 

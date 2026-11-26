@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@sparticuz/chromium": "158.0.0",
     "@thema/engine": "workspace:*",
     "@thema/exporters": "workspace:*",
     "@thema/jobs": "workspace:*",

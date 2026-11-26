@@ -1,8 +1,10 @@
 // Anonymous daily totals for SPEC's 4-week check (user's call: no analytics, no tracking). Per UTC
 // day: how many extractions, blends, exports and sign-ups happened, and how many different
 // projects blended and exported (by the project's random id, which identifies no person). Never
-// an IP address, a name, a cookie or a URL. Redis in production, memory otherwise.
+// an IP address, a name, a cookie or a URL. Redis with a worker server, Postgres in serverless
+// mode, memory otherwise.
 import type { Redis } from "ioredis";
+import type { Db } from "./db";
 
 export const EVENTS = ["extraction", "blend", "export", "signup"] as const;
 export type StatEvent = (typeof EVENTS)[number];
@@ -114,6 +116,71 @@ export function createRedisStats(connection: Redis, now: () => Date = () => new 
           blend: await connection.pfcount(...dayList.map((d) => projects(d, "blend"))),
           export: await connection.pfcount(...dayList.map((d) => projects(d, "export"))),
         },
+      };
+    },
+  };
+}
+
+/**
+ * Postgres (serverless mode): a count per day and event, and the ids of projects that blended or
+ * exported per day (random ids, see the top of this file), for distinct counts. Rows older than
+ * STATS_KEEP_DAYS are deleted as new ones arrive.
+ */
+export function createPostgresStats(db: Db, now: () => Date = () => new Date()): Stats {
+  const since = (n: number) => lastDays(now(), n)[0] ?? utcDay(now());
+  return {
+    async record(event, projectId) {
+      const day = utcDay(now());
+      await db.query(
+        `INSERT INTO "daily_totals" ("day", "event", "count") VALUES ($1::date, $2, 1)
+         ON CONFLICT ("day", "event") DO UPDATE SET "count" = "daily_totals"."count" + 1`,
+        [day, event],
+      );
+      if (projectId && PER_PROJECT.includes(event)) {
+        await db.query(
+          `INSERT INTO "daily_projects" ("day", "event", "project") VALUES ($1::date, $2, $3)
+           ON CONFLICT DO NOTHING`,
+          [day, event, projectId],
+        );
+      }
+      const oldest = since(STATS_KEEP_DAYS);
+      await db.query(`DELETE FROM "daily_totals" WHERE "day" < $1::date`, [oldest]);
+      await db.query(`DELETE FROM "daily_projects" WHERE "day" < $1::date`, [oldest]);
+    },
+    async report(n) {
+      const dayList = lastDays(now(), n);
+      const from = dayList[0] ?? utcDay(now());
+      const { rows: totals } = await db.query<{ day: string; event: StatEvent; count: number }>(
+        `SELECT to_char("day", 'YYYY-MM-DD') AS "day", "event", "count"
+         FROM "daily_totals" WHERE "day" >= $1::date`,
+        [from],
+      );
+      const { rows: perDay } = await db.query<{ day: string; event: StatEvent; count: number }>(
+        `SELECT to_char("day", 'YYYY-MM-DD') AS "day", "event", count(*)::int AS "count"
+         FROM "daily_projects" WHERE "day" >= $1::date GROUP BY "day", "event"`,
+        [from],
+      );
+      const { rows: window } = await db.query<{ event: StatEvent; count: number }>(
+        `SELECT "event", count(DISTINCT "project")::int AS "count"
+         FROM "daily_projects" WHERE "day" >= $1::date GROUP BY "event"`,
+        [from],
+      );
+      const find = (
+        rows: { day?: string; event: StatEvent; count: number }[],
+        event: string,
+        day?: string,
+      ) => rows.find((r) => r.event === event && (day === undefined || r.day === day))?.count ?? 0;
+      return {
+        days: dayList.map((day) => {
+          const counts = zero();
+          for (const event of EVENTS) counts[event] = find(totals, event, day);
+          return {
+            day,
+            counts,
+            projects: { blend: find(perDay, "blend", day), export: find(perDay, "export", day) },
+          };
+        }),
+        window: { blend: find(window, "blend"), export: find(window, "export") },
       };
     },
   };

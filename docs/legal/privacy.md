@@ -40,10 +40,9 @@ We use these services to run Thema. Each one processes data only to provide its 
 
 | Service | What it does for Thema | Where |
 | --- | --- | --- |
-| Vercel | Hosts the website and its server | Singapore (server); pages are served from Vercel's worldwide network |
-| Neon | Database: accounts, sessions, saved projects | Singapore |
+| Vercel | Hosts the website and its server, including the browser that reads the sites you paste | Singapore (server); pages are served from Vercel's worldwide network |
+| Neon | Database: accounts, sessions, saved projects, extraction results for 24 hours, daily limits and totals | Singapore |
 | Cloudflare R2 | Stores screenshots of saved projects | Asia-Pacific |
-| [WORKER HOST, e.g. Oracle Cloud] | Runs the browser that reads sites, and the job queue | [REGION] |
 | GitHub, Google | Sign-in, if you choose it | Their own terms and privacy policies apply |
 
 Your data may therefore be stored or processed outside the Philippines. We choose providers that protect it with appropriate safeguards.

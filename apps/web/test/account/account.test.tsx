@@ -125,8 +125,9 @@ describe("the Workspace and accounts", { timeout: 15_000 }, () => {
     expect(await screen.findByRole("button", { name: "Account: User ana" })).toBeTruthy();
     await addSite("light-saas.test");
     await screen.findByText("Saved to your account");
+    // The browser copy can be written a moment after the notice shows (seen under a busy run).
+    await waitFor(() => expect(stored()?.account).toMatchObject({ userId: "ana" }));
     const id = stored()?.id ?? "";
-    expect(stored()?.account).toMatchObject({ userId: "ana" });
 
     // The extraction finishes and the first blend lands: both are saved on top.
     await waitFor(async () => {

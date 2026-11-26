@@ -1,18 +1,37 @@
 // @vitest-environment node
-// The anonymous daily totals: one contract for memory and Redis (Redis runs only with REDIS_URL,
-// like the job queue's contract), plus the routes that count.
+// The anonymous daily totals: one contract for memory, Postgres (PGlite) and Redis (Redis runs only
+// with REDIS_URL, like the job queue's contract), plus the routes that count.
 import { Redis } from "ioredis";
 import { afterAll, describe, expect, it } from "vitest";
-import { createMemoryStats, createRedisStats, recordSafely, type Stats } from "@/server/stats";
+import {
+  createMemoryStats,
+  createPostgresStats,
+  createRedisStats,
+  recordSafely,
+  type Stats,
+} from "@/server/stats";
+import { testDb } from "./pglite";
 
 const clock = { now: new Date("2026-11-21T10:00:00.000Z") };
 const now = () => clock.now;
 const redisUrl = process.env.REDIS_URL;
 const redis = redisUrl ? new Redis(redisUrl) : null;
-afterAll(() => redis?.disconnect());
+// One database for the file, created as it loads (starting PGlite is slow under a full run).
+const db = await testDb();
+afterAll(async () => {
+  redis?.disconnect();
+  await db.close();
+});
 
 const makers: [string, () => Promise<Stats>][] = [
   ["memory", () => Promise.resolve(createMemoryStats(now))],
+  [
+    "postgres",
+    async () => {
+      await db.exec(`DELETE FROM "daily_totals"; DELETE FROM "daily_projects";`);
+      return createPostgresStats(db, now);
+    },
+  ],
 ];
 if (redis) {
   makers.push([

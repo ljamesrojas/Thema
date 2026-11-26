@@ -14,6 +14,20 @@ browser ──▶ Vercel (apps/web) ──rediss://:6380 (TLS + password)──�
 
 Follow the steps in order. Secrets go straight from the provider's page into Vercel or `apps/web/.env.local`; never paste them into chat, issues or commits.
 
+## Serverless mode: no worker server (how Thema runs today)
+
+Without a worker server, Vercel runs the extractions itself: set `THEMA_EXTRACTION=serverless` in Vercel's environment variables, next to `DATABASE_URL`, and redeploy. Then:
+
+- **The browser** is `@sparticuz/chromium`, a Chromium build for AWS Lambda, which runs Vercel's functions. It's the same Chromium version as the worker's Playwright. An extraction runs in the reference route's own function after the response, using up to 300 s (`maxDuration`). One runs at a time by default (`THEMA_CONCURRENCY`), and a status check starts the next one waiting.
+- **Jobs, the daily limits and the daily totals** live in Postgres (migration `0003_serverless.sql`) instead of Redis. Leave `REDIS_URL` unset, since it takes precedence.
+- **A daily total for everyone:** at most `THEMA_DAILY_TOTAL` new extractions a day for everyone together, 20 by default. Vercel's free plan includes 4 CPU-hours a month, and a project that goes over can be paused. Check **Usage → Functions → Active CPU** after a few days, and raise or lower the total to match.
+- **The fence** lives in the code: there's no firewall to set up on Vercel.
+  - Every request the browser makes goes through the URL guard, redirects included.
+  - The fetch connects only to the public address it checked, which blocks DNS rebinding to the platform's localhost services.
+  - WebSockets and WebRTC are blocked.
+
+To go back to a worker server later, set `REDIS_URL` and `REDIS_TLS_CA`; you can remove `THEMA_EXTRACTION` too. Steps 3 and 4 below are only for a worker server.
+
 ## 0. Before you start
 
 - Merge `m5-launch` into `main`. Vercel deploys `main` to production, and the VM's setup script checks out `main` (`THEMA_BRANCH` overrides that).

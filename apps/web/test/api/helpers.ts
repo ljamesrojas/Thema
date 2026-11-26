@@ -71,7 +71,9 @@ export const signedIn = (userId: string, plan: "free" | "pro" = "free") => ({
 });
 
 /** Install fake services for the routes; returns the queue and a log of extractions run. */
-export function useFakeServices(options: { accounts?: boolean } = {}): TestServices {
+export function useFakeServices(
+  options: { accounts?: boolean; dailyTotal?: number } = {},
+): TestServices {
   const clock = { now: new Date("2026-11-13T10:00:00.000Z") };
   const now = () => clock.now;
   const runs: string[] = [];
@@ -104,6 +106,7 @@ export function useFakeServices(options: { accounts?: boolean } = {}): TestServi
     queue,
     limiter: createMemoryRateLimiter({ limit: 3, now }),
     dailyLimit: 3,
+    ...(options.dailyTotal !== undefined ? { dailyTotal: options.dailyTotal } : {}),
     lookup: fakeDns,
     now,
     accounts:

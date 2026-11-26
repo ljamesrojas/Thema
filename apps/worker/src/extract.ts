@@ -1,5 +1,5 @@
 import { canvasFlipsInDark, type StyleSample } from "@thema/engine";
-import { chromium, type APIRequestContext, type Browser, type Route } from "playwright";
+import { chromium, type Browser, type BrowserContext, type Route } from "playwright";
 import { inFrame, SCROLL_PAUSE_MS, scrollThrough, settle } from "./browser.js";
 import { collectSamples } from "./collect.js";
 import { dismissConsent } from "./consent.js";
@@ -11,6 +11,7 @@ import {
   systemLookup,
   type Lookup,
 } from "./ssrf.js";
+import { nodeUpstream } from "./upstream.js";
 
 export const VIEWPORT = { width: 1440, height: 900 } as const;
 export const MAX_SAMPLES = 2000;
@@ -34,8 +35,9 @@ export interface UpstreamResponse {
 }
 
 /**
- * Performs one hop WITHOUT following redirects. The default uses the browser context's own
- * request client (shared cookies). Tests pass an in-memory website so nothing touches the network.
+ * Performs one hop WITHOUT following redirects. The default (upstream.ts) fetches with Node and
+ * connects only to public addresses. Tests pass an in-memory website so nothing touches the
+ * network.
  */
 export type Upstream = (hop: Hop) => Promise<UpstreamResponse>;
 
@@ -51,6 +53,35 @@ export interface ExtractOptions {
    * styles are sampled. (The job adds "naming" when the engine runs.)
    */
   onStage?: (stage: "fetching" | "reading") => void;
+  /**
+   * Starts the browser with these extra arguments (the fence's). Defaults to Playwright's own
+   * Chromium; serverless hosts pass one built for them (apps/web, serverless mode).
+   */
+  launch?: (args: string[]) => Promise<Browser>;
+}
+
+/**
+ * Chromium flags every extraction runs with: no WebRTC traffic outside a proxy, and there is no
+ * proxy, so WebRTC can't reach anything (it would bypass the request guard below).
+ */
+export const FENCE_ARGS = ["--force-webrtc-ip-handling-policy=disable_non_proxied_udp"];
+
+/**
+ * The parts of the fence that live in the browser context: WebSockets are closed before they
+ * connect (they bypass request routing, and styles don't need them), and WebRTC's constructors
+ * are removed from every page. Ordinary requests go through the guarded route in capture().
+ */
+export async function fenceContext(context: BrowserContext): Promise<void> {
+  await context.routeWebSocket(/.*/, (ws) => ws.close({ code: 1008, reason: "Blocked" }));
+  await context.addInitScript(() => {
+    for (const name of ["RTCPeerConnection", "webkitRTCPeerConnection", "RTCDataChannel"]) {
+      try {
+        Object.defineProperty(window, name, { value: undefined, configurable: false });
+      } catch {
+        // Already gone.
+      }
+    }
+  });
 }
 
 export interface Extraction {
@@ -71,8 +102,8 @@ export interface Extraction {
 
 type Guard = (url: string) => Promise<boolean>;
 
-/** Headers we don't forward: the request client sets them itself. */
-const DROP_REQUEST_HEADERS = new Set(["host", "cookie", "content-length", "connection"]);
+/** Headers we don't forward: the upstream sets them itself. Cookies go along as the browser sent them. */
+const DROP_REQUEST_HEADERS = new Set(["host", "content-length", "connection"]);
 /** Headers we don't pass back: the body is already decoded and re-framed. */
 const DROP_RESPONSE_HEADERS = new Set([
   "content-encoding",
@@ -124,20 +155,6 @@ export async function fetchGuarded(
   return null;
 }
 
-function requestClientUpstream(client: APIRequestContext, timeoutMs: number): Upstream {
-  return async (hop) => {
-    const response = await client.fetch(hop.url, {
-      method: hop.method,
-      headers: hop.headers,
-      ...(hop.postData ? { data: hop.postData } : {}),
-      maxRedirects: 0,
-      timeout: timeoutMs,
-      failOnStatusCode: false,
-    });
-    return { status: response.status(), headers: response.headers(), body: await response.body() };
-  };
-}
-
 interface Pass {
   url: string;
   samples: StyleSample[];
@@ -154,6 +171,7 @@ async function capture(
     guard: Guard;
     blocked: string[];
     timeoutMs: number;
+    lookup: Lookup;
     upstream: Upstream | undefined;
     onStage: ExtractOptions["onStage"];
   },
@@ -166,7 +184,9 @@ async function capture(
     reducedMotion: "reduce",
   });
   try {
-    const upstream = deps.upstream ?? requestClientUpstream(context.request, deps.timeoutMs);
+    await fenceContext(context);
+    const upstream =
+      deps.upstream ?? nodeUpstream({ lookup: deps.lookup, timeoutMs: deps.timeoutMs });
 
     // Resolve the page's own redirects first (guarded), so it loads at its final URL and
     // relative links resolve correctly.
@@ -226,7 +246,7 @@ async function handle(
       {
         url: request.url(),
         method: request.method(),
-        headers: filterHeaders(request.headers(), DROP_REQUEST_HEADERS),
+        headers: filterHeaders(await request.allHeaders(), DROP_REQUEST_HEADERS),
         postData: request.postDataBuffer(),
       },
       upstream,
@@ -256,12 +276,14 @@ export async function extract(rawUrl: string, options: ExtractOptions = {}): Pro
     guard: createRequestGuard(lookup),
     blocked: [] as string[],
     timeoutMs: options.timeoutMs ?? 30_000,
+    lookup,
     upstream: options.upstream,
     onStage: options.onStage,
   };
 
   options.onStage?.("fetching");
-  const browser = await chromium.launch();
+  const launch = options.launch ?? ((args) => chromium.launch({ args }));
+  const browser = await launch(FENCE_ARGS);
   try {
     const light = await capture(browser, url.href, "light", deps, true);
     const dark = await capture(browser, url.href, "dark", deps, false);

@@ -22,6 +22,9 @@ export interface ReferenceView {
 
 export const screenshotPath = (id: string) => `/api/references/${id}/screenshot`;
 
+/** The daily limit's key for everyone together (serverless mode: services.dailyTotal). */
+export const EVERYONE = "thema:everyone";
+
 export function referenceView(job: JobSnapshot): ReferenceView {
   const screenshot = job.status === "done" ? screenshotPath(job.id) : null;
   const view: ReferenceView = {

@@ -2,20 +2,23 @@ import { assertPublicUrl, BlockedUrlError, normalizeUrl } from "@thema/url-guard
 import { optionalAccount } from "@/server/accounts";
 import { clientId } from "@/server/client-id";
 import { ApiError, handler, json, readJson, type IdParams } from "@/server/http";
-import { referenceView } from "@/server/references";
+import { EVERYONE, referenceView } from "@/server/references";
 import { PLANS } from "@/server/plans";
 import { addReferenceBody, projectId } from "@/server/schemas";
 import { getServices } from "@/server/services";
 import { recordSafely } from "@/server/stats";
 
 export const runtime = "nodejs";
+/** Serverless mode runs the extraction in this function after the response (Vercel's maximum). */
+export const maxDuration = 300;
 
 /**
  * POST /api/projects/:id/references { url, borrowed }: start (or reuse) the extraction of a URL.
  *
  * Order: validate → SSRF guard with DNS (before anything is enqueued) → today's cached job for
  * the URL (free) → the daily limit (per IP when signed out, per account and plan when signed
- * in) → enqueue. Returns the reference with its status;
+ * in) → in serverless mode, the limit for everyone together → enqueue. Returns the reference
+ * with its status;
  * poll GET /api/references/:id until it's done.
  */
 export const POST = handler(async (request: Request, { params }: IdParams) => {
@@ -61,6 +64,19 @@ export const POST = handler(async (request: Request, { params }: IdParams) => {
       `${who} new extractions a day. Sites already extracted today still work. The limit resets at ${decision.resetAt.toISOString()}.`,
       { "retry-after": String(seconds) },
     );
+  }
+
+  if (services.dailyTotal !== undefined) {
+    const everyone = await limiter.consume(EVERYONE, services.dailyTotal);
+    if (!everyone.allowed) {
+      const seconds = Math.max(1, Math.ceil((everyone.resetAt.getTime() - now().getTime()) / 1000));
+      throw new ApiError(
+        429,
+        "paused-today",
+        `Thema has read all the new sites it can for today (it runs on a free plan). Sites already read today still work, and the Landing page's demo always does. New sites open again at ${everyone.resetAt.toISOString()}.`,
+        { "retry-after": String(seconds) },
+      );
+    }
   }
 
   const job = await queue.submit(url);

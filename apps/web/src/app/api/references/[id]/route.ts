@@ -4,6 +4,8 @@ import { referenceId } from "@/server/schemas";
 import { getServices } from "@/server/services";
 
 export const runtime = "nodejs";
+/** In serverless mode a status check may start the next waiting extraction, after the response. */
+export const maxDuration = 300;
 
 /** GET /api/references/:id: status, and once done the extracted system and its warnings. */
 export const GET = handler(async (_request: Request, { params }: IdParams) => {

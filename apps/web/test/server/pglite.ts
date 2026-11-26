@@ -1,16 +1,23 @@
 // A real Postgres for tests (PGlite: Postgres compiled to WebAssembly, in-process), migrated.
-import { PGlite } from "@electric-sql/pglite";
+import { PGlite, type Transaction } from "@electric-sql/pglite";
 import { migrate, type Db } from "@/server/db";
 
-export async function testDb(): Promise<Db & { close: () => Promise<void> }> {
-  const pg = new PGlite();
+/** PGlite (or one of its transactions) as a Db. */
+export function pgliteDb(pg: PGlite | Transaction): Db {
   const db: Db = {
     query: async <R extends object>(text: string, params: unknown[] = []) => {
       const result = await pg.query<R>(text, params);
       return { rows: result.rows };
     },
     exec: (sql) => pg.exec(sql),
+    transaction: (fn) => ("transaction" in pg ? pg.transaction((tx) => fn(pgliteDb(tx))) : fn(db)),
   };
+  return db;
+}
+
+export async function testDb(): Promise<Db & { close: () => Promise<void> }> {
+  const pg = new PGlite();
+  const db = pgliteDb(pg);
   await migrate(db);
   return { ...db, close: () => pg.close() };
 }

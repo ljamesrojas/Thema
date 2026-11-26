@@ -187,4 +187,24 @@ describe("cache and anonymous limit", () => {
     services.clock.now = new Date("2026-11-14T00:00:01.000Z");
     expect((await add("linear.test")).status).toBe(202);
   });
+
+  it("in serverless mode, stops new extractions for everyone at the daily total", async () => {
+    setServices(undefined);
+    services = useFakeServices({ dailyTotal: 2 });
+    // Two clients, one new site each: the day's total is used up.
+    expect((await add("light-saas.test", { ip: "203.0.113.7" })).status).toBe(202);
+    expect((await add("warm-editorial.test", { ip: "198.51.100.4" })).status).toBe(202);
+
+    // A third client still has its own 3, but the shared total says no.
+    const refused = await add("dark-dev-tool.test", { ip: "192.0.2.55" });
+    expect(refused.status).toBe(429);
+    expect(await errorCode(refused)).toBe("paused-today");
+    expect(refused.headers.get("retry-after")).toBe(String(14 * 60 * 60));
+    expect(services.runs).toHaveLength(2);
+
+    // Sites already read today are free for anyone, and the total resets at UTC midnight.
+    expect((await add("light-saas.test", { ip: "192.0.2.55" })).status).toBeLessThan(400);
+    services.clock.now = new Date("2026-11-14T00:00:01.000Z");
+    expect((await add("dark-dev-tool.test", { ip: "192.0.2.55" })).status).toBe(202);
+  });
 });
