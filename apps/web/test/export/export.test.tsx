@@ -37,7 +37,8 @@ describe("the zip", () => {
       body: { system },
     });
     expect(new Uint8Array(await response.arrayBuffer())).toEqual(buildZip(files));
-  });
+    // Builds and compares two full archives byte by byte: over 5 s once in a busy full run.
+  }, 20_000);
 });
 
 describe("the Export screen", () => {

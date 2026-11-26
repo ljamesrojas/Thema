@@ -6,6 +6,7 @@ import type { Plan } from "@/server/plans";
 import type { ProjectData } from "@/server/project-schema";
 import type { ProjectSummary } from "@/server/project-store";
 import type { ReferenceView } from "@/server/references";
+import { withLocalTimes } from "@/lib/local-time";
 import type { blendRequest } from "./project";
 
 export class ApiFailure extends Error {
@@ -46,7 +47,7 @@ async function call<T>(path: string, init: RequestInit = {}): Promise<T> {
     const error = data && "error" in data ? data.error : undefined;
     throw new ApiFailure(
       error?.code ?? "unknown",
-      error?.message ?? "Something went wrong. Try again.",
+      withLocalTimes(error?.message ?? "Something went wrong. Try again."),
       response.status,
       error?.details,
     );
