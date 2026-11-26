@@ -18,13 +18,10 @@ const config: NextConfig = {
     "bullmq",
     "ioredis",
     // Serverless mode's Chromium finds its compressed binary next to its own files, so it must
-    // stay a real package, and those files must ship with the routes that extract.
+    // stay a real package. Next's tracing ships its bin/ by the real (pnpm store) path; adding
+    // the node_modules link path too made Vercel refuse the functions ("symlinked directories").
     "@sparticuz/chromium",
   ],
-  outputFileTracingIncludes: {
-    "/api/projects/[id]/references": ["./node_modules/@sparticuz/chromium/bin/**"],
-    "/api/references/[id]": ["./node_modules/@sparticuz/chromium/bin/**"],
-  },
   // Pricing became Plans when Thema turned into a free personal project (2026-11-22); old links
   // and search results keep working. Refunds left with the payments plan (docs/plans/).
   redirects: () =>
