@@ -23,3 +23,6 @@ apps/web/AGENTS.md
 # npm builds of the CLI and MCP server (pnpm build:npm); LICENSE is copied in by the build.
 packages/*/npm/dist/
 packages/*/npm/LICENSE
+
+# The Vercel CLI's link to the project (vercel link); local only.
+.vercel

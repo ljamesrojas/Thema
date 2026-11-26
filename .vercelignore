@@ -1,0 +1,14 @@
+# Files a `vercel deploy` from a local clone must never upload (Git deploys don't use this file).
+# Secrets stay on the machine: Vercel's own Environment Variables hold production's values.
+.env
+.env.*
+**/.env
+**/.env.*
+!**/.env.example
+# Installed and built on Vercel, not uploaded.
+**/node_modules
+**/.next
+**/.turbo
+packages/*/npm/dist
+packages/*/npm/LICENSE
+.git
